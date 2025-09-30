@@ -1,0 +1,26 @@
+.index-main {
+    width: 80%;
+    margin: auto;
+    height: 600px;
+}
+.title-bar {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    right: 0;
+    width: auto;
+}
+.me {
+    position: absolute;
+    pointer-events: none;
+    top: 150;
+    right: 0;
+    opacity: 1;
+    animation-name: meAnim;
+    animation-duration: 2s;
+}
+@keyframes meAnim {
+    0% { right: 200; opacity: 0; }
+    40% { right: 200; opacity: 0; }
+    100% { right: 0; opacity: 1; }
+}
