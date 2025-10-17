@@ -18,7 +18,7 @@
     "og": "an original album",
     "single": "a single",
     "mh-date": "released on July 28th, 2025",
-    "mp-date": "released on July 8th, 2024",
+    "mp-date": "released on July 8th, 2024<span class='mp-flicker'>█</span>",
     "md-date": "released on December 24th, 2023",
     "tracklist": "Tracklist:",
     "yt": "Watch on <span>YouTube</span>:",

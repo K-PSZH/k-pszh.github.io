@@ -1,4 +1,6 @@
 :root {
+    --danganronpa: #FF2D81;
+    --social-default-color: #100;
     --social-youtube: #FF0033;
     --social-spotify: #1ED760;
     --social-soundcloud: #FF5500;
@@ -10,9 +12,6 @@
     --vst-default-header: #D3D9DD;
     --vst-default-subheader: #8c9599
 }
-::-webkit-scrollbar {
-    display: none
-}
 ::selection {
     background-color:#B50000;
     color:white
@@ -21,28 +20,28 @@ img, br, .overlay {
     user-select: none
 }
 html {
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 body {
     margin: 0;
-    background-image: url("./img/bg.png")
+    background-image: url("/img/bg.png")
 }
 
 @font-face {
     font-family: JostLight;
-    src: url(fonts/JostLight.otf)
+    src: url(/fonts/JostLight.otf)
 }
 @font-face {
     font-family: JostBold;
-    src: url(fonts/JostBold.otf)
+    src: url(/fonts/JostBold.otf)
 }
 @font-face {
     font-family: FOTComet;
-    src:url(fonts/FOTCometStd.otf)
+    src: url(/fonts/FOTCometStd.otf)
 }
 
 h1, h2, h3, h4, h5, h6, p, ol {
-    cursor: default;
     line-height: 100%
 }
 h1, h2, h3, h4, h5, h6 {
@@ -112,7 +111,6 @@ a:active {
     font-family: FOTComet;
     margin-block-start: 0;
     margin-block-end: 0;
-    cursor: pointer;
     filter: none;
     transition: all .3s ease
 }
@@ -120,13 +118,12 @@ a:active {
     filter: drop-shadow(0 0 10px #f00)
 }
 .kpszh-header-menu a {
-    font-size: 24px;
+    font-size: 20px;
     font-family: JostLight;
     text-decoration: none;
     text-transform: uppercase;
 }
 .kpszh-header-menu a.active {
-    font-family: JostBold;
     text-decoration: underline
 }
 .kpszh-header-menu .time {
@@ -138,12 +135,10 @@ a:active {
     outline: 1px solid white;
 }
 .kpszh-header-menu span {
-    animation: time-divider 1s step-end infinite;
+    animation: animationFlicker 1s step-end infinite;
 }
-@keyframes time-divider {
-  50% {
-    opacity: 0;
-  }
+@keyframes animationFlicker {
+    50% { opacity: 0; }
 }
 
 .kpszh-header-langauage {
@@ -187,7 +182,7 @@ a:active {
 .kpszh-social-icon .bandcamp,
 .kpszh-social-icon .vk,
 .kpszh-social-icon .boosty {
-    fill:black;
+    fill: var(--social-default-color);
     transition:all .3s ease;
 }
 .kpszh-social-icon:hover .youtube { fill: var(--social-youtube) }
@@ -202,20 +197,9 @@ a:active {
     margin-block-start: 2em;
     margin-block-end: 1em
 }
-.overlay {
-    margin: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    pointer-events: none;
-    object-fit: cover;
-    mix-blend-mode: screen
-}
 .spoiler {
-    background-color: #FC00A8;
-    color: #FC00A8;
+    background-color: var(--danganronpa);
+    color: var(--danganronpa);
 }
 .spoiler::selection {
     background-color: #B50000;
@@ -228,21 +212,4 @@ a:active {
 .spoiler:hover::selection {
     background-color: #B50000;
     color: white
-}
-
-@keyframes scroll_watcher {
-    to { scale: 1 1; }
-}
-
-.scroll-watcher {
-    height: 10px;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    background-color: lime;
-    width: 100%;
-    scale: 0 1;
-    animation: scroll_watcher linear;
-    animation-timeline: scroll();
-    transform-origin: left;
 }
