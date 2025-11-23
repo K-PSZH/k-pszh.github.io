@@ -1,0 +1,239 @@
+:root {
+    --marquee-background: #000;
+    --marquee-background-hover: #200;
+    --danganronpa: #FF2D81;
+    --social-default-color: #100;
+    --social-youtube: #FF0033;
+    --social-spotify: #1ED760;
+    --social-soundcloud: #FF5500;
+    --social-bandcamp: #1DA0C3;
+    --social-vk: #0077FF;
+    --social-boosty: #F15F2C;
+    --vst-default-background: #3F484D;
+    --vst-default-outline: #2A3338;
+    --vst-default-header: #D3D9DD;
+    --vst-default-subheader: #8c9599;
+    --link-gradient-1: #d00;
+    --link-gradient-2: #a00;
+    --danganronpa-gradient-1: #fa0;
+    --danganronpa-gradient-2: #c71;
+}
+
+@font-face { font-family: Oswald; src: url(/fonts/Oswald.ttf); font-display: swap; font-weight: 200 400; }
+@font-face { font-family: FOTComet; src: url(/fonts/FOTCometStd.otf); font-display: swap }
+
+::selection {
+    background-color:#a00;
+    color:white
+}
+img, br {
+    user-select: none
+}
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    font-family: Oswald;
+    font-weight: 300;
+}
+body {
+    margin: 0;
+    background-image: url("/img/bg.webp");
+}
+b {
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6, p, ol {
+    line-height: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    color: white;
+    font-weight: 400;
+}
+h1 {
+    font-size: 96px;
+    margin-block-end: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+h2 {
+    font-size: 48.5px;
+    margin-block-start: -0.3em;
+    font-weight: 300;
+}
+h2 span {
+    font-weight: 400;
+}
+p, ol {
+    font-size: 22px;
+    text-align: left;
+    color: white;
+    font-weight: 300;
+    line-height: normal
+}
+a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 8px;
+    color: white;
+    text-decoration: none;
+    transition: all .25s ease;
+    will-change: color;
+}
+a:hover {
+    color: var(--link-gradient-1);
+}
+a:active {
+    color: #600
+}
+.nbsp {
+    user-select: none;
+}
+.kpszh-header {
+    width: 80%;
+    margin: auto
+}
+.kpszh-header-content {
+    padding: 50px 0 25px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.kpszh-header-logo, .kpszh-header-menu {
+    align-items: center;
+    display: flex;
+    gap: 10px
+}
+.kpszh-header-logo img {
+    width: 50px;
+    animation: logoRotate 8s linear infinite;
+}
+@keyframes logoRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.kpszh-header-logo a {
+    text-decoration: none
+}
+.kpszh-header h1 {
+    font-size: 46px;
+    font-family: FOTComet;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    filter: none;
+    transition: all .25s ease
+}
+.kpszh-header h1:hover {
+    filter: drop-shadow(0 0 10px #f00)
+}
+.kpszh-header-menu a {
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.kpszh-header-menu a.active {
+    text-decoration: underline
+}
+
+@keyframes animationFlicker {
+    50% { opacity: 0; }
+}
+
+.kpszh-social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px
+}
+.kpszh-social-icon {
+    display: flex;
+    width: auto;
+    max-width: 100px;
+    margin: 0 10px
+}
+.kpszh-social-icon svg {
+    transition: all .25s ease;
+    will-change: filter, width;
+    filter: drop-shadow(0 0 20px #f003);
+    width: 80px
+}
+.kpszh-social-icon:hover svg {
+    filter: none;
+    width: 90px
+}
+.kpszh-social-icon .youtube,
+.kpszh-social-icon .spotify,
+.kpszh-social-icon .soundcloud,
+.kpszh-social-icon .bandcamp,
+.kpszh-social-icon .vk,
+.kpszh-social-icon .boosty {
+    fill: var(--social-default-color);
+    transition: all .25s ease;
+    will-change: fill;
+}
+.kpszh-social-icon:hover .youtube { fill: var(--social-youtube) }
+.kpszh-social-icon:hover .spotify { fill: var(--social-spotify) }
+.kpszh-social-icon:hover .soundcloud { fill: var(--social-soundcloud) }
+.kpszh-social-icon:hover .bandcamp { fill: var(--social-bandcamp) }
+.kpszh-social-icon:hover .vk { fill: var(--social-vk) }
+.kpszh-social-icon:hover .boosty { fill: var(--social-boosty) }
+.kpszh-footer h6 {
+    font-size: 20px;
+    margin-block-start: 2em;
+    margin-block-end: 1em;
+}
+.flag {
+    height: 0.8em;
+    border-radius: 10%;
+}
+.kpszh-marquee {
+    position: fixed;
+    background-color: var(--marquee-background);
+    overflow: hidden;
+    user-select: none;
+    --marquee-gap: 40px;
+    display: flex;
+    gap: var(--marquee-gap);
+    animation: marqueeAppear 2s linear;
+    transition: background-color .25s ease;
+    will-change: background-color;
+}
+.kpszh-marquee-link:hover .kpszh-marquee {
+    background-color: var(--marquee-background-hover);
+}
+.kpszh-marquee ul {
+    padding: 0;
+    list-style: none;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--marquee-gap);
+    animation: marqueeScroll 30s linear infinite;
+    color: white;
+    margin-block: 0.2em;
+    font-weight: 400;
+    font-size: 22px;
+    transition: color .25s ease;
+    will-change: color;
+}
+.kpszh-marquee-link:hover .kpszh-marquee ul {
+    color: #fffd;
+}
+@keyframes marqueeAppear {
+    0% { transform: translateY(-100%); }
+    50% { transform: translateY(-100%); }
+    75% { transform: translateY(0%); }
+}
+@keyframes marqueeScroll {
+    100% { transform: translateX(calc(-100% - var(--marquee-gap))); }
+}
+.character-red {
+    background-image: linear-gradient(var(--link-gradient-1), var(--link-gradient-2));
+}
+span.danganronpa {
+    background-image: linear-gradient(var(--danganronpa-gradient-1), var(--danganronpa-gradient-2));
+    color: transparent;
+    background-clip: text;
+    transition: all .25s ease;
+    will-change: color;
+}

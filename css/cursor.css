@@ -1,0 +1,33 @@
+html, body, a, button {
+    cursor: none;
+}
+
+#custom-cursor {
+    display: block;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%,-50%)
+}
+
+#custom-cursor img {
+    width: 60px;
+    animation: spin 8s linear infinite;
+    will-change: animation, width;
+    transition: all 0.25s ease;
+}
+
+#custom-cursor.pointer img {
+    animation: spin 8s linear infinite, hover 0.1s linear infinite alternate;
+    width: 45px;
+}
+
+@keyframes spin {
+    from { transform: rotate(0); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes hover {
+    from { opacity: 1; }
+    to { opacity: .25; }
+}

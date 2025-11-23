@@ -1,0 +1,182 @@
+@font-face { font-family: AgencyFB; src: url(/fonts/AgencyFB.ttf); font-display: swap }
+@font-face { font-family: Consolas; src: url(/fonts/Consolas.ttf); font-display: swap }
+@font-face { font-family: FOTCarat; src: url(/fonts/FOTCaratStd.otf); font-display: swap }
+
+.album{
+    --scroll-progress: 0;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-size: cover;
+    background-position: right;
+    box-shadow: inset 0 0 100px #000, inset 0 0 15px #000;
+    padding-inline: 5%;
+    min-height: auto;
+    user-select: none;
+}
+
+.album a {
+    background-image: none;
+    background-clip: unset;
+}
+.album a:hover {
+    color: #d00;
+}
+
+.album > * { position: relative; z-index: 2 }
+.album-art { pointer-events: none; max-width: 45%; height: auto; display: block; z-index: 0; }
+.album-data { display: flex; flex-direction: column; }
+
+.album ol {
+    list-style: none;
+    counter-reset: track;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+.album ol li { counter-increment: track; }
+.album ol li::before { content: counter(track) "."; display: inline-block; margin-right: 0.5ch; }
+
+.album::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: black;
+    opacity: calc(1 - var(--scroll-progress));
+    will-change: opacity;
+    pointer-events: none;
+}
+
+.album-art,
+.album-data,
+.album-data h4,
+.album-data h3,
+.album-data ol{
+    will-change: transform, opacity;
+}
+
+#mh.album-art{
+    transform: translateX(calc((1 - var(--scroll-progress)) * 100%));
+    opacity: calc(var(--scroll-progress));
+}
+#md.album-art{
+    transform: translateX(calc((var(--scroll-progress) - 1) * 100%));
+    opacity: calc(var(--scroll-progress));
+}
+#mh.album-data{
+    transform: translateX(calc((var(--scroll-progress) - 1) * 100%));
+}
+#md.album-data{
+    transform: translateX(calc((1 - var(--scroll-progress)) * 100%));
+}
+
+.album-data h4,
+.album-data h3,
+.album-data ol { opacity: calc(var(--scroll-progress)); }
+
+.album#mh { background-image: url(/img/projects/myhallucination_bg.webp); }
+
+.album#mh h1,
+.album#mh h2,
+.album#mh h3,
+.album#mh ol {
+    font-family: AgencyFB;
+    font-weight: 600;
+    transform: scale(1, 1.1);
+    -webkit-text-stroke: 0.09em black;
+    paint-order: stroke fill;
+    margin: 6px auto;
+    text-align: center;
+    user-select: none;
+}
+.album#mh h1 { font-size: 133px }
+.album#mh h2 { font-size: 53px; font-weight: 500 }
+.album#mh h3 { font-size: 43px; font-weight: 500; margin-block-start: 0.5em }
+.album#mh ol { margin-block-start: 0.5em; font-size: 32px; font-weight: 500 }
+.album#mh ol span { color: #ccc; font-size: 0.85em }
+
+.album a:visited { -webkit-text-stroke-color: black }
+
+.album-data h4 {
+    font-weight: 300;
+    font-size: 32px;
+    letter-spacing: 1px;
+    margin-block: 0.75em;
+    filter: drop-shadow(0 0 6px #000);
+    user-select: all;
+}
+
+@keyframes noise_anima {
+    from {background-position: 0 0}
+    to {background-position: 123px 456px} }
+
+.album#mp {
+    background-image: url(/img/projects/mypain_bg.webp);
+    min-height: 400px;
+    position: relative;
+}
+
+.album#mp::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background-image: url("/img/projects/noise.webp");
+    animation: noise_anima 1s steps(10) infinite;
+    opacity: 0.9;
+    will-change: background-position, opacity;
+}
+
+.album#mp h1,
+.album#mp h2,
+.album#mp h3 {
+    font-family: Consolas;
+    user-select: none;
+    margin: 6px auto;
+    text-align: center;
+}
+.album#mp h1 { font-size: 128px; text-transform: none }
+.album#mp h2 { font-size: 64px }
+.album#mp h3 { font-size: 32px; margin: 12px auto }
+.album#mp a:hover { color: #555 }
+
+.mp-flicker { animation: animationFlicker 1s step-end infinite }
+
+.album#md {
+    background-image: url(/img/projects/mydespair_bg.webp);
+    flex-direction: row-reverse;
+}
+.album#md h1,
+.album#md h2,
+.album#md h3,
+.album#md ol {
+    font-family: FOTCarat;
+    user-select: none;
+    -webkit-text-stroke: 8px black;
+    paint-order: stroke fill;
+    margin: 6px auto;
+    text-align: center;
+}
+.album#md h1 { font-size: 107px; text-transform: none }
+.album#md h2 { font-size: 36px; margin-block-start: 0.8em }
+.album#md h3 { font-size: 32px; margin-block-start: 1em }
+.album#md ol { margin-block-start: 0.5em; font-size: 24px; line-height: 1.6 }
+
+.album#md video {
+    mix-blend-mode: screen;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    right: 0;
+    opacity: calc(var(--scroll-progress));
+    transform: translateX(calc((1 - var(--scroll-progress)) * 250px));
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .album-art, .album-data, .album#mp::before { transform: none !important; opacity: 1 !important; animation-play-state: paused !important }
+}
