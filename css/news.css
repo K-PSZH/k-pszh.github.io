@@ -83,4 +83,10 @@ a.news-link:hover .news-title, a.news-link:hover .news-excerpt, a.news-link:hove
     .news-date, .news-image {
         display: none;
     }
+    .news-title {
+        width: 100%;
+    }
+    .news-excerpt {
+        margin-right: 0px;
+    }
 }

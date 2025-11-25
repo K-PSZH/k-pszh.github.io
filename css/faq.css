@@ -37,7 +37,7 @@
     will-change: transform, color;
 }
 .faq-question.active .arrow {
-    transform: rotate(540deg) scale(90%);
+    transform: rotate(540deg) scale(95%);
     color: #f776;
 }
 .faq-question.active span.danganronpa {
