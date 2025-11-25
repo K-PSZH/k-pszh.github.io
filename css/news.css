@@ -1,0 +1,92 @@
+.news-main {
+    max-width: 60%;
+    margin: auto;
+    transition: max-width .25s ease;
+}
+
+.news-block {
+    margin-block: 2em;
+}
+
+a.news-link, .news-link-style, .news-title, a.news-link .news-excerpt, a.news-link .news-date {
+    transition: all .25s ease;
+}
+
+a.news-link, a.news-link:visited, a.news-link:active {
+    background-color: transparent;
+    width: 100%;
+    display: inline-flex;
+    border: 0;
+    margin-block: 0.5em;
+    text-decoration: none;
+}
+
+a.news-link:hover {
+    color: white;
+}
+
+.news-link-style {
+    position: relative;
+    display: block;
+    border-radius: 12px;
+    padding: 10px;
+    background-color: #0007;
+    width: 100%;
+}
+
+.news-link-style:hover {
+    background-color: #4008;
+}
+
+.news-image {
+    width: 200px;
+    float: left;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    margin-right: 8px;
+    border-radius: 4px;
+    user-select: all;
+}
+
+.news-date {
+    opacity: 65%;
+    font-size: 18px;
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    font-weight: 400;
+}
+
+.news-title {
+    font-size: 28px;
+    font-weight: 400;
+    width: calc(100% - 100px);
+}
+
+.news-excerpt {
+    padding-top: 10px;
+    margin-right: 100px;
+    opacity: 65%;
+    overflow: hidden;
+    font-size: 18px;
+}
+
+a.news-link:hover .news-title, a.news-link:hover .news-excerpt, a.news-link:hover .news-date {
+    opacity: 100%;
+}
+
+@media only screen and (max-width: 780px) {
+    .news-main {
+        max-width: 90%;
+    }
+    a.news-link {
+        height: auto;
+        margin-bottom: 8px;
+    }
+    .news-link-style {
+        width: 100%;
+    }
+    .news-date, .news-image {
+        display: none;
+    }
+}

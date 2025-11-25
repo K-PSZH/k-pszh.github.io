@@ -11,15 +11,15 @@ html, body, a, button {
 }
 
 #custom-cursor img {
-    width: 60px;
+    width: 40px;
     animation: spin 8s linear infinite;
     will-change: animation, width;
-    transition: all 0.25s ease;
+    transition: all .25s ease;
 }
 
 #custom-cursor.pointer img {
     animation: spin 8s linear infinite, hover 0.1s linear infinite alternate;
-    width: 45px;
+    width: 30px;
 }
 
 @keyframes spin {

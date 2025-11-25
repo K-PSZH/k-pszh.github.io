@@ -68,18 +68,17 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: flex-start;
+    align-items: stretch;
     align-content: flex-start;
     box-sizing: border-box;
     max-width: 1240px;
     perspective: 1500px;
-    min-height: 900px;
+    min-height: 920px;
 }
 
 .vst-wrapper, .graphics-wrapper {
     position: relative;
     display: flex;
-    height: 280px;
 }
 
 .vst-preview {
@@ -148,6 +147,10 @@
 }
 
 .daw-wrapper .logo {
+    top: 45%;
+}
+
+.graphics-wrapper .logo {
     top: 50%;
 }
 

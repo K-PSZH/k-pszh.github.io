@@ -59,8 +59,3 @@
     margin-block-start: 0em;
     margin-block-end: 0em;
 }
-.faq-answer p a {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
-}

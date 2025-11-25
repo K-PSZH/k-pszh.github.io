@@ -21,6 +21,7 @@
 .album a {
     background-image: none;
     background-clip: unset;
+    text-decoration: none;
 }
 .album a:hover {
     color: #d00;
@@ -107,7 +108,7 @@
     letter-spacing: 1px;
     margin-block: 0.75em;
     filter: drop-shadow(0 0 6px #000);
-    user-select: all;
+    user-select: text;
 }
 
 @keyframes noise_anima {

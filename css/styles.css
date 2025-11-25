@@ -13,9 +13,9 @@
     --vst-default-outline: #2A3338;
     --vst-default-header: #D3D9DD;
     --vst-default-subheader: #8c9599;
-    --link-gradient-1: #d00;
-    --link-gradient-2: #a00;
-    --danganronpa-gradient-1: #fa0;
+    --link-gradient-1: #e00;
+    --link-gradient-2: #900;
+    --danganronpa-gradient-1: #fc0;
     --danganronpa-gradient-2: #c71;
 }
 
@@ -23,7 +23,7 @@
 @font-face { font-family: FOTComet; src: url(/fonts/FOTCometStd.otf); font-display: swap }
 
 ::selection {
-    background-color:#a00;
+    background-color: var(--link-gradient-2);
     color:white
 }
 img, br {
@@ -55,6 +55,7 @@ h1 {
     margin-block-end: 20px;
     text-transform: uppercase;
     font-weight: 400;
+    
 }
 h2 {
     font-size: 48.5px;
@@ -69,28 +70,30 @@ p, ol {
     text-align: left;
     color: white;
     font-weight: 300;
-    line-height: normal
+    line-height: normal;
 }
 a {
-    text-decoration-thickness: 1px;
-    text-underline-offset: 8px;
     color: white;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
     transition: all .25s ease;
-    will-change: color;
+    will-change: color, text-underline-offset;
 }
 a:hover {
     color: var(--link-gradient-1);
+    text-underline-offset: 4px;
+    text-decoration-color: transparent;
 }
 a:active {
-    color: #600
+    color: var(--link-gradient-2);
 }
 .nbsp {
     user-select: none;
 }
 .kpszh-header {
     width: 80%;
-    margin: auto
+    margin: auto;
 }
 .kpszh-header-content {
     padding: 50px 0 25px;
@@ -99,20 +102,21 @@ a:active {
     justify-content: space-between;
 }
 .kpszh-header-logo, .kpszh-header-menu {
-    align-items: center;
+    align-items: flex-start;
     display: flex;
-    gap: 10px
+    gap: 10px;
 }
 .kpszh-header-logo img {
     width: 50px;
     animation: logoRotate 8s linear infinite;
+    pointer-events: none;
 }
 @keyframes logoRotate {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 .kpszh-header-logo a {
-    text-decoration: none
+    text-decoration: none;
 }
 .kpszh-header h1 {
     font-size: 46px;
@@ -120,10 +124,10 @@ a:active {
     margin-block-start: 0em;
     margin-block-end: 0em;
     filter: none;
-    transition: all .25s ease
+    transition: all .25s ease;
 }
 .kpszh-header h1:hover {
-    filter: drop-shadow(0 0 10px #f00)
+    filter: drop-shadow(0 0 10px #f00);
 }
 .kpszh-header-menu a {
     font-size: 20px;
@@ -131,7 +135,7 @@ a:active {
     text-transform: uppercase;
 }
 .kpszh-header-menu a.active {
-    text-decoration: underline
+    text-decoration: underline;
 }
 
 @keyframes animationFlicker {
@@ -140,25 +144,26 @@ a:active {
 
 .kpszh-social-media {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 100px
+    min-height: 100px;
 }
 .kpszh-social-icon {
     display: flex;
     width: auto;
     max-width: 100px;
-    margin: 0 10px
+    margin: 0 10px;
 }
 .kpszh-social-icon svg {
     transition: all .25s ease;
     will-change: filter, width;
     filter: drop-shadow(0 0 20px #f003);
-    width: 80px
+    width: 80px;
 }
 .kpszh-social-icon:hover svg {
     filter: none;
-    width: 90px
+    width: 90px;
 }
 .kpszh-social-icon .youtube,
 .kpszh-social-icon .spotify,
@@ -181,9 +186,16 @@ a:active {
     margin-block-start: 2em;
     margin-block-end: 1em;
 }
+.kpszh-footer-image {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -100;
+}
 .flag {
     height: 0.8em;
     border-radius: 10%;
+    pointer-events: none;
 }
 .kpszh-marquee {
     position: fixed;
@@ -195,7 +207,7 @@ a:active {
     gap: var(--marquee-gap);
     animation: marqueeAppear 2s linear;
     transition: background-color .25s ease;
-    will-change: background-color;
+    will-change: transform, background-color;
 }
 .kpszh-marquee-link:hover .kpszh-marquee {
     background-color: var(--marquee-background-hover);
@@ -236,4 +248,88 @@ span.danganronpa {
     background-clip: text;
     transition: all .25s ease;
     will-change: color;
+}
+
+#image-viewer {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #000c;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: imageViewerBackground 0.5s ease;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    animation: imageViewerZoom 0.5s ease;
+}
+#image-viewer .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 80px;
+    font-weight: 200;
+    animation: imageViewerZoom 0.5s ease;
+    transition: all .25s ease;
+}
+@keyframes imageViewerZoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+@keyframes imageViewerBackground {
+    from {opacity: 0; }
+    to {opacity: 1; }
+}
+#image-viewer .close:hover,
+#image-viewer .close:focus {
+    opacity: 50%;
+}
+
+audio::-webkit-media-controls-enclosure {
+    background: transparent;
+    filter: invert();
+    border-radius: 0;
+}
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-fullscreen-button {
+    cursor: none !important;
+}
+audio::-internal-media-controls-overflow-button {
+    cursor: none !important;
+}
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    font-family: Oswald;
+    font-size: 18px;
+    text-shadow: none;
+}
+
+@media (max-width: 1024px) {
+    .kpszh-header-content {
+        flex-direction: column;
+        align-items: center; /* Добавьте это */
+        text-align: center; /* Добавьте это */
+    }
+    .kpszh-header-logo {
+        align-items: center; /* Добавьте это */
+        justify-content: center; /* Добавьте это */
+        margin-bottom: 15px; /* Опционально - для отступа между лого и меню */
+    }
+    .kpszh-header-menu {
+        justify-content: center; /* Добавьте это */
+        flex-wrap: wrap; /* Опционально - если элементы меню не помещаются */
+    }
 }

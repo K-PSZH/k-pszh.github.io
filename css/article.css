@@ -1,6 +1,7 @@
 .article-main {
     max-width: 60%;
     margin: auto;
+    transition: max-width .25s ease;
 }
 
 .article-header {
@@ -8,15 +9,19 @@
     align-content: center;
     justify-content: space-between;
     align-items: flex-end;
+    margin-block-start: 2.5em;
+    margin-block-end: 2em;
 }
 
 .article-main h1 {
     text-indent: 0.25em;
     text-align: left;
     text-transform: none;
-    line-height: 110%;
+    line-height: normal;
     font-size: 48px;
     width: 75%;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 .article-main h1::first-letter {
@@ -27,18 +32,45 @@
     font-size: 22px;
     text-align: right;
     font-weight: 300;
+    line-height: normal;
+    margin-block-start: 0.1em;
+    margin-block-end: 0;
 }
 
 .article-image-container {
-  position: relative;
-  display: flex;
+    position: relative;
+    display: flex;
+    transition: all .25s ease;
+}
+
+.article-image-container:hover {
+    transform: scale(96%);
+    opacity: 60%;
 }
 
 .article-image-container img {
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     margin-block: 0.5em;
     user-select: all;
+    aspect-ratio: 8/3;
+}
+
+.article-image-container.image-red-gradient::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: 96.5%;
+    background: linear-gradient(135deg, transparent 25%, var(--link-gradient-2) 125%);
+    z-index: 2;
+    pointer-events: none;
+    transition: opacity .25s ease;
+}
+
+.article-image-container.image-red-gradient:hover::after {
+    opacity: 0%;
 }
 
 .article-image-caption {
@@ -48,6 +80,7 @@
     background-color: #0008;
     color: #fff;
     padding: 4px 8px;
+    z-index: 3;
 }
 
 .article-main h3 {
@@ -57,15 +90,90 @@
     margin-block-end: 0.3em;
 }
 
-.article-main h4 {
-    text-align: center;
-    font-size: 20px;
-    font-weight: 200;
-    margin-block-start: 0em;
-    margin-block-end: 0.75em;
-    color: #fff8;
-}
-
 .article-main p {
     text-indent: 1em;
+}
+
+.bubble-caption {
+    border-radius: 8px;
+    background-color: #0007;
+    padding: 12px 18px;
+    animation: bubbleCaptionWarning 1s ease infinite;
+    will-change: background-color;
+}
+@keyframes bubbleCaptionWarning {
+    0% { background-color: #0007; }
+    50% { background-color: #4008; }
+    100% { background-color: #0007; }
+}
+.bubble-caption-text {
+    color: white;
+    font-size: 24px;
+}
+
+.kpszh-audio-grid {
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    --audio-grid-gap: 20px;
+    gap: var(--audio-grid-gap);
+}
+
+.kpszh-audio-container {
+    border-radius: 4px;
+    background: linear-gradient(-30deg, #f007 -100%, transparent 50%, transparent 75%, #f007 150%);
+    background-color: #0007;
+    padding: 12px 24px;
+    width: calc(50% - var(--audio-grid-gap)/2);
+    box-sizing: border-box;
+    transition: background-color .25s ease;
+}
+
+.kpszh-audio-container:hover {
+    background-color: #4008;
+}
+
+.kpszh-audio-text {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.kpszh-audio-title {
+    color: white;
+    font-size: 36px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.kpszh-audio-subtitle {
+    color: white;
+    opacity: 50%;
+    font-size: 24px;
+    font-weight: 300;
+    user-select: none;
+}
+
+.kpszh-audio-container audio {
+    width: 100%;
+}
+
+@media (max-width: 1280px) {
+    .article-main {
+        max-width: 90%
+    }
+}
+
+@media (max-width: 1024px) {
+    .article-header {
+        flex-direction: column;
+    }
+    .article-main h1 {
+        width: 100%;
+    }
+    .kpszh-audio-container {
+        width: 100%;
+    }
 }
