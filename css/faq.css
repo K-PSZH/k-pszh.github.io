@@ -1,6 +1,7 @@
 .faq-main {
     max-width: 60%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 .faq-main h2 {
     margin-block: 0px;

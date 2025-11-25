@@ -93,7 +93,8 @@ a:active {
 }
 .kpszh-header {
     width: 80%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 .kpszh-header-content {
     padding: 50px 0 25px;
@@ -317,19 +318,19 @@ audio::-webkit-media-controls-time-remaining-display {
     text-shadow: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
     .kpszh-header-content {
         flex-direction: column;
-        align-items: center; /* Добавьте это */
-        text-align: center; /* Добавьте это */
+        align-items: center;
+        text-align: center;
     }
     .kpszh-header-logo {
-        align-items: center; /* Добавьте это */
-        justify-content: center; /* Добавьте это */
-        margin-bottom: 15px; /* Опционально - для отступа между лого и меню */
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
     }
     .kpszh-header-menu {
-        justify-content: center; /* Добавьте это */
-        flex-wrap: wrap; /* Опционально - если элементы меню не помещаются */
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }

@@ -160,13 +160,13 @@
     width: 100%;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1080px) {
     .article-main {
         max-width: 90%
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
     .article-header {
         flex-direction: column;
     }
