@@ -56,15 +56,17 @@
             </div>
             <hr>
         </header>
-        <main class="index-main">
-            <div class="index-art">
-                <video autoplay muted preload="metadata" playsinline class="title-bar">
-                    <source src="/img/title_back.webm" type="video/webm"/>
-                </video>
-                <img src="/img/me.webp" class="me">
-                <video autoplay muted preload="metadata" playsinline class="title-bar">
-                    <source src="/img/title_front_int.webm" type="video/webm"/>
-                </video>
+        <div id="main">
+            <div id="main-body">
+                <div class="index-art">
+                    <video autoplay muted preload="metadata" playsinline class="title-bar">
+                        <source src="/img/title_back.webm" type="video/webm"/>
+                    </video>
+                    <video autoplay muted preload="metadata" playsinline class="title-bar" style="z-index: 2">
+                        <source src="/img/title_front_int.webm" type="video/webm"/>
+                    </video>
+                    <img src="/img/me.webp" class="me">
+                </div>
             </div>
         </div>
         <br>

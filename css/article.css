@@ -27,7 +27,7 @@
     text-align: right;
     font-weight: 300;
     line-height: normal;
-    margin-block-start: 0.1em;
+    margin-block-start: .1em;
     margin-block-end: 0;
     white-space: nowrap;
 }
@@ -35,6 +35,7 @@
 .article-image-container {
     position: relative;
     display: flex;
+    margin-block: .75em;
     transition: all .25s ease;
 }
 
@@ -46,18 +47,17 @@
 .article-image-container img {
     width: 100%;
     object-fit: cover;
-    margin-block: 0.5em;
     user-select: all;
     aspect-ratio: 8/3;
+    transition: aspect-ratio .25s ease;
 }
 
 .article-image-container.image-red-gradient::after {
     content: "";
     position: absolute;
-    top: 8px;
     left: 0;
     width: 100%;
-    height: 96.5%;
+    height: 100%;
     background: linear-gradient(135deg, transparent 25%, var(--link-gradient-2) 125%);
     z-index: 2;
     pointer-events: none;
@@ -70,7 +70,7 @@
 
 .article-image-caption {
     position: absolute;
-    bottom: 8px;
+    bottom: 0px;
     right: 0px;
     background-color: #0008;
     color: #fff;
@@ -81,8 +81,8 @@
 #main h3 {
     text-align: center;
     font-size: 36px;
-    margin-block-start: 0.5em;
-    margin-block-end: 0.3em;
+    margin-block-start: .5em;
+    margin-block-end: .3em;
 }
 
 #main p {
@@ -164,5 +164,11 @@
     }
     .kpszh-audio-container {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .article-image-container img {
+        aspect-ratio: 4/3;
     }
 }

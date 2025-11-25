@@ -52,14 +52,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
     font-size: 96px;
-    margin-block-end: 20px;
+    margin-block-end: .2em;
     text-transform: uppercase;
     font-weight: 400;
     
 }
 h2 {
     font-size: 48.5px;
-    margin-block-start: -0.3em;
+    margin-block-start: -.3em;
     font-weight: 300;
 }
 h2 span {
@@ -82,7 +82,7 @@ a {
 }
 a:hover {
     color: var(--link-gradient-1);
-    text-underline-offset: 4px;
+    text-underline-offset: 10px;
     text-decoration-color: transparent;
 }
 a:active {
@@ -122,8 +122,8 @@ a:active {
 .kpszh-header h1 {
     font-size: 46px;
     font-family: FOTComet;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
+    margin-block-start: 0;
+    margin-block-end: 0;
     filter: none;
     transition: all .25s ease;
 }
@@ -147,9 +147,6 @@ a:active {
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
-}
-#main.merch {
-    width: 1440px;
 }
 
 #main-body {
@@ -358,9 +355,6 @@ audio::-webkit-media-controls-time-remaining-display {
         margin-left: 0;
         margin-right: 0;
     }
-    #main.merch {
-        width: 100%;
-    }
 	#main-body
 	{
 		padding-left: 16px;
@@ -369,14 +363,20 @@ audio::-webkit-media-controls-time-remaining-display {
 	}
 }
 
-@media only screen and (max-width: 650px)
-{
-	#main-body {
-		padding-left: 8px;
-		padding-right: 8px;
-	}
-
-	#main-body p {
-		margin-left: 0px;
-	}
+@media (hover: none) and (pointer: coarse) {
+    :root {
+        --social-default-color: #200;
+    }
+    h1 {
+        font-size: 72px;
+    }
+    h2 {
+        font-size: 38px;
+    }
+    .kpszh-header h1:hover {
+        filter: none;
+    }
+    .kpszh-social-icon svg {
+        filter: none;
+    }
 }

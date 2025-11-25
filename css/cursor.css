@@ -2,14 +2,12 @@ html, body, a, button {
     cursor: none;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    #custom-cursor {
-        display: block;
-        position: fixed;
-        pointer-events: none;
-        z-index: 9999;
-        transform: translate(-50%,-50%);
-    }
+#custom-cursor {
+    display: block;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%,-50%);
 }
 
 #custom-cursor img {
@@ -32,4 +30,14 @@ html, body, a, button {
 @keyframes hover {
     from { opacity: 1; }
     to { opacity: .25; }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    #custom-cursor {
+        display: block;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%,-50%);
+    }
 }

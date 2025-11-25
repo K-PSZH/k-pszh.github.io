@@ -3,8 +3,8 @@
 }
 #main h3 {
     font-weight: 300;
-    font-size: 22px;
-    margin-block-start: 0.5em;
+    font-size: 24px;
+    margin-block-start: .5em;
     margin-block-end: 2em;
 }
 .faq-container {
@@ -19,7 +19,7 @@
     padding: 20px;
     padding-right: 40px;
     text-align: left;
-    font-size: 24px;
+    font-size: 28px;
     border: none;
     position: relative;
     transition: background-color .25s ease;
@@ -51,8 +51,7 @@
 }
 .faq-answer p {
     padding: 20px;
-    font-size: 20px;
     width: 90%;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }

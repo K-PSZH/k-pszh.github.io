@@ -96,8 +96,8 @@
 }
 .album#mh h1 { font-size: 133px }
 .album#mh h2 { font-size: 53px; font-weight: 500 }
-.album#mh h3 { font-size: 43px; font-weight: 500; margin-block-start: 0.5em }
-.album#mh ol { margin-block-start: 0.5em; font-size: 32px; font-weight: 500 }
+.album#mh h3 { font-size: 43px; font-weight: 500; margin-block-start: .5em }
+.album#mh ol {  font-size: 32px; font-weight: 500; margin-block-start: .5em }
 .album#mh ol span { color: #ccc; font-size: 0.85em }
 
 .album a:visited { -webkit-text-stroke-color: black }

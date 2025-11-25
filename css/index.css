@@ -1,21 +1,13 @@
-.index-main {
-    width: 80%;
-    margin: auto;
-    height: 600px;
+.index-art {
+    display: flex;
 }
+
 .title-bar {
-    position: absolute;
     pointer-events: none;
-    top: 0;
     right: 0;
-    width: auto;
 }
 .me {
-    position: absolute;
     pointer-events: none;
-    top: 150;
-    right: 0;
-    opacity: 1;
     animation-name: meAnim;
     animation-duration: 2s;
 }
