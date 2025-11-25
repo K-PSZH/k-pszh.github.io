@@ -2,12 +2,14 @@ html, body, a, button {
     cursor: none;
 }
 
-#custom-cursor {
-    display: block;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%,-50%)
+@media (hover: hover) and (pointer: fine) {
+    #custom-cursor {
+        display: block;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%,-50%)
+    }
 }
 
 #custom-cursor img {
