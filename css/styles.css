@@ -92,7 +92,7 @@ a:active {
     user-select: none;
 }
 .kpszh-header {
-    width: 80%;
+    width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -141,6 +141,23 @@ a:active {
 
 @keyframes animationFlicker {
     50% { opacity: 0; }
+}
+
+#main {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#main.merch {
+    width: 1440px;
+}
+
+#main-body {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    overflow-wrap: break-word;
 }
 
 .kpszh-social-media {
@@ -199,7 +216,7 @@ a:active {
     pointer-events: none;
 }
 .kpszh-marquee {
-    position: fixed;
+    position: absolute;
     background-color: var(--marquee-background);
     overflow: hidden;
     user-select: none;
@@ -318,7 +335,10 @@ audio::-webkit-media-controls-time-remaining-display {
     text-shadow: none;
 }
 
-@media (max-width: 1080px) {
+@media only screen and (max-width: 1080px) {
+    .kpszh-header {
+        width: calc(100% - 32px);
+    }
     .kpszh-header-content {
         flex-direction: column;
         align-items: center;
@@ -333,4 +353,30 @@ audio::-webkit-media-controls-time-remaining-display {
         justify-content: center;
         flex-wrap: wrap;
     }
+    #main {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #main.merch {
+        width: 100%;
+    }
+	#main-body
+	{
+		padding-left: 16px;
+		padding-right: 16px;
+		overflow: hidden;
+	}
+}
+
+@media only screen and (max-width: 650px)
+{
+	#main-body {
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+
+	#main-body p {
+		margin-left: 0px;
+	}
 }

@@ -1,12 +1,7 @@
-.faq-main {
-    max-width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.faq-main h2 {
+#main h2 {
     margin-block: 0px;
 }
-.faq-main h3 {
+#main h3 {
     font-weight: 300;
     font-size: 22px;
     margin-block-start: 0.5em;

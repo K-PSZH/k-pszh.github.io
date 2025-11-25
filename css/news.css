@@ -1,9 +1,3 @@
-.news-main {
-    max-width: 60%;
-    margin: auto;
-    transition: max-width .25s ease;
-}
-
 .news-block {
     margin-block: 2em;
 }
