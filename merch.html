@@ -7,53 +7,60 @@
         <link rel="stylesheet" href="/css/styles.css">
         <link rel="stylesheet" href="/css/merch.css">
         <link rel="stylesheet" href="/css/cursor.css">
-	    <title>Merch | K-PSZH</title>
+	    <title data-i18n="merch-tab-name"></title>
     </head>
     <body>
         <header class="kpszh-header">
             <div class="kpszh-header-content">
                 <div class="kpszh-header-logo">
                     <img src="/img/logo.webp">
-                    <a href="/" title="K-PSZH"><h1>K-PSZH</h1></a>
+                    <a href="/"><h1>K-PSZH</h1></a>
                 </div>
                 <div class="kpszh-header-menu">
-                    <a href="/" title="Home">Home</a>
-                    <a href="/news.html" title="News">News</a>
-                    <a href="/about.html" title="About me">About me</a>
-                    <a href="/projects.html" title="Projects">Projects</a>
-                    <a href="/merch.html" title="Merch">Merch</a>
-                    <a href="/tools.html" title="Tools I use">Tools I use</a>
-                    <a href="/faq.html" title="FAQ">FAQ</a>
+                    <a href="/" data-i18n="common-header-home"></a>
+                    <a href="/news.html" data-i18n="common-header-news"></a>
+                    <a href="/about.html" data-i18n="common-header-about"></a>
+                    <a href="/projects.html" data-i18n="common-header-projects"></a>
+                    <a href="/merch.html" data-i18n="common-header-merch"></a>
+                    <a href="/tools.html" data-i18n="common-header-tools"></a>
+                    <a href="/faq.html" data-i18n="common-header-faq"></a>
+                    <div class="kpszh-header-dropdown">
+                        <a onclick="langMenu()" class="dropbtn" data-i18n="common-header-language"></a>
+                        <div id="lang-dropdown" class="kpszh-header-dropdown-content">
+                            <a onclick="langSet('ru')"><span data-i18n="common-header-language-ru"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag cursor-hoverable" src="/img/flags/ru.svg"></a>
+                            <a onclick="langSet('en')"><span data-i18n="common-header-language-en"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag cursor-hoverable" src="/img/flags/us.svg"></a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <hr>
         </header>
         <div id="main" class="merch">
             <div id="main-body">
-                <h1>MERCH</h1>
-                <h2>Together with the <span class="danganronpa">Tanuki</span> chain stores, we've launched a limited batch of <span class="character-red">K-PSZH</span>' official merchandise! Take a look!</h2>
+                <h1 data-i18n="merch-title"></h1>
+                <h2 data-i18n="merch-subtitle"></h2>
                 <div class="merch-grid">
                     <a class="merch-container">
                         <img class="merch-image" src="/img/merch/shirt-1.webp">
-                        <div class="merch-title">K-PSZH' Red Shirt</div>
-                        <div class="merch-price">$100 / €100 / ₽7500</div>
+                        <div class="merch-title" data-i18n="merch-1-title"></div>
+                        <div class="merch-price">$50 / €50 / ₽3000</div>
                         <div class="merch-take-a-look">Take a look →</div>
                     </a>
                     <a class="merch-container">
                         <img class="merch-image" src="/img/merch/tshirt-1.webp">
-                        <div class="merch-title">"My Hallucination" T-Shirt</div>
+                        <div class="merch-title" data-i18n="merch-2-title"></div>
                         <div class="merch-price">$50 / €50 / ₽3000</div>
                         <div class="merch-take-a-look">Take a look →</div>
                     </a>
                     <a class="merch-container">
                         <img class="merch-image" src="/img/merch/notebook-1.webp">
-                        <div class="merch-title">Brand Notebook</div>
+                        <div class="merch-title" data-i18n="merch-3-title"></div>
                         <div class="merch-price">$10 / €10 / ₽600</div>
                         <div class="merch-take-a-look">Take a look →</div>
                     </a>
                     <a class="merch-container">
                         <img class="merch-image" src="/img/merch/pin-1.webp">
-                        <div class="merch-title">Brand Pin</div>
+                        <div class="merch-title" data-i18n="merch-4-title"></div>
                         <div class="merch-price">$10 / €10 / ₽600</div>
                         <div class="merch-take-a-look">Take a look →</div>
                     </a>
@@ -112,11 +119,12 @@
                     </a>
                 </div>
             </div>
-            <h6>© 2026 K-PSZH. All Rights Reserved.</h6>
+            <h6 data-i18n="common-footer-copyright"></h6>
         </footer>
-        <div id="custom-cursor">
-            <img src="/img/cursor.webp" alt="">
+        <div id="kpszh-cursor">
+            <img id="kpszh-cursor-image" src="/img/cursor.webp" alt="">
         </div>
         <script src="/js/cursor.js"></script>
+        <script src="/js/language.js"></script>
     </body>
 </html>

@@ -1,13 +1,37 @@
-var t = document.getElementById("custom-cursor");
-document.addEventListener("mousemove", function(e) {
-    t.style.left = e.clientX + "px",
-    t.style.top = e.clientY + "px"
-}),
-document.querySelectorAll("a, button, .cursor-hoverable").forEach(function(e) {
-    e.addEventListener("mouseenter", function() {
-        t.classList.add("pointer")
-    }),
-    e.addEventListener("mouseleave", function() {
-        t.classList.remove("pointer")
-    })
-})
+(() => {
+    const cursor = document.getElementById("kpszh-cursor");
+    let x = window.innerWidth / 2;
+    let y = window.innerHeight / 2;
+    let angle = 0;
+    
+    let speed = 30;
+    let boosted = 450;
+    let currentSpeed = speed;
+    let lastMove = Date.now();
+
+    const sizeHalf = cursor.offsetWidth / 2;
+
+    document.querySelectorAll("a, button, .cursor-hoverable").forEach(el => {
+        el.onmouseenter = () => cursor.classList.add("pointer");
+        el.onmouseleave = () => cursor.classList.remove("pointer");
+    });
+
+    document.onmousemove = e => {
+        x = e.clientX;
+        y = e.clientY;
+        lastMove = Date.now();
+        currentSpeed = boosted;
+    };
+
+    function tick() {
+        let target = (Date.now() - lastMove > 200) ? speed : boosted;
+        currentSpeed += (target - currentSpeed) * 0.01;
+
+        angle += currentSpeed * 0.016;
+        cursor.style.transform = `translate(${x - sizeHalf}px, ${y - sizeHalf}px) rotate(${angle}deg)`;
+
+        requestAnimationFrame(tick);
+    }
+
+    tick();
+})();

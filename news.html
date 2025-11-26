@@ -14,29 +14,36 @@
             <div class="kpszh-header-content">
                 <div class="kpszh-header-logo">
                     <img src="/img/logo.webp">
-                    <a href="/" title="K-PSZH"><h1>K-PSZH</h1></a>
+                    <a href="/"><h1>K-PSZH</h1></a>
                 </div>
                 <div class="kpszh-header-menu">
-                    <a href="/" title="Home">Home</a>
-                    <a href="/news.html" title="News">News</a>
-                    <a href="/about.html" title="About me">About me</a>
-                    <a href="/projects.html" title="Projects">Projects</a>
-                    <a href="/merch.html" title="Merch">Merch</a>
-                    <a href="/tools.html" title="Tools I use">Tools I use</a>
-                    <a href="/faq.html" title="FAQ">FAQ</a>
+                    <a href="/" data-i18n="common-header-home"></a>
+                    <a href="/news.html" data-i18n="common-header-news"></a>
+                    <a href="/about.html" data-i18n="common-header-about"></a>
+                    <a href="/projects.html" data-i18n="common-header-projects"></a>
+                    <a href="/merch.html" data-i18n="common-header-merch"></a>
+                    <a href="/tools.html" data-i18n="common-header-tools"></a>
+                    <a href="/faq.html" data-i18n="common-header-faq"></a>
+                    <div class="kpszh-header-dropdown">
+                        <a onclick="langMenu()" class="dropbtn" data-i18n="common-header-language"></a>
+                        <div id="lang-dropdown" class="kpszh-header-dropdown-content">
+                            <a onclick="langSet('ru')"><span data-i18n="common-header-language-ru"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag cursor-hoverable" src="/img/flags/ru.svg"></a>
+                            <a onclick="langSet('en')"><span data-i18n="common-header-language-en"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag cursor-hoverable" src="/img/flags/us.svg"></a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <hr>
         </header>
         <div id="main">
             <div id="main-body">
-                <h1>NEWS</h1>
+                <h1 data-i18n="news-title"></h1>
                 <div class="news-block">
                     <a alt="About REBUILD..." class="news-link" href="/news/2026/03/02/about-rebuild.html">
                         <span class="news-link-style">
                             <img class="news-image" src="img/news/about-rebuild.webp">
                             <div class="news-date">Mar 2, 2026</div>
-                            <div class="news-title">About REBUILD...</div>
+                            <div class="news-title" data-i18n="news-3-title"></div>
                             <div class="news-excerpt">[Article excerpt]</div>
                         </span>
                     </a>
@@ -44,7 +51,7 @@
                         <span class="news-link-style">
                             <img class="news-image" src="img/news/unreleased-demos.webp">
                             <div class="news-date">Feb 6, 2026</div>
-                            <div class="news-title">past_months.mp3 : UNRELEASED DEMOS</div>
+                            <div class="news-title" data-i18n="news-2-title"></div>
                             <div class="news-excerpt">[Article excerpt]</div>
                         </span>
                     </a>
@@ -52,7 +59,7 @@
                         <span class="news-link-style">
                             <img class="news-image" src="img/news/welcome-to-the-beginning.webp">
                             <div class="news-date">Feb 1, 2026</div>
-                            <div class="news-title">Welcome to the Beginning!   ...</div>
+                            <div class="news-title" data-i18n="news-1-title"></div>
                             <div class="news-excerpt">I’ve been sitting on this for what feels like forever...</div>
                         </span>
                     </a>
@@ -111,11 +118,12 @@
                     </a>
                 </div>
             </div>
-            <h6>© 2026 K-PSZH. All Rights Reserved.</h6>
+            <h6 data-i18n="common-footer-copyright"></h6>
         </footer>
-        <div id="custom-cursor">
-            <img src="/img/cursor.webp" alt="">
+        <div id="kpszh-cursor">
+            <img id="kpszh-cursor-image" src="/img/cursor.webp" alt="">
         </div>
         <script src="/js/cursor.js"></script>
+        <script src="/js/language.js"></script>
     </body>
 </html>

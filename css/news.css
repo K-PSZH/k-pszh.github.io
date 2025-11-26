@@ -10,7 +10,6 @@ a.news-link, a.news-link:visited, a.news-link:active {
     background-color: transparent;
     width: 100%;
     display: inline-flex;
-    border: 0;
     margin-block: 0.5em;
     text-decoration: none;
 }
@@ -22,6 +21,8 @@ a.news-link:hover {
 .news-link-style {
     position: relative;
     display: block;
+    box-sizing: border-box;
+    border: 3px solid transparent;
     border-radius: 12px;
     padding: 10px;
     background-color: #0007;
@@ -29,7 +30,8 @@ a.news-link:hover {
 }
 
 .news-link-style:hover {
-    background-color: #4008;
+    background-color: #4006;
+    border: 3px solid #8008;
 }
 
 .news-image {

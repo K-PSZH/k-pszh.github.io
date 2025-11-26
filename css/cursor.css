@@ -1,43 +1,36 @@
-html, body, a, button {
-    cursor: none;
-}
+html, body, a, button { cursor: none; }
 
-#custom-cursor {
-    display: block;
+#kpszh-cursor {
     position: fixed;
+    left: 0;
+    top: 0;
     pointer-events: none;
     z-index: 9999;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+    width: 64px;
+    will-change: left, top;
 }
 
-#custom-cursor img {
-    width: 40px;
-    animation: spin 8s linear infinite;
-    will-change: animation, width;
-    transition: all .25s ease;
+#kpszh-cursor img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transform-origin: center center;
+    transition: transform .25s ease, opacity .25s ease;
+    will-change: transform, opacity;
 }
 
-#custom-cursor.pointer img {
-    animation: spin 8s linear infinite, hover 0.1s linear infinite alternate;
-    width: 30px;
-}
-
-@keyframes spin {
-    from { transform: rotate(0); }
-    to { transform: rotate(360deg); }
+#kpszh-cursor.pointer img {
+    transform: scale(.75);
+    animation: hover 0.1s linear infinite alternate
 }
 
 @keyframes hover {
     from { opacity: 1; }
-    to { opacity: .25; }
+    to { opacity: .5; }
 }
 
 @media (hover: none) and (pointer: coarse) {
-    #custom-cursor {
-        display: block;
-        position: fixed;
-        pointer-events: none;
-        z-index: 9999;
-        transform: translate(-50%,-50%);
-    }
+    #kpszh-cursor { display: none; }
 }
