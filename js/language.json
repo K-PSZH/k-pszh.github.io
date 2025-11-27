@@ -15,15 +15,24 @@
     "home-tab-name": "K-PSZH",
     "home-marquee-1": "WEBSITE HAS LAUNCHED!",
     "home-marquee-2": "MERCH DISCOUNT UP TO 70%",
+    "home-latest-header": "The latest release:",
+    "home-latest-date": "July 28, 2025",
+    "home-latest-excerpt": "Original album (featuring Rekonza, Nero Sakamaki & Hikaru Akahoshi)",
+    "home-latest-link": "Listen <b>full album</b> on <b><a href=\"https://youtu.be/2M0d_sTrlE0\" target=\"_blank\">YouTube</a></b>!",
 
     "news-tab-name": "News | K-PSZH",
     "news-title": "News",
     "news-1-title": "Welcome to the Beginning!",
+    "news-1-date": "Feb 1, 2026",
     "news-2-title": "past_months.mp3 : UNRELEASED DEMOS",
+    "news-2-date": "Feb 6, 2026",
     "news-3-title": "About REBUILD...",
+    "news-3-date": "Mar 2, 2026",
 
+    "article-back": "Back to News",
     "article-author": "author: ",
     "article-image-author": "ph: ",
+    "article-photographer-yura": "Yura Ukhrenkov",
 
     "article-1-tab-name": "Welcome to the Beginning! | K-PSZH",
 
@@ -39,8 +48,16 @@
     "article-3-tab-name": "About REBUILD... | K-PSZH",
 
     "about-tab-name": "About me | K-PSZH",
+    "about-title": "About me",
 
     "projects-tab-name": "Projects | K-PSZH",
+    "projects-title": "Projects",
+    "projects-album": "an original album",
+    "projects-single": "a single",
+    "projects-tracklist": "Tracklist:",
+    "projects-mh-date": "released July 28, 2025",
+    "projects-mp-date": "released July 8, 2024",
+    "projects-md-date": "released December 24, 2023",
 
     "merch-tab-name": "Merch | K-PSZH",
     "merch-title": "Merch",
@@ -71,15 +88,24 @@
     "home-tab-name": "K-PSZH",
     "home-marquee-1": "САЙТ ОТКРЫЛСЯ!",
     "home-marquee-2": "СКИДКИ НА МЕРЧ ДО 70%",
+    "home-latest-header": "Последний релиз:",
+    "home-latest-date": "28 июля 2025",
+    "home-latest-excerpt": "Оригинальный альбом (приглашённые артисты: Rekonza, Nero Sakamaki и Hikaru Akahoshi)",
+    "home-latest-link": "Слушайте <b>полный альбом</b> на <b><a href=\"https://youtu.be/2M0d_sTrlE0\" target=\"_blank\">YouTube</a></b>!",
 
     "news-tab-name": "Новости | K-PSZH",
     "news-title": "Новости",
     "news-1-title": "Всё только начинается!",
+    "news-1-date": "1 фев 2026",
     "news-2-title": "недавнее.mp3 : НЕИЗДАННЫЕ ДЕМКИ",
+    "news-2-date": "6 фев 2026",
     "news-3-title": "О проекте \"REBUILD\"...",
+    "news-3-date": "2 мар 2026",
 
+    "article-back": "Назад к новостям",
     "article-author": "автор: ",
     "article-image-author": "фото: ",
+    "article-photographer-yura": "Юра Ухрёнков",
 
     "article-1-tab-name": "Всё только начинается! | K-PSZH",
 
@@ -95,8 +121,16 @@
     "article-3-tab-name": "О проекте \"REBUILD\"... | K-PSZH",
 
     "about-tab-name": "Обо мне | K-PSZH",
+    "about-title": "Обо мне",
 
     "projects-tab-name": "Проекты | K-PSZH",
+    "projects-title": "Проекты",
+    "projects-album": "оригинальный альбом",
+    "projects-single": "сингл",
+    "projects-tracklist": "Треклист:",
+    "projects-mh-date": "релиз: 28 июля 2025",
+    "projects-mp-date": "релиз: 8 июля 2024",
+    "projects-md-date": "релиз: 24 декабря 2023",
 
     "merch-tab-name": "Мерч | K-PSZH",
     "merch-title": "Мерч",

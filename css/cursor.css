@@ -7,7 +7,7 @@ html, body, a, button { cursor: none; }
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    width: 64px;
+    width: 48px;
     will-change: left, top;
 }
 
@@ -17,7 +17,7 @@ html, body, a, button { cursor: none; }
     height: 100%;
     pointer-events: none;
     transform-origin: center center;
-    transition: transform .25s ease, opacity .25s ease;
+    transition: transform var(--brand-transition), opacity var(--brand-transition);
     will-change: transform, opacity;
 }
 

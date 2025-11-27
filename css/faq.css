@@ -1,17 +1,18 @@
-#main h2 {
-    margin-block: 0px;
-}
+#main h2 { margin-block: 0px; }
+
 #main h3 {
     font-weight: 300;
     font-size: 24px;
     margin-block-start: .5em;
     margin-block-end: 2em;
 }
+
 .faq-container {
     margin-inline: auto;
     margin-top: 15px;
     margin-bottom: 50px;
 }
+
 .faq-question {
     background-color: #000;
     color: #fff;
@@ -22,33 +23,35 @@
     font-size: 28px;
     border: none;
     position: relative;
-    transition: background-color .25s ease;
+    transition: background-color var(--brand-transition);
     font-family: Oswald;
 }
-.faq-question:hover {
-    background-color: #300;
-}
+
+.faq-question:hover { background-color: #300; }
+
 .faq-question .arrow {
     position: absolute;
     right: 20px;
     user-select: none;
     color: #ffff;
-    transition: all .25s ease;
+    transition: all var(--brand-transition);
     will-change: transform, color;
 }
+
 .faq-question.active .arrow {
     transform: rotate(540deg) scale(95%);
     color: #f776;
 }
-.faq-question.active span.danganronpa {
-    color: white;
-}
+
+.faq-question.active span.danganronpa { color: white; }
+
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height .25s ease;
+    transition: max-height var(--brand-transition);
     background-color: #0004;
 }
+
 .faq-answer p {
     padding: 20px;
     width: 90%;

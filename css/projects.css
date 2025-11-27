@@ -23,13 +23,24 @@
     background-clip: unset;
     text-decoration: none;
 }
-.album a:hover {
-    color: #d00;
+
+.album > * {
+    position: relative;
+    z-index: 2
 }
 
-.album > * { position: relative; z-index: 2 }
-.album-art { pointer-events: none; max-width: 45%; height: auto; display: block; z-index: 0; }
-.album-data { display: flex; flex-direction: column; }
+.album-art {
+    pointer-events: none; 
+    max-width: 45%; 
+    height: auto;
+    display: block;
+    z-index: 0;
+}
+
+.album-data {
+    display: flex;
+    flex-direction: column;
+}
 
 .album ol {
     list-style: none;
@@ -39,7 +50,11 @@
     margin: 0;
 }
 .album ol li { counter-increment: track; }
-.album ol li::before { content: counter(track) "."; display: inline-block; margin-right: 0.5ch; }
+
+.album ol li::before {
+    content: counter(track) ".";
+    display: inline-block;
+    margin-right: 0.5ch; }
 
 .album::after {
     content: "";
@@ -56,9 +71,7 @@
 .album-data,
 .album-data h4,
 .album-data h3,
-.album-data ol{
-    will-change: transform, opacity;
-}
+.album-data ol { will-change: transform, opacity; }
 
 #mh.album-art{
     transform: translateX(calc((1 - var(--scroll-progress)) * 100%));
@@ -94,11 +107,11 @@
     text-align: center;
     user-select: none;
 }
-.album#mh h1 { font-size: 133px }
-.album#mh h2 { font-size: 53px; font-weight: 500 }
-.album#mh h3 { font-size: 43px; font-weight: 500; margin-block-start: .5em }
-.album#mh ol {  font-size: 32px; font-weight: 500; margin-block-start: .5em }
-.album#mh ol span { color: #ccc; font-size: 0.85em }
+.album#mh h1 { font-size: 133px; }
+.album#mh h2 { font-size: 53px; font-weight: 500; }
+.album#mh h3 { font-size: 43px; font-weight: 500; margin-block-start: .5em; }
+.album#mh ol {  font-size: 32px; font-weight: 500; margin-block-start: .5em; }
+.album#mh ol span { color: #ccc; font-size: 0.85em; }
 
 .album a:visited { -webkit-text-stroke-color: black }
 
@@ -141,12 +154,12 @@
     margin: 6px auto;
     text-align: center;
 }
-.album#mp h1 { font-size: 128px; text-transform: none }
-.album#mp h2 { font-size: 64px }
-.album#mp h3 { font-size: 32px; margin: 12px auto }
-.album#mp a:hover { color: #555 }
+.album#mp h1 { font-size: 128px; text-transform: none; }
+.album#mp h2 { font-size: 64px; }
+.album#mp h3 { font-size: 32px; margin: 12px auto; }
+.album#mp a:hover { color: #555; }
 
-.mp-flicker { animation: animationFlicker 1s step-end infinite }
+.mp-flicker { animation: animationFlicker 1s step-end infinite; }
 
 .album#md {
     background-image: url(/img/projects/mydespair_bg.webp);
@@ -163,10 +176,10 @@
     margin: 6px auto;
     text-align: center;
 }
-.album#md h1 { font-size: 107px; text-transform: none }
-.album#md h2 { font-size: 36px; margin-block-start: .8em }
-.album#md h3 { font-size: 32px; margin-block-start: 1em }
-.album#md ol { font-size: 24px; line-height: 1.6; margin-block-start: .5em }
+.album#md h1 { font-size: 107px; text-transform: none; }
+.album#md h2 { font-size: 36px; margin-block-start: .8em; }
+.album#md h3 { font-size: 32px; margin-block-start: 1em; }
+.album#md ol { font-size: 24px; line-height: 1.6; margin-block-start: .5em; }
 
 .album#md video {
     mix-blend-mode: screen;

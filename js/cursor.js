@@ -10,6 +10,7 @@
     let lastMove = Date.now();
 
     const sizeHalf = cursor.offsetWidth / 2;
+    const scalePower = 1.5;
 
     document.querySelectorAll("a, button, .cursor-hoverable").forEach(el => {
         el.onmouseenter = () => cursor.classList.add("pointer");
@@ -28,7 +29,9 @@
         currentSpeed += (target - currentSpeed) * 0.01;
 
         angle += currentSpeed * 0.016;
-        cursor.style.transform = `translate(${x - sizeHalf}px, ${y - sizeHalf}px) rotate(${angle}deg)`;
+        let scale = 1.0 + currentSpeed * scalePower * 0.001;
+
+        cursor.style.transform = `translate(${x - sizeHalf}px, ${y - sizeHalf}px) rotate(${angle}deg) scale(${scale})`;
 
         requestAnimationFrame(tick);
     }
