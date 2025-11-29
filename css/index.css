@@ -88,7 +88,7 @@
     position: absolute;
     pointer-events: none;
     right: 0;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
     align-items: flex-start;
     margin-bottom: 300px;
@@ -113,7 +113,7 @@
 .me {
     position: absolute;
     pointer-events: none;
-    right: 150px;
+    right: -200px;
     animation-name: meAnim;
     animation-duration: 2s;
 }
@@ -123,9 +123,9 @@
 }
 
 @keyframes meAnim {
-    0% { right: 500px; opacity: 0; }
-    40% { right: 500px; opacity: 0; }
-    100% { right: 150px; opacity: 1; }
+    0% { right: 150px; opacity: 0; }
+    40% { right: 150px; opacity: 0; }
+    100% { right: -200px; opacity: 1; }
 }
 
 @media only screen and (max-width: 1080px) {
