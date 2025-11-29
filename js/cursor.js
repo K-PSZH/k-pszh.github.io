@@ -1,17 +1,19 @@
+// Кастомный курсор
 (() => {
     const cursor = document.getElementById("kpszh-cursor");
     let x = window.innerWidth / 2;
     let y = window.innerHeight / 2;
     let angle = 0;
     
-    let speed = 30;
-    let boosted = 450;
+    let speed = 30; // Обычная скорость вращения
+    let boosted = 450; // Увеличенная скорость вращения при движении
     let currentSpeed = speed;
     let lastMove = Date.now();
 
-    const sizeHalf = cursor.offsetWidth / 2;
-    const scalePower = 1.5;
+    const sizeHalf = cursor.offsetWidth / 2; // Вычисление половинного размера
+    const scalePower = 1.5; // Коэффициент масштабирования при движении 
 
+    // Эффект наведения (ссылки, кнопки и кастомные .cursor-hoverable)
     document.querySelectorAll("a, button, .cursor-hoverable").forEach(el => {
         el.onmouseenter = () => cursor.classList.add("pointer");
         el.onmouseleave = () => cursor.classList.remove("pointer");
@@ -26,7 +28,7 @@
 
     function tick() {
         let target = (Date.now() - lastMove > 200) ? speed : boosted;
-        currentSpeed += (target - currentSpeed) * 0.01;
+        currentSpeed += (target - currentSpeed) * 0.015;
 
         angle += currentSpeed * 0.016;
         let scale = 1.0 + currentSpeed * scalePower * 0.001;

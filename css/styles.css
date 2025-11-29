@@ -116,7 +116,8 @@ hr {
 .kpszh-header-logo, .kpszh-header-menu {
     align-items: flex-start;
     display: flex;
-    gap: 10px;
+    row-gap: 5px;
+    column-gap: 10px;
 }
 
 .kpszh-header-logo img {
@@ -163,7 +164,7 @@ hr {
     background-color: #200e;
     min-width: 100%;
     overflow: auto;
-    z-index: 1;
+    z-index: 10;
     transition: background-color var(--brand-transition);
 }
 
@@ -180,7 +181,7 @@ hr {
 }
 
 #main {
-    width: 1000px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -206,7 +207,7 @@ hr {
     justify-content: center;
     align-items: center;
     width: var(--social-icon-size);
-    height: var(--social-icon-size);
+    height: var(--social-icon-size-hover);
     max-width: var(--social-icon-size-hover);
     max-height: var(--social-icon-size-hover);
     margin: auto 10px;
@@ -253,6 +254,7 @@ hr {
     font-size: 20px;
     margin-block-start: 2em;
     margin-block-end: 1em;
+    transition: all var(--brand-transition);
 }
 
 .kpszh-footer-image {
@@ -407,7 +409,7 @@ audio::-webkit-media-controls-time-remaining-display {
     }
 
     #main {
-        width: 100%;
+        max-width: 100%;
         margin-left: 0;
         margin-right: 0;
     }
@@ -419,8 +421,32 @@ audio::-webkit-media-controls-time-remaining-display {
 	}
 }
 
+@media only screen and (max-width: 640px) {
+    :root {
+        --social-icon-size: 60px;
+        --social-icon-size-hover: 75px;
+    }
+
+    .kpszh-social-media {
+        min-height: 50px;
+    }
+
+    .kpszh-social-icon {
+        margin: auto 5px;
+    }
+
+    .kpszh-footer h6 {
+        margin-block-start: 1em;
+        margin-block-end: .5em;
+    }
+}
+
 @media (hover: none) and (pointer: coarse) {
-    :root { --social-default-color: #200; }
+    :root {
+        --social-default-color: #300;
+        --social-icon-size: 40px;
+        --social-icon-size-hover: 50px;
+    }
 
     h1 { font-size: 72px; }
 
@@ -431,4 +457,6 @@ audio::-webkit-media-controls-time-remaining-display {
     .kpszh-social-icon svg { filter: none; }
 
     .character-red { background-image: none; }
+
+    .kpszh-footer h6 { font-size: 16px; }
 }

@@ -1,9 +1,9 @@
 #main.index {
-    position: relative;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    right: 0;
+    max-width: 100%;
+}
+
+.index-main-section {
+    display: flex;
 }
 
 .index-latest-container {
@@ -12,7 +12,9 @@
     color: white;
     font-size: 18px;
     font-weight: 400;
-    max-width: 480px;
+    max-width: 720px;
+    margin-top: 2em;
+    padding-bottom: 1em;
 }
 
 .index-latest-header, .index-latest-link {
@@ -71,12 +73,25 @@
     text-decoration: none;
 }
 
+.index-latest-mockup {
+    display: flex;
+    position: absolute;
+    pointer-events: none;
+    justify-content: center;
+}
+
+.index-latest-mockup img {
+    width: 100%;
+}
+
 .index-art {
     display: flex;
-    position: relative;
+    position: absolute;
+    pointer-events: none;
     width: 100%;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    margin-bottom: 300px;
 }
 
 .index-art-title-bar {
@@ -85,28 +100,38 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 250px;
 }
 
 .title-bar {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position: fixed;
+    overflow: hidden;
     width: 100vw;
-    transform: translate(-50%, -50%);
     pointer-events: none;
 }
 
 .me {
-    position: absolute;
-    transform: translate(-50%, -50%);
+    position: fixed;
     pointer-events: none;
-    right: 0px;
+    right: 80px;
     animation-name: meAnim;
     animation-duration: 2s;
+}
+
+.index-empty-space {
+    min-height: 640px;
 }
 
 @keyframes meAnim {
     0% { right: 400px; opacity: 0; }
     40% { right: 400px; opacity: 0; }
-    100% { right: 0px; opacity: 1; }
+    100% { right: 80px; opacity: 1; }
+}
+
+@media only screen and (max-width: 1080px) {
+    #main.merch { width: 100%; }
+
+    .index-art-title-bar {
+        width: max-content;
+    }
 }

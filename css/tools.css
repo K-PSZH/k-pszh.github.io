@@ -1,4 +1,4 @@
-#main.tools { width: 1280px; }
+#main.tools { max-width: 1280px; }
 
 #main.tools h2 span { filter: drop-shadow(3px 7px 7px #f00b) drop-shadow(-3px -7px 7px #f00b); }
 

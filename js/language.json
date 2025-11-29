@@ -64,7 +64,7 @@
     "merch-subtitle": "Together with the <span class=\"danganronpa\">Tanuki</span> local store, we've launched a limited batch of <span class=\"character-red\">K-PSZH</span>' official merchandise! Take a look!",
     "merch-1-title": "K-PSZH' Red Shirt",
     "merch-2-title": "\"My Hallucination\" T-Shirt",
-    "merch-3-title": "Brand Notebook",
+    "merch-3-title": "Brand Shopper Bag",
     "merch-4-title": "Brand Pin",
 
     "tools-tab-name": "Tools I use | K-PSZH",
@@ -72,6 +72,7 @@
     "faq-tab-name": "FAQ | K-PSZH",
     "faq-title": "FAQ"
   },
+
   "ru": {
     "common-header-home": "Главная",
     "common-header-news": "Новости",
@@ -111,13 +112,13 @@
 
     "article-2-tab-name": "недавнее.mp3 : НЕИЗДАННЫЕ ДЕМКИ | K-PSZH",
     "article-2-title": "недавнее<span class=\"character-red\">.mp3</span> : <span class=\"character-red\">НЕ</span>ИЗДАННЫЕ ДЕМКИ",
-    "article-2-date": "пятница, <b>6 фев, 2026, 23:04</b>",
+    "article-2-date": "пятница, <b>6 фев 2026, 23:04</b>",
     "article-2-note": "<b>ПРИМЕЧАНИЕ:</b> Это неизданные демозаписи. Несанкционированное копирование, воспроизведение, трансляция, загрузка или распространение любым способом <span class=\"danganronpa\"><b>строго запрещены</b></span> без письменного согласия автора.",
     "article-2-audio-1-date": "/ авг-08-2025",
     "article-2-audio-2-date": "/ авг-20-2025",
     "article-2-audio-3-date": "/ окт-17-2025",
     "article-2-audio-4-date": "/ ноя-15-2025",
-    
+
     "article-3-tab-name": "О проекте \"REBUILD\"... | K-PSZH",
 
     "about-tab-name": "Обо мне | K-PSZH",
@@ -137,7 +138,7 @@
     "merch-subtitle": "Совместно с магазином <span class=\"danganronpa\">Тануки</span> мы запустили в производство ограниченную партию официального мерча <span class=\"character-red\">K-PSZH</span>! Присмотритесь!",
     "merch-1-title": "Красная рубашка K-PSZH",
     "merch-2-title": "Футболка \"My Hallucination\"",
-    "merch-3-title": "Блокнот с логотипом",
+    "merch-3-title": "Шоппер с логотипом",
     "merch-4-title": "Значок с логотипом",
   
     "tools-tab-name": "Инструменты | K-PSZH",
