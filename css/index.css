@@ -59,7 +59,7 @@
 
 .index-latest-image:hover {
     transform: scale(.9);
-    opacity: .6;
+    opacity: .5;
 }
 
 .index-latest-title {

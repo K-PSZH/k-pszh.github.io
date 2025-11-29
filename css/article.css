@@ -50,7 +50,7 @@
 
 .article-image-container:hover {
     transform: scale(.96);
-    opacity: .6;
+    opacity: .5;
 }
 
 .article-image-container img {

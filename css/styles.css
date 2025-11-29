@@ -41,7 +41,7 @@ html {
 
 body {
     margin: 0;
-    background-image: url("/img/bg.webp");
+    background-image: url(/img/bg.webp);
 }
 
 b { font-weight: 400; }

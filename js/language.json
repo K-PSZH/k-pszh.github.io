@@ -35,6 +35,8 @@
     "article-photographer-yura": "Yura Ukhrenkov",
 
     "article-1-tab-name": "Welcome to the Beginning! | K-PSZH",
+    "article-1-title": "Welcome to the Beginning! Website <span class=\"character-red\">Launch</span>, Merch Drop and a New Chapter...",
+    "article-1-date": "sunday, <b>Feb 1, 2026, 8:32 PM</b>",
 
     "article-2-tab-name": "past_months.mp3 : UNRELEASED DEMOS | K-PSZH",
     "article-2-title": "past_months<span class=\"character-red\">.mp3</span> : <span class=\"character-red\">UN</span>RELEASED DEMOS",
@@ -46,6 +48,8 @@
     "article-2-audio-4-date": "/ nov-15-2025",
 
     "article-3-tab-name": "About REBUILD... | K-PSZH",
+    "article-3-title": "About <span class=\"character-red\">RE</span>BUILD...",
+    "article-3-date": "monday, <b>Mar 2, 2026, 8:47 AM</b>",
 
     "about-tab-name": "About me | K-PSZH",
     "about-title": "About me",
@@ -65,7 +69,7 @@
     "merch-1-title": "K-PSZH' Red Shirt",
     "merch-2-title": "\"My Hallucination\" T-Shirt",
     "merch-3-title": "Brand Shopper Bag",
-    "merch-4-title": "Brand Pin",
+    "merch-4-title": "Brand Badge Pin",
 
     "tools-tab-name": "Tools I use | K-PSZH",
 
@@ -108,7 +112,9 @@
     "article-image-author": "фото: ",
     "article-photographer-yura": "Юра Ухрёнков",
 
-    "article-1-tab-name": "Всё только начинается! | K-PSZH",
+    "article-1-tab-name": "Всё только начинается! Запуск сайта, продажи мерча и новый горизонт... | K-PSZH",
+    "article-1-title": "Всё только начинается! <span class=\"character-red\">Запуск</span> сайта, продажи мерча и новый горизонт...",
+    "article-1-date": "воскресенье, <b>1 фев 2026, 20:32</b>",
 
     "article-2-tab-name": "недавнее.mp3 : НЕИЗДАННЫЕ ДЕМКИ | K-PSZH",
     "article-2-title": "недавнее<span class=\"character-red\">.mp3</span> : <span class=\"character-red\">НЕ</span>ИЗДАННЫЕ ДЕМКИ",
@@ -120,6 +126,8 @@
     "article-2-audio-4-date": "/ ноя-15-2025",
 
     "article-3-tab-name": "О проекте \"REBUILD\"... | K-PSZH",
+    "article-3-title": "О проекте <span class=\"character-red\">RE</span>BUILD...",
+    "article-3-date": "понедельник, <b>2 мар 2026, 8:47</b>",
 
     "about-tab-name": "Обо мне | K-PSZH",
     "about-title": "Обо мне",

@@ -100,7 +100,7 @@
     font-weight: 400;
     text-align: right;
     opacity: .75;
-    margin-block-end: .5em;
+    margin-block: .5em;
 }
 
 @media only screen and (max-width: 1080px) {
