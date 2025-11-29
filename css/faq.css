@@ -39,7 +39,7 @@
 }
 
 .faq-question.active .arrow {
-    transform: rotate(540deg) scale(95%);
+    transform: rotate(540deg) scale(.95);
     color: #f776;
 }
 

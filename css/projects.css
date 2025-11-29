@@ -142,7 +142,7 @@
     pointer-events: none;
     background-image: url("/img/projects/noise.webp");
     animation: noise_anima 1s steps(10) infinite;
-    opacity: 0.9;
+    opacity: .9;
     will-change: background-position, opacity;
 }
 

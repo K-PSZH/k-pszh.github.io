@@ -44,7 +44,7 @@
                         <img class="merch-image" src="/img/merch/shirt-1.webp">
                         <div class="merch-info">
                             <div class="merch-title" data-i18n="merch-1-title"></div>
-                            <div class="merch-price">$50 / €50 / ₽3000</div>
+                            <div class="merch-price"><span class="merch-price-nodiscount">$50 / €50 / ₽3000</span> $15 / €15 / ₽1000</div>
                             <div class="merch-take-a-look">Take a look →</div>
                         </div>
                     </a>
@@ -52,7 +52,7 @@
                         <img class="merch-image" src="/img/merch/tshirt-1.webp">
                         <div class="merch-info">
                             <div class="merch-title" data-i18n="merch-2-title"></div>
-                            <div class="merch-price">$50 / €50 / ₽3000</div>
+                            <div class="merch-price"><span class="merch-price-nodiscount">$50 / €50 / ₽3000</span> $30 / €30 / ₽2000</div>
                             <div class="merch-take-a-look">Take a look →</div>
                         </div>
                     </a>
@@ -60,7 +60,7 @@
                         <img class="merch-image" src="/img/merch/shopper-1.webp">
                         <div class="merch-info">
                             <div class="merch-title" data-i18n="merch-3-title"></div>
-                            <div class="merch-price">$10 / €10 / ₽600</div>
+                            <div class="merch-price"><span class="merch-price-nodiscount">$15 / €15 / ₽1000</span> $10 / €10 / ₽600</div>
                             <div class="merch-take-a-look">Take a look →</div>
                         </div>
                     </a>
@@ -68,7 +68,7 @@
                         <img class="merch-image" src="/img/merch/pin-1.webp">
                         <div class="merch-info">
                             <div class="merch-title" data-i18n="merch-4-title"></div>
-                            <div class="merch-price">$10 / €10 / ₽600</div>
+                            <div class="merch-price"><span class="merch-price-nodiscount">$10 / €10 / ₽600</span> $5 / €5 / ₽300</div>
                             <div class="merch-take-a-look">Take a look →</div>
                         </div>
                     </a>
@@ -134,5 +134,20 @@
         </div>
         <script src="/js/cursor.js"></script>
         <script src="/js/language.js"></script>
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            const items = document.querySelectorAll('.merch-container');
+            items.forEach(item => observer.observe(item));
+        </script>
     </body>
 </html>

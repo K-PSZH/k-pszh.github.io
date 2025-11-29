@@ -69,19 +69,18 @@
                     <div class="index-latest-container">
                         <div class="index-latest-header" data-i18n="home-latest-header"></div>
                         <div class="index-latest-details">
-                            <img src="img/latest.webp" class="index-latest-image cursor-hoverable">
+                            <img src="img/covers/mh.webp" class="index-latest-image cursor-hoverable">
                             <div class="index-latest-info">
                                 <div class="index-latest-title">My Hallucination</div>
                                 <div class="index-latest-date" data-i18n="home-latest-date"></div>
                                 <div class="index-latest-excerpt" data-i18n="home-latest-excerpt"></div>
+                                <audio loop controls controlsList="nodownload noplaybackrate" style="width: 100%;">
+                                    <source class="kpszh-audio-player" src="/audio/acoh.mp3" type="audio/mpeg">
+                                </audio>
                             </div>
                         </div>
                         <div class="index-latest-link" data-i18n="home-latest-link"></div>
                     </div>
-                    <div class="index-latest-mockup">
-                        <img src="img/mockup.webp">
-                    </div>
-                    <!--
                     <div class="index-art">
                         <img src="/img/me.webp" class="me" style="z-index: 2;">
                         <div class="index-art-title-bar">
@@ -92,7 +91,6 @@
                             <video id="title-front-ru" autoplay muted preload="auto" playsinline class="title-bar" style="z-index: 3;"></video>
                         </div>
                     </div>
-                    -->
                 </div>
                 <div class="index-empty-space"></div>
             </div>
@@ -156,11 +154,16 @@
             <span class="close cursor-hoverable">&times;</span>
             <img class="modal-content" id="full-image">
         </div>
+        <div id="kpszh-cursor">
+            <img id="kpszh-cursor-image" src="/img/cursor.webp" alt="">
+        </div>
+        <script src="/js/cursor.js"></script>
+        <script src="/js/language.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const viewer = document.getElementById('image-viewer');
                 const fullImage = document.getElementById('full-image');
-                
+
                 document.addEventListener('click', e => {
                     if (e.target.matches('.index-latest-image')) {
                         fullImage.src = e.target.src;
@@ -169,12 +172,13 @@
                         viewer.style.display = 'none';
                     }
                 });
+
+                document.addEventListener("contextmenu", function(event) {
+                    if (event.target.tagName === 'AUDIO') {
+                        event.preventDefault();
+                    }
+                });
             });
         </script>
-        <div id="kpszh-cursor">
-            <img id="kpszh-cursor-image" src="/img/cursor.webp" alt="">
-        </div>
-        <script src="/js/cursor.js"></script>
-        <script src="/js/language.js"></script>
     </body>
 </html>

@@ -4,10 +4,10 @@
     display: inline-block;
     text-decoration: none;
     transition: all var(--brand-transition);
-    opacity: 75%;
+    opacity: .75;
 }
 
-.article-back:hover { opacity: 100%; }
+.article-back:hover { opacity: 1; }
 
 .article-header {
     display: flex;
@@ -49,8 +49,8 @@
 }
 
 .article-image-container:hover {
-    transform: scale(96%);
-    opacity: 60%;
+    transform: scale(.96);
+    opacity: .6;
 }
 
 .article-image-container img {
@@ -73,7 +73,7 @@
     transition: opacity var(--brand-transition);
 }
 
-.article-image-container.image-red-gradient:hover::after { opacity: 0%; }
+.article-image-container.image-red-gradient:hover::after { opacity: 0; }
 
 .article-image-caption {
     position: absolute;
@@ -155,7 +155,7 @@
 
 .kpszh-audio-subtitle {
     color: white;
-    opacity: 50%;
+    opacity: .5;
     font-size: 24px;
     font-weight: 300;
     user-select: none;

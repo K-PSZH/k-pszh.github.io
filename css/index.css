@@ -1,7 +1,3 @@
-#main.index {
-    max-width: 100%;
-}
-
 .index-main-section {
     display: flex;
 }
@@ -15,12 +11,22 @@
     max-width: 720px;
     margin-top: 2em;
     padding-bottom: 1em;
+    z-index: 5;
+}
+
+.index-latest-header, .index-latest-link, .index-latest-details {
+    transition: background-color var(--brand-transition);
 }
 
 .index-latest-header, .index-latest-link {
     background-color: #000;
     text-align: center;
     padding-block: .2em;
+}
+
+.index-latest-container:hover .index-latest-header,
+.index-latest-container:hover .index-latest-link {
+    background-color: #200;
 }
 
 .index-latest-header {
@@ -34,6 +40,10 @@
     background-color: #0003;
 }
 
+.index-latest-container:hover .index-latest-details {
+    background-color: #2003;
+}
+
 .index-latest-info {
     display: flex;
     flex-direction: column;
@@ -42,14 +52,14 @@
 }
 
 .index-latest-image {
-    height: 125px;
+    height: 175px;
     transition: all var(--brand-transition);
     will-change: transform, opacity;
 }
 
 .index-latest-image:hover {
-    transform: scale(90%);
-    opacity: 60%;
+    transform: scale(.9);
+    opacity: .6;
 }
 
 .index-latest-title {
@@ -57,12 +67,12 @@
 }
 
 .index-latest-date {
-    opacity: 65%;
+    opacity: .65;
 }
 
 .index-latest-excerpt {
     font-weight: 300;
-    opacity: 65%;
+    opacity: .65;
 }
 
 .index-latest-link {
@@ -73,22 +83,12 @@
     text-decoration: none;
 }
 
-.index-latest-mockup {
-    display: flex;
-    position: absolute;
-    pointer-events: none;
-    justify-content: center;
-}
-
-.index-latest-mockup img {
-    width: 100%;
-}
-
 .index-art {
     display: flex;
     position: absolute;
     pointer-events: none;
-    width: 100%;
+    right: 0;
+    width: 100vw;
     justify-content: center;
     align-items: flex-start;
     margin-bottom: 300px;
@@ -100,32 +100,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 250px;
+    margin-top: 300px;
 }
 
 .title-bar {
-    position: fixed;
+    position: absolute;
     overflow: hidden;
     width: 100vw;
     pointer-events: none;
 }
 
 .me {
-    position: fixed;
+    position: absolute;
     pointer-events: none;
-    right: 80px;
+    right: 150px;
     animation-name: meAnim;
     animation-duration: 2s;
 }
 
 .index-empty-space {
-    min-height: 640px;
+    min-height: 360px;
 }
 
 @keyframes meAnim {
-    0% { right: 400px; opacity: 0; }
-    40% { right: 400px; opacity: 0; }
-    100% { right: 80px; opacity: 1; }
+    0% { right: 500px; opacity: 0; }
+    40% { right: 500px; opacity: 0; }
+    100% { right: 150px; opacity: 1; }
 }
 
 @media only screen and (max-width: 1080px) {

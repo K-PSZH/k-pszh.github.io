@@ -47,7 +47,7 @@ a.news-link:hover {
 }
 
 .news-date {
-    opacity: 65%;
+    opacity: .65;
     font-size: 18px;
     position: absolute;
     top: 12px;
@@ -64,13 +64,13 @@ a.news-link:hover {
 .news-excerpt {
     padding-top: 10px;
     margin-right: 100px;
-    opacity: 65%;
+    opacity: .65;
     overflow: hidden;
     font-size: 18px;
 }
 
 a.news-link:hover .news-title, a.news-link:hover .news-excerpt, a.news-link:hover .news-date {
-    opacity: 100%;
+    opacity: 1;
 }
 
 @media only screen and (max-width: 780px) {

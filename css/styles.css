@@ -213,6 +213,7 @@ hr {
     margin: auto 10px;
     transition: all var(--brand-transition);
     will-change: transform;
+    z-index: 5;
 }
 
 .kpszh-social-icon svg {
@@ -366,7 +367,7 @@ span.danganronpa {
     from {opacity: 0; }
     to {opacity: 1; }
 }
-#image-viewer .close:hover, #image-viewer .close:focus { opacity: 50%; }
+#image-viewer .close:hover, #image-viewer .close:focus { opacity: .5; }
 
 audio::-webkit-media-controls-enclosure {
     background: transparent;
