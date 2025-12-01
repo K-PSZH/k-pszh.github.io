@@ -13,18 +13,12 @@ async function langLoad(lang) {
     const en = document.getElementById('title-front-en');
     const ru = document.getElementById('title-front-ru');
 
-    if (!en.src) en.src = '/img/title_front_en.webm';
-    if (!ru.src) ru.src = '/img/title_front_ru.webm';
-
     const active = lang === 'ru' ? ru : en;
     const inactive = lang === 'ru' ? en : ru;
     active.currentTime = inactive.currentTime;
 
     active.style.opacity = 1;
-    active.style.zIndex = 3;
-
     inactive.style.opacity = 0;
-    inactive.style.zIndex = 2;
 
     document.documentElement.lang = lang;
 }

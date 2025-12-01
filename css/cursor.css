@@ -27,8 +27,8 @@ html, body, a, button { cursor: none; }
 }
 
 @keyframes hover {
-    from { opacity: 1; }
-    to { opacity: .5; }
+    0% { opacity: 1; }
+    100% { opacity: .5; }
 }
 
 @media (hover: none) and (pointer: coarse) {

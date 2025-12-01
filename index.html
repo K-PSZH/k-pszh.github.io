@@ -71,7 +71,7 @@
                         <div class="index-latest-details">
                             <img src="img/covers/mh.webp" class="index-latest-image cursor-hoverable">
                             <div class="index-latest-info">
-                                <div class="index-latest-title">My Hallucination</div>
+                                <div class="index-latest-title"><span class="character-red">M</span>y <span class="character-red">H</span>allucination</div>
                                 <div class="index-latest-date" data-i18n="home-latest-date"></div>
                                 <div class="index-latest-excerpt" data-i18n="home-latest-excerpt"></div>
                                 <audio loop controls controlsList="nodownload noplaybackrate" style="width: 100%;">
@@ -82,13 +82,19 @@
                         <div class="index-latest-link" data-i18n="home-latest-link"></div>
                     </div>
                     <div class="index-art">
-                        <img src="/img/me.webp" class="me" style="z-index: 2;">
+                        <div class="index-art-character">
+                            <img src="/img/me.webp">
+                        </div>
                         <div class="index-art-title-bar">
-                            <video autoplay muted preload="metadata" playsinline class="title-bar" style="z-index: 1;">
+                            <video autoplay muted preload="metadata" playsinline class="title-bar back">
                                 <source src="/img/title_back.webm" type="video/webm"/>
                             </video>
-                            <video id="title-front-en" autoplay muted preload="auto" playsinline class="title-bar" style="z-index: 3;"></video>
-                            <video id="title-front-ru" autoplay muted preload="auto" playsinline class="title-bar" style="z-index: 3;"></video>
+                            <video id="title-front-en" autoplay muted preload="auto" playsinline class="title-bar front">
+                                <source src="/img/title_front_en.webm" type="video/webm"/>
+                            </video>
+                            <video id="title-front-ru" autoplay muted preload="auto" playsinline class="title-bar front">
+                                <source src="/img/title_front_ru.webm" type="video/webm"/>
+                            </video>
                         </div>
                     </div>
                 </div>

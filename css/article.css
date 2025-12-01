@@ -3,7 +3,7 @@
     margin-block-end: 0;
     display: inline-block;
     text-decoration: none;
-    transition: all var(--brand-transition);
+    transition: opacity var(--brand-transition);
     opacity: .75;
 }
 
@@ -45,7 +45,7 @@
     position: relative;
     display: flex;
     margin-block: .75em;
-    transition: all var(--brand-transition);
+    transition: transform var(--brand-transition), opacity var(--brand-transition);
 }
 
 .article-image-container:hover {
@@ -131,7 +131,7 @@
     width: calc(50% - var(--audio-grid-gap)/2);
     box-sizing: border-box;
     border: 4px solid #0008;
-    transition: all var(--brand-transition);
+    transition: background-color var(--brand-transition), border var(--brand-transition);
 }
 
 .kpszh-audio-container:hover {

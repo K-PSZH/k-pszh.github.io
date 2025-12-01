@@ -34,7 +34,7 @@
     right: 20px;
     user-select: none;
     color: #ffff;
-    transition: all var(--brand-transition);
+    transition: transform var(--brand-transition), color var(--brand-transition);
     will-change: transform, color;
 }
 

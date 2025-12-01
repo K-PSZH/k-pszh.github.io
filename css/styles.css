@@ -44,8 +44,6 @@ body {
     background-image: url(/img/bg.webp);
 }
 
-body * { transform: translateZ(0); }
-
 b { font-weight: 400; }
 
 h1, h2, h3, h4, h5, h6, p, ol { line-height: 100%; }
@@ -84,14 +82,13 @@ a {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 6px;
-    transition: all var(--brand-transition);
+    transition: color var(--brand-transition), text-underline-offset var(--brand-transition);
     will-change: color, text-underline-offset;
 }
 
 a:hover {
     color: var(--link-gradient-1);
     text-underline-offset: 10px;
-    text-decoration-color: transparent;
 }
 
 a:active { color: var(--link-gradient-2); }
@@ -115,7 +112,8 @@ hr {
     justify-content: space-between;
 }
 
-.kpszh-header-logo, .kpszh-header-menu {
+.kpszh-header-logo,
+.kpszh-header-menu {
     align-items: flex-start;
     display: flex;
     row-gap: 5px;
@@ -141,7 +139,7 @@ hr {
     margin-block-start: 0;
     margin-block-end: 0;
     filter: none;
-    transition: all var(--brand-transition);
+    transition: filter var(--brand-transition);
 }
 
 .kpszh-header h1:hover { filter: drop-shadow(0 0 10px #f00); }
@@ -213,13 +211,13 @@ hr {
     max-width: var(--social-icon-size-hover);
     max-height: var(--social-icon-size-hover);
     margin: auto 10px;
-    transition: all var(--brand-transition);
-    will-change: transform;
+    transition: width var(--brand-transition), height var(--brand-transition);
+    will-change: width, height;
     z-index: 5;
 }
 
 .kpszh-social-icon svg {
-    transition: all var(--brand-transition);
+    transition: filter var(--brand-transition), transform var(--brand-transition);
     will-change: filter, transform;
     filter: drop-shadow(0 0 20px #f003);
     width: var(--social-icon-size);
@@ -242,22 +240,27 @@ hr {
 .kpszh-social-icon .vk,
 .kpszh-social-icon .boosty {
     fill: var(--social-default-color);
-    transition: all var(--brand-transition);
+    transition: fill var(--brand-transition);
     will-change: fill;
 }
 
 .kpszh-social-icon:hover .youtube { fill: var(--social-youtube) }
+
 .kpszh-social-icon:hover .spotify { fill: var(--social-spotify) }
+
 .kpszh-social-icon:hover .soundcloud { fill: var(--social-soundcloud) }
+
 .kpszh-social-icon:hover .bandcamp { fill: var(--social-bandcamp) }
+
 .kpszh-social-icon:hover .vk { fill: var(--social-vk) }
+
 .kpszh-social-icon:hover .boosty { fill: var(--social-boosty) }
 
 .kpszh-footer h6 {
     font-size: 20px;
     margin-block-start: 2em;
     margin-block-end: 1em;
-    transition: all var(--brand-transition);
+    transition: font-size var(--brand-transition);
 }
 
 .kpszh-footer-image {
@@ -322,7 +325,7 @@ span.danganronpa {
     background-image: linear-gradient(var(--danganronpa-gradient-1), var(--danganronpa-gradient-2));
     color: transparent;
     background-clip: text;
-    transition: all var(--brand-transition);
+    transition: color var(--brand-transition);
     will-change: color;
 }
 
@@ -335,7 +338,7 @@ span.danganronpa {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: #000c;
+    background-color: #000d;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -357,19 +360,20 @@ span.danganronpa {
     font-size: 80px;
     font-weight: 200;
     animation: imageViewerZoom 0.5s ease;
-    transition: all var(--brand-transition);
+    transition: opacity var(--brand-transition);
 }
 
 @keyframes imageViewerZoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
+    0% { transform: scale(0); } 
+    100% { transform: scale(1); }
 }
 
 @keyframes imageViewerBackground {
-    from {opacity: 0; }
-    to {opacity: 1; }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
-#image-viewer .close:hover, #image-viewer .close:focus { opacity: .5; }
+#image-viewer .close:hover,
+#image-viewer .close:focus { opacity: .5; }
 
 audio::-webkit-media-controls-enclosure {
     background: transparent;
@@ -430,13 +434,9 @@ audio::-webkit-media-controls-time-remaining-display {
         --social-icon-size-hover: 75px;
     }
 
-    .kpszh-social-media {
-        min-height: 50px;
-    }
+    .kpszh-social-media { min-height: 50px; }
 
-    .kpszh-social-icon {
-        margin: auto 5px;
-    }
+    .kpszh-social-icon { margin: auto 5px; }
 
     .kpszh-footer h6 {
         margin-block-start: 1em;
