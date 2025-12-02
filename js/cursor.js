@@ -14,11 +14,11 @@
     const scalePower = 1.5; // Коэффициент масштабирования при движении 
 
     // Эффект наведения (ссылки, кнопки и кастомные .cursor-hoverable)
-    document.querySelectorAll("a, button, .cursor-hoverable").forEach(el => {
-        el.onmouseenter = () => cursor.classList.add("pointer");
-        el.onmouseleave = () => cursor.classList.remove("pointer");
+    document.addEventListener("pointermove", e => {
+        cursor.classList.toggle("pointer", !!e.target.closest("a,button,.cursor-hoverable"));
     });
 
+    // Анимация ускорения и масштабирования
     document.onmousemove = e => {
         x = e.clientX;
         y = e.clientY;

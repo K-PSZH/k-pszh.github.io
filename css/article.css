@@ -3,7 +3,6 @@
     margin-block-end: 0;
     display: inline-block;
     text-decoration: none;
-    transition: opacity var(--brand-transition);
     opacity: .75;
 }
 
@@ -131,6 +130,7 @@
     width: calc(50% - var(--audio-grid-gap)/2);
     box-sizing: border-box;
     border: 4px solid #0008;
+    transform: translateZ(0);
     transition: background-color var(--brand-transition), border var(--brand-transition);
 }
 

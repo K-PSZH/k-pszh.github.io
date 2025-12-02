@@ -82,8 +82,8 @@ a {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 6px;
-    transition: color var(--brand-transition), text-underline-offset var(--brand-transition);
-    will-change: color, text-underline-offset;
+    transition: color var(--brand-transition), text-underline-offset var(--brand-transition), opacity var(--brand-transition);
+    will-change: color, text-underline-offset, opacity;
 }
 
 a:hover {

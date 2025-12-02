@@ -2,102 +2,141 @@
 @font-face { font-family: Consolas; src: url(/fonts/Consolas.ttf); font-display: swap }
 @font-face { font-family: FOTCarat; src: url(/fonts/FOTCaratStd.otf); font-display: swap }
 
-.album{
-    --scroll-progress: 0;
-    margin: 0 auto;
+#main.projects { max-width: 1440px; }
+
+.album-panel {
     position: relative;
-    overflow: hidden;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    width: 100%;
+    overflow: hidden;
+    height: 720px;
+    border-radius: 12px;
+    background-color: black;
+    margin-bottom: 50px;
     background-size: cover;
-    background-position: right;
-    box-shadow: inset 0 0 100px #000, inset 0 0 15px #000;
-    padding-inline: 5%;
-    min-height: auto;
-    user-select: none;
+    background-position: center;
+    background-clip: padding-box;
+    box-sizing: border-box;
+    border: 4px solid #0008;
+    justify-content: space-between;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: background-image var(--brand-transition), border var(--brand-transition), max-height var(--brand-transition), opacity var(--brand-transition), transform var(--brand-transition);
 }
 
-.album a {
-    background-image: none;
-    background-clip: unset;
-    text-decoration: none;
+.album-panel.active {
+    max-height: 720px;
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.album > * {
-    position: relative;
-    z-index: 2
+.album-panel:hover { border: 4px solid #8005; }
+
+@keyframes albumPanelCover {
+    0% { transform: translateY(-100px); opacity: 0; }
+    25% { transform: translateY(-100px); opacity: 0; }
+    75% { transform: translateY(0px); opacity: 1; }
 }
 
-.album-art {
-    pointer-events: none; 
-    max-width: 45%; 
-    height: auto;
-    display: block;
-    z-index: 0;
+.album-panel-cover {
+    position: absolute;
+    width: 150px;
+    right: 20px;
+    bottom: 20px;
+    filter: drop-shadow(0 0 10px #0008);
+    background-image: url(/img/covers/empty.webp);
+    transition: transform var(--brand-transition), opacity var(--brand-transition);
+    z-index: 1;
 }
 
-.album-data {
+.album-panel.active .album-panel-cover {
+    animation: albumPanelCover 2s ease;
+}
+
+.album-panel-cover:hover {
+    transform: scale(.85);
+    opacity: .5;
+}
+
+@keyframes albumPanelArt {
+    0% { transform: translateX(-100px); opacity: 0; }
+    25% { transform: translateX(-100px); opacity: 0; }
+    75% { transform: translateX(0px); opacity: 1; }
+}
+
+.album-panel-art {
+    pointer-events: none;
+}
+
+.album-panel.active .album-panel-art {
+    animation: albumPanelArt 1s ease;
+}
+
+@keyframes albumPanelVideo {
+    0% { opacity: 0; }
+    25% { opacity: 0; }
+    75% { opacity: 1; }
+}
+
+.album-panel-video {
+    border-radius: 8px;
+    mix-blend-mode: screen;
+    position: absolute;
+    pointer-events: none;
+    object-fit: cover;
+    transition: opacity var(--brand-transition);
+    right: 0;
+    bottom: 0;
+}
+
+.album-panel.active .album-panel-video {
+    animation: albumPanelVideo 1s ease;
+}
+
+@keyframes albumPanelInfo {
+    0% { transform: translateX(-100px); opacity: 0; }
+    50% { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateX(0px); opacity: 1; }
+}
+
+.album-panel-info {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    width: 100%;
 }
 
-.album ol {
+.album-panel.active .album-panel-info {
+    animation: albumPanelInfo 1s ease;
+}
+
+.album-panel ol {
     list-style: none;
     counter-reset: track;
     padding: 0;
     text-align: center;
     margin: 0;
 }
-.album ol li { counter-increment: track; }
 
-.album ol li::before {
+.album-panel ol li { counter-increment: track; }
+
+.album-panel ol li::before {
     content: counter(track) ".";
     display: inline-block;
-    margin-right: 0.5ch; }
-
-.album::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: black;
-    opacity: calc(1 - var(--scroll-progress));
-    will-change: opacity;
-    pointer-events: none;
+    margin-right: 0.5ch;
 }
 
-.album-art,
-.album-data,
-.album-data h4,
-.album-data h3,
-.album-data ol { will-change: transform, opacity; }
-
-#mh.album-art{
-    transform: translateX(calc((1 - var(--scroll-progress)) * 100%));
-    opacity: calc(var(--scroll-progress));
-}
-#md.album-art{
-    transform: translateX(calc((var(--scroll-progress) - 1) * 100%));
-    opacity: calc(var(--scroll-progress));
-}
-#mh.album-data{
-    transform: translateX(calc((var(--scroll-progress) - 1) * 100%));
-}
-#md.album-data{
-    transform: translateX(calc((1 - var(--scroll-progress)) * 100%));
+.album-panel a {
+    text-decoration: none;
 }
 
-.album-data h4,
-.album-data h3,
-.album-data ol { opacity: calc(var(--scroll-progress)); }
+.album-panel a:visited { -webkit-text-stroke-color: black }
 
-.album#mh { background-image: url(/img/projects/myhallucination_bg.webp); }
-
-.album#mh h1,
-.album#mh h2,
-.album#mh h3,
-.album#mh ol {
+.album-panel.mh h1,
+.album-panel.mh h2,
+.album-panel.mh h3,
+.album-panel.mh ol {
     font-family: AgencyFB;
     font-weight: 600;
     transform: scale(1, 1.1);
@@ -107,90 +146,167 @@
     text-align: center;
     user-select: none;
 }
-.album#mh h1 { font-size: 133px; }
-.album#mh h2 { font-size: 53px; font-weight: 500; }
-.album#mh h3 { font-size: 43px; font-weight: 500; margin-block-start: .5em; }
-.album#mh ol {  font-size: 32px; font-weight: 500; margin-block-start: .5em; }
-.album#mh ol span { color: #ccc; font-size: 0.85em; }
 
-.album a:visited { -webkit-text-stroke-color: black }
+.album-panel.mh h1 { font-size: 108px; }
 
-.album-data h4 {
-    font-weight: 300;
+.album-panel.mh h2 {
+    font-size: 42px;
+    font-weight: 500;
+}
+
+.album-panel.mh h3 {
+    font-size: 34px;
+    font-weight: 500;
+    margin-block-start: .5em;
+}
+
+.album-panel.mh ol {
     font-size: 32px;
-    letter-spacing: 1px;
-    margin-block: 0.75em;
-    filter: drop-shadow(0 0 6px #000);
-    user-select: text;
+    font-weight: 500;
+    margin-block-start: .5em;
 }
 
-@keyframes noise_anima {
-    from {background-position: 0 0}
-    to {background-position: 123px 456px} }
-
-.album#mp {
-    background-image: url(/img/projects/mypain_bg.webp);
-    min-height: 400px;
-    position: relative;
+.album-panel.mh ol span {
+    color: #ccc;
+    font-size: 0.85em;
 }
 
-.album#mp::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    background-image: url("/img/projects/noise.webp");
-    animation: noise_anima 1s steps(10) infinite;
-    opacity: .9;
-    will-change: background-position, opacity;
-}
-
-.album#mp h1,
-.album#mp h2,
-.album#mp h3 {
+.album-panel.mp h1,
+.album-panel.mp h2,
+.album-panel.mp h3 {
     font-family: Consolas;
     user-select: none;
     margin: 6px auto;
     text-align: center;
 }
-.album#mp h1 { font-size: 128px; text-transform: none; }
-.album#mp h2 { font-size: 64px; }
-.album#mp h3 { font-size: 32px; margin: 12px auto; }
-.album#mp a:hover { color: #555; }
 
-.mp-flicker { animation: animationFlicker 1s step-end infinite; }
-
-.album#md {
-    background-image: url(/img/projects/mydespair_bg.webp);
-    flex-direction: row-reverse;
+.album-panel.mp h1 {
+    font-size: 128px;
+    text-transform: none;
 }
-.album#md h1,
-.album#md h2,
-.album#md h3,
-.album#md ol {
+
+.album-panel.mp h2 { font-size: 64px; }
+
+.album-panel.mp h3 {
+    font-size: 32px;
+    margin: 12px auto;
+}
+
+.album-panel.mp a:hover { color: #555; }
+
+.album-panel.md h1,
+.album-panel.md h2,
+.album-panel.md h3,
+.album-panel.md ol {
     font-family: FOTCarat;
     user-select: none;
-    -webkit-text-stroke: 8px black;
+    -webkit-text-stroke: 7px black;
     paint-order: stroke fill;
     margin: 6px auto;
     text-align: center;
 }
-.album#md h1 { font-size: 107px; text-transform: none; }
-.album#md h2 { font-size: 36px; margin-block-start: .8em; }
-.album#md h3 { font-size: 32px; margin-block-start: 1em; }
-.album#md ol { font-size: 24px; line-height: 1.6; margin-block-start: .5em; }
 
-.album#md video {
-    mix-blend-mode: screen;
-    position: absolute;
-    z-index: 1;
-    pointer-events: none;
-    right: 0;
-    opacity: calc(var(--scroll-progress));
-    transform: translateX(calc((1 - var(--scroll-progress)) * 250px));
+.album-panel.md h1 {
+    font-size: 81px;
+    text-transform: none;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .album-art, .album-data, .album#mp::before { transform: none !important; opacity: 1 !important; animation-play-state: paused !important }
+.album-panel.md h2 {
+    font-size: 27px;
+    margin-block-start: .8em;
+}
+
+.album-panel.md h3 {
+    font-size: 25px;
+    margin-block-start: 1em;
+}
+
+.album-panel.md ol {
+    font-size: 22px;
+    line-height: 1.6;
+    margin-block-start: .5em;
+}
+
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-block-start: 0em;
+    margin-block-end: 3em;
+}
+
+.album-container {
+    border-radius: 12px;
+    background: linear-gradient(-30deg, #f009 -100%, transparent 50%, transparent 75%, #f009 150%);
+    background-color: #0008;
+    background-clip: padding-box;
+    text-decoration: none;
+    position: relative;
+    box-sizing: border-box;
+    border: 4px solid #0008;
+    transition: background-color var(--brand-transition), border var(--brand-transition);
+}
+
+.album-container:hover {
+    background-color: #4006;
+    border: 4px solid #800a;
+}
+
+.album-container.selected {
+    background-color: #4006;
+    border: 4px solid #800c;
+}
+
+.album-image {
+    max-height: 250px;
+    border-radius: 8px 8px 0 0;
+    transition: transform var(--brand-transition), opacity var(--brand-transition);
+    will-change: transform, opacity;
+}
+
+.album-container:hover .album-image {
+    transform: scale(.95);
+    opacity: .5;
+}
+
+.album-container.selected .album-image {
+    transform: scale(.85);
+    opacity: .25;
+}
+
+.album-info {
+    padding-left: 4px;
+    padding-right: 8px;
+    margin-block: .5em;
+}
+
+.album-title, .album-date {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: normal;
+    text-indent: 0.1em;
+    margin-block-start: -.3em;
+    margin-block-end: 0;
+    transition: opacity var(--brand-transition);
+}
+
+.album-title {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.album-date {
+    font-size: 20px;
+    opacity: .5;
+}
+
+.album-container.selected .album-title,
+.album-container.selected .album-date {
+    opacity: .25;
+}
+
+@media only screen and (max-width: 1080px) {
+    #main.projects { width: 100%; }
 }
