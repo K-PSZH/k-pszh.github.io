@@ -243,6 +243,15 @@
                         // Выбор карточки альбома
                         containers.forEach(c => c.classList.remove("selected"));
                         container.classList.add("selected");
+
+                        // Скролл при первом открытии панели
+                        panel.addEventListener('animationend', () => {
+                            document.getElementById('projectsTitle').scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        });
+
                     });
                 });
 
