@@ -49,11 +49,14 @@
 .merch-image {
     width: 100%;
     border-radius: 8px 8px 0 0;
-    transition: transform var(--brand-transition);
-    will-change: transform;
+    transition: transform var(--brand-transition), border-radius var(--brand-transition);
+    will-change: transform, border-radius;
 }
 
-.merch-container:hover .merch-image { transform: scale(.95); }
+.merch-container:hover .merch-image {
+    transform: scale(.95);
+    border-radius: 0 0 0 0;
+}
 
 .merch-info {
     padding-left: 4px;
