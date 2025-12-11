@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="/css/cursor.css">
 	    <title data-i18n="product-1-tab-name"></title>
     </head>
-    <body>
+    <body class="preload">
         <header class="kpszh-header">
             <div class="kpszh-header-content">
                 <div class="kpszh-header-logo">
@@ -114,7 +114,16 @@
             <span class="close cursor-hoverable">&times;</span>
             <img class="modal-content" id="full-image">
         </div>
+        <div id="kpszh-cursor">
+            <img id="kpszh-cursor-image" src="/img/cursor.webp" alt="">
+        </div>
+        <script src="/js/cursor.js"></script>
+        <script src="/js/language.js"></script>
         <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                document.body.classList.remove('preload');
+            });
+
             document.addEventListener('DOMContentLoaded', () => {
                 const viewer = document.getElementById('image-viewer');
                 const fullImage = document.getElementById('full-image');
@@ -129,10 +138,5 @@
                 });
             });
         </script>
-        <div id="kpszh-cursor">
-            <img id="kpszh-cursor-image" src="/img/cursor.webp" alt="">
-        </div>
-        <script src="/js/cursor.js"></script>
-        <script src="/js/language.js"></script>
     </body>
 </html>

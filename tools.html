@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="/css/cursor.css">
 	    <title data-i18n="tools-tab-name"></title>
     </head>
-    <body>
+    <body class="preload">
         <header class="kpszh-header">
             <div class="kpszh-header-content">
                 <div class="kpszh-header-logo">
@@ -436,5 +436,10 @@
         </div>
         <script src="/js/cursor.js"></script>
         <script src="/js/language.js"></script>
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                document.body.classList.remove('preload');
+            });
+        </script>
     </body>
 </html>

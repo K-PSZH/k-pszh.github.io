@@ -44,6 +44,11 @@ body {
     background-image: url(/img/bg.webp);
 }
 
+body.preload {
+    opacity: 0;
+    transition: opacity var(--brand-transition);
+}
+
 b { font-weight: 400; }
 
 h1, h2, h3, h4, h5, h6, p, ol { line-height: 100%; }
@@ -274,7 +279,7 @@ hr {
 }
 
 .flag {
-    height: 0.8em;
+    height: .8em;
     border-radius: 10%;
 }
 
@@ -304,7 +309,7 @@ hr {
     gap: var(--marquee-gap);
     animation: marqueeScroll 30s linear infinite;
     color: white;
-    margin-block: 0.2em;
+    margin-block: .2em;
     font-weight: 400;
     font-size: 22px;
     transition: color var(--brand-transition);

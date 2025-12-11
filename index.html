@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="/css/cursor.css">
 	    <title data-i18n="home-tab-name"></title>
     </head>
-    <body>
+    <body class="preload">
         <a class="kpszh-marquee-link" href="/news/2026/02/01/welcome-to-the-beginning.html">
             <div class="kpszh-marquee">
                 <ul>
@@ -166,6 +166,10 @@
         <script src="/js/cursor.js"></script>
         <script src="/js/language.js"></script>
         <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                document.body.classList.remove('preload');
+            });
+
             document.addEventListener('DOMContentLoaded', () => {
                 const viewer = document.getElementById('image-viewer');
                 const fullImage = document.getElementById('full-image');
