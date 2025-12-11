@@ -276,7 +276,6 @@ hr {
 .flag {
     height: 0.8em;
     border-radius: 10%;
-    pointer-events: none;
 }
 
 .kpszh-marquee {
@@ -322,7 +321,10 @@ hr {
 
 @keyframes marqueeScroll { 100% { transform: translateX(calc(-100% - var(--marquee-gap))); } }
 
-.character-red { background-image: linear-gradient(var(--link-gradient-1), var(--link-gradient-2)); }
+.character-red {
+    background-image: linear-gradient(var(--link-gradient-1), var(--link-gradient-2));
+    color: white;
+}
 
 span.danganronpa {
     background-image: linear-gradient(var(--danganronpa-gradient-1), var(--danganronpa-gradient-2));
@@ -367,7 +369,7 @@ span.danganronpa {
 }
 
 @keyframes imageViewerZoom {
-    0% { transform: scale(0); } 
+    0% { transform: scale(0); }
     100% { transform: scale(1); }
 }
 

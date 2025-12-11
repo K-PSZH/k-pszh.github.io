@@ -3,10 +3,8 @@
     margin-block-end: 0;
     display: inline-block;
     text-decoration: none;
-    opacity: .75;
+    color: #fffa;
 }
-
-.product-back:hover { opacity: 1; }
 
 .product-container {
     display: flex;
@@ -124,13 +122,6 @@
 .product-add-button:focus {
     background-color: var(--link-gradient-2);
     filter: drop-shadow(0 0 8px #f00);
-}
-
-#main h3 {
-    text-align: center;
-    font-size: 36px;
-    margin-block-start: .5em;
-    margin-block-end: .3em;
 }
 
 @media only screen and (max-width: 1080px) {

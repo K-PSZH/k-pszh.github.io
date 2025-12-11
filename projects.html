@@ -27,8 +27,8 @@
                     <div class="kpszh-header-dropdown">
                         <a onclick="langMenu()" class="dropbtn" data-i18n="common-header-language"></a>
                         <div id="lang-dropdown" class="kpszh-header-dropdown-content">
-                            <a onclick="langSet('ru')"><span data-i18n="common-header-language-ru"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag cursor-hoverable" src="/img/flags/ru.svg"></a>
-                            <a onclick="langSet('en')"><span data-i18n="common-header-language-en"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag cursor-hoverable" src="/img/flags/us.svg"></a>
+                            <a onclick="langSet('ru')"><span data-i18n="common-header-language-ru"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/ru.svg"></a>
+                            <a onclick="langSet('en')"><span data-i18n="common-header-language-en"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/us.svg"></a>
                         </div>
                     </div>
                 </div>
@@ -165,6 +165,7 @@
                         bg: "/img/projects/myhallucination_bg.webp",
                         art: "/img/projects/myhallucination.webp",
                         cover: "/img/covers/mh.webp",
+                        overlay: .3,
                         type: "projects-album",
                         title: "MY HALLUCINATION",
                         date: "projects-mh-date",
@@ -176,6 +177,7 @@
                     mp: {
                         bg: "/img/projects/mypain_bg.webp",
                         cover: "/img/covers/mp.webp",
+                        overlay: .9,
                         title: "my pain",
                         date: "projects-mp-date",
                         tracklist: "",
@@ -186,6 +188,7 @@
                         art: "/img/projects/mydespair.webp",
                         cover: "/img/covers/md.webp",
                         video: "/img/projects/mydespair_deco.webm",
+                        overlay: .3,
                         type: "projects-album",
                         title: "My Despair",
                         date: "projects-md-date",
@@ -217,6 +220,8 @@
                         cover.src = albums[key].cover; // Обложка
                         art.src = albums[key].art || ''; // Арт
                         video.src = albums[key].video || ''; // Видео для арта (My Despair)
+                        panel.style.setProperty('--overlay-opacity', albums[key].overlay || 0); // Оверлей шума
+
                         if (albums[key].type) {
                             type.setAttribute("data-i18n", albums[key].type); // Тип релиза
                         } else {

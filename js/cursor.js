@@ -11,11 +11,11 @@
     let lastMove = Date.now();
 
     const sizeHalf = cursor.offsetWidth / 2; // Вычисление половинного размера
-    const scalePower = 1.5; // Коэффициент масштабирования при движении 
+    const scalePower = 1.5; // Коэффициент масштабирования при движении
 
     // Эффект наведения (ссылки, кнопки и кастомные .cursor-hoverable)
     document.addEventListener("pointermove", e => {
-        cursor.classList.toggle("pointer", !!e.target.closest("a,button,.cursor-hoverable"));
+        cursor.classList.toggle("pointer", !!e.target.closest("a, button, .cursor-hoverable"));
     });
 
     // Анимация ускорения и масштабирования

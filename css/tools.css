@@ -198,7 +198,7 @@
     filter: sepia(000%) hue-rotate(0deg) saturate(100%) brightness(100%);
 }
 
-.inspiration h4 { 
+.inspiration h4 {
     font-size: 20px;
     text-align: center;
     margin-block-start: .75em;
@@ -216,7 +216,6 @@
     filter: sepia(100%) hue-rotate(-47deg) saturate(500%) brightness(75%);
     transition: filter var(--brand-transition);
     will-change: filter;
-    
 }
 
 .graphics-wrapper:hover .graphics-preview { filter: sepia(0%) hue-rotate(0deg) saturate(100%) brightness(100%) drop-shadow(0px 0px 15px #ff575755); }

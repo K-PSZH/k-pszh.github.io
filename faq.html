@@ -27,8 +27,8 @@
                     <div class="kpszh-header-dropdown">
                         <a onclick="langMenu()" class="dropbtn" data-i18n="common-header-language"></a>
                         <div id="lang-dropdown" class="kpszh-header-dropdown-content">
-                            <a onclick="langSet('ru')"><span data-i18n="common-header-language-ru"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag cursor-hoverable" src="/img/flags/ru.svg"></a>
-                            <a onclick="langSet('en')"><span data-i18n="common-header-language-en"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag cursor-hoverable" src="/img/flags/us.svg"></a>
+                            <a onclick="langSet('ru')"><span data-i18n="common-header-language-ru"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/ru.svg"></a>
+                            <a onclick="langSet('en')"><span data-i18n="common-header-language-en"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/us.svg"></a>
                         </div>
                     </div>
                 </div>
@@ -141,25 +141,24 @@
             <img id="kpszh-cursor-image" src="/img/cursor.webp" alt="">
         </div>
         <script> // FAQ
-            const faqQuestions = document.querySelectorAll('.faq-question');
+            const qs = document.querySelectorAll('.faq-question');
 
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', () => {
-                    faqQuestions.forEach(item => {
-                        if (item !== question) {
-                            item.classList.remove('active');
-                            item.nextElementSibling.style.maxHeight = null;
+            qs.forEach(q => {
+                q.addEventListener('click', () => {
+                    qs.forEach(i => {
+                        if (i !== q) {
+                            i.classList.remove('active');
+                            i.nextElementSibling.style.maxHeight = null;
                         }
                     });
 
-                    question.classList.toggle('active');
+                    q.classList.toggle('active');
 
-                    const answer = question.nextElementSibling;
-
-                    if (answer.style.maxHeight) {
-                        answer.style.maxHeight = null;
+                    const a = q.nextElementSibling;
+                    if (a.style.maxHeight) {
+                        a.style.maxHeight = null;
                     } else {
-                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        a.style.maxHeight = a.scrollHeight + 'px';
                     }
                 });
             });

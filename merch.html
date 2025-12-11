@@ -27,8 +27,8 @@
                     <div class="kpszh-header-dropdown">
                         <a onclick="langMenu()" class="dropbtn" data-i18n="common-header-language"></a>
                         <div id="lang-dropdown" class="kpszh-header-dropdown-content">
-                            <a onclick="langSet('ru')"><span data-i18n="common-header-language-ru"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag cursor-hoverable" src="/img/flags/ru.svg"></a>
-                            <a onclick="langSet('en')"><span data-i18n="common-header-language-en"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag cursor-hoverable" src="/img/flags/us.svg"></a>
+                            <a onclick="langSet('ru')"><span data-i18n="common-header-language-ru"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/ru.svg"></a>
+                            <a onclick="langSet('en')"><span data-i18n="common-header-language-en"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/us.svg"></a>
                         </div>
                     </div>
                 </div>
@@ -142,7 +142,7 @@
                     }
                 });
             }, {
-                threshold: 0.5
+                threshold: .5
             });
 
             const items = document.querySelectorAll('.merch-container');

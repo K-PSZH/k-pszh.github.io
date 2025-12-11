@@ -60,11 +60,11 @@
 
 .index-latest-title { font-size: 28px; }
 
-.index-latest-date { opacity: .65; }
+.index-latest-date { color: #fffa }
 
 .index-latest-excerpt {
     font-weight: 300;
-    opacity: .65;
+    color: #fffa;
 }
 
 .index-latest-link { font-weight: 300; }

@@ -28,6 +28,23 @@
     transition: background-image var(--brand-transition), border var(--brand-transition), max-height var(--brand-transition), opacity var(--brand-transition), transform var(--brand-transition);
 }
 
+@keyframes albumPanelNoise {
+    0% { background-position: 0 0; }
+    100% { background-position: 123px 456px; }
+}
+
+.album-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background-image: url(/img/projects/noise.webp);
+    animation: albumPanelNoise 1s steps(10) infinite;
+    opacity: var(--overlay-opacity, 0);
+    will-change: background-position;
+}
+
 @keyframes albumPanelActive {
     to { opacity: 1; transform: translateY(0);}
 }
@@ -130,7 +147,7 @@
 .album-panel ol li::before {
     content: counter(track) ".";
     display: inline-block;
-    margin-right: 0.5ch;
+    margin-right: .5ch;
 }
 
 .album-panel a {
@@ -146,7 +163,7 @@
     font-family: AgencyFB;
     font-weight: 600;
     transform: scale(1, 1.1);
-    -webkit-text-stroke: 0.09em black;
+    -webkit-text-stroke: .09em black;
     paint-order: stroke fill;
     margin: 6px auto;
     text-align: center;
@@ -174,7 +191,7 @@
 
 .album-panel.mh ol span {
     color: #ccc;
-    font-size: 0.85em;
+    font-size: .85em;
 }
 
 .album-panel.mp h1,
@@ -238,7 +255,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    margin-block-start: 0em;
+    margin-block-start: 0;
     margin-block-end: 3em;
 }
 
@@ -292,10 +309,10 @@
     text-align: center;
     text-transform: uppercase;
     line-height: normal;
-    text-indent: 0.1em;
+    text-indent: .1em;
     margin-block-start: -.3em;
     margin-block-end: 0;
-    transition: opacity var(--brand-transition);
+    transition: color var(--brand-transition);
 }
 
 .album-title {
@@ -305,12 +322,12 @@
 
 .album-date {
     font-size: 20px;
-    opacity: .5;
+    color: #fff8;
 }
 
 .album-container.selected .album-title,
 .album-container.selected .album-date {
-    opacity: .25;
+    color: #fff4;
 }
 
 @media only screen and (max-width: 1080px) {

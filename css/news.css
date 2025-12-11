@@ -6,7 +6,7 @@ a.news-link:active {
     background-color: transparent;
     width: 100%;
     display: inline-flex;
-    margin-block: 0.5em;
+    margin-block: .5em;
     text-decoration: none;
     transition: color var(--brand-transition);
 }
@@ -59,13 +59,13 @@ a.news-link:hover { color: white; }
 .news-excerpt {
     padding-top: 10px;
     margin-right: 100px;
-    opacity: .65;
+    color: #fffa;
     overflow: hidden;
     font-size: 18px;
 }
 
 .news-date {
-    opacity: .65;
+    color: #fffa;
     font-size: 18px;
     position: absolute;
     top: 12px;
