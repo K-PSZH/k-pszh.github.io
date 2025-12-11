@@ -11,6 +11,8 @@
     "common-header-language-ru": "RUS",
     "common-header-language-en": "ENG",
     "common-footer-copyright": "© 2026 K-PSZH. All Rights Reserved.",
+    "common-image-author": "ph: ",
+    "common-photographer-yura": "Yura Ukhrenkov",
 
     "home-tab-name": "K-PSZH",
     "home-marquee-1": "WEBSITE HAS LAUNCHED!",
@@ -31,8 +33,6 @@
 
     "article-back": "Back to News",
     "article-author": "author: ",
-    "article-image-author": "ph: ",
-    "article-photographer-yura": "Yura Ukhrenkov",
 
     "article-1-tab-name": "Welcome to the Beginning! | K-PSZH",
     "article-1-title": "Welcome to the Beginning! Website <span class=\"character-red\">Launch</span>, Merch Drop and a New Chapter...",
@@ -66,10 +66,30 @@
     "merch-tab-name": "Merch | K-PSZH",
     "merch-title": "Merch",
     "merch-subtitle": "Together with the <span class=\"danganronpa cursor-hoverable\">Tanuki</span> local store, we've launched a limited batch of <span class=\"character-red\">K-PSZH</span>' official merchandise! Take a look!",
+    "merch-take-a-look": "Take a look →",
     "merch-1-title": "K-PSZH' Red Shirt",
     "merch-2-title": "\"My Hallucination\" T-Shirt",
     "merch-3-title": "Brand Shopper Bag",
     "merch-4-title": "Brand Badge Pin",
+
+    "product-back": "Back to Merch",
+    "product-add-button": "Add to cart",
+
+    "product-1-tab-name": "K-PSZH' Red Shirt | K-PSZH",
+    "product-1-title": "K-PSZH' <span class=\"character-red\">Red</span> Shirt",
+    "product-1-about": "Legendary red check shirt that has been a part of official K-PSZH look since June 2025! According to rumors, this is a <i>real</i>&nbsp; garment from the <i>real</i>&nbsp; wardrobe of the <i>real</i>&nbsp; K-PSZH, which means a lot to him... Now <span class=\"danganronpa cursor-hoverable\"><b>you</b></span> can touch the great too!",
+
+    "product-2-tab-name": "\"My Hallucination\" T-Shirt | K-PSZH",
+    "product-2-title": "\"My \"<span class=\"character-red\">Hallucination</span>\" T-Shirt",
+    "product-2-about": "T-shirt featuring the cover of my magnum opus album \"My Hallucination\", released summer 2025!",
+
+    "product-3-tab-name": "<span class=\"character-red\">Brand</span> Shopper Bag",
+    "product-3-title": "<span class=\"character-red\">Brand</span> Shopper Bag",
+    "product-3-about": "Shopper bag designed by one of the K-PSZH community active members, including the brand logo of yours truly!",
+
+    "product-4-tab-name": "Brand Badge Pin",
+    "product-4-title": "<span class=\"character-red\">Brand</span> Badge Pin",
+    "product-4-about": "Fancy addition to the finished look — a 5x5 cm metal badge pin, including the brand logo of yours truly!",
 
     "tools-tab-name": "Tools I use | K-PSZH",
 
@@ -109,8 +129,8 @@
 
     "article-back": "Назад к новостям",
     "article-author": "автор: ",
-    "article-image-author": "фото: ",
-    "article-photographer-yura": "Юра Ухрёнков",
+    "common-image-author": "фото: ",
+    "common-photographer-yura": "Юра Ухрёнков",
 
     "article-1-tab-name": "Всё только начинается! Запуск сайта, продажи мерча и новый горизонт... | K-PSZH",
     "article-1-title": "Всё только начинается! <span class=\"character-red\">Запуск</span> сайта, продажи мерча и новый горизонт...",
@@ -144,11 +164,31 @@
     "merch-tab-name": "Мерч | K-PSZH",
     "merch-title": "Мерч",
     "merch-subtitle": "Совместно с магазином <span class=\"danganronpa cursor-hoverable\">Тануки</span> мы запустили в производство ограниченную партию официального мерча <span class=\"character-red\">K-PSZH</span>! Присмотритесь!",
+    "merch-take-a-look": "Подробнее →",
     "merch-1-title": "Красная рубашка K-PSZH",
     "merch-2-title": "Футболка \"My Hallucination\"",
     "merch-3-title": "Шоппер с логотипом",
     "merch-4-title": "Значок с логотипом",
   
+    "product-back": "Назад к мерчу",
+    "product-add-button": "В корзину",
+
+    "product-1-tab-name": "Красная рубашка K-PSZH | K-PSZH",
+    "product-1-title": "<span class=\"character-red\">Красная</span> рубашка K-PSZH",
+    "product-1-about": "Та самая красная рубашка в клетку, которая стала неотъемлемой частью образа K-PSZH с июня 2025 года! Официально по слухам, это <i>реальная</i>&nbsp; вещь из <i>реального</i>&nbsp; гардероба <i>реального</i>&nbsp; K-PSZH, которая очень много для него значит... Теперь и <span class=\"danganronpa cursor-hoverable\"><b>вы</b></span> сможете прикоснуться к великому!",
+
+    "product-2-tab-name": "Футболка \"My Hallucination\" | K-PSZH",
+    "product-2-title": "Футболка \"My <span class=\"character-red\">Hallucination</span>\"",
+    "product-2-about": "Футболка с изображением обложки моего magnum opus, альбома \"My Hallucination\", вышедшего летом 2025 года!",
+
+    "product-3-tab-name": "Шоппер с логотипом | K-PSZH",
+    "product-3-title": "Шоппер с <span class=\"character-red\">лого</span>типом",
+    "product-3-about": "Шоппер с дизайном от одного из активных участников комьюнити, с логотипом вашего покорного слуги!",
+
+    "product-4-tab-name": "Значок с логотипом | K-PSZH",
+    "product-4-title": "Значок с <span class=\"character-red\">лого</span>типом",
+    "product-4-about": "Стильное дополнение к готовому образу — металлический значок размером 5x5 сантиметров, с логотипом вашего покорного слуги!",
+
     "tools-tab-name": "Инструменты | K-PSZH",
 
     "faq-tab-name": "ЧаВО | K-PSZH",

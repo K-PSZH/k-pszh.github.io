@@ -38,8 +38,8 @@ function langMenu() {
 }
 
 // Пункты меню выбора языка
-window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
+window.onclick = e => {
+    if (!e.target.matches('.dropbtn')) {
         var dropdowns = document.getElementsByClassName("kpszh-header-dropdown-content");
         var i;
         for (i = 0; i < dropdowns.length; i++) {

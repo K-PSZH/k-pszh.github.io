@@ -200,6 +200,8 @@ hr {
     justify-content: center;
     align-items: center;
     min-height: 100px;
+    transition: min-height var(--brand-transition);
+    will-change: min-height;
 }
 
 .kpszh-social-icon {
@@ -211,8 +213,8 @@ hr {
     max-width: var(--social-icon-size-hover);
     max-height: var(--social-icon-size-hover);
     margin: auto 10px;
-    transition: width var(--brand-transition), height var(--brand-transition);
-    will-change: width, height;
+    transition: width var(--brand-transition), height var(--brand-transition), max-width var(--brand-transition), max-height var(--brand-transition), margin var(--brand-transition);
+    will-change: width, height, max-width, max-height;
     z-index: 5;
 }
 
@@ -257,10 +259,11 @@ hr {
 .kpszh-social-icon:hover .boosty { fill: var(--social-boosty) }
 
 .kpszh-footer h6 {
-    font-size: 20px;
     margin-block-start: 2em;
     margin-block-end: 1em;
-    transition: font-size var(--brand-transition);
+    font-size: 20px;
+    transition: margin-block-start var(--brand-transition), margin-block-end var(--brand-transition), font-size var(--brand-transition);
+    will-change: margin-block-start, margin-block-end, font-size;
 }
 
 .kpszh-footer-image {
@@ -347,7 +350,7 @@ span.danganronpa {
 
 .modal-content {
     max-width: 90%;
-    max-height: 80%;
+    max-height: 90%;
     object-fit: contain;
     animation: imageViewerZoom 0.5s ease;
 }

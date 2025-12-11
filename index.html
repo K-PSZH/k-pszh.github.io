@@ -179,9 +179,9 @@
                     }
                 });
 
-                document.addEventListener("contextmenu", function(event) {
-                    if (event.target.tagName === 'AUDIO') {
-                        event.preventDefault();
+                document.addEventListener('contextmenu', e => {
+                    if (e.target.tagName === 'AUDIO') {
+                        e.preventDefault();
                     }
                 });
             });
