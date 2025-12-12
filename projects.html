@@ -169,7 +169,7 @@
                         bg: "/img/projects/myhallucination_bg.webp",
                         art: "/img/projects/myhallucination.webp",
                         cover: "/img/covers/mh.webp",
-                        overlay: .3,
+                        overlay_opacity: .2,
                         type: "projects-album",
                         title: "MY HALLUCINATION",
                         date: "projects-mh-date",
@@ -181,7 +181,7 @@
                     mp: {
                         bg: "/img/projects/mypain_bg.webp",
                         cover: "/img/covers/mp.webp",
-                        overlay: .6,
+                        overlay_opacity: .6,
                         title: "my pain",
                         date: "projects-mp-date",
                         tracklist: "",
@@ -192,7 +192,8 @@
                         art: "/img/projects/mydespair.webp",
                         cover: "/img/covers/md.webp",
                         video: "/img/projects/mydespair_deco.webm",
-                        overlay: .2,
+                        overlay_opacity: 1,
+                        overlay_texture: "/img/projects/pattern.webp",
                         type: "projects-album",
                         title: "My Despair",
                         date: "projects-md-date",
@@ -224,7 +225,8 @@
                         cover.src = albums[key].cover; // Обложка
                         art.src = albums[key].art || ''; // Арт
                         video.src = albums[key].video || ''; // Видео для арта (My Despair)
-                        panel.style.setProperty('--overlay-opacity', albums[key].overlay || 0); // Оверлей шума
+                        panel.style.setProperty('--overlay-opacity', albums[key].overlay_opacity || 0); // Непрозрачность оверлея
+                        panel.style.setProperty('--overlay-texture', `url("${albums[key].overlay_texture || '/img/projects/noise.webp'}")`); // Текстура оверлея
 
                         if (albums[key].type) {
                             type.setAttribute("data-i18n", albums[key].type); // Тип релиза

@@ -933,9 +933,9 @@ a.news-link:hover .news-date { opacity: 1; }
     transition: background-image var(--brand-transition), border var(--brand-transition), max-height var(--brand-transition), opacity var(--brand-transition), transform var(--brand-transition);
 }
 
-@keyframes albumPanelNoise {
+@keyframes albumPanelOverlay {
     0% { background-position: 0 0; }
-    100% { background-position: 123px 456px; }
+    100% { background-position: 170px 460px; }
 }
 
 .album-panel::before {
@@ -944,8 +944,8 @@ a.news-link:hover .news-date { opacity: 1; }
     inset: 0;
     z-index: 1;
     pointer-events: none;
-    background-image: url(/img/projects/noise.webp);
-    animation: albumPanelNoise 1s steps(10) infinite;
+    background-image: var(--overlay-texture, url("/img/projects/noise.webp"));
+    animation: albumPanelOverlay 1s steps(10) infinite;
     opacity: var(--overlay-opacity, 0);
     will-change: background-position;
 }
