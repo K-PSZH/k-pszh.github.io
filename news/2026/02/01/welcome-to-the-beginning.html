@@ -140,13 +140,38 @@
             document.addEventListener('DOMContentLoaded', () => {
                 const viewer = document.getElementById('image-viewer');
                 const fullImage = document.getElementById('full-image');
-                
+
+                function openViewer(src) {
+                    fullImage.src = src;
+                    viewer.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                    requestAnimationFrame(() => viewer.classList.add('visible'));
+                }
+
+                function closeViewer() {
+                    if (!viewer.classList.contains('visible')) return;
+                    viewer.classList.remove('visible');
+                    viewer.addEventListener('transitionend', function hide(e) {
+                        if (e.propertyName === 'opacity') {
+                            viewer.style.display = 'none';
+                            document.body.style.overflow = '';
+                            viewer.removeEventListener('transitionend', hide);
+                        }
+                    });
+                }
+
                 document.addEventListener('click', e => {
                     if (e.target.matches('.article-image-container img')) {
-                        fullImage.src = e.target.src;
-                        viewer.style.display = 'flex';
-                    } else if (e.target === viewer || e.target.matches('.close')) {
-                        viewer.style.display = 'none';
+                        openViewer(e.target.src);
+                    }
+                    else if (e.target === viewer || e.target.matches('.close')) {
+                        closeViewer();
+                    }
+                });
+
+                document.addEventListener('keydown', e => {
+                    if (e.key === 'Escape') {
+                        closeViewer();
                     }
                 });
             });

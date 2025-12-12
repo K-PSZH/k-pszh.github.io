@@ -353,14 +353,21 @@ span.danganronpa {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    animation: imageViewerBackground 0.5s ease;
+    opacity: 0;
+    transition: opacity var(--brand-transition);
+}
+
+#image-viewer.visible {
+    display: flex;
+    opacity: 1;
 }
 
 .modal-content {
     max-width: 90%;
     max-height: 90%;
     object-fit: contain;
-    animation: imageViewerZoom 0.5s ease;
+    transform: scale(.5);
+    transition: transform var(--brand-transition);
 }
 
 #image-viewer .close {
@@ -370,8 +377,13 @@ span.danganronpa {
     color: white;
     font-size: 80px;
     font-weight: 200;
-    animation: imageViewerZoom 0.5s ease;
-    transition: opacity var(--brand-transition);
+    transform: scale(.25);
+    transition: transform var(--brand-transition), opacity var(--brand-transition);
+}
+
+#image-viewer.visible .modal-content,
+#image-viewer.visible .close {
+    transform: scale(1);
 }
 
 @keyframes imageViewerZoom {
@@ -383,6 +395,7 @@ span.danganronpa {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+
 #image-viewer .close:hover,
 #image-viewer .close:focus { opacity: .5; }
 
