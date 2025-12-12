@@ -988,7 +988,7 @@ a.news-link:hover .news-date { opacity: 1; }
     filter: drop-shadow(0 0 10px #0008);
     background-image: url(/img/covers/empty.webp);
     transition: transform var(--brand-transition), opacity var(--brand-transition);
-    z-index: 1;
+    z-index: 4;
 }
 
 .album-panel.active .album-panel-cover {
@@ -1008,6 +1008,7 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .album-panel-art {
     pointer-events: none;
+    z-index: 2;
 }
 
 .album-panel.active .album-panel-art {
@@ -1029,6 +1030,7 @@ a.news-link:hover .news-date { opacity: 1; }
     transition: opacity var(--brand-transition);
     right: 0;
     bottom: 0;
+    z-index: 3;
 }
 
 .album-panel.active .album-panel-video {
@@ -1046,6 +1048,7 @@ a.news-link:hover .news-date { opacity: 1; }
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    z-index: 2;
 }
 
 .album-panel.active .album-panel-info {
