@@ -87,14 +87,15 @@ a {
     color: white;
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    text-underline-offset: 6px;
-    transition: color var(--brand-transition), text-underline-offset var(--brand-transition), opacity var(--brand-transition);
+    text-underline-offset: 2px;
+    transition: color var(--brand-transition), text-underline-offset var(--brand-transition), text-decoration-color var(--brand-transition), opacity var(--brand-transition);
     will-change: color, text-underline-offset, opacity;
 }
 
 a:hover {
     color: var(--link-1);
-    text-underline-offset: 10px;
+    text-underline-offset: 12px;
+    text-decoration-color: transparent;
 }
 
 a:active { color: var(--link-2); }
@@ -332,7 +333,7 @@ hr {
 }
 
 span.danganronpa {
-    background-image: linear-gradient(var(--danganronpa-gradient-1), var(--danganronpa-gradient-2));
+    background-image: linear-gradient(var(--danganronpa-gradient-1) 20%, var(--danganronpa-gradient-2) 100%);
     color: transparent;
     background-clip: text;
     transition: color var(--brand-transition);
@@ -391,7 +392,7 @@ span.danganronpa {
 .image-viewer-caption {
     flex: 0 0 auto;
     font-weight: 400;
-    color: var(--link-1);
+    color: var(--link-2);
     font-size: 24px;
     text-align: center;
     z-index: 1;
@@ -508,7 +509,11 @@ audio::-webkit-media-controls-time-remaining-display {
 
     .character-red { background-image: none; }
 
+    .index-latest-excerpt .character-red { color: #fffa; }
+
     .kpszh-footer h6 { font-size: 16px; }
+
+    #image-viewer .close { display: none;}
 }
 
 
@@ -679,7 +684,7 @@ a.news-link:hover { color: white; }
 }
 
 .news-link-style:hover {
-    background-color: #4006;
+    background-color: #4008;
     border: 4px solid #800a;
 }
 
@@ -690,6 +695,7 @@ a.news-link:hover { color: white; }
     object-fit: cover;
     margin-right: 8px;
     border-radius: 4px;
+    filter: drop-shadow(-2px 0 4px black);
     user-select: all;
     transition: transform var(--brand-transition), opacity var(--brand-transition);
 }
@@ -707,10 +713,15 @@ a.news-link:hover { color: white; }
 
 .news-title::first-letter { background-image: linear-gradient(var(--link-1), var(--link-2)); }
 
+.news-subtitle {
+    color: #fffa;
+    overflow: hidden;
+    font-size: 22px;
+}
+
 .news-excerpt {
     padding-top: 10px;
-    margin-right: 100px;
-    color: #fffa;
+    color: #fff8;
     overflow: hidden;
     font-size: 18px;
 }
@@ -743,11 +754,10 @@ a.news-link:hover .news-date { opacity: 1; }
     .news-link-style { width: 100%; }
 
     .news-date,
-    .news-image { display: none; }
+    .news-image,
+    .news-excerpt { display: none; }
 
     .news-title { width: 100%; }
-
-    .news-excerpt { margin-right: 0px; }
 }
 
 @media (hover: none) and (pointer: coarse) {
@@ -851,16 +861,18 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .bubble-caption {
     border-radius: 12px;
+    box-sizing: border-box;
     background-color: #0007;
+    border: 4px solid #f00;
     padding: 12px 18px;
     animation: bubbleCaptionWarning 1s ease infinite;
     will-change: background-color;
 }
 
 @keyframes bubbleCaptionWarning {
-    0% { background-color: #0007; }
-    50% { background-color: #4008; }
-    100% { background-color: #0007; }
+    0% { background-color: #0007; border: 4px solid #4008; }
+    50% { background-color: #4008; border: 4px solid #800a; }
+    100% { background-color: #0007; border: 4px solid #4008; }
 }
 
 .bubble-caption-text {
@@ -880,7 +892,7 @@ a.news-link:hover .news-date { opacity: 1; }
 .kpszh-audio-container {
     border-radius: 12px;
     background: linear-gradient(-30deg, #f009 -100%, transparent 50%, transparent 75%, #f009 150%);
-    background-color: #0008;
+    background-color: #0007;
     background-clip: padding-box;
     padding: 12px 24px;
     width: calc(50% - var(--audio-grid-gap)/2);
@@ -891,7 +903,7 @@ a.news-link:hover .news-date { opacity: 1; }
 }
 
 .kpszh-audio-container:hover {
-    background-color: #4006;
+    background-color: #4008;
     border: 4px solid #800a;
 }
 
@@ -1226,12 +1238,12 @@ a.news-link:hover .news-date { opacity: 1; }
 }
 
 .album-container:hover {
-    background-color: #4006;
+    background-color: #4008;
     border: 4px solid #800a;
 }
 
 .album-container.selected {
-    background-color: #4006;
+    background-color: #4008;
     border: 4px solid #800c;
 }
 
@@ -1329,7 +1341,7 @@ a.news-link:hover .news-date { opacity: 1; }
 .merch-container.visible { animation: merchContainerSwipe 1s ease forwards; }
 
 .merch-container:hover {
-    background-color: #4006;
+    background-color: #4008;
     border: 4px solid #800a;
 }
 
