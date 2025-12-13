@@ -52,21 +52,21 @@
                     <video autoplay loop muted class="album-panel-video" id="albumPanelVideo"></video>
                 </div>
                 <div class="projects-grid">
-                    <a class="album-container" href="#projectsTitle">
+                    <a class="album-container">
                         <img class="album-image" data-album="mh" src="/img/covers/mh.webp">
                         <div class="album-info">
                             <div class="album-title">My Hallucination</div>
                             <div class="album-date" data-i18n="projects-mh-date"></div>
                         </div>
                     </a>
-                    <a class="album-container" href="#projectsTitle">
+                    <a class="album-container">
                         <img class="album-image" data-album="mp" src="/img/covers/mp.webp">
                         <div class="album-info">
                             <div class="album-title">My Pain</div>
                             <div class="album-date" data-i18n="projects-mp-date"></div>
                         </div>
                     </a>
-                    <a class="album-container" href="#projectsTitle">
+                    <a class="album-container">
                         <img class="album-image" data-album="md" src="/img/covers/md.webp">
                         <div class="album-info">
                             <div class="album-title">My Despair</div>
@@ -200,7 +200,6 @@
                         cover_caption: "projects-md-cover-image-caption",
                         video: "/img/projects/mydespair_deco.webm",
                         overlay_opacity: .4,
-                        overlay_texture: "/img/projects/pattern.webp",
                         type: "projects-album",
                         title: "My Despair",
                         date: "projects-md-date",
@@ -234,7 +233,6 @@
                         art.src = albums[key].art || ''; // Арт
                         video.src = albums[key].video || ''; // Видео для арта (My Despair)
                         panel.style.setProperty('--overlay-opacity', albums[key].overlay_opacity || 0); // Непрозрачность оверлея
-                        panel.style.setProperty('--overlay-texture', `url("${albums[key].overlay_texture || '/img/projects/noise.webp'}")`); // Текстура оверлея
 
                         if (albums[key].type) {
                             type.setAttribute("data-i18n", albums[key].type); // Тип релиза
