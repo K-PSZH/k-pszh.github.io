@@ -37,6 +37,7 @@
     "article-1-tab-name": "Welcome to the Beginning! | K-PSZH",
     "article-1-title": "Welcome to the Beginning! Website <span class=\"character-red\">Launch</span>, Merch Drop and a New Chapter...",
     "article-1-date": "sunday, <b>Feb 1, 2026, 8:32 PM</b>",
+    "article-1-image-caption-merch": "Items, from left to right, are: K-PSZH' Red Shirt; \"My Hallucination\" T-Shirt; Brand Shopper Bag; Brand Badge Pin.",
 
     "article-2-tab-name": "past_months.mp3 : UNRELEASED DEMOS | K-PSZH",
     "article-2-title": "past_months<span class=\"character-red\">.mp3</span> : <span class=\"character-red\">UN</span>RELEASED DEMOS",
@@ -59,8 +60,11 @@
     "projects-album": "an original album",
     "projects-single": "a single",
     "projects-tracklist": "Tracklist:",
+    "projects-mh-cover-image-caption": "\"My Hallucination\" cover art by Grisha Morris",
     "projects-mh-date": "released July 28, 2025",
+    "projects-mp-cover-image-caption": "\"My Pain\" cover art by K-PSZH",
     "projects-mp-date": "released July 8, 2024",
+    "projects-md-cover-image-caption": "\"My Despair\" cover art by Shrug Moji",
     "projects-md-date": "released December 24, 2023",
 
     "merch-tab-name": "Merch | K-PSZH",
@@ -76,18 +80,22 @@
     "product-add-button": "Add to cart",
 
     "product-1-tab-name": "K-PSZH' Red Shirt | K-PSZH",
+    "product-1-image-caption": "K-PSZH' Red Shirt. Model : Yuka Takaoka ; photographer : Yura Ukhrenkov",
     "product-1-title": "K-PSZH' <span class=\"character-red\">Red</span> Shirt",
     "product-1-about": "Legendary red check shirt that has been a part of official K-PSZH look since June 2025! According to rumors, this is a <i>real</i>&nbsp; garment from the <i>real</i>&nbsp; wardrobe of the <i>real</i>&nbsp; K-PSZH, which means a lot to him... Now <span class=\"danganronpa cursor-hoverable\"><b>you</b></span> can touch the great too!",
 
     "product-2-tab-name": "\"My Hallucination\" T-Shirt | K-PSZH",
+    "product-2-image-caption": "\"My Hallucination\" T-Shirt. Model : Yuka Takaoka ; photographer : Yura Ukhrenkov",
     "product-2-title": "\"My \"<span class=\"character-red\">Hallucination</span>\" T-Shirt",
     "product-2-about": "T-shirt featuring the cover of my magnum opus album \"My Hallucination\", released summer 2025!",
 
     "product-3-tab-name": "Brand Shopper Bag",
+    "product-3-image-caption": "Brand Shopper Bag. Photographer : Yura Ukhrenkov",
     "product-3-title": "<span class=\"character-red\">Brand</span> Shopper Bag",
     "product-3-about": "Shopper bag designed by one of the K-PSZH community active members, including the brand logo of yours truly!",
 
     "product-4-tab-name": "Brand Badge Pin",
+    "product-4-image-caption": "Brand Badge Pin. Photographer : Yura Ukhrenkov",
     "product-4-title": "<span class=\"character-red\">Brand</span> Badge Pin",
     "product-4-about": "Fancy addition to the finished look — a 5x5 cm metal badge pin, including the brand logo of yours truly!",
 
@@ -135,6 +143,7 @@
     "article-1-tab-name": "Всё только начинается! Запуск сайта, продажи мерча и новый горизонт... | K-PSZH",
     "article-1-title": "Всё только начинается! <span class=\"character-red\">Запуск</span> сайта, продажи мерча и новый горизонт...",
     "article-1-date": "воскресенье, <b>1 фев 2026, 20:32</b>",
+    "article-1-image-caption-merch": "Предметы (слева направо): красная рубашка K-PSZH; футболка \"My Hallucination\"; шоппер с логотипом; значок с логотипом.",
 
     "article-2-tab-name": "недавнее.mp3 : НЕИЗДАННЫЕ ДЕМКИ | K-PSZH",
     "article-2-title": "недавнее<span class=\"character-red\">.mp3</span> : <span class=\"character-red\">НЕ</span>ИЗДАННЫЕ ДЕМКИ",
@@ -157,8 +166,11 @@
     "projects-album": "оригинальный альбом",
     "projects-single": "сингл",
     "projects-tracklist": "Треклист:",
+    "projects-mh-cover-image-caption": "Обложка \"My Hallucination\" за авторством Гриши Морриса",
     "projects-mh-date": "релиз: 28 июля 2025",
+    "projects-mp-cover-image-caption": "Обложка \"My Pain\" за авторством K-PSZH",
     "projects-mp-date": "релиз: 8 июля 2024",
+    "projects-md-cover-image-caption": "Обложка \"My Despair\" за авторством Shrug Moji",
     "projects-md-date": "релиз: 24 декабря 2023",
 
     "merch-tab-name": "Мерч | K-PSZH",
@@ -174,18 +186,22 @@
     "product-add-button": "В корзину",
 
     "product-1-tab-name": "Красная рубашка K-PSZH | K-PSZH",
+    "product-1-image-caption": "Красная рубашка K-PSZH. Модель на фото — Юка Такаока, фотограф — Юра Ухрёнков",
     "product-1-title": "<span class=\"character-red\">Красная</span> рубашка K-PSZH",
     "product-1-about": "Та самая красная рубашка в клетку, которая стала неотъемлемой частью образа K-PSZH с июня 2025 года! Официально по слухам, это <i>реальная</i>&nbsp; вещь из <i>реального</i>&nbsp; гардероба <i>реального</i>&nbsp; K-PSZH, которая очень много для него значит... Теперь и <span class=\"danganronpa cursor-hoverable\"><b>вы</b></span> сможете прикоснуться к великому!",
 
     "product-2-tab-name": "Футболка \"My Hallucination\" | K-PSZH",
+    "product-2-image-caption": "Футболка \"My Hallucination\". Модель на фото — Юка Такаока, фотограф — Юра Ухрёнков",
     "product-2-title": "Футболка \"My <span class=\"character-red\">Hallucination</span>\"",
     "product-2-about": "Футболка с изображением обложки моего magnum opus, альбома \"My Hallucination\", вышедшего летом 2025 года!",
 
     "product-3-tab-name": "Шоппер с логотипом | K-PSZH",
+    "product-3-image-caption": "Шоппер с логотипом. Фотограф — Юра Ухрёнков",
     "product-3-title": "Шоппер с <span class=\"character-red\">лого</span>типом",
     "product-3-about": "Шоппер с дизайном от одного из активных участников комьюнити, с логотипом вашего покорного слуги!",
 
     "product-4-tab-name": "Значок с логотипом | K-PSZH",
+    "product-4-image-caption": "Значок с логотипом. Фотограф — Юра Ухрёнков",
     "product-4-title": "Значок с <span class=\"character-red\">лого</span>типом",
     "product-4-about": "Стильное дополнение к готовому образу — металлический значок размером 5x5 сантиметров, с логотипом вашего покорного слуги!",
 

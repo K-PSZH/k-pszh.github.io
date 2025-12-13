@@ -1,12 +1,15 @@
 // Сама система i18n
+
+let currentLang = localStorage.getItem('lang') || 'ru';
+
 async function langLoad(lang) {
     const res = await fetch('/js/language.json');
-    const data = await res.json();
+    data = await res.json();
 
     // Текстовые элементы
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        el.innerHTML = data[lang][key];
+    document.querySelectorAll('[data-i18n]').forEach(e => {
+        const key = e.dataset.i18n;
+        e.innerHTML = data[lang][key];
     });
 
     // Видео на главной странице (бесшовно)
@@ -25,12 +28,16 @@ async function langLoad(lang) {
 
 // Функция смены языка
 function langSet(lang) {
+    currentLang = lang;
     localStorage.setItem('lang', lang);
     langLoad(lang);
+
+    // Подписи изображений в image viewer
+    viewerCaption.textContent = data[lang][activeCaptionKey] || '';
 }
 
 // Сохранение выбранного языка локально
-langLoad(localStorage.getItem('lang') || 'ru');
+langLoad(currentLang);
 
 // Меню выбора языка
 function langMenu() {

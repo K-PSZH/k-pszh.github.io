@@ -48,7 +48,7 @@
                         <h3 class="album-panel-links"></h3>
                     </div>
                     <img class="album-panel-art" id="albumPanelArt">
-                    <img class="album-panel-cover" id="albumPanelCover">
+                    <img class="album-panel-cover zoomable" data-caption id="albumPanelCover">
                     <video autoplay loop muted class="album-panel-video" id="albumPanelVideo"></video>
                 </div>
                 <div class="projects-grid">
@@ -132,7 +132,10 @@
         </footer>
         <div id="image-viewer">
             <span class="close cursor-hoverable">&times;</span>
-            <img class="modal-content" id="full-image">
+            <div class="image-viewer-body">
+                <img class="modal-content" id="full-image">
+                <div class="image-viewer-caption">Пиздец</div>
+            </div>
         </div>
         <div id="kpszh-cursor">
             <img id="kpszh-cursor-image" src="/img/cursor.webp" alt="">
@@ -170,6 +173,7 @@
                         bg: "/img/projects/myhallucination_bg.webp",
                         art: "/img/projects/myhallucination.webp",
                         cover: "/img/covers/mh.webp",
+                        cover_caption: "projects-mh-cover-image-caption",
                         overlay_opacity: .2,
                         type: "projects-album",
                         title: "MY HALLUCINATION",
@@ -182,6 +186,7 @@
                     mp: {
                         bg: "/img/projects/mypain_bg.webp",
                         cover: "/img/covers/mp.webp",
+                        cover_caption: "projects-mp-cover-image-caption",
                         overlay_opacity: .6,
                         title: "my pain",
                         date: "projects-mp-date",
@@ -192,8 +197,9 @@
                         bg: "/img/projects/mydespair_bg.webp",
                         art: "/img/projects/mydespair.webp",
                         cover: "/img/covers/md.webp",
+                        cover_caption: "projects-md-cover-image-caption",
                         video: "/img/projects/mydespair_deco.webm",
-                        overlay_opacity: .3,
+                        overlay_opacity: .4,
                         overlay_texture: "/img/projects/pattern.webp",
                         type: "projects-album",
                         title: "My Despair",
@@ -224,6 +230,7 @@
 
                         panel.style.backgroundImage = `url(${albums[key].bg})`; // Фон
                         cover.src = albums[key].cover; // Обложка
+                        cover.dataset.caption = albums[key].cover_caption;
                         art.src = albums[key].art || ''; // Арт
                         video.src = albums[key].video || ''; // Видео для арта (My Despair)
                         panel.style.setProperty('--overlay-opacity', albums[key].overlay_opacity || 0); // Непрозрачность оверлея
@@ -271,9 +278,12 @@
             document.addEventListener('DOMContentLoaded', () => {
                 const viewer = document.getElementById('image-viewer');
                 const fullImage = document.getElementById('full-image');
+                const viewerCaption = document.querySelector('.image-viewer-caption');
 
-                function openViewer(src) {
-                    fullImage.src = src;
+                function openViewer(img) {
+                    fullImage.src = img.src;
+                    activeCaptionKey = img.dataset.caption || null;
+                    viewerCaption.textContent = activeCaptionKey ? data[currentLang][activeCaptionKey] : '';
                     viewer.style.display = 'flex';
                     document.body.style.overflow = 'hidden';
                     requestAnimationFrame(() => viewer.classList.add('visible'));
@@ -292,8 +302,8 @@
                 }
 
                 document.addEventListener('click', e => {
-                    if (e.target.matches('.album-panel-cover')) {
-                        openViewer(e.target.src);
+                    if (e.target.matches('.zoomable')) {
+                        openViewer(e.target);
                     }
                     else if (e.target === viewer || e.target.matches('.close')) {
                         closeViewer();

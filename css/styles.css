@@ -343,16 +343,11 @@ span.danganronpa {
 #image-viewer {
     display: none;
     position: fixed;
+    inset: 0;
     z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
     background-color: #000d;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     opacity: 0;
     transition: opacity var(--brand-transition);
 }
@@ -362,11 +357,23 @@ span.danganronpa {
     opacity: 1;
 }
 
-.modal-content {
-    max-width: 90%;
+.image-viewer-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-height: 90%;
+    max-width: 90%;
+    gap: 18px;
+}
+
+.modal-content {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
     transform: scale(.5);
+    z-index: 2;
     transition: transform var(--brand-transition);
 }
 
@@ -379,6 +386,22 @@ span.danganronpa {
     font-weight: 200;
     transform: scale(.25);
     transition: transform var(--brand-transition), opacity var(--brand-transition);
+}
+
+.image-viewer-caption {
+    flex: 0 0 auto;
+    font-weight: 400;
+    color: var(--link-gradient-1);
+    font-size: 24px;
+    text-align: center;
+    z-index: 1;
+    transform: translateY(-100px);
+    transition: transform var(--brand-transition), color var(--brand-transition);
+}
+
+#image-viewer.visible .image-viewer-caption {
+    transform: translateY(0);
+    color: white;
 }
 
 #image-viewer.visible .modal-content,

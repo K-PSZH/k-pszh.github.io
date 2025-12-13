@@ -69,7 +69,7 @@
                     <div class="index-latest-container">
                         <div class="index-latest-header" data-i18n="home-latest-header"></div>
                         <div class="index-latest-details">
-                            <img src="img/covers/mh.webp" class="index-latest-image cursor-hoverable">
+                            <img src="img/covers/mh.webp" class="index-latest-image cursor-hoverable zoomable" data-caption="projects-mh-cover-image-caption">
                             <div class="index-latest-info">
                                 <div class="index-latest-title"><span class="character-red">M</span>y <span class="character-red">H</span>allucination</div>
                                 <div class="index-latest-date" data-i18n="home-latest-date"></div>
@@ -158,7 +158,10 @@
         </footer>
         <div id="image-viewer">
             <span class="close cursor-hoverable">&times;</span>
-            <img class="modal-content" id="full-image">
+            <div class="image-viewer-body">
+                <img class="modal-content" id="full-image">
+                <div class="image-viewer-caption">Пиздец</div>
+            </div>
         </div>
         <div id="kpszh-cursor">
             <img id="kpszh-cursor-image" src="/img/cursor.webp" alt="">
@@ -173,9 +176,12 @@
             document.addEventListener('DOMContentLoaded', () => {
                 const viewer = document.getElementById('image-viewer');
                 const fullImage = document.getElementById('full-image');
+                const viewerCaption = document.querySelector('.image-viewer-caption');
 
-                function openViewer(src) {
-                    fullImage.src = src;
+                function openViewer(img) {
+                    fullImage.src = img.src;
+                    activeCaptionKey = img.dataset.caption || null;
+                    viewerCaption.textContent = activeCaptionKey ? data[currentLang][activeCaptionKey] : '';
                     viewer.style.display = 'flex';
                     document.body.style.overflow = 'hidden';
                     requestAnimationFrame(() => viewer.classList.add('visible'));
@@ -194,8 +200,8 @@
                 }
 
                 document.addEventListener('click', e => {
-                    if (e.target.matches('.index-latest-image')) {
-                        openViewer(e.target.src);
+                    if (e.target.matches('.zoomable')) {
+                        openViewer(e.target);
                     }
                     else if (e.target === viewer || e.target.matches('.close')) {
                         closeViewer();
