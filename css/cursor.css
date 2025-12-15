@@ -23,7 +23,7 @@ html, body, a, button { cursor: none; }
 
 #kpszh-cursor.pointer img {
     transform: scale(.75);
-    animation: hover 0.1s linear infinite alternate
+    animation: hover .1s linear infinite alternate;
 }
 
 @keyframes hover {

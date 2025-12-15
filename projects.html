@@ -51,26 +51,73 @@
                     <img class="album-panel-cover zoomable" data-caption id="albumPanelCover">
                     <video autoplay loop muted class="album-panel-video" id="albumPanelVideo"></video>
                 </div>
+                <div class="album-panel" id="remixesPanel">
+                    <div class="remixes-cloud-container">
+                        <div class="remixes-cloud">
+                            <img src="/img/projects/remixes-thumb-1.webp">
+                            <img src="/img/projects/remixes-thumb-2.webp">
+                            <img src="/img/projects/remixes-thumb-3.webp">
+                            <img src="/img/projects/remixes-thumb-4.webp">
+                            <img src="/img/projects/remixes-thumb-5.webp">
+                            <img src="/img/projects/remixes-thumb-6.webp">
+                            <img src="/img/projects/remixes-thumb-7.webp">
+                            <img src="/img/projects/remixes-thumb-8.webp">
+                            <img src="/img/projects/remixes-thumb-9.webp">
+                            <img src="/img/projects/remixes-thumb-10.webp">
+                            <img src="/img/projects/remixes-thumb-11.webp">
+                            <img src="/img/projects/remixes-thumb-12.webp">
+                            <img src="/img/projects/remixes-thumb-13.webp">
+                            <img src="/img/projects/remixes-thumb-14.webp">
+                            <img src="/img/projects/remixes-thumb-15.webp">
+                            <img src="/img/projects/remixes-thumb-16.webp">
+                            <img src="/img/projects/remixes-thumb-17.webp">
+                            <img src="/img/projects/remixes-thumb-18.webp">
+                            <img src="/img/projects/remixes-thumb-19.webp">
+                            <img src="/img/projects/remixes-thumb-20.webp">
+                            <img src="/img/projects/remixes-thumb-21.webp">
+                            <img src="/img/projects/remixes-thumb-22.webp">
+                            <img src="/img/projects/remixes-thumb-23.webp">
+                            <img src="/img/projects/remixes-thumb-24.webp">
+                            <img src="/img/projects/remixes-thumb-25.webp">
+                            <img src="/img/projects/remixes-thumb-26.webp">
+                            <img src="/img/projects/remixes-thumb-27.webp">
+                        </div>
+                    </div>
+                    <p data-i18n="projects-remixes-description"></p>
+                </div>
                 <div class="projects-grid">
-                    <a class="album-container">
+                    <a class="album-container" href="#projectsTitle">
                         <img class="album-image" data-album="mh" src="/img/covers/mh.webp">
                         <div class="album-info">
                             <div class="album-title">My Hallucination</div>
                             <div class="album-date" data-i18n="projects-mh-date"></div>
                         </div>
                     </a>
-                    <a class="album-container">
+                    <a class="album-container" href="#projectsTitle">
                         <img class="album-image" data-album="mp" src="/img/covers/mp.webp">
                         <div class="album-info">
                             <div class="album-title">My Pain</div>
                             <div class="album-date" data-i18n="projects-mp-date"></div>
                         </div>
                     </a>
-                    <a class="album-container">
+                    <a class="album-container" href="#projectsTitle">
                         <img class="album-image" data-album="md" src="/img/covers/md.webp">
                         <div class="album-info">
                             <div class="album-title">My Despair</div>
                             <div class="album-date" data-i18n="projects-md-date"></div>
+                        </div>
+                    </a>
+                    <a class="album-container" href="#projectsTitle">
+                        <img class="album-image" data-album="tdufa" src="/img/covers/tdufa.webp">
+                        <div class="album-info">
+                            <div class="album-title">The Danganronpa Ultimate Fan Album</div>
+                            <div class="album-date" data-i18n="projects-tdufa-date"></div>
+                        </div>
+                    </a>
+                    <a class="album-container wide" href="#projectsTitle">
+                        <img class="album-image" data-album="remixes" src="/img/covers/remixes.webp">
+                        <div class="album-info">
+                            <div class="album-title" data-i18n="projects-remixes-title"></div>
                         </div>
                     </a>
                 </div>
@@ -148,6 +195,68 @@
             });
 
             document.addEventListener('DOMContentLoaded', () => {
+                let cloudRAF = null;
+                let isCloudActive = false;
+                const cloud = document.querySelector('.remixes-cloud');
+                const tags = cloud.querySelectorAll('img');
+                const R = 200;
+                const P = R * 1.5;
+                let rotX = -0.1;
+                let rotY = -0.2;
+                const data = [];
+
+                tags.forEach((el, i) => {
+                    const phi = Math.acos(-1 + (2 * i) / tags.length);
+                    const theta = Math.sqrt(tags.length * Math.PI) * phi;
+                    data.push({
+                        el,
+                        x: R * Math.cos(theta) * Math.sin(phi),
+                        y: R * Math.sin(theta) * Math.sin(phi),
+                        z: R * Math.cos(phi)
+                    });
+                });
+
+                function cloudLoop() {
+                    if (!isCloudActive) return;
+
+                    const sx = Math.sin(rotX * Math.PI / 180);
+                    const cx = Math.cos(rotX * Math.PI / 180);
+                    const sy = Math.sin(rotY * Math.PI / 180);
+                    const cy = Math.cos(rotY * Math.PI / 180);
+
+                    data.forEach(p => {
+                        let y = p.y * cx - p.z * sx;
+                        let z = p.y * sx + p.z * cx;
+                        let x = p.x * cy + z * sy;
+                        z = -p.x * sy + z * cy;
+
+                        p.x = x;
+                        p.y = y;
+                        p.z = z;
+
+                        const scale = (P / (P + z)) * 0.8;
+                        p.el.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px) scale(${scale})`;
+                        const minOpacity = 0.6;
+                        p.el.style.opacity = minOpacity + (scale - 0.6) * 1.6;
+                        p.el.style.zIndex = (scale * 100) | 0;
+                    });
+
+                    cloudRAF = requestAnimationFrame(cloudLoop);
+                }
+
+                function startCloud() {
+                    if (isCloudActive) return;
+                    isCloudActive = true;
+                    cloudLoop();
+                }
+
+                function stopCloud() {
+                    isCloudActive = false;
+                    if (cloudRAF) {
+                        cancelAnimationFrame(cloudRAF);
+                        cloudRAF = null;
+                    }
+                }
 
                 function restartAnimation(e) {
                     e.style.animation = 'none';
@@ -155,7 +264,8 @@
                     e.style.animation = '';
                 }
 
-                const panel = document.getElementById("albumPanel");
+                const albumPanel = document.getElementById("albumPanel");
+                const remixesPanel = document.getElementById("remixesPanel");
                 const art = document.getElementById("albumPanelArt");
                 const cover = document.getElementById("albumPanelCover");
                 const video = document.getElementById("albumPanelVideo");
@@ -179,7 +289,7 @@
                         title: "MY HALLUCINATION",
                         date: "projects-mh-date",
                         tracklist_title: "projects-tracklist",
-                        tracklist: "<li>The Ball of Schizos <span>[Sep 18]</span></li><li>Mass Tour Baiting <span>[Nov 3] (feat. Rekonza)</span></li><li>Beverly Hills Slut, 4649 <span>[Dec 6]</span></li><li>Bring Me Some Pizza and Let's Celebrate <span>[Jan 13]</span></li><li>Identifying Her <span>[Jan 26]</span></li><li>time of death is 7.08.20 <span>[Apr 11]</span></li><li>A City of Hallucination <span>(feat. Nero Sakamaki & Hikaru Akahoshi)</span></li>",
+                        tracklist: "<li>1. The Ball of Schizos <span>[Sep 18]</span></li><li>2. Mass Tour Baiting <span>[Nov 3] (feat. Rekonza)</span></li><li>3. Beverly Hills Slut, 4649 <span>[Dec 6]</span></li><li>4. Bring Me Some Pizza and Let's Celebrate <span>[Jan 13]</span></li><li>5. Identifying Her <span>[Jan 26]</span></li><li>6. time of death is 7.08.20 <span>[Apr 11]</span></li><li>7. A City of Hallucination <span>(feat. Nero Sakamaki & Hikaru Akahoshi)</span></li>",
                         link_youtube: "https://youtu.be/2M0d_sTrlE0",
                         links: '<a href="https://youtu.be/2M0d_sTrlE0">YouTube</a> | <a href="https://open.spotify.com/album/1mPHRHbUd4ylrc6hGFKURm">Spotify</a> | <a href="https://music.apple.com/us/album/my-hallucination/1829957401">Apple Music</a> | <a href="https://kpszh.bandcamp.com/album/my-hallucination">Bandcamp</a>',
                     },
@@ -204,8 +314,19 @@
                         title: "My Despair",
                         date: "projects-md-date",
                         tracklist_title: "projects-tracklist",
-                        tracklist: "<li>Despairification (Intro)</li><li>Not My WORLD?</li><li>Beautiful Danger</li><li>Her Eyes</li><li>Cling For Your Life</li><li>Despair Symptom</li><li>My Despair</li>",
+                        tracklist: "<li>1. Despairification (Intro)</li><li>2. Not My WORLD?</li><li>3. Beautiful Danger</li><li>4. Her Eyes</li><li>5. Cling For Your Life</li><li>6. Despair Symptom</li><li>7. My Despair</li>",
                         links: '<a href="https://youtu.be/8oa-dFOf0CU">YouTube</a> | <a href="https://open.spotify.com/album/0iHF3CMDCt8wiktjghR312">Spotify</a> | <a href="https://music.apple.com/us/album/my-despair/1737262415">Apple Music</a> | <a href="https://kpszh.bandcamp.com/album/my-despair">Bandcamp</a>',
+                    },
+                    tdufa: {
+                        bg: "/img/projects/tdufa_bg.webp",
+                        cover: "/img/covers/tdufa.webp",
+                        cover_caption: "projects-tdufa-cover-image-caption",
+                        type: "projects-collab",
+                        title: "The Danganronpa Ultimate Fan Album",
+                        date: "projects-tdufa-date",
+                        tracklist_title: "projects-tdufa-tracklist",
+                        tracklist: "<li>3. Scrum Debate</li><li>11. Flashing Anagram</li>",
+                        links: '<a href="https://youtu.be/mqNVufYBNvw">YouTube</a> | <a href="https://everythingfantasy.bandcamp.com/album/the-danganronpa-ultimate-fan-album">Bandcamp</a>',
                     }
                 };
 
@@ -213,49 +334,66 @@
                     container.addEventListener("click", () => {
                         // Закрытие панели при нажатии на уже выбранный альбом
                         if (container.classList.contains('selected')) {
-                            panel.classList.remove("active");
+                            albumPanel.classList.remove("active");
+                            remixesPanel.classList.remove("active");
                             container.classList.remove("selected");
+                            stopCloud();
                             return;
                         };
 
-                        const key = container.querySelector('img').getAttribute('data-album'); // Выбор ключа альбома
+                        const key = container.querySelector('img').dataset.album; // Выбор ключа альбома
                         const keys = Object.keys(albums); // Все ключи альбомов
+                        const panel = (key === 'remixes') ? remixesPanel : albumPanel; // Выбран контейнер "remixes"
+
+                        // Анимация облака только при открытой панели remixes
+                        if (panel === remixesPanel) {
+                            startCloud();
+                        } else {
+                            stopCloud();
+                        };
 
                         panel.classList.forEach(c => {
                             if (keys.includes(c)) panel.classList.remove(c); // Только один ключ альбома в панели
                         });
                         panel.classList.add(key); // Назначение ключа выбранного альбома для панели
+                        albumPanel.classList.remove("active");
+                        remixesPanel.classList.remove("active");
                         panel.classList.add("active"); // Панель открыта
 
-                        panel.style.backgroundImage = `url(${albums[key].bg})`; // Фон
-                        cover.src = albums[key].cover; // Обложка
-                        cover.dataset.caption = albums[key].cover_caption;
-                        art.src = albums[key].art || ''; // Арт
-                        video.src = albums[key].video || ''; // Видео для арта (My Despair)
-                        panel.style.setProperty('--overlay-opacity', albums[key].overlay_opacity || 0); // Непрозрачность оверлея
+                        if (panel === albumPanel) {
+                            panel.style.backgroundImage = `url(${albums[key].bg})`; // Фон
+                            cover.src = albums[key].cover || ''; // Обложка
+                            cover.dataset.caption = albums[key].cover_caption;
+                            art.src = albums[key].art || ''; // Арт
+                            video.src = albums[key].video || ''; // Видео для арта (My Despair)
+                            panel.style.setProperty('--overlay-opacity', albums[key].overlay_opacity || 0); // Непрозрачность оверлея
 
-                        if (albums[key].type) {
-                            type.setAttribute("data-i18n", albums[key].type); // Тип релиза
-                        } else {
-                            type.removeAttribute("data-i18n"); // Тип релиза отсутствует у My Pain
-                            type.textContent = "";
-                        }
-                        title.textContent = albums[key].title; // Название релиза
-                        date.setAttribute("data-i18n", albums[key].date); // Дата релиза
-                        if (albums[key].tracklist_title) {
-                            tracklist_title.setAttribute("data-i18n", albums[key].tracklist_title); // Заголовок треклиста
-                        } else {
-                            tracklist_title.removeAttribute("data-i18n"); // Заголовок треклиста отсутствует у синглов
-                            tracklist_title.textContent = "";
-                        }
-                        tracklist.innerHTML = albums[key].tracklist; // Треклист
-                        links.innerHTML = albums[key].links; // Ссылки
-                        langLoad(localStorage.getItem('lang') || 'ru'); // Обеспечение работы i18n
+                            if (albums[key].type) {
+                                type.setAttribute("data-i18n", albums[key].type); // Тип релиза
+                            } else {
+                                type.removeAttribute("data-i18n"); // Тип релиза отсутствует у My Pain
+                                type.textContent = "";
+                            }
+                            title.textContent = albums[key].title; // Название релиза
+                            date.setAttribute("data-i18n", albums[key].date); // Дата релиза
+                            if (albums[key].tracklist_title) {
+                                tracklist_title.setAttribute("data-i18n", albums[key].tracklist_title); // Заголовок треклиста
+                            } else {
+                                tracklist_title.removeAttribute("data-i18n"); // Заголовок треклиста отсутствует у синглов
+                                tracklist_title.textContent = "";
+                            }
+                            tracklist.innerHTML = albums[key].tracklist; // Треклист
+                            links.innerHTML = albums[key].links; // Ссылки
+                            langLoad(localStorage.getItem('lang') || 'ru'); // Обеспечение работы i18n
 
-                        // Анимации с начала при открытии панели
-                        restartAnimation(cover);
-                        restartAnimation(art);
-                        restartAnimation(info);
+                            // Анимации с начала при открытии панели
+                            restartAnimation(cover);
+                            restartAnimation(art);
+                            restartAnimation(info);
+                        }
+
+                        else if (panel === remixesPanel) {
+                        }
 
                         // Выбор карточки альбома
                         containers.forEach(c => c.classList.remove("selected"));
