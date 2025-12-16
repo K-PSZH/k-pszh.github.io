@@ -1281,6 +1281,10 @@ a.news-link:hover .news-date { opacity: 1; }
     margin-block-start: .5em;
 }
 
+.album-panel.tdufa li { transition: color var(--brand-transition); }
+
+.album-panel.tdufa li:hover { color: #f68; }
+
 .album-panel.tdufa a:hover { color: #e14; }
 
 .album-panel.tdufa a:active { color: #802; }
@@ -1726,13 +1730,13 @@ a.news-link:hover .news-date { opacity: 1; }
 }
 
 .daw-preview {
-    filter: sepia(1) hue-rotate(-47deg) saturate(5) brightness(.6) drop-shadow(0px 0px 40px #ff5757a1);
+    filter: sepia(1) hue-rotate(-47deg) saturate(5) brightness(.6) drop-shadow(0px 0px 40px #f55a );
     align-items: center;
     transition: filter var(--brand-transition);
     will-change: filter;
 }
 
-.daw-preview:hover { filter: sepia(0) hue-rotate(0deg) saturate(1) brightness(1) drop-shadow(0 0 25px #ff575733); }
+.daw-preview:hover { filter: sepia(0) hue-rotate(0deg) saturate(1) brightness(1) drop-shadow(0 0 25px #f553); }
 
 .daw-preview img, .daw-preview video {
     max-width: 720px;
@@ -1792,7 +1796,7 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .vst-wrapper:hover .vst-preview {
     padding: 0px 3px 3px 3px;
-    filter: sepia(0) hue-rotate(0deg) saturate(1) brightness(1) drop-shadow(0px 0px 25px #ff575733);
+    filter: sepia(0) hue-rotate(0deg) saturate(1) brightness(1) drop-shadow(0px 0px 25px #f553);
 }
 
 .vst-header {
@@ -1854,7 +1858,7 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .sample-pack img {
     width: 160px;
-    filter: sepia(1) hue-rotate(-47deg) saturate(5) brightness(.6) drop-shadow(0px 0px 15px #ff575771);
+    filter: sepia(1) hue-rotate(-47deg) saturate(5) brightness(.6) drop-shadow(0px 0px 15px #f557);
     transition: filter var(--brand-transition), width var(--brand-transition);
     will-change: filter, width;
     -webkit-user-drag: none;
@@ -1889,7 +1893,7 @@ a.news-link:hover .news-date { opacity: 1; }
 .inspiration-artist-picture img {
     border-radius: 50%;
     width: 160px;
-    filter: sepia(1) hue-rotate(-47deg) saturate(5) brightness(.6) drop-shadow(0px 0px 25px #ff575771);
+    filter: sepia(1) hue-rotate(-47deg) saturate(5) brightness(.6) drop-shadow(0px 0px 25px #f557);
     transition: width var(--brand-transition), filter var(--brand-transition);
     will-change: width, filter;
     -webkit-user-drag: none;
@@ -1920,7 +1924,7 @@ a.news-link:hover .news-date { opacity: 1; }
     will-change: filter;
 }
 
-.graphics-wrapper:hover .graphics-preview { filter: sepia(0) hue-rotate(0deg) saturate(1) brightness(1) drop-shadow(0px 0px 15px #ff575755); }
+.graphics-wrapper:hover .graphics-preview { filter: sepia(0) hue-rotate(0deg) saturate(1) brightness(1) drop-shadow(0px 0px 15px #f555); }
 
 @media only screen and (max-width: 1080px) {
     #main.tools { width: 100%; }
@@ -1932,7 +1936,7 @@ a.news-link:hover .news-date { opacity: 1; }
         margin-block-end: .3em;
     }
     
-    .daw-preview { filter: sepia(0) hue-rotate(0deg) saturate(1) brightness(1) drop-shadow(0 0 25px #ff575733); }
+    .daw-preview { filter: sepia(0) hue-rotate(0deg) saturate(1) brightness(1) drop-shadow(0 0 25px #f553); }
     
     .daw-preview h1 { opacity: 1; }
     
@@ -1940,7 +1944,7 @@ a.news-link:hover .news-date { opacity: 1; }
     
     .vst-wrapper .vst-preview {
         padding: 0px 3px 3px 3px;
-        filter: sepia(0) hue-rotate(0deg) saturate(1) brightness(1) drop-shadow(0px 0px 25px #ff575733);
+        filter: sepia(0) hue-rotate(0deg) saturate(1) brightness(1) drop-shadow(0px 0px 25px #f553);
     
     }
     .vst-wrapper .vst-header {
