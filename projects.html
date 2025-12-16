@@ -205,11 +205,11 @@
                 let rotY = -0.2;
                 const data = [];
 
-                tags.forEach((el, i) => {
+                tags.forEach((e, i) => {
                     const phi = Math.acos(-1 + (2 * i) / tags.length);
                     const theta = Math.sqrt(tags.length * Math.PI) * phi;
                     data.push({
-                        el,
+                        e,
                         x: R * Math.cos(theta) * Math.sin(phi),
                         y: R * Math.sin(theta) * Math.sin(phi),
                         z: R * Math.cos(phi)
@@ -235,10 +235,10 @@
                         p.z = z;
 
                         const scale = (P / (P + z)) * 0.8;
-                        p.el.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px) scale(${scale})`;
+                        p.e.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px) scale(${scale})`;
                         const minOpacity = 0.6;
-                        p.el.style.opacity = minOpacity + (scale - 0.6) * 1.6;
-                        p.el.style.zIndex = (scale * 100) | 0;
+                        p.e.style.opacity = minOpacity + (scale - 0.6) * 1.6;
+                        p.e.style.zIndex = (scale * 100) | 0;
                     });
 
                     cloudRAF = requestAnimationFrame(cloudLoop);
