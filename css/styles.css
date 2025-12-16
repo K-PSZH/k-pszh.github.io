@@ -21,6 +21,7 @@
     --social-icon-size: 80px;
     --social-icon-size-hover: 100px;
     --brand-transition: .25s ease;
+    --remixes-cloud-size: 500;
 }
 
 @font-face { font-family: Oswald; src: url(/fonts/Oswald.ttf); font-display: swap; font-weight: 200 400; }
@@ -512,6 +513,7 @@ audio::-webkit-media-controls-time-remaining-display {
         --social-default-color: #300;
         --social-icon-size: 40px;
         --social-icon-size-hover: 50px;
+        --remixes-cloud-size: 350;
     }
 
     h1 { font-size: 72px; }
@@ -705,14 +707,20 @@ a.news-link:hover { color: white; }
 
 .news-image {
     width: 200px;
+    overflow: hidden;
     float: left;
-    aspect-ratio: 16/9;
-    object-fit: cover;
     margin-right: 8px;
     border-radius: 4px;
     filter: drop-shadow(-2px 0 4px black);
-    user-select: all;
     transition: transform var(--brand-transition), opacity var(--brand-transition);
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    user-select: all;
 }
 
 .news-link-style:hover .news-image {
@@ -1251,7 +1259,10 @@ a.news-link:hover .news-date { opacity: 1; }
     text-transform: uppercase;
 }
 
-.album-panel.tdufa h1 { font-size: 56px; }
+.album-panel.tdufa h1 {
+    font-size: 56px;
+    max-width: 100%;
+}
 
 .album-panel.tdufa h2 {
     font-size: 27px;
@@ -1261,7 +1272,7 @@ a.news-link:hover .news-date { opacity: 1; }
 .album-panel.tdufa h3 {
     font-size: 25px;
     margin-block-start: 1em;
-    width: 1080px;
+    max-width: 1080px;
 }
 
 .album-panel.tdufa ol {
@@ -1283,8 +1294,8 @@ a.news-link:hover .news-date { opacity: 1; }
 .remixes-cloud-container { display: flex; }
 
 .remixes-cloud {
-    width: 500px;
-    height: 500px;
+    width: calc(var(--remixes-cloud-size) * 1px);
+    height: calc(var(--remixes-cloud-size) * 1px);
 }
 
 .remixes-cloud::before {
@@ -1292,8 +1303,8 @@ a.news-link:hover .news-date { opacity: 1; }
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 500px;
-    height: 500px;
+    width: calc(var(--remixes-cloud-size) * 1px);
+    height: calc(var(--remixes-cloud-size) * 1px);
     background-image: url('/img/projects/remixes_cloud.webp');
     background-size: cover;
     transform: translate(-50%, -50%);
@@ -1306,7 +1317,7 @@ a.news-link:hover .news-date { opacity: 1; }
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 50px;
+    width: calc(var(--remixes-cloud-size)/10 * 1px);
     border-radius: 4px;
     overflow: hidden;
 }

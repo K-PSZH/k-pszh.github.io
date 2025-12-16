@@ -208,7 +208,7 @@
                 let isCloudActive = false;
                 const cloud = document.querySelector('.remixes-cloud');
                 const tags = cloud.querySelectorAll('.remixes-thumb');
-                const R = 200;
+                const R = window.getComputedStyle(document.body).getPropertyValue('--remixes-cloud-size') * .4;
                 const P = R * 1.5;
                 let rotX = -.1;
                 let rotY = -.2;
