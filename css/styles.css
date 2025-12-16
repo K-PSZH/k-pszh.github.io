@@ -127,10 +127,19 @@ hr {
     column-gap: 10px;
 }
 
-.kpszh-header-logo img {
+.kpszh-header-logo-img {
     width: 50px;
-    animation: logoRotate 8s linear infinite;
+    border-radius: 50%;
+    overflow: hidden;
     pointer-events: none;
+}
+
+.kpszh-header-logo-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    animation: logoRotate 8s linear infinite;
+    user-select: all;
 }
 
 @keyframes logoRotate {
@@ -389,6 +398,7 @@ span.danganronpa {
     font-size: 80px;
     font-weight: 200;
     transform: scale(.25);
+    user-select: none;
     transition: transform var(--brand-transition), opacity var(--brand-transition);
 }
 
@@ -423,8 +433,10 @@ span.danganronpa {
     100% { opacity: 1; }
 }
 
-#image-viewer .close:hover,
-#image-viewer .close:focus { opacity: .5; }
+#image-viewer .close:hover {
+    opacity: .5;
+    transform: scale(.8);
+}
 
 audio::-webkit-media-controls-enclosure {
     background: transparent;
@@ -829,6 +841,15 @@ a.news-link:hover .news-date { opacity: 1; }
     transition: aspect-ratio var(--brand-transition);
 }
 
+.article-image-container.about {
+    max-width: 720px;
+    margin-inline: auto;
+}
+
+.article-image-container.about img {
+    aspect-ratio: auto;
+}
+
 .article-image-container.image-red-gradient::after {
     content: "";
     position: absolute;
@@ -961,8 +982,6 @@ a.news-link:hover .news-date { opacity: 1; }
 
 #main.projects { max-width: 1440px; }
 
-@keyframes albumPanelInactive { to { opacity: 0; transform: translateY(-20px);} }
-
 .album-panel {
     position: relative;
     display: flex;
@@ -979,7 +998,8 @@ a.news-link:hover .news-date { opacity: 1; }
     border: 4px solid #0008;
     justify-content: space-between;
     max-height: 0;
-    animation: albumPanelInactive .25s ease forwards;
+    opacity: 0;
+    transform: translateY(-20px);
     transition: all var(--brand-transition);
 }
 
@@ -1001,29 +1021,38 @@ a.news-link:hover .news-date { opacity: 1; }
     pointer-events: none;
     background-image: url("/img/projects/noise.webp");
     animation: albumPanelNoise 1s steps(10) infinite;
-    opacity: var(--overlay-opacity, 0);
+    opacity: 0;
     will-change: background-position;
 }
 
-.album-panel.md::before {
-    background-image: url("/img/projects/pattern.webp");
-    animation: albumPanelPattern 1s infinite linear;
+.album-panel.mh::before {
+    opacity: .25;
 }
 
-@keyframes albumPanelActive { to { opacity: 1; transform: translateY(0);} }
+.album-panel.mp::before {
+    opacity: .75;
+}
+
+.album-panel.md::before,
+.album-panel.tdufa::before {
+    background-image: url("/img/projects/pattern.webp");
+    animation: albumPanelPattern 1s infinite linear;
+    opacity: .5;
+}
 
 .album-panel.active {
     max-height: 720px;
     margin-bottom: 50px;
-    animation: albumPanelActive .25s ease forwards;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .album-panel:hover { border: 4px solid #8005; }
 
 @keyframes albumPanelCover {
     0% { transform: translateY(-100px); opacity: 0; }
-    25% { transform: translateY(-100px); opacity: 0; }
-    75% { transform: translateY(0px); opacity: 1; }
+    50% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(0px); opacity: 1; }
 }
 
 .album-panel-cover {
@@ -1035,9 +1064,10 @@ a.news-link:hover .news-date { opacity: 1; }
     background-image: url(/img/covers/empty.webp);
     transition: transform var(--brand-transition), opacity var(--brand-transition);
     z-index: 4;
+    user-select: all;
 }
 
-.album-panel.active .album-panel-cover { animation: albumPanelCover 2s ease; }
+.album-panel.active .album-panel-cover { animation: albumPanelCover 1s ease; }
 
 .album-panel-cover:hover {
     transform: scale(.85) rotate(-3deg);
@@ -1055,12 +1085,12 @@ a.news-link:hover .news-date { opacity: 1; }
     z-index: 2;
 }
 
-.album-panel.active .album-panel-art { animation: albumPanelArt .75s ease; }
+.album-panel.active .album-panel-art { animation: albumPanelArt 1s ease; }
 
 @keyframes albumPanelVideo {
     0% { opacity: 0; }
     25% { opacity: 0; }
-    75% { opacity: 1; }
+    50% { opacity: 1; }
 }
 
 .album-panel-video {
@@ -1216,7 +1246,8 @@ a.news-link:hover .news-date { opacity: 1; }
 .album-panel.tdufa h3,
 .album-panel.tdufa ol {
     font-family: MontserratBlack;
-    filter: drop-shadow(0 0 6px black) drop-shadow(0 0 2px black);
+    -webkit-text-stroke: 4px black;
+    paint-order: stroke fill;
     text-transform: uppercase;
 }
 
@@ -1271,12 +1302,19 @@ a.news-link:hover .news-date { opacity: 1; }
     animation: tagCloudAnim 4s ease-in-out infinite;
 }
 
-.remixes-cloud img {
+.remixes-thumb {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 50px;
     border-radius: 4px;
+    overflow: hidden;
+}
+
+.remixes-thumb img {
+    width: 100%;
+    height: 100%;
+    display: block;
     user-select: all;
 }
 
@@ -1327,19 +1365,28 @@ a.news-link:hover .news-date { opacity: 1; }
 }
 
 .album-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    display: block;
+    height: 100%;
     border-radius: 8px 8px 0 0;
+    overflow: hidden;
     transition: transform var(--brand-transition), opacity var(--brand-transition);
     will-change: transform, opacity;
 }
 
+.album-image img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
 .album-container:hover .album-image {
-    transform: scale(.9);
-    opacity: .5;
+    transform: scale(0.9);
+    opacity: 0.5;
 }
 
 .album-container.selected .album-image {
@@ -1544,6 +1591,8 @@ a.news-link:hover .news-date { opacity: 1; }
 .product-image-container {
     position: relative;
     display: flex;
+    border-radius: 12px 12px 0 12px;
+    overflow: hidden;
     transition: transform var(--brand-transition), opacity var(--brand-transition);
 }
 
@@ -1557,7 +1606,6 @@ a.news-link:hover .news-date { opacity: 1; }
     max-width: 400px;
     object-fit: cover;
     user-select: all;
-    border-radius: 12px 12px 0 12px;
     transition: aspect-ratio var(--brand-transition);
 }
 
