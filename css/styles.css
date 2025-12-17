@@ -16,11 +16,21 @@
     --vst-default-subheader: #8c9599;
     --link-1: #f00;
     --link-2: #a00;
+    --black-transparent-1: #0004;
+    --black-transparent-2: #0008;
+    --black-transparent-3: #000c;
+    --white-transparent-1: #fff6;
+    --white-transparent-2: #fff8;
+    --white-transparent-3: #fffa;
+    --red-transparent-1: #4008;
+    --red-transparent-2: #800a;
     --danganronpa-gradient-1: #fc0;
     --danganronpa-gradient-2: #c71;
     --social-icon-size: 80px;
     --social-icon-size-hover: 100px;
     --brand-transition: .25s ease;
+    --image-gradient: transparent 25%, var(--link-2) 125%;
+    --container-gradient: var(--container-gradient);
     --remixes-cloud-size: 500;
 }
 
@@ -30,6 +40,12 @@
 ::selection {
     background-color: var(--link-2);
     color:white
+}
+
+* {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 img, br { user-select: none; }
@@ -90,7 +106,6 @@ a {
     text-decoration-thickness: 2px;
     text-underline-offset: 2px;
     transition: color var(--brand-transition), text-underline-offset var(--brand-transition), text-decoration-color var(--brand-transition), opacity var(--brand-transition);
-    will-change: color, text-underline-offset, opacity;
 }
 
 a:hover {
@@ -102,7 +117,11 @@ a:hover {
 a:active { color: var(--link-2); }
 
 hr {
-    border-color: #feea;
+    border-color: var(--white-transparent-2);
+}
+
+.gpu {
+    transform: translateZ(0);
 }
 
 .nbsp { user-select: none; }
@@ -181,7 +200,7 @@ hr {
     display: none;
     position: absolute;
     right: 0;
-    background-color: #200e;
+    background-color: #200;
     min-width: 100%;
     overflow: auto;
     z-index: 10;
@@ -221,7 +240,6 @@ hr {
     align-items: center;
     min-height: 100px;
     transition: min-height var(--brand-transition);
-    will-change: min-height;
 }
 
 .kpszh-social-icon {
@@ -234,13 +252,11 @@ hr {
     max-height: var(--social-icon-size-hover);
     margin: auto 10px;
     transition: width var(--brand-transition), height var(--brand-transition), max-width var(--brand-transition), max-height var(--brand-transition), margin var(--brand-transition);
-    will-change: width, height, max-width, max-height;
     z-index: 5;
 }
 
 .kpszh-social-icon svg {
     transition: filter var(--brand-transition), transform var(--brand-transition);
-    will-change: filter, transform;
     width: var(--social-icon-size);
 }
 
@@ -262,7 +278,6 @@ hr {
 .kpszh-social-icon .boosty {
     fill: var(--social-default-color);
     transition: fill var(--brand-transition);
-    will-change: fill;
 }
 
 .kpszh-social-icon:hover .youtube { fill: var(--social-youtube) }
@@ -282,7 +297,6 @@ hr {
     margin-block-end: 1em;
     font-size: 20px;
     transition: margin-block-start var(--brand-transition), margin-block-end var(--brand-transition), font-size var(--brand-transition);
-    will-change: margin-block-start, margin-block-end, font-size;
 }
 
 .kpszh-footer-image {
@@ -308,7 +322,7 @@ hr {
     gap: var(--marquee-gap);
     animation: marqueeAppear 2s linear;
     transition: background-color var(--brand-transition);
-    will-change: transform, background-color;
+    will-change: transform;
 }
 
 .kpszh-marquee-link:hover .kpszh-marquee { background-color: var(--marquee-background-hover); }
@@ -327,10 +341,9 @@ hr {
     font-weight: 400;
     font-size: 22px;
     transition: color var(--brand-transition);
-    will-change: color;
 }
 
-.kpszh-marquee-link:hover .kpszh-marquee ul { color: #fffd; }
+.kpszh-marquee-link:hover .kpszh-marquee ul { color: var(--white-transparent-3); }
 
 @keyframes marqueeAppear {
     0% { transform: translateY(-100%); }
@@ -350,7 +363,6 @@ span.danganronpa {
     color: transparent;
     background-clip: text;
     transition: color var(--brand-transition);
-    will-change: color;
 }
 
 #image-viewer {
@@ -358,7 +370,7 @@ span.danganronpa {
     position: fixed;
     inset: 0;
     z-index: 100;
-    background-color: #000c;
+    background-color: var(--black-transparent-3);
     justify-content: center;
     align-items: center;
     opacity: 0;
@@ -526,7 +538,7 @@ audio::-webkit-media-controls-time-remaining-display {
 
     .character-red { background-image: none; }
 
-    .index-latest-excerpt .character-red { color: #fffa; }
+    .index-latest-excerpt .character-red { color: var(--white-transparent-3); }
 
     .kpszh-footer h6 { font-size: 16px; }
 
@@ -543,7 +555,7 @@ audio::-webkit-media-controls-time-remaining-display {
     color: white;
     font-size: 18px;
     font-weight: 400;
-    max-width: 720px;
+    max-width: 800px;
     margin-top: 2em;
     margin-bottom: 1em;
     z-index: 3;
@@ -571,11 +583,10 @@ audio::-webkit-media-controls-time-remaining-display {
 .index-latest-details {
     display: flex;
     flex-direction: row;
-    background: linear-gradient(-30deg, #f002 -50%, transparent 50%, #f002 100%);
-    background-color: #0008;
+    background-color: var(--black-transparent-1);
 }
 
-.index-latest-container:hover .index-latest-details { background-color: #2008; }
+.index-latest-container:hover .index-latest-details { background-color: var(--red-transparent-1); }
 
 .index-latest-info {
     display: flex;
@@ -587,7 +598,6 @@ audio::-webkit-media-controls-time-remaining-display {
 .index-latest-image {
     height: 175px;
     transition: transform var(--brand-transition), opacity var(--brand-transition);
-    will-change: transform, opacity;
 }
 
 .index-latest-image:hover {
@@ -597,11 +607,11 @@ audio::-webkit-media-controls-time-remaining-display {
 
 .index-latest-title { font-size: 28px; }
 
-.index-latest-date { color: #fffa }
+.index-latest-date { color: var(--white-transparent-3) }
 
 .index-latest-excerpt {
     font-weight: 300;
-    color: #fffa;
+    color: var(--white-transparent-3);
 }
 
 .index-latest-link { font-weight: 300; }
@@ -689,20 +699,20 @@ a.news-link:hover { color: white; }
 .news-link-style {
     position: relative;
     display: block;
-    background: linear-gradient(-30deg, #f009 -100%, transparent 50%, transparent 75%, #f009 150%);
+    background: var(--container-gradient);
     background-clip: padding-box;
     box-sizing: border-box;
-    border: 4px solid #0008;
+    border: 4px solid var(--black-transparent-2);
     border-radius: 12px;
     padding: 10px;
-    background-color: #0008;
+    background-color: var(--black-transparent-2);
     width: 100%;
     transition: background-color var(--brand-transition), border var(--brand-transition);
 }
 
 .news-link-style:hover {
-    background-color: #4008;
-    border: 4px solid #800a;
+    background-color: var(--red-transparent-1);
+    border: 4px solid var(--red-transparent-2);
 }
 
 .news-image {
@@ -737,20 +747,20 @@ a.news-link:hover { color: white; }
 .news-title::first-letter { background-image: linear-gradient(var(--link-1), var(--link-2)); }
 
 .news-subtitle {
-    color: #fffa;
+    color: var(--white-transparent-3);
     overflow: hidden;
     font-size: 22px;
 }
 
 .news-excerpt {
     padding-top: 10px;
-    color: #fff8;
+    color: var(--white-transparent-2);
     overflow: hidden;
     font-size: 18px;
 }
 
 .news-date {
-    color: #fffa;
+    color: var(--white-transparent-3);
     font-size: 18px;
     position: absolute;
     top: 12px;
@@ -794,7 +804,7 @@ a.news-link:hover .news-date { opacity: 1; }
     margin-block-end: 0;
     display: inline-block;
     text-decoration: none;
-    color: #fffa;
+    color: var(--white-transparent-3);
 }
 
 .article-header {
@@ -864,19 +874,27 @@ a.news-link:hover .news-date { opacity: 1; }
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, transparent 25%, var(--link-2) 125%);
+    background: linear-gradient(135deg, var(--image-gradient));
     z-index: 2;
     pointer-events: none;
     transition: opacity var(--brand-transition);
 }
 
-.article-image-container.image-red-gradient:hover::after { opacity: 0; }
+.article-image-container.about.image-red-gradient::after {
+    background: linear-gradient(210deg, var(--image-gradient));
+}
+
+.article-image-container.about.image-red-gradient.flip::after {
+    background: linear-gradient(325deg, var(--image-gradient));
+}
+
+.article-image-container.image-red-gradient:hover::after { opacity: .5; }
 
 .article-image-caption {
     position: absolute;
     bottom: 0px;
     right: 0px;
-    background-color: #0008;
+    background-color: var(--black-transparent-2);
     color: white;
     padding: 4px 8px;
     z-index: 3;
@@ -894,17 +912,16 @@ a.news-link:hover .news-date { opacity: 1; }
 .bubble-caption {
     border-radius: 12px;
     box-sizing: border-box;
-    background-color: #0007;
-    border: 4px solid #f00;
+    background-color: var(--black-transparent-2);
     padding: 12px 18px;
     animation: bubbleCaptionWarning 1s ease infinite;
-    will-change: background-color;
+    will-change: background-color, border;
 }
 
 @keyframes bubbleCaptionWarning {
-    0% { background-color: #0007; border: 4px solid #4008; }
-    50% { background-color: #4008; border: 4px solid #800a; }
-    100% { background-color: #0007; border: 4px solid #4008; }
+    0% { background-color: var(--black-transparent-2); border: 4px solid var(--red-transparent-1); }
+    50% { background-color: var(--red-transparent-1); border: 4px solid var(--red-transparent-2); }
+    100% { background-color: var(--black-transparent-2); border: 4px solid var(--red-transparent-1); }
 }
 
 .bubble-caption-text {
@@ -923,20 +940,20 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .kpszh-audio-container {
     border-radius: 12px;
-    background: linear-gradient(-30deg, #f009 -100%, transparent 50%, transparent 75%, #f009 150%);
-    background-color: #0007;
+    background: var(--container-gradient);
+    background-color: var(--black-transparent-2);
     background-clip: padding-box;
     padding: 12px 24px;
     width: calc(50% - var(--audio-grid-gap)/2);
     box-sizing: border-box;
-    border: 4px solid #0008;
+    border: 4px solid var(--black-transparent-2);
     transform: translateZ(0);
     transition: background-color var(--brand-transition), border var(--brand-transition);
 }
 
 .kpszh-audio-container:hover {
-    background-color: #4008;
-    border: 4px solid #800a;
+    background-color: var(--red-transparent-1);
+    border: 4px solid var(--red-transparent-2);
 }
 
 .kpszh-audio-text {
@@ -954,7 +971,7 @@ a.news-link:hover .news-date { opacity: 1; }
 }
 
 .kpszh-audio-subtitle {
-    color: #fff8;
+    color: var(--white-transparent-2);
     font-size: 24px;
     font-weight: 300;
     user-select: none;
@@ -1003,7 +1020,7 @@ a.news-link:hover .news-date { opacity: 1; }
     background-position: center;
     background-clip: padding-box;
     box-sizing: border-box;
-    border: 4px solid #0008;
+    border: 4px solid var(--black-transparent-2);
     justify-content: space-between;
     max-height: 0;
     opacity: 0;
@@ -1068,7 +1085,7 @@ a.news-link:hover .news-date { opacity: 1; }
     height: 150px;
     right: 20px;
     bottom: 20px;
-    filter: drop-shadow(0 0 10px #0008);
+    filter: drop-shadow(0 0 10px var(--black-transparent-2));
     background-image: url(/img/covers/empty.webp);
     transition: transform var(--brand-transition), opacity var(--brand-transition);
     z-index: 4;
@@ -1313,8 +1330,6 @@ a.news-link:hover .news-date { opacity: 1; }
     background-size: cover;
     transform: translate(-50%, -50%);
     z-index: 90;
-    will-change: transform, opacity;
-    animation: tagCloudAnim 4s ease-in-out infinite;
 }
 
 .remixes-thumb {
@@ -1358,24 +1373,24 @@ a.news-link:hover .news-date { opacity: 1; }
     display: flex;
     flex-direction: column;
     border-radius: 12px;
-    background: linear-gradient(-30deg, #f009 -100%, transparent 50%, transparent 75%, #f009 150%);
-    background-color: #0008;
+    background: var(--container-gradient);
+    background-color: var(--black-transparent-2);
     background-clip: padding-box;
     text-decoration: none;
     position: relative;
     box-sizing: border-box;
-    border: 4px solid #0008;
+    border: 4px solid var(--black-transparent-2);
     transition: background-color var(--brand-transition), border var(--brand-transition);
     overflow: hidden;
 }
 
 .album-container:hover {
-    background-color: #4008;
-    border: 4px solid #800a;
+    background-color: var(--red-transparent-1);
+    border: 4px solid var(--red-transparent-2);
 }
 
 .album-container.selected {
-    background-color: #4008;
+    background-color: var(--red-transparent-1);
     border: 4px solid #800c;
 }
 
@@ -1388,7 +1403,6 @@ a.news-link:hover .news-date { opacity: 1; }
     border-radius: 8px 8px 0 0;
     overflow: hidden;
     transition: transform var(--brand-transition), opacity var(--brand-transition);
-    will-change: transform, opacity;
 }
 
 .album-image img {
@@ -1432,7 +1446,7 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .album-date {
     font-size: 18px;
-    color: #fff8;
+    color: var(--white-transparent-2);
 }
 
 .album-container.wide .album-image { aspect-ratio: 261 / 126; }
@@ -1478,13 +1492,13 @@ a.news-link:hover .news-date { opacity: 1; }
 .merch-container {
     max-width: 330px;
     border-radius: 12px;
-    background: linear-gradient(-30deg, #f009 -100%, transparent 50%, transparent 75%, #f009 150%);
-    background-color: #0008;
+    background: var(--container-gradient);
+    background-color: var(--black-transparent-2);
     background-clip: padding-box;
     text-decoration: none;
     position: relative;
     box-sizing: border-box;
-    border: 4px solid #0008;
+    border: 4px solid var(--black-transparent-2);
     opacity: 0;
     transition: background-color var(--brand-transition), border var(--brand-transition);
 }
@@ -1492,8 +1506,8 @@ a.news-link:hover .news-date { opacity: 1; }
 .merch-container.visible { animation: merchContainerSwipe 1s ease forwards; }
 
 .merch-container:hover {
-    background-color: #4008;
-    border: 4px solid #800a;
+    background-color: var(--red-transparent-1);
+    border: 4px solid var(--red-transparent-2);
 }
 
 .merch-container:nth-child(1) { animation-delay: 0s }
@@ -1505,7 +1519,6 @@ a.news-link:hover .news-date { opacity: 1; }
     width: 100%;
     border-radius: 8px 8px 0 0;
     transition: transform var(--brand-transition), border-radius var(--brand-transition);
-    will-change: transform, border-radius;
 }
 
 .merch-container:hover .merch-image {
@@ -1537,19 +1550,19 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .merch-price-nodiscount {
     font-size: 14px;
-    color: #fff6;
+    color: var(--white-transparent-1);
     text-decoration-line: line-through;
 }
 
 .merch-price {
     font-size: 22px;
-    color: #fff8;
+    color: var(--white-transparent-2);
 }
 
 .merch-take-a-look {
     font-weight: 400;
     text-align: right;
-    color: #fffa;
+    color: var(--white-transparent-3);
     margin-block: .5em;
 }
 
@@ -1571,7 +1584,7 @@ a.news-link:hover .news-date { opacity: 1; }
     margin-block-end: 0;
     display: inline-block;
     text-decoration: none;
-    color: #fffa;
+    color: var(--white-transparent-3);
 }
 
 .product-container {
@@ -1630,7 +1643,7 @@ a.news-link:hover .news-date { opacity: 1; }
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, transparent 25%, var(--link-2) 125%);
+    background: linear-gradient(135deg, var(--image-gradient));
     border-radius: 12px 12px 0 12px;
     z-index: 2;
     pointer-events: none;
@@ -1643,7 +1656,7 @@ a.news-link:hover .news-date { opacity: 1; }
     position: absolute;
     bottom: 0px;
     right: 0px;
-    background-color: #0008;
+    background-color: var(--black-transparent-2);
     color: white;
     padding: 4px 8px;
     z-index: 3;
@@ -1668,7 +1681,7 @@ a.news-link:hover .news-date { opacity: 1; }
 .product-add-button {
     border-radius: 4px;
     background-color: #100;
-    background-image: linear-gradient(325deg, transparent 40%, #fff8 50%, transparent 60%);
+    background-image: linear-gradient(325deg, transparent 40%, var(--white-transparent-2) 50%, transparent 60%);
     background-size: 300% auto;
     padding: 12px 24px;
     width: 250px;
@@ -1733,7 +1746,6 @@ a.news-link:hover .news-date { opacity: 1; }
     filter: sepia(1) hue-rotate(-47deg) saturate(5) brightness(.6) drop-shadow(0px 0px 40px #f55a );
     align-items: center;
     transition: filter var(--brand-transition);
-    will-change: filter;
 }
 
 .daw-preview:hover { filter: sepia(0) hue-rotate(0deg) saturate(1) brightness(1) drop-shadow(0 0 25px #f553); }
@@ -1741,7 +1753,6 @@ a.news-link:hover .news-date { opacity: 1; }
 .daw-preview img, .daw-preview video {
     max-width: 720px;
     transition: max-width var(--brand-transition);
-    will-change: max-width;
 }
 
 .daw-preview:hover img, .daw-preview:hover video { max-width: 800px; }
@@ -1753,7 +1764,6 @@ a.news-link:hover .news-date { opacity: 1; }
     margin-block-end: 0;
     opacity: 0;
     transition: opacity var(--brand-transition);
-    will-change: opacity;
     text-transform: none;
 }
 
@@ -1791,7 +1801,6 @@ a.news-link:hover .news-date { opacity: 1; }
     filter: sepia(1) hue-rotate(-47deg) saturate(5) brightness(.65);
     transform: translateZ(0);
     transition: filter var(--brand-transition), padding var(--brand-transition);
-    will-change: filter, padding;
 }
 
 .vst-wrapper:hover .vst-preview {
@@ -1808,7 +1817,6 @@ a.news-link:hover .news-date { opacity: 1; }
     margin-left: 4px;
     user-select: auto;
     transition: margin-top var(--brand-transition), margin-bottom var(--brand-transition), font-size var(--brand-transition);
-    will-change: margin-top, margin-bottom, font-size;
 }
 
 .vst-wrapper:hover .vst-header {
@@ -1823,7 +1831,6 @@ a.news-link:hover .news-date { opacity: 1; }
     -webkit-user-drag: none;
     width: 360px;
     transition: width var(--brand-transition);
-    will-change: width;
 }
 
 .vst-wrapper:hover img, .graphics-wrapper:hover img { width: 400px; }
@@ -1837,7 +1844,6 @@ a.news-link:hover .news-date { opacity: 1; }
     fill: white;
     opacity: 1;
     transition: transform var(--brand-transition), top var(--brand-transition), opacity var(--brand-transition);
-    will-change: transform, top, opacity;
     filter: drop-shadow(0px 0px 20px rgb(255, 0, 0));
 }
 
@@ -1860,7 +1866,6 @@ a.news-link:hover .news-date { opacity: 1; }
     width: 160px;
     filter: sepia(1) hue-rotate(-47deg) saturate(5) brightness(.6) drop-shadow(0px 0px 15px #f557);
     transition: filter var(--brand-transition), width var(--brand-transition);
-    will-change: filter, width;
     -webkit-user-drag: none;
 }
 .sample-pack img:hover {
@@ -1895,7 +1900,6 @@ a.news-link:hover .news-date { opacity: 1; }
     width: 160px;
     filter: sepia(1) hue-rotate(-47deg) saturate(5) brightness(.6) drop-shadow(0px 0px 25px #f557);
     transition: width var(--brand-transition), filter var(--brand-transition);
-    will-change: width, filter;
     -webkit-user-drag: none;
 }
 
@@ -1921,7 +1925,6 @@ a.news-link:hover .news-date { opacity: 1; }
     width: fit-content;
     filter: sepia(1) hue-rotate(-47deg) saturate(5) brightness(.75);
     transition: filter var(--brand-transition);
-    will-change: filter;
 }
 
 .graphics-wrapper:hover .graphics-preview { filter: sepia(0) hue-rotate(0deg) saturate(1) brightness(1) drop-shadow(0px 0px 15px #f555); }
@@ -1993,7 +1996,6 @@ a.news-link:hover .news-date { opacity: 1; }
     user-select: none;
     color: white;
     transition: transform var(--brand-transition), color var(--brand-transition);
-    will-change: transform, color;
 }
 
 .faq-question.active .arrow {
@@ -2007,7 +2009,7 @@ a.news-link:hover .news-date { opacity: 1; }
     max-height: 0;
     overflow: hidden;
     transition: max-height var(--brand-transition);
-    background-color: #0004;
+    background-color: var(--black-transparent-1);
 }
 
 .faq-answer p {

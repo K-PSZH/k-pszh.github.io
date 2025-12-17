@@ -38,7 +38,7 @@
         <div id="main" class="projects">
             <div id="main-body">
                 <h1 data-i18n="projects-title" id="projectsTitle"></h1>
-                <div class="album-panel" id="albumPanel">
+                <div class="album-panel gpu" id="albumPanel">
                     <div class="album-panel-info">
                         <h2 class="album-panel-type" data-i18n></h2>
                         <h1 class="album-panel-title"></h1>
@@ -48,10 +48,10 @@
                         <h3 class="album-panel-links"></h3>
                     </div>
                     <img class="album-panel-art" id="albumPanelArt">
-                    <img class="album-panel-cover zoomable" data-caption id="albumPanelCover">
-                    <video autoplay loop muted class="album-panel-video" id="albumPanelVideo"></video>
+                    <img class="album-panel-cover cursor-hoverable zoomable" data-caption id="albumPanelCover">
+                    <div class="album-panel-video"><video autoplay loop muted id="albumPanelVideo"></video></div>
                 </div>
-                <div class="album-panel" id="remixesPanel">
+                <div class="album-panel gpu" id="remixesPanel">
                     <div class="remixes-cloud-container">
                         <div class="remixes-cloud">
                             <div class="remixes-thumb"><img src="/img/projects/remixes-thumb-1.webp"></div>
@@ -86,7 +86,7 @@
                     <p data-i18n="projects-remixes-description"></p>
                 </div>
                 <div class="projects-grid">
-                    <a class="album-container" href="#projectsTitle">
+                    <a class="album-container gpu" href="#projectsTitle">
                         <div class="album-image">
                             <img data-album="mh" src="/img/covers/mh.webp">
                         </div>
@@ -95,7 +95,7 @@
                             <div class="album-date" data-i18n="projects-mh-date"></div>
                         </div>
                     </a>
-                    <a class="album-container" href="#projectsTitle">
+                    <a class="album-container gpu" href="#projectsTitle">
                         <div class="album-image">
                             <img data-album="mp" src="/img/covers/mp.webp">
                         </div>
@@ -104,7 +104,7 @@
                             <div class="album-date" data-i18n="projects-mp-date"></div>
                         </div>
                     </a>
-                    <a class="album-container" href="#projectsTitle">
+                    <a class="album-container gpu" href="#projectsTitle">
                         <div class="album-image">
                             <img data-album="md" src="/img/covers/md.webp">
                         </div>
@@ -113,7 +113,7 @@
                             <div class="album-date" data-i18n="projects-md-date"></div>
                         </div>
                     </a>
-                    <a class="album-container" href="#projectsTitle">
+                    <a class="album-container gpu" href="#projectsTitle">
                         <div class="album-image">
                             <img data-album="tdufa" src="/img/covers/tdufa.webp">
                         </div>
@@ -122,7 +122,7 @@
                             <div class="album-date" data-i18n="projects-tdufa-date"></div>
                         </div>
                     </a>
-                    <a class="album-container wide" href="#projectsTitle">
+                    <a class="album-container wide gpu" href="#projectsTitle">
                         <div class="album-image">
                             <img data-album="remixes" src="/img/covers/remixes.webp">
                         </div>                        <div class="album-info">
@@ -315,7 +315,8 @@
                         art: "/img/projects/mydespair.webp",
                         cover: "/img/covers/md.webp",
                         cover_caption: "projects-md-cover-image-caption",
-                        video: "/img/projects/mydespair_deco.webm",
+                        video: "/img/projects/mydespair_vid.webm",
+                        poster: "/img/projects/mydespair_vid_poster.webp",
                         type: "projects-album",
                         title: "My Despair",
                         date: "projects-md-date",
@@ -372,6 +373,7 @@
                             cover.dataset.caption = albums[key].cover_caption;
                             art.src = albums[key].art || ''; // Арт
                             video.src = albums[key].video || ''; // Видео для арта (My Despair)
+                            video.poster = albums[key].poster || ''; // Постер-заглушка для арта (My Despair)
 
                             if (albums[key].type) {
                                 type.setAttribute("data-i18n", albums[key].type); // Тип релиза
