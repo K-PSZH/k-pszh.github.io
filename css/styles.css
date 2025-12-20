@@ -584,6 +584,7 @@ audio::-webkit-media-controls-time-remaining-display {
     display: flex;
     flex-direction: row;
     background-color: var(--black-transparent-1);
+    backdrop-filter: blur(6px);
 }
 
 .index-latest-container:hover .index-latest-details { background-color: var(--red-transparent-1); }
@@ -657,16 +658,15 @@ audio::-webkit-media-controls-time-remaining-display {
     width: 30vw;
     right: 0;
     margin-right: 5vw;
-    animation-name: meAnim;
-    animation-duration: 2s;
+    animation: meAnim 2s ease forwards;
 }
 
 .index-empty-space { min-height: 360px; }
 
 @keyframes meAnim {
-    0% { transform: translateX(-400px); opacity: 0; }
-    40% { transform: translateX(-400px); opacity: 0; }
-    100% { transform: translateX(0px); opacity: 1; }
+    0% { transform: translateX(-400px) rotate(-22.5deg); opacity: 0; }
+    40% { transform: translateX(-400px) rotate(-22.5deg); opacity: 0; }
+    100% { transform: translateX(-100px) rotate(0); opacity: 1; }
 }
 
 @media only screen and (max-width: 1080px) {
@@ -888,7 +888,7 @@ a.news-link:hover .news-date { opacity: 1; }
     background: linear-gradient(325deg, var(--image-gradient));
 }
 
-.article-image-container.image-red-gradient:hover::after { opacity: .5; }
+.article-image-container.image-red-gradient:hover::after { opacity: .2; }
 
 .article-image-caption {
     position: absolute;
@@ -1206,10 +1206,19 @@ a.news-link:hover .news-date { opacity: 1; }
     margin-block-start: .5em;
 }
 
-.album-panel.mh ol span {
+.album-panel.mh li,
+.album-panel.mh li span {
+    transition: color var(--brand-transition);
+}
+
+.album-panel.mh li span {
     color: #ccc;
     font-size: .85em;
 }
+
+.album-panel.mh li:hover { color: #888; }
+
+.album-panel.mh li:hover span { color: #555; }
 
 .album-panel.mp h1,
 .album-panel.mp h2,
@@ -1265,6 +1274,10 @@ a.news-link:hover .news-date { opacity: 1; }
     line-height: 1.6;
     margin-block-start: .5em;
 }
+
+.album-panel.md li { transition: color var(--brand-transition); }
+
+.album-panel.md li:hover { color: var(--danganronpa) }
 
 .album-panel.tdufa h1,
 .album-panel.tdufa h2,
@@ -1750,12 +1763,14 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .daw-preview:hover { filter: sepia(0) hue-rotate(0deg) saturate(1) brightness(1) drop-shadow(0 0 25px #f553); }
 
-.daw-preview img, .daw-preview video {
+.daw-preview img,
+.daw-preview video {
     max-width: 720px;
     transition: max-width var(--brand-transition);
 }
 
-.daw-preview:hover img, .daw-preview:hover video { max-width: 800px; }
+.daw-preview:hover img,
+.daw-preview:hover video { max-width: 800px; }
 
 .daw-preview h1 {
     font-weight: 300;
@@ -1771,7 +1786,8 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .daw-preview a { font-weight: 400; }
 
-.music-grid, .video-grid {
+.music-grid,
+.video-grid {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -1784,7 +1800,8 @@ a.news-link:hover .news-date { opacity: 1; }
     min-height: 920px;
 }
 
-.vst-wrapper, .graphics-wrapper {
+.vst-wrapper,
+.graphics-wrapper {
     position: relative;
     display: flex;
 }
@@ -1827,13 +1844,15 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .vst-preview span { color: var(--vst-default-subheader); }
 
-.vst-preview img, .graphics-preview img {
+.vst-preview img,
+.graphics-preview img {
     -webkit-user-drag: none;
     width: 360px;
     transition: width var(--brand-transition);
 }
 
-.vst-wrapper:hover img, .graphics-wrapper:hover img { width: 400px; }
+.vst-wrapper:hover img,
+.graphics-wrapper:hover img { width: 400px; }
 
 #main.tools .logo {
     position: absolute;
@@ -1880,7 +1899,8 @@ a.news-link:hover .news-date { opacity: 1; }
     min-height: 280px;
 }
 
-.daw-wrapper:hover .logo, .vst-wrapper:hover .logo {
+.daw-wrapper:hover .logo,
+.vst-wrapper:hover .logo {
     transform: translate(-50%, -50%) scale(.5);
     top: 25%;
     opacity: 0;
@@ -1943,7 +1963,8 @@ a.news-link:hover .news-date { opacity: 1; }
     
     .daw-preview h1 { opacity: 1; }
     
-    .daw-preview:hover img, .daw-preview:hover video { max-width: 720px; }
+    .daw-preview:hover img,
+    .daw-preview:hover video { max-width: 720px; }
     
     .vst-wrapper .vst-preview {
         padding: 0px 3px 3px 3px;
