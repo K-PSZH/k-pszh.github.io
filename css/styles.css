@@ -1051,11 +1051,11 @@ a.news-link:hover .news-date { opacity: 1; }
 }
 
 .album-panel.mh::before {
-    opacity: .25;
+    opacity: .2;
 }
 
 .album-panel.mp::before {
-    opacity: .75;
+    opacity: .5;
 }
 
 .album-panel.md::before,
