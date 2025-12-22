@@ -38,9 +38,9 @@
         <div id="main" class="tools">
             <div id="main-body">
                 <div class="music">
-                    <h1>TOOLS I USE</h1>
-                    <h2>FOR <span class="cursor-hoverable">MUSIC</span> PRODUCTION</h2>
-                    <h3><b>DAW:</b> FL Studio 21</h3>
+                    <h1 data-i18n="tools-title"></h1>
+                    <h2 data-i18n="tools-music-subtitle"></h2>
+                    <h3 data-i18n="tools-music-subtitle-daw"></h3>
                     <div class="daw-wrapper">
                         <div class="daw-preview">
                             <a href="https://www.image-line.com" target="_blank" title="Get FL Studio">
@@ -48,7 +48,7 @@
                                     <source src="/img/tools/music/flstudio.webm" type="video/webm"/>
                                 </video>
                             </a>
-                            <h1>A preview of FL Studio project for <a href="https://youtu.be/2M0d_sTrlE0?t=1089">"A City of Hallucination"</a></h1>
+                            <h1 data-i18n="tools-music-caption-daw"></h1>
                         </div>
                         <svg class="logo" viewBox="630 150 10500 2700" width="400px" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;">
                             <path d="M1617.13 715.43l-16.94 0c-29.96,-128.62 -248.49,-262.46 -423.33,-262.46 -403.83,0 -584.47,491.06 -465.66,491.06 70.73,0 119.45,-18.3 186.26,-33.86 -107.27,160.19 -134.26,191.09 -189.69,411.43 -32.82,130.46 -57.91,319.21 -64.23,519.26l0 191.15c8.93,272.69 58.22,539.03 174.96,684.31 62.32,77.56 130.39,107.62 201.8,106.83 71.4,-0.78 146.13,-32.42 221.76,-78.26 30.3,-18.37 61.99,-42.27 88.52,-63.88l85.59 -75.28c106.13,-106.49 192.11,-224.19 280.73,-345.79 126.28,-173.28 368.96,-593.08 368.96,-875.64 67.74,45.36 141.33,270.7 239.78,36.58 124.76,-296.67 -102.24,-680.05 -451.45,-680.05 -48.99,0 -92.13,16.94 -152.4,16.94 0,-123.07 170.63,-369.74 268.74,-467.86 25.93,-25.92 33.68,-32.49 64.14,-54.42 43,-30.96 52.79,-66.7 27.56,-68.42l-3.95 0c-15.46,0.91 -41.11,12.27 -77.29,40.17 -71.82,55.39 -80.58,77.55 -124.63,120.9 -23.48,23.09 -37.72,42.3 -58.8,68.19 -50.22,61.66 -174.34,245.94 -180.43,319.1z"/>
@@ -62,13 +62,17 @@
                             <path d="M9330.27 2400.29l118.53 0c19.51,0 25.4,-5.89 25.4,-25.4l0 -1303.86 -143.93 0 0 1329.26z"/>
                         </svg>
                     </div>
-                    <h3>ADDITIONAL <b>VST PLUGINS</b></h3>
+                    <h3 data-i18n="tools-music-subtitle-vsts"></h3>
                     <div class="music-grid">
                         <div class="vst-wrapper">
                             <div class="vst-preview">
-                                <div class="vst-header cursor-hoverable">Omnisphere 3 <span>(by Spectrasonics)</span></div>
+                                <div class="vst-header cursor-hoverable">
+                                    <img src="/img/tools/music/vst_header_left.webp">
+                                    <p>Omnisphere 3 <span>(by Spectrasonics)</span></p>
+                                    <img class="right" src="/img/tools/music/vst_header_right.webp">
+                                </div>
                                 <a href="https://www.spectrasonics.net/products/omnisphere/overview.php" target="_blank" title="Get Omnisphere">
-                                    <img src="/img/tools/music/omnisphere3.webp">
+                                    <img class="vst-preview-image" src="/img/tools/music/omnisphere3.webp">
                                 </a>
                             </div>
                             <svg class="logo" viewBox="0 0 2321 149" width="325px" xmlns="http://www.w3.org/2000/svg">
@@ -77,9 +81,13 @@
                         </div>
                         <div class="vst-wrapper">
                             <div class="vst-preview">
-                                <div class="vst-header cursor-hoverable">Serum <span>(by Xfer Records)</span></div>
+                                <div class="vst-header cursor-hoverable">
+                                    <img src="/img/tools/music/vst_header_left.webp">
+                                    <p>Serum <span>(by Xfer Records)</span></p>
+                                    <img class="right" src="/img/tools/music/vst_header_right.webp">
+                                </div>
                                 <a href="https://xferrecords.com/products/serum-2" target="_blank" title="Get Serum">
-                                    <img src="/img/tools/music/serum.webp">
+                                    <img class="vst-preview-image" src="/img/tools/music/serum.webp">
                                 </a>
                             </div>
                             <svg class="logo" viewBox="0 0 1500 464" width="225px" xmlns="http://www.w3.org/2000/svg">
@@ -93,9 +101,13 @@
                         </div>
                         <div class="vst-wrapper">
                             <div class="vst-preview">
-                                <div class="vst-header cursor-hoverable">Addictive Keys <span>(by XLN Audio)</span></div>
+                                <div class="vst-header cursor-hoverable">
+                                    <img src="/img/tools/music/vst_header_left.webp">
+                                    <p>Addictive Keys <span>(by XLN Audio)</span></p>
+                                    <img class="right" src="/img/tools/music/vst_header_right.webp">
+                                </div>
                                 <a href="https://www.xlnaudio.com/products/addictive_keys" target="_blank" title="Get Addictive Keys">
-                                    <img src="/img/tools/music/addictivekeys.webp">
+                                    <img class="vst-preview-image" src="/img/tools/music/addictivekeys.webp">
                                 </a>
                             </div>
                             <svg class="logo" viewBox="0 0 318.34 75.02" width="250px" xmlns="http://www.w3.org/2000/svg">
@@ -118,9 +130,13 @@
                         </div>
                         <div class="vst-wrapper">
                             <div class="vst-preview">
-                                <div class="vst-header cursor-hoverable">Massive X <span>(by Native Instruments)</span></div>
+                                <div class="vst-header cursor-hoverable">
+                                    <img src="/img/tools/music/vst_header_left.webp">
+                                    <p>Massive X <span>(by Native Instruments)</span></p>
+                                    <img class="right" src="/img/tools/music/vst_header_right.webp">
+                                </div>
                                 <a href="https://www.native-instruments.com/en/products/komplete/synths/massive-x" target="_blank" title="Get Massive X">
-                                    <img src="/img/tools/music/massivex.webp">
+                                    <img class="vst-preview-image" src="/img/tools/music/massivex.webp">
                                 </a>
                             </div>
                             <svg class="logo" viewBox="0 0 485 42" width="250px" xmlns="http://www.w3.org/2000/svg">
@@ -129,9 +145,13 @@
                         </div>
                         <div class="vst-wrapper">
                             <div class="vst-preview">
-                                <div class="vst-header cursor-hoverable">Ample Metal Hellrazer <span>(by Ample Sound)</span></div>
+                                <div class="vst-header cursor-hoverable">
+                                    <img src="/img/tools/music/vst_header_left.webp">
+                                    <p>Ample Metal Hellrazer <span>(by Ample Sound)</span></p>
+                                    <img class="right" src="/img/tools/music/vst_header_right.webp">
+                                </div>
                                 <a href="https://www.amplesound.net/en/pro-pd.asp?id=33" target="_blank" title="Get Ample Metal Hellrazer">
-                                    <img src="/img/tools/music/amplemetalhellrazer.webp">
+                                    <img class="vst-preview-image" src="/img/tools/music/amplemetalhellrazer.webp">
                                 </a>
                             </div>
                             <svg class="logo" viewBox="0 0 1534 64" width="325px" xmlns="http://www.w3.org/2000/svg">
@@ -140,9 +160,13 @@
                         </div>
                         <div class="vst-wrapper">
                             <div class="vst-preview">
-                                <div class="vst-header cursor-hoverable">Sylenth1 <span>(by LennarDigital)</span></div>
+                                <div class="vst-header cursor-hoverable">
+                                    <img src="/img/tools/music/vst_header_left.webp">
+                                    <p>Sylenth1 <span>(by LennarDigital)</span></p>
+                                    <img class="right" src="/img/tools/music/vst_header_right.webp">
+                                </div>
                                 <a href="https://www.lennardigital.com/sylenth1" target="_blank" title="Get Sylenth1">
-                                    <img src="/img/tools/music/sylenth1.webp">
+                                    <img class="vst-preview-image" src="/img/tools/music/sylenth1.webp">
                                 </a>
                             </div>
                             <svg class="logo" viewBox="0 0 1898 440" width="225px" xmlns="http://www.w3.org/2000/svg">
@@ -151,9 +175,13 @@
                         </div>
                         <div class="vst-wrapper">
                             <div class="vst-preview">
-                                <div class="vst-header cursor-hoverable">FLEX <span>(by Image-Line)</span></div>
+                                <div class="vst-header cursor-hoverable">
+                                    <img src="/img/tools/music/vst_header_left.webp">
+                                    <p>FLEX <span>(by Image-Line)</span></p>
+                                    <img class="right" src="/img/tools/music/vst_header_right.webp">
+                                </div>
                                 <a href="https://www.image-line.com/flex" target="_blank" title="Get FLEX packs">
-                                    <img src="/img/tools/music/flex.webp">
+                                    <img class="vst-preview-image" src="/img/tools/music/flex.webp">
                                 </a>
                             </div>
                             <svg class="logo" viewBox="0 0 210 95" width="125px" xmlns="http://www.w3.org/2000/svg">
@@ -165,9 +193,13 @@
                         </div>
                         <div class="vst-wrapper">
                             <div class="vst-preview">
-                                <div class="vst-header cursor-hoverable">Stylus RMX <span>(by Spectrasonics)</span></div>
+                                <div class="vst-header cursor-hoverable">
+                                    <img src="/img/tools/music/vst_header_left.webp">
+                                    <p>Stylus RMX <span>(by Spectrasonics)</span></p>
+                                    <img class="right" src="/img/tools/music/vst_header_right.webp">
+                                </div>
                                 <a href="https://www.spectrasonics.net/products/stylusrmx/overview.php" target="_blank" title="Get Stylus RMX">
-                                    <img src="/img/tools/music/stylusrmx.webp">
+                                    <img class="vst-preview-image" src="/img/tools/music/stylusrmx.webp">
                                 </a>
                             </div>
                             <svg class="logo" viewBox="0 0 762 302" width="200px" xmlns="http://www.w3.org/2000/svg">
@@ -183,9 +215,13 @@
                         </div>
                         <div class="vst-wrapper">
                             <div class="vst-preview">
-                                <div class="vst-header cursor-hoverable">OsTirus <span>(by The Usual Suspects)</span></div>
+                                <div class="vst-header cursor-hoverable">
+                                    <img src="/img/tools/music/vst_header_left.webp">
+                                    <p>OsTirus <span>(by The Usual Suspects)</span></p>
+                                    <img class="right" src="/img/tools/music/vst_header_right.webp">
+                                </div>
                                 <a href="https://dsp56300.wordpress.com/ostirus-downloads" target="_blank" title="Get OsTirus">
-                                    <img src="/img/tools/music/ostirus.webp">
+                                    <img class="vst-preview-image" src="/img/tools/music/ostirus.webp">
                                 </a>
                             </div>
                             <svg class="logo" viewBox="0 0 889 135" width="200px" xmlns="http://www.w3.org/2000/svg">
@@ -193,7 +229,7 @@
                             </svg>
                         </div>
                     </div>
-                    <h3><b>SAMPLE PACKS</b> YOU CAN HEAR IN MY MUSIC</h3>
+                    <h3 data-i18n="tools-music-subtitle-packs"></h3>
                     <div class="sample-packs-grid">
                         <div class="sample-pack">
                             <a href="https://www.vengeance-sound.com/samples.php" target="_blank" title="Get Vengeance Samplepacks">
@@ -256,7 +292,7 @@
                             </a>
                         </div>
                     </div>
-                    <h3><b>ARTISTS I INSPIRED BY</b></h3>
+                    <h3 data-i18n="tools-music-subtitle-inspiration"></h3>
                     <div class="inspiration">
                         <div class="inspiration-artist">
                             <div class="inspiration-artist-picture">
@@ -310,9 +346,9 @@
                 </div>
                 <hr>
                 <div class="video">
-                    <h1>TOOLS I USE</h1>
-                    <h2>FOR <span class="cursor-hoverable">VIDEO</span> PRODUCTION</h2>
-                    <h3><b>VIDEO SOFTWARE:</b> Adobe After Effects</h3>
+                    <h1 data-i18n="tools-title">TOOLS I USE</h1>
+                    <h2 data-i18n="tools-video-subtitle"></h2>
+                    <h3 data-i18n="tools-video-subtitle-daw"></h3>
                     <div class="daw-wrapper">
                         <div class="daw-preview">
                             <a href="https://www.adobe.com/products/aftereffects.html" target="_blank" title="Get Adobe After Effects">
@@ -320,7 +356,7 @@
                                     <source src="/img/tools/video/adobeaftereffects.webm" type="video/webm"/>
                                 </video>
                             </a>
-                            <h1>A preview of Adobe After Effects project for <a href="https://youtu.be/2M0d_sTrlE0">"My Hallucination"</a> video</h1>
+                            <h1 data-i18n="tools-video-caption-daw"></h1>
                         </div>
                         <svg class="logo" viewBox="0 0 2000 383" width="400px" xmlns="http://www.w3.org/2000/svg">
                             <path d="M145.5,172.5c-1.6-4.9-3-9.5-4.6-14.4c-1.6-4.8-3-9.4-4.3-13.9c-1.3-4.4-2.4-8.5-3.5-12.2h-0.3   c-1.4,6.7-3.2,13.5-5.4,20.2c-2.4,7.5-4.8,15.3-7.3,23.2c-2.1,8-4.6,15.3-7,21.9h40.3c-0.9-3.3-2.2-7.2-3.6-11.3   C148.3,181.8,146.9,177.2,145.5,172.5z"/>
@@ -329,12 +365,12 @@
                             <path d="M550.7,224.8l11.3,32.6c0.4,0.8,1,1.2,2,1.2h21.9c1.2,0,1.4-0.6,1.2-1.8l-45.1-125.4  c-0.2-1-0.4-1.2-1.4-1.2h-27.2c-0.8,0-1.2,0.6-1.2,1.4c-0.4,6.6-1,8.6-1.8,10.6l-40.2,114.4c-0.2,1.4,0.2,2,1.4,2h19.5  c1.2,0,1.8-0.4,2.1-1.6l10.8-32.2L550.7,224.8L550.7,224.8z M510.2,203.5c5.8-17.8,13.7-40.6,16.8-53.7h0.2  c3.9,13.7,13.1,40.8,17.2,53.7H510.2z M644,260.5c11.7,0,24.2-2.1,36.9-7.6c1-0.4,1.2-0.8,1.2-1.8c-0.4-3.5-0.8-8.6-0.8-12.5v-118  c0-0.8,0-1.2-1-1.2h-21.3c-0.8,0-1.2,0.4-1.2,1.4v40c-3.3-0.4-5.7-0.6-8.4-0.6c-34.4,0-55.5,22.7-55.5,51  C594,244.1,615.7,260.5,644,260.5L644,260.5z M657.9,238.6c-3.5,1.2-7.4,1.6-11.3,1.6c-15.6,0-28.3-8.8-28.3-30.1  c0-18.9,13.1-30.1,30.5-30.1c3.5,0,6.6,0.4,9.2,1.4L657.9,238.6L657.9,238.6z M747.5,160.3c-29.3,0-47.5,22.5-47.5,50.2  c0,24.8,14.5,50,47.1,50c27.5,0,46.9-20.3,46.9-50.6C794,183.2,777.6,160.3,747.5,160.3L747.5,160.3z M746.4,180  c16.6,0,23.6,14.3,23.6,30.5c0,20.1-10.3,30.1-22.5,30.1c-14.8,0-23.6-12.5-23.6-30.5C723.9,191.5,733.3,180,746.4,180L746.4,180z   M813.8,119.5c-0.8,0-1.4,0.4-1.4,1.4v133.6c0,0.6,0.6,1.6,1.4,1.8c9.4,2.9,19.1,4.3,29.3,4.3c28.9,0,57-18,57-54.1  c0-26.2-18-46.1-46.1-46.1c-6.5,0-12.5,1-17.8,2.7l-0.2-42c0-1.4-0.4-1.6-1.8-1.6L813.8,119.5L813.8,119.5z M876.1,208.7  c0,21.7-14.8,31.8-30.9,31.8c-3.3,0-6.2-0.2-9-1v-57c3.1-1.2,6.8-2.1,13.7-2.1C865.3,180.4,876.1,190.2,876.1,208.7z M977.4,215.8  c9.6,0,17.4-0.2,20.1-0.8c1-0.2,1.4-0.6,1.6-1.4c0.6-2.1,0.8-6.6,0.8-12.1c0-18.6-11.1-41.2-40-41.2c-29.5,0-45.9,24-45.9,51.2  c0,24,12.7,49,48.2,49c13.3,0,21.9-2.1,29.3-5.7c0.8-0.4,1.2-1,1.2-2.1v-16.2c0-1-0.6-1.2-1.2-0.8c-7.4,3.1-15.4,4.7-24.2,4.7  c-19.9,0-28.9-10.9-29.5-24.6L977.4,215.8L977.4,215.8z M937.8,199c1.6-9.6,7.6-19.9,21.1-19.9c14.8,0,18.8,12.5,18.8,18.2  c0,0.2,0,1,0,1.6c-0.8,0.2-3.3,0.2-10.7,0.2H937.8L937.8,199z M1121.2,224.8l10.8,32.6c0.4,0.8,0.9,1.2,1.9,1.2h20.9  c1.1,0,1.3-0.6,1.1-1.8l-43.2-125.4c-0.2-1-0.4-1.2-1.3-1.2h-26c-0.8,0-1.1,0.6-1.1,1.4c-0.4,6.6-0.9,8.6-1.7,10.6l-38.5,114.4  c-0.2,1.4,0.2,2,1.3,2h18.7c1.1,0,1.7-0.4,2.1-1.6l10.3-32.2L1121.2,224.8L1121.2,224.8z M1082.5,203.5  c5.6-17.8,13.1-40.6,16.1-53.7h0.2c3.7,13.7,12.5,40.8,16.4,53.7H1082.5L1082.5,203.5z M1192.2,162.2v-7.6  c0-12.7,4.3-16.6,11.8-16.6c2.1,0,4.5,0.4,6.5,1.2c0.9,0.4,1.3-0.4,1.3-1.2v-17.2c0-1-0.2-1.6-1.1-1.8c-1.9-0.8-4.1-1.4-9.3-1.4  c-13.8,0-23,6.1-27.7,16.6c-2.8,5.9-4.1,13.3-4.1,21.7v6.2h-11.2c-0.8,0-1.3,0.4-1.3,1.2v17c0,1,0.2,1.6,1.1,1.6h11.4v74.8  c0,1.2,0.4,1.8,1.5,1.8h19.4c1.3,0,1.7-0.6,1.7-1.8V182h30.1v51.4c0,19.3,9.5,27.1,24.8,27.1c6.2,0,11.6-0.8,16.4-3.3  c1.1-0.4,1.3-1.2,1.3-2.4v-14.1c0-1.2-0.8-1.4-1.3-1.2c-3.2,1-5.6,1.4-8,1.4c-7.8,0-10.7-4.3-10.7-13.1V182h18.5  c0.7,0,1.1-0.4,1.1-1.4v-17c0-1-0.2-1.4-1.3-1.4H1245c0.2-9.6,0.6-21.1,1.1-27.3c0-1.2-0.6-1.4-1.3-1.2l-19.1,2.7  c-0.8,0.2-1.3,0.8-1.5,1.8c-0.9,4.9-1.7,17.2-1.9,24L1192.2,162.2L1192.2,162.2z M1334.2,215.8c9.2,0,16.6-0.2,19.2-0.8  c0.9-0.2,1.3-0.6,1.5-1.4c0.6-2.1,0.8-6.6,0.8-12.1c0-18.6-10.7-41.2-38.3-41.2c-28.2,0-43.9,24-43.9,51.2c0,24,12.1,49,46.2,49  c12.7,0,20.9-2.1,28-5.7c0.7-0.4,1.1-1,1.1-2.1v-16.2c0-1-0.6-1.2-1.1-0.8c-7.1,3.1-14.8,4.7-23.2,4.7c-19.1,0-27.7-10.9-28.2-24.6  L1334.2,215.8L1334.2,215.8z M1296.2,199c1.5-9.6,7.3-19.9,20.2-19.9c14.2,0,17.9,12.5,17.9,18.2c0,0.2,0,1,0,1.6  c-0.8,0.2-3.2,0.2-10.3,0.2H1296.2z M1373.2,162.2c-0.9,0-1.1,0.2-1.1,1.2c0.8,6.4,0.9,17.8,0.9,26.2V257c0,1,0.4,1.6,1.7,1.6h19.4  c1.1,0,1.7-0.4,1.7-1.6v-62.9c4.3-5.9,15.3-10.7,28.6-10.4c1.3,0,1.7-0.4,1.7-1.4v-20.7c0-1.2-0.4-1.4-1.5-1.4  c-12.9,0-23.6,7-29.9,15.2c-0.2-4.3-0.9-9.2-1.9-11.7c-0.4-1.2-0.9-1.6-2.1-1.6L1373.2,162.2L1373.2,162.2z M1563.4,238.8  c0.2-1-0.2-1.6-1.3-1.6h-56.6v-33.6h48.6c0.8,0,1.3-0.2,1.3-1.2v-18.6c0-1.2-0.4-1.4-1.3-1.4h-48.6v-31.1h53.4  c1.1,0,1.5-0.8,1.3-1.8l-2.1-18.2c-0.2-1.2-0.6-1.4-1.7-1.4h-72.1c-1.1,0-1.5,0.6-1.5,1.6V257c0,1,0.4,1.6,1.7,1.6h74.4  c1.1,0,1.5-0.2,1.7-1.6L1563.4,238.8z M1569.2,180.8c0,0.8,0.2,1.2,0.9,1.2h11.6v74.8c0,1.4,0.4,1.8,1.5,1.8h19.4  c1.3,0,1.7-0.6,1.7-1.8V182h30.1v75c0,1,0.6,1.6,1.5,1.6h19.6c1.3,0,1.5-0.6,1.5-1.6v-75h16.6c0.9,0,1.3-0.4,1.3-1.4v-17.2  c0-0.8-0.2-1.2-1.3-1.2H1657l-0.2-6.8c0-15.8,6-17.4,12.3-17.4c2.2,0,4.5,0.4,6.2,0.8c1.1,0.4,1.3-0.4,1.3-1.2v-16.8  c0-1,0-1.4-0.9-1.8c-2.1-1-5.2-1.4-10.5-1.4c-17,0-30.6,11.1-30.8,37.3v7.2h-30.1V155c0-12.9,4.5-17,11.6-17c2.2,0,4.3,0.2,6.5,1  c0.9,0.4,1.3-0.4,1.3-1.2v-17c0-1-0.2-1.6-1.1-2c-1.9-0.8-4.3-1.2-9.3-1.2c-13.6,0-22.8,6.1-27.5,16.6c-2.8,5.9-4.1,13.3-4.1,21.7  v6.2h-11.4c-0.6,0-1.1,0.4-1.1,1.2L1569.2,180.8L1569.2,180.8z M1743,215.8c9.2,0,16.6-0.2,19.2-0.8c0.9-0.2,1.3-0.6,1.5-1.4  c0.6-2.1,0.8-6.6,0.8-12.1c0-18.6-10.7-41.2-38.3-41.2c-28.2,0-43.9,24-43.9,51.2c0,24,12.1,49,46.2,49c12.7,0,20.9-2.1,28-5.7  c0.8-0.4,1.1-1,1.1-2.1v-16.2c0-1-0.6-1.2-1.1-0.8c-7.1,3.1-14.8,4.7-23.2,4.7c-19.1,0-27.7-10.9-28.2-24.6L1743,215.8L1743,215.8z   M1705.1,199c1.5-9.6,7.3-19.9,20.2-19.9c14.2,0,17.9,12.5,17.9,18.2c0,0.2,0,1,0,1.6c-0.8,0.2-3.2,0.2-10.3,0.2H1705.1z   M1847.2,238.4c0-0.8-0.4-1.4-1.3-1c-3.7,1.4-9.5,1.9-16.2,1.9c-14.4,0-29.2-8.2-29.2-29.5c0-18.8,12-29.3,29-29.3  c7.3,0,12.2,1,16.1,2.5c0.8,0.2,1.5,0.2,1.5-1.2l0.2-17.4c0-1.2-0.2-1.8-0.9-2.1c-3.2-1.2-8.2-2.1-17.6-2.1  c-30.8,0-51.4,21.5-51.4,50.4c0,28.1,17.9,49.8,48.2,49.8c7.3,0,14.8-0.6,20.7-3.1c0.7-0.2,0.9-0.6,0.9-1.6L1847.2,238.4  L1847.2,238.4z M1912.3,241.4c0-1.2-0.6-1.4-1.1-1.2c-2.6,0.6-4.7,0.8-7.1,0.8c-8,0-10.7-4.1-10.7-12.7V182h18.3  c0.9,0,1.3-0.4,1.3-1.4v-17c0-1-0.4-1.4-1.3-1.4h-18.1c0-9.6,0.4-21.1,0.9-27.5c0-1-0.4-1.2-1.3-1l-18.9,2.7  c-0.9,0.2-1.3,0.8-1.5,1.8c-0.9,4.9-1.7,17.2-1.9,24h-11.8c-1.1,0-1.5,0.4-1.5,1.6v16.4c0,1.2,0.4,1.6,1.3,1.8h11.8v51.4  c0,19.3,9.2,27.1,24.5,27.1c6.2,0,10.8-0.8,15.9-2.7c0.9-0.4,1.1-1.2,1.1-2.4L1912.3,241.4L1912.3,241.4z M1983.3,184.9  c1.1,0.4,1.7-0.2,1.7-1.2v-17.2c0-1-0.2-1.8-1.1-2.3c-4.5-2.4-12.7-3.9-23.6-3.9c-23.3,0-34.9,13.9-34.9,28.7  c0,14.1,7.3,22.9,27.7,30.7c11.6,4.9,15.1,8,15.1,12.9c0,5.1-4.7,8.6-14.4,8.6c-8.4,0-18.7-2.3-26.7-7.8c-0.7-0.4-1.5,0-1.5,1v18.6  c0,1.2,0.4,1.6,1.3,2.1c5.6,3.3,15.3,5.5,26.3,5.5c23,0,36.8-11.5,36.8-29.9c0-13.9-7.3-22.7-28.6-30.9  c-11.9-4.9-14.8-7.8-14.8-12.1c0-4.1,3.4-8.4,13.3-8.4C1968.1,179.2,1977.5,181.6,1983.3,184.9L1983.3,184.9z"/>
                         </svg>
                     </div>
-                    <h3>ADDITIONAL STUFF</h3>
+                    <h3 data-i18n="tools-video-subtitle-additional"></h3>
                     <div class="video-grid">
                         <div class="graphics-wrapper">
                             <div class="graphics-preview">
                                 <a href="https://motionarray.com/browse/stock-video" target="_blank" title="Visit MotionArray">
-                                    <img src="/img/tools/video/motionarray.webp">
+                                    <img class="vst-preview-image" src="/img/tools/video/motionarray.webp">
                                 </a>
                             </div>
                             <svg class="logo" viewBox="0 0 976 184" width="250px" xmlns="http://www.w3.org/2000/svg">
@@ -345,7 +381,7 @@
                         <div class="graphics-wrapper">
                             <div class="graphics-preview">
                                 <a href="https://aescripts.com/deep-glow" target="_blank" title="Get Deep Glow">
-                                    <img src="/img/tools/video/deepglow.webp">
+                                    <img class="vst-preview-image" src="/img/tools/video/deepglow.webp">
                                 </a>
                             </div>
                             <svg class="logo" viewBox="0 0 540 360" width="200px" xmlns="http://www.w3.org/2000/svg">
@@ -363,7 +399,7 @@
                         <div class="graphics-wrapper">
                             <div class="graphics-preview">
                                 <a href="https://www.plugineverything.com/qca3" target="_blank" title="Get Quick Chromatic Abberation 3">
-                                    <img src="/img/tools/video/qca3.webp">
+                                    <img class="vst-preview-image" src="/img/tools/video/qca3.webp">
                                 </a>
                             </div>
                             <svg class="logo" viewBox="0 0 540 160" width="200px" xmlns="http://www.w3.org/2000/svg">

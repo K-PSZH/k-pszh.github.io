@@ -208,7 +208,7 @@
                 let isCloudActive = false;
                 const cloud = document.querySelector('.remixes-cloud');
                 const tags = cloud.querySelectorAll('.remixes-thumb');
-                const R = window.getComputedStyle(document.body).getPropertyValue('--remixes-cloud-size') * .4;
+                const R = window.getComputedStyle(document.body).getPropertyValue('--projects-remixes-panel-cloud-size') * .4;
                 const P = R * 1.5;
                 let rotX = -.1;
                 let rotY = -.2;
@@ -405,15 +405,6 @@
                         // Выбор карточки альбома
                         containers.forEach(c => c.classList.remove("selected"));
                         container.classList.add("selected");
-
-                        // Скролл при первом открытии панели
-                        panel.addEventListener('animationend', () => {
-                            document.getElementById('projectsTitle').scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-                        });
-
                     });
                 });
             });

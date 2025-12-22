@@ -116,6 +116,17 @@
     "product-4-about": "Fancy addition to the finished look — a 5x5 cm metal badge pin, including the brand logo of yours truly!",
 
     "tools-tab-name": "Tools I use | K-PSZH",
+    "tools-title": "TOOLS I USE",
+    "tools-music-subtitle": "FOR <span class=\"cursor-hoverable\">MUSIC</span> PRODUCTION",
+    "tools-music-subtitle-daw": "<b>DAW:</b> FL Studio 21",
+    "tools-music-caption-daw": "A preview of FL Studio project for <a href=\"https://youtu.be/2M0d_sTrlE0?t=1089\">\"A City of Hallucination\"",
+    "tools-music-subtitle-vsts": "ADDITIONAL <b>VST PLUGINS</b>",
+    "tools-music-subtitle-packs": "<b>SAMPLE PACKS</b> YOU CAN HEAR IN MY MUSIC",
+    "tools-music-subtitle-inspiration": "<b>ARTISTS I INSPIRED BY</b>",
+    "tools-video-subtitle": "FOR <span class=\"cursor-hoverable\">VIDEO</span> PRODUCTION",
+    "tools-video-subtitle-daw": "<b>VIDEO SOFTWARE:</b> Adobe After Effects",
+    "tools-video-caption-daw": "A preview of Adobe After Effects project for <a href=\"https://youtu.be/2M0d_sTrlE0\">\"My Hallucination\"</a> video",
+    "tools-video-subtitle-additional": "ADDITIONAL STUFF",
 
     "faq-tab-name": "FAQ | K-PSZH",
     "faq-title": "FAQ"
@@ -238,6 +249,17 @@
     "product-4-about": "Стильное дополнение к готовому образу — металлический значок размером 5x5 сантиметров, с логотипом вашего покорного слуги!",
 
     "tools-tab-name": "Инструменты | K-PSZH",
+    "tools-title": "ИНСТРУМЕНТЫ",
+    "tools-music-subtitle": "ДЛЯ СОЗДАНИЯ <span class=\"cursor-hoverable\">МУЗЫКИ</span>",
+    "tools-music-subtitle-daw": "<b>DAW:</b> FL Studio 21",
+    "tools-music-caption-daw": "Превью проекта FL Studio для трека <a href=\"https://youtu.be/2M0d_sTrlE0?t=1089\">\"A City of Hallucination\"",
+    "tools-music-subtitle-vsts": "ДОПОЛНИТЕЛЬНЫЕ <b>VST-ПЛАГИНЫ</b>",
+    "tools-music-subtitle-packs": "<b>ПАКИ СЕМПЛОВ</b>, КОТОРЫМИ Я ПОЛЬЗУЮСЬ",
+    "tools-music-subtitle-inspiration": "<b>ИСТОЧНИКИ МОЕГО ВДОХНОВЕНИЯ</b>",
+    "tools-video-subtitle": "ДЛЯ СОЗДАНИЯ <span class=\"cursor-hoverable\">ВИДЕО</span>",
+    "tools-video-subtitle-daw": "<b>МОНТАЖ:</b> Adobe After Effects",
+    "tools-video-caption-daw": "Превью проекта Adobe After Effects для видео <a href=\"https://youtu.be/2M0d_sTrlE0\">\"My Hallucination\"</a>",
+    "tools-video-subtitle-additional": "ДОПОЛНИТЕЛЬНЫЕ РЕСУРСЫ",
 
     "faq-tab-name": "ЧаВО | K-PSZH",
     "faq-title": "ЧаВО"
