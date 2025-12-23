@@ -151,20 +151,19 @@ hr {
     width: 50px;
     border-radius: 50%;
     overflow: hidden;
-    pointer-events: none;
+    transition: transform var(--brand-transition);
 }
 
 .kpszh-header-logo-img img {
     width: 100%;
     height: 100%;
+    border-radius: 50%;
     display: block;
-    animation: logoRotate 8s linear infinite;
     user-select: all;
 }
 
-@keyframes logoRotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.kpszh-header-logo-img:hover {
+    transform: rotate(10deg);
 }
 
 .kpszh-header-logo a { text-decoration: none; }
