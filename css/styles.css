@@ -371,6 +371,9 @@ span.danganronpa {
     inset: 0;
     z-index: 100;
     background-color: var(--black-transparent-3);
+    backdrop-filter: blur(4px);
+    transform: translateZ(0);
+    isolation: isolate;
     justify-content: center;
     align-items: center;
     opacity: 0;
