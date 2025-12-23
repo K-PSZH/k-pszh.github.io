@@ -374,6 +374,7 @@ span.danganronpa {
     backdrop-filter: blur(4px);
     transform: translateZ(0);
     isolation: isolate;
+    contain: paint;
     justify-content: center;
     align-items: center;
     opacity: 0;
