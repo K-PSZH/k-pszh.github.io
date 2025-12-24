@@ -24,8 +24,9 @@
     --white-transparent-3: #fffa;
     --red-transparent-1: #4008;
     --red-transparent-2: #800a;
-    --danganronpa-gradient-1: #fc0;
-    --danganronpa-gradient-2: #c71;
+    --red-transparent-3: #900d;
+    --yellow-gradient-1: #fc0;
+    --yellow-gradient-2: #c71;
     --social-icon-size: 80px;
     --social-icon-size-hover: 100px;
     --brand-transition: .25s ease;
@@ -120,6 +121,10 @@ hr {
     border-color: var(--white-transparent-2);
 }
 
+img::selection {
+    background-color: #ff0;
+}
+
 .gpu {
     transform: translateZ(0);
 }
@@ -157,13 +162,12 @@ hr {
 .kpszh-header-logo-img img {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
     display: block;
     user-select: all;
 }
 
-.kpszh-header-logo-img:hover {
-    transform: rotate(10deg);
+.kpszh-header-logo:hover .kpszh-header-logo-img {
+    transform: rotate(360deg);
 }
 
 .kpszh-header-logo a { text-decoration: none; }
@@ -177,7 +181,7 @@ hr {
     transition: color var(--brand-transition), filter var(--brand-transition);
 }
 
-.kpszh-header h1:hover {
+.kpszh-header-logo:hover h1 {
     color: var(--link-1);
     filter: drop-shadow(0 0 10px var(--link-1));
 }
@@ -358,7 +362,7 @@ hr {
 }
 
 span.danganronpa {
-    background-image: linear-gradient(var(--danganronpa-gradient-1) 20%, var(--danganronpa-gradient-2) 100%);
+    background-image: linear-gradient(var(--yellow-gradient-1) 20%, var(--yellow-gradient-2) 100%);
     color: transparent;
     background-clip: text;
     transition: color var(--brand-transition);
@@ -369,8 +373,8 @@ span.danganronpa {
     position: fixed;
     inset: 0;
     z-index: 100;
-    background-color: var(--black-transparent-3);
-    backdrop-filter: blur(4px);
+    background-color: var(--black-transparent-2);
+    backdrop-filter: blur(6px);
     transform: translateZ(0);
     isolation: isolate;
     contain: paint;
@@ -867,9 +871,7 @@ a.news-link:hover .news-date { opacity: 1; }
     margin-inline: auto;
 }
 
-.article-image-container.about img {
-    aspect-ratio: auto;
-}
+.article-image-container.about img { aspect-ratio: auto; }
 
 .article-image-container.image-red-gradient::after {
     content: "";
@@ -883,13 +885,9 @@ a.news-link:hover .news-date { opacity: 1; }
     transition: opacity var(--brand-transition);
 }
 
-.article-image-container.about.image-red-gradient::after {
-    background: linear-gradient(210deg, var(--image-gradient));
-}
+.article-image-container.about.image-red-gradient::after { background: linear-gradient(210deg, var(--image-gradient)); }
 
-.article-image-container.about.image-red-gradient.flip::after {
-    background: linear-gradient(325deg, var(--image-gradient));
-}
+.article-image-container.about.image-red-gradient.flip::after { background: linear-gradient(325deg, var(--image-gradient)); }
 
 .article-image-container.image-red-gradient:hover::after { opacity: .2; }
 
@@ -1053,13 +1051,9 @@ a.news-link:hover .news-date { opacity: 1; }
     will-change: background-position;
 }
 
-.album-panel.mh::before {
-    opacity: .2;
-}
+.album-panel.mh::before { opacity: .2; }
 
-.album-panel.mp::before {
-    opacity: .8;
-}
+.album-panel.mp::before { opacity: .8; }
 
 .album-panel.md::before,
 .album-panel.tdufa::before {
@@ -1075,7 +1069,7 @@ a.news-link:hover .news-date { opacity: 1; }
     transform: translateY(0);
 }
 
-.album-panel:hover { border: 4px solid #8005; }
+.album-panel:hover { border: 4px solid var(--red-transparent-2); }
 
 @keyframes albumPanelCover {
     0% { transform: translateY(-100px); opacity: 0; }
@@ -1210,9 +1204,7 @@ a.news-link:hover .news-date { opacity: 1; }
 }
 
 .album-panel.mh li,
-.album-panel.mh li span {
-    transition: color var(--brand-transition);
-}
+.album-panel.mh li span { transition: color var(--brand-transition); }
 
 .album-panel.mh li span {
     color: #ccc;
@@ -1382,7 +1374,7 @@ a.news-link:hover .news-date { opacity: 1; }
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 12px;
     margin-block-end: 3em;
-    align-items: start;
+    align-items: stretch;
 }
 
 .album-container {
@@ -1395,6 +1387,7 @@ a.news-link:hover .news-date { opacity: 1; }
     text-decoration: none;
     position: relative;
     box-sizing: border-box;
+    height: 100%;
     border: 4px solid var(--black-transparent-2);
     transition: background-color var(--brand-transition), border var(--brand-transition);
     overflow: hidden;
@@ -1407,7 +1400,7 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .album-container.selected {
     background-color: var(--red-transparent-1);
-    border: 4px solid #800c;
+    border: 4px solid var(--red-transparent-3);
 }
 
 .album-image {
@@ -1415,10 +1408,11 @@ a.news-link:hover .news-date { opacity: 1; }
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    flex: 0 0 auto;
     border-radius: 8px 8px 0 0;
     overflow: hidden;
-    transition: transform var(--brand-transition), opacity var(--brand-transition);
+    box-shadow: 0px 16px 64px -16px var(--link-1);
+    transition: all var(--brand-transition);
 }
 
 .album-image img {
@@ -1432,14 +1426,18 @@ a.news-link:hover .news-date { opacity: 1; }
 .album-container:hover .album-image {
     transform: scale(0.9);
     opacity: 0.5;
+    box-shadow: none;
 }
 
 .album-container.selected .album-image {
-    transform: scale(.85);
+    transform: scale(.95);
     opacity: .25;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .album-info {
+    z-index: 2;
     padding: .6em;
     margin-top: auto;
 }
@@ -1722,9 +1720,6 @@ a.news-link:hover .news-date { opacity: 1; }
     filter: drop-shadow(0 0 8px var(--link-1));
 }
 
-@media only screen and (max-width: 1080px) {
-}
-
 @media (hover: none) and (pointer: coarse) {
     #main.product h1::first-letter { background-image: none; }
 
@@ -1839,9 +1834,7 @@ a.news-link:hover .news-date { opacity: 1; }
     transition: height var(--brand-transition), opacity var(--brand-transition);
 }
 
-.vst-header img.right {
-    margin-left: auto;
-}
+.vst-header img.right { margin-left: auto; }
 
 .vst-wrapper:hover .vst-header img {
     height: 24px;
