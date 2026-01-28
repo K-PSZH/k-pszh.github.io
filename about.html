@@ -12,23 +12,23 @@
     <body class="preload">
         <header class="kpszh-header">
             <div class="kpszh-header-content">
-                <div class="kpszh-header-logo">
+                <a class="kpszh-header-logo" href="/">
                     <div class="kpszh-header-logo-img"><img src="/img/logo.webp"></div>
-                    <a href="/"><h1>K-PSZH</h1></a>
-                </div>
+                    <h1>K-PSZH</h1>
+                </a>
                 <div class="kpszh-header-menu">
                     <a href="/" data-i18n="common-header-home"></a>
                     <a href="/news.html" data-i18n="common-header-news"></a>
-                    <a href="/about.html" data-i18n="common-header-about"></a>
+                    <a href="/about.html" class="active" data-i18n="common-header-about"></a>
                     <a href="/projects.html" data-i18n="common-header-projects"></a>
                     <a href="/merch.html" data-i18n="common-header-merch"></a>
                     <a href="/tools.html" data-i18n="common-header-tools"></a>
                     <a href="/faq.html" data-i18n="common-header-faq"></a>
                     <div class="kpszh-header-dropdown">
-                        <a onclick="langMenu()" class="dropbtn" data-i18n="common-header-language"></a>
+                        <a onclick="langMenu()" class="kpszh-header-dropdown-button" data-i18n="common-header-language"></a>
                         <div id="lang-dropdown" class="kpszh-header-dropdown-content">
-                            <a onclick="langSet('ru')"><span data-i18n="common-header-language-ru"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/ru.svg"></a>
-                            <a onclick="langSet('en')"><span data-i18n="common-header-language-en"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/us.svg"></a>
+                            <a onclick="langSet('ru')" data-lang="ru"><span data-i18n="common-header-language-ru"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/ru.svg"></a>
+                            <a onclick="langSet('en')" data-lang="en"><span data-i18n="common-header-language-en"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/us.svg"></a>
                         </div>
                     </div>
                 </div>
@@ -46,15 +46,18 @@
                 <p>Proin at turpis tincidunt, cursus nisl ac, eleifend dui. Nullam pellentesque quam a est imperdiet aliquet. Quisque sit amet laoreet odio, ut laoreet sapien. Nulla porta eros massa, nec mollis augue ullamcorper ac. Nullam vulputate placerat lacus, et varius mauris pretium nec. Suspendisse placerat, felis at posuere faucibus, dui tortor vehicula neque, vitae ornare ipsum augue aliquam lectus. Pellentesque vehicula tortor elit, at tempor nisi ullamcorper ut. Ut dapibus libero id magna elementum lobortis. Pellentesque at consequat lacus. Sed sollicitudin eros ut posuere euismod. Ut mattis ligula lorem, sit amet luctus velit pulvinar sed. Mauris in gravida urna, quis vestibulum risus. Vivamus enim nibh, volutpat eget justo sed, tincidunt tincidunt leo.</p>
                 <p>Aliquam vel ex efficitur lorem interdum blandit. Sed auctor leo ut eros ullamcorper blandit. Suspendisse mauris dui, interdum vel vulputate et, porta vel nunc. Vivamus porta nec enim et mollis. Donec magna lacus, congue sed auctor sed, euismod in nisi. Duis aliquam sagittis interdum. Curabitur malesuada, purus sed fringilla viverra, orci orci suscipit augue, non fermentum odio urna vel neque. Suspendisse ac lacus vitae est suscipit mattis. In hac habitasse platea dictumst. Praesent arcu quam, lobortis vel mi ac, vehicula condimentum metus. Mauris nisi massa, convallis id luctus vel, volutpat eget enim. Nunc tristique placerat nunc quis gravida. Suspendisse at pretium magna, at tempor tellus.</p>
                 <p>Curabitur euismod mollis tortor, eget tempus tortor eleifend quis. Mauris at tortor sollicitudin, maximus augue in, consectetur eros. Suspendisse posuere vulputate augue a dapibus. Fusce velit mi, aliquam at libero sed, fermentum blandit felis. Morbi faucibus congue lacinia. Nulla consectetur ac mi quis maximus. Etiam quis arcu vitae lacus mollis luctus. Integer at commodo mi. Etiam sed arcu lobortis, pulvinar nibh quis, viverra turpis. Proin ultricies, sapien eu luctus ornare, magna sapien malesuada eros, in iaculis leo nulla non nisi. In pretium elementum est, sed laoreet sapien lobortis eu.</p>
-                <div class="article-image-container about image-red-gradient cursor-hoverable gpu">
+                <div class="main-image-container about image-red-gradient cursor-hoverable gpu">
                     <img class="zoomable" src="/img/about/kpszh_old.webp">
                 </div>
-                <div class="article-image-container about flip image-red-gradient cursor-hoverable gpu">
+                <h6 class="main-image-subtitle">sex</h6>
+                <div class="main-image-container about flip image-red-gradient cursor-hoverable gpu">
                     <img class="zoomable" src="/img/about/kpszh_new.webp">
                 </div>
             </div>
         </div>
         <footer class="kpszh-footer">
+            <hr>
+            <br>
             <div class="kpszh-social-media">
                 <div class="kpszh-social-icon">
                     <a href="https://youtube.com/c/K-PSZH" target="_blank">

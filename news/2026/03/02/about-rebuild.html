@@ -12,23 +12,23 @@
     <body class="preload">
         <header class="kpszh-header">
             <div class="kpszh-header-content">
-                <div class="kpszh-header-logo">
+                <a class="kpszh-header-logo" href="/">
                     <div class="kpszh-header-logo-img"><img src="/img/logo.webp"></div>
-                    <a href="/"><h1>K-PSZH</h1></a>
-                </div>
+                    <h1>K-PSZH</h1>
+                </a>
                 <div class="kpszh-header-menu">
                     <a href="/" data-i18n="common-header-home"></a>
-                    <a href="/news.html" data-i18n="common-header-news"></a>
+                    <a href="/news.html" class="active" data-i18n="common-header-news"></a>
                     <a href="/about.html" data-i18n="common-header-about"></a>
                     <a href="/projects.html" data-i18n="common-header-projects"></a>
                     <a href="/merch.html" data-i18n="common-header-merch"></a>
                     <a href="/tools.html" data-i18n="common-header-tools"></a>
                     <a href="/faq.html" data-i18n="common-header-faq"></a>
                     <div class="kpszh-header-dropdown">
-                        <a onclick="langMenu()" class="dropbtn" data-i18n="common-header-language"></a>
+                        <a onclick="langMenu()" class="kpszh-header-dropdown-button" data-i18n="common-header-language"></a>
                         <div id="lang-dropdown" class="kpszh-header-dropdown-content">
-                            <a onclick="langSet('ru')"><span data-i18n="common-header-language-ru"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/ru.svg"></a>
-                            <a onclick="langSet('en')"><span data-i18n="common-header-language-en"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/us.svg"></a>
+                            <a onclick="langSet('ru')" data-lang="ru"><span data-i18n="common-header-language-ru"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/ru.svg"></a>
+                            <a onclick="langSet('en')" data-lang="en"><span data-i18n="common-header-language-en"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/us.svg"></a>
                         </div>
                     </div>
                 </div>
@@ -46,9 +46,9 @@
                     </div>
                 </div>
                 <hr>
-                <div class="article-image-container image-red-gradient cursor-hoverable">
+                <div class="main-image-container image-red-gradient cursor-hoverable">
                     <img class="zoomable" src="/img/news/about-rebuild.webp">
-                    <div class="article-image-caption"><span class="common-image-author" data-i18n="common-image-author"></span>Google Gemini</div>
+                    <div class="main-image-caption"><span class="common-image-author" data-i18n="common-image-author"></span>Google Gemini</div>
                 </div>
                 <hr>
                 <p>I’ve been sitting on this for what feels like forever, waiting for the right moment to finally share it with you all... and now I can say it: the website is officially live! This little corner of the internet has been quietly simmering in my mind for ages, a place I’ve dreamed about building for a long time, and it’s an incredible feeling to finally open the doors and let you in. Here, you’ll find everything tied to my music world — updates, behind-the-scenes glimpses, random thoughts, and all the little creative sparks that I’m chasing at any given moment. For those of you who’ve been following my journey up to this point, thank you. Seriously. Your support means the world. And if you’re new here, welcome! Things are about to get interesting, chaotic, and hopefully a little magical.</p>
@@ -59,8 +59,9 @@
                 <p>So, from the bottom of my heart, thank you for being here at the very start. This is just the beginning, and I have a feeling that this chapter is going to be unforgettable. Strap in — it’s about to get fun, weird, and wild.</p>
             </div>
         </div>
-        <br>
         <footer class="kpszh-footer">
+            <hr>
+            <br>
             <div class="kpszh-social-media">
                 <div class="kpszh-social-icon">
                     <a href="https://youtube.com/c/K-PSZH" target="_blank">

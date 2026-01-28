@@ -7,45 +7,45 @@
         <link rel="stylesheet" href="/css/styles.css">
         <link rel="stylesheet" href="/css/cursor.css">
 	    <link rel="preload" href="/js/language.json" as="fetch" crossorigin>
-	    <title data-i18n="home-tab-name"></title>
+	    <title data-i18n="index-tab-name"></title>
     </head>
     <body class="preload">
         <a class="kpszh-marquee-link" href="/news/2026/02/01/welcome-to-the-beginning.html">
             <div class="kpszh-marquee">
                 <ul>
-                    <li data-i18n="home-marquee-1"></li>
-                    <li data-i18n="home-marquee-2"></li>
-                    <li data-i18n="home-marquee-1"></li>
-                    <li data-i18n="home-marquee-2"></li>
-                    <li data-i18n="home-marquee-1"></li>
-                    <li data-i18n="home-marquee-2"></li>
-                    <li data-i18n="home-marquee-1"></li>
-                    <li data-i18n="home-marquee-2"></li>
-                    <li data-i18n="home-marquee-1"></li>
-                    <li data-i18n="home-marquee-2"></li>
+                    <li data-i18n="index-marquee-1"></li>
+                    <li data-i18n="index-marquee-2"></li>
+                    <li data-i18n="index-marquee-1"></li>
+                    <li data-i18n="index-marquee-2"></li>
+                    <li data-i18n="index-marquee-1"></li>
+                    <li data-i18n="index-marquee-2"></li>
+                    <li data-i18n="index-marquee-1"></li>
+                    <li data-i18n="index-marquee-2"></li>
+                    <li data-i18n="index-marquee-1"></li>
+                    <li data-i18n="index-marquee-2"></li>
                 </ul>
                 <ul aria-hidden="true">
-                    <li data-i18n="home-marquee-1"></li>
-                    <li data-i18n="home-marquee-2"></li>
-                    <li data-i18n="home-marquee-1"></li>
-                    <li data-i18n="home-marquee-2"></li>
-                    <li data-i18n="home-marquee-1"></li>
-                    <li data-i18n="home-marquee-2"></li>
-                    <li data-i18n="home-marquee-1"></li>
-                    <li data-i18n="home-marquee-2"></li>
-                    <li data-i18n="home-marquee-1"></li>
-                    <li data-i18n="home-marquee-2"></li>
+                    <li data-i18n="index-marquee-1"></li>
+                    <li data-i18n="index-marquee-2"></li>
+                    <li data-i18n="index-marquee-1"></li>
+                    <li data-i18n="index-marquee-2"></li>
+                    <li data-i18n="index-marquee-1"></li>
+                    <li data-i18n="index-marquee-2"></li>
+                    <li data-i18n="index-marquee-1"></li>
+                    <li data-i18n="index-marquee-2"></li>
+                    <li data-i18n="index-marquee-1"></li>
+                    <li data-i18n="index-marquee-2"></li>
                 </ul>
             </div>
         </a>
         <header class="kpszh-header">
             <div class="kpszh-header-content">
-                <div class="kpszh-header-logo">
+                <a class="kpszh-header-logo" href="/">
                     <div class="kpszh-header-logo-img"><img src="/img/logo.webp"></div>
-                    <a href="/"><h1>K-PSZH</h1></a>
-                </div>
+                    <h1>K-PSZH</h1>
+                </a>
                 <div class="kpszh-header-menu">
-                    <a href="/" data-i18n="common-header-home"></a>
+                    <a href="/" class="active" data-i18n="common-header-home"></a>
                     <a href="/news.html" data-i18n="common-header-news"></a>
                     <a href="/about.html" data-i18n="common-header-about"></a>
                     <a href="/projects.html" data-i18n="common-header-projects"></a>
@@ -53,10 +53,10 @@
                     <a href="/tools.html" data-i18n="common-header-tools"></a>
                     <a href="/faq.html" data-i18n="common-header-faq"></a>
                     <div class="kpszh-header-dropdown">
-                        <a onclick="langMenu()" class="dropbtn" data-i18n="common-header-language"></a>
+                        <a onclick="langMenu()" class="kpszh-header-dropdown-button" data-i18n="common-header-language"></a>
                         <div id="lang-dropdown" class="kpszh-header-dropdown-content">
-                            <a onclick="langSet('ru')"><span data-i18n="common-header-language-ru"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/ru.svg"></a>
-                            <a onclick="langSet('en')"><span data-i18n="common-header-language-en"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/us.svg"></a>
+                            <a onclick="langSet('ru')" data-lang="ru"><span data-i18n="common-header-language-ru"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/ru.svg"></a>
+                            <a onclick="langSet('en')" data-lang="en"><span data-i18n="common-header-language-en"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/us.svg"></a>
                         </div>
                     </div>
                 </div>
@@ -66,43 +66,83 @@
         <div id="main" class="index">
             <div id="main-body">
                 <div class="index-main-section">
-                    <div class="index-latest-container gpu">
-                        <div class="index-latest-header" data-i18n="home-latest-header"></div>
-                        <div class="index-latest-details">
-                            <img src="img/covers/mh.webp" class="index-latest-image cursor-hoverable zoomable" data-caption="projects-mh-cover-image-caption">
-                            <div class="index-latest-info">
-                                <div class="index-latest-title"><span class="character-red">M</span>y <span class="character-red">H</span>allucination</div>
-                                <div class="index-latest-date" data-i18n="home-latest-date"></div>
-                                <div class="index-latest-excerpt" data-i18n="home-latest-excerpt"></div>
-                                <audio loop controls controlsList="nodownload noplaybackrate" style="width: 100%;">
-                                    <source class="kpszh-audio-player" src="/audio/acoh.mp3" type="audio/mpeg">
-                                </audio>
+                    <div class="index-left">
+                        <div class="index-logo-anim">
+                            <img src="img/index/logo_anim_1.webp">
+                            <img src="img/index/logo_anim_2.webp">
+                            <img src="img/index/logo_anim_3.webp" style="--duration: 10s">
+                            <img src="img/index/logo_anim_4.webp" style="--duration: 20s">
+                            <img src="img/index/logo_anim_5.webp" style="--duration: 30s">
+                            <img src="img/index/logo_anim_6.webp" style="--duration: 40s">
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat maximus luctus. Integer varius, diam eu interdum fermentum, diam enim ultrices tellus, et varius urna arcu quis nulla. Nam porttitor quam eget neque consectetur, ac feugiat lacus pharetra. Nunc cursus blandit iaculis. Sed gravida velit convallis semper placerat. Morbi sit amet leo sollicitudin, ornare odio vitae, tempus leo. Nulla in mi eget purus dapibus rutrum. Curabitur a pellentesque libero. Sed sit amet pellentesque justo. Nunc sollicitudin mollis eros ut blandit. Maecenas in orci ut lacus placerat egestas. Sed commodo malesuada dui, vel pulvinar justo lobortis id. Ut odio risus, venenatis at mi luctus, ullamcorper auctor sem.</p>
+                        <p>Sed in nunc sed nulla blandit vestibulum in id ligula. Suspendisse sit amet felis vel dui vulputate eleifend. Quisque condimentum suscipit auctor. Aenean porta euismod turpis, non laoreet urna ornare quis. Nullam sem sapien, consectetur ut tempus vel, faucibus eu felis. Integer vehicula, libero a interdum pretium, risus arcu vehicula lorem, id gravida metus lectus faucibus quam. Nunc accumsan tempor ipsum quis convallis. Suspendisse malesuada varius nulla id imperdiet. Nullam malesuada metus eu dui tincidunt, eget tempus diam placerat. Vivamus lacinia laoreet elementum. Cras gravida eros eu magna ullamcorper varius. Maecenas id ex a lacus tincidunt sollicitudin. Nam quis placerat mi. Suspendisse in mauris ac ante rhoncus faucibus. Integer sit amet est at odio commodo bibendum a nec dui.</p>
+                        <p>Sed porttitor leo varius sagittis congue. Aliquam id imperdiet dolor, vitae posuere turpis. Duis scelerisque dapibus lacinia. Cras vel vulputate quam. In hac habitasse platea dictumst. Etiam justo diam, elementum non est ut, dapibus congue enim. Phasellus placerat scelerisque vulputate.</p>
+                        <p>Duis ut egestas mauris. Etiam malesuada nulla quis ullamcorper euismod. Nullam nisl dolor, dapibus ut ornare consectetur, congue id elit. Cras posuere quis leo vel molestie. Sed ornare erat enim, non mollis nisi tempor sit amet. Pellentesque sit amet purus ornare velit volutpat mattis eu placerat velit. Nunc luctus vel arcu quis posuere. Integer fringilla ligula consequat massa porta, quis posuere dolor gravida. Sed sit amet elit ac risus porttitor euismod. Vivamus eu purus ut erat lacinia vulputate. Proin cursus felis vitae tellus suscipit, non iaculis nisl bibendum. Vivamus efficitur enim turpis. Cras ac nunc purus.</p>
+                        <div class="index-stats-grid">
+                            <div class="index-stats-container">
+                                <h1>2 465</h1>
+                                <h2 data-i18n="index-stats-subs"></h2>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M21,24H19V18.957A2.96,2.96,0,0,0,16.043,16H7.957A2.96,2.96,0,0,0,5,18.957V24H3V18.957A4.963,4.963,0,0,1,7.957,14h8.086A4.963,4.963,0,0,1,21,18.957Z"/>
+                                    <path d="M12,12a6,6,0,1,1,6-6A6.006,6.006,0,0,1,12,12ZM12,2a4,4,0,1,0,4,4A4,4,0,0,0,12,2Z"/>
+                                </svg>
+                            </div>
+                            <div class="index-stats-container">
+                                <h1>1 081 243</h1>
+                                <h2 data-i18n="index-stats-views"></h2>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M23,22H5a3,3,0,0,1-3-3V1A1,1,0,0,0,0,1V19a5.006,5.006,0,0,0,5,5H23a1,1,0,0,0,0-2Z"/>
+                                    <path d="M6,20a1,1,0,0,0,1-1V12a1,1,0,0,0-2,0v7A1,1,0,0,0,6,20Z"/>
+                                    <path d="M10,10v9a1,1,0,0,0,2,0V10a1,1,0,0,0-2,0Z"/>
+                                    <path d="M15,13v6a1,1,0,0,0,2,0V13a1,1,0,0,0-2,0Z"/>
+                                    <path d="M20,9V19a1,1,0,0,0,2,0V9a1,1,0,0,0-2,0Z"/>
+                                    <path d="M6,9a1,1,0,0,0,.707-.293l3.586-3.586a1.025,1.025,0,0,1,1.414,0l2.172,2.172a3,3,0,0,0,4.242,0l5.586-5.586A1,1,0,0,0,22.293.293L16.707,5.878a1,1,0,0,1-1.414,0L13.121,3.707a3,3,0,0,0-4.242,0L5.293,7.293A1,1,0,0,0,6,9Z"/>
+                                </svg>
+                            </div>
+                            <div class="index-stats-container">
+                                <h1>27 303</h1>
+                                <h2 data-i18n="index-stats-hours"></h2>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"/>
+                                    <path d="M12,6a1,1,0,0,0-1,1v4.325L7.629,13.437a1,1,0,0,0,1.062,1.7l3.84-2.4A1,1,0,0,0,13,11.879V7A1,1,0,0,0,12,6Z"/>
+                                </svg>
+                            </div>
+                            <div class="index-stats-container">
+                                <h1 class="nbsp">&nbsp;</h1>
+                                <h2 class="nbsp">&nbsp;</h2>
                             </div>
                         </div>
-                        <div class="index-latest-link" data-i18n="home-latest-link"></div>
+                        <p class="index-stats-state">*информация актуальна на 28.01.2025, 12:00 UTC+3</p>
                     </div>
-                    <div class="index-art">
-                        <div class="index-art-character">
-                            <img src="/img/me.webp">
-                        </div>
-                        <div class="index-art-title-bar">
-                            <video autoplay muted preload="metadata" playsinline class="title-bar back">
-                                <source src="/img/title_back.webm" type="video/webm"/>
-                            </video>
-                            <video id="title-front-en" autoplay muted preload="auto" playsinline class="title-bar front">
-                                <source src="/img/title_front_en.webm" type="video/webm"/>
-                            </video>
-                            <video id="title-front-ru" autoplay muted preload="auto" playsinline class="title-bar front">
-                                <source src="/img/title_front_ru.webm" type="video/webm"/>
-                            </video>
+                    <div class="index-right">
+                        <div class="index-art">
+                            <div class="index-art-character">
+                                <img src="/img/me.webp">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="index-empty-space"></div>
+                <div class="index-latest-container gpu">
+                    <div class="index-latest-header" data-i18n="index-latest-header"></div>
+                    <div class="index-latest-details">
+                        <img src="img/covers/mh.webp" class="index-latest-image cursor-hoverable zoomable" data-caption="projects-mh-cover-image-caption">
+                        <div class="index-latest-info">
+                            <div class="index-latest-title"><span class="character-red">M</span>y <span class="character-red">H</span>allucination</div>
+                            <div class="index-latest-date" data-i18n="index-latest-date"></div>
+                            <div class="index-latest-excerpt" data-i18n="index-latest-excerpt"></div>
+                            <audio loop controls controlsList="nodownload noplaybackrate" style="width: 100%;">
+                                <source class="kpszh-audio-player" src="/audio/acoh.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </div>
+                    <div class="index-latest-link" data-i18n="index-latest-link"></div>
+                </div>
             </div>
         </div>
-        <br>
         <footer class="kpszh-footer">
+            <hr>
+            <br>
             <div class="kpszh-social-media">
                 <div class="kpszh-social-icon">
                     <a href="https://youtube.com/c/K-PSZH" target="_blank">
@@ -171,6 +211,14 @@
         <script>
             window.addEventListener('DOMContentLoaded', () => {
                 document.body.classList.remove('preload');
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                document.addEventListener('contextmenu', e => {
+                    if (e.target.tagName === 'AUDIO') {
+                        e.preventDefault();
+                    }
+                });
             });
 
             document.addEventListener('DOMContentLoaded', () => {
