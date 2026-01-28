@@ -2084,13 +2084,27 @@ a.news-link:hover .news-date { opacity: 1; }
     overflow: hidden;
 }
 
-.inspiration-artist-picture img {
+.round-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    line-height: 0;
+    text-decoration: none;
+}
+
+.round-link img {
     -webkit-user-drag: none;
     border-radius: 50%;
     width: 100%;
     height: 100%;
     display: block;
+    object-fit: cover;
     user-select: all;
+    transform-origin: center center;
 }
 
 .inspiration-artist-picture:hover {
