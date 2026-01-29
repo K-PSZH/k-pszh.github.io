@@ -27,6 +27,7 @@
     --red-transparent-2: #5007;
     --red-transparent-3: #800a;
     --red-transparent-4: #900d;
+    --red-transparent-5: #c00e;
     --yellow-gradient-1: #fc0;
     --yellow-gradient-2: #c71;
     --social-icon-size: 80px;
@@ -73,7 +74,7 @@ body::before {
     left: 0;
     right: 0;
     z-index: -1000;
-    background: radial-gradient(25% 50% at 110% 50%, var(--red-transparent-3), transparent), /* right smaller */
+    background: radial-gradient(30% 60% at 110% 50%, var(--red-transparent-3), transparent), /* right smaller */
         radial-gradient(50% 100% at 100% 60%, var(--red-transparent-1), transparent), /* right bigger */
         radial-gradient(15% 30% at 0% 105%, var(--red-transparent-1), transparent), /* left bottom*/
         radial-gradient(25% 50% at 35% 40%, var(--red-transparent-2), transparent); /* center */
@@ -303,54 +304,49 @@ a.kpszh-header-dropdown-button.active { font-weight: 300; }
 }
 
 .kpszh-social-icon {
+    color: var(--social-default-color);
     display: flex;
     justify-content: center;
     align-items: center;
     width: var(--social-icon-size);
-    height: var(--social-icon-size-hover);
-    max-width: var(--social-icon-size-hover);
-    max-height: var(--social-icon-size-hover);
+    height: var(--social-icon-size);
     margin: auto 10px;
-    transition: width var(--brand-transition), height var(--brand-transition), max-width var(--brand-transition), max-height var(--brand-transition), margin var(--brand-transition);
+    transition: width var(--brand-transition), height var(--brand-transition), margin var(--brand-transition);
     z-index: 5;
 }
 
+.kpszh-social-icon a { color: inherit; }
+
 .kpszh-social-icon svg {
-    transition: filter var(--brand-transition), transform var(--brand-transition);
     width: var(--social-icon-size);
+    transition: transform var(--brand-transition), filter var(--brand-transition);
+    will-change: transform, filter;
 }
 
 .kpszh-social-icon:hover {
     width: var(--social-icon-size-hover);
     height: var(--social-icon-size-hover);
+    color: var(--icon-color);
 }
 
 .kpszh-social-icon:hover svg {
-    filter: none;
     transform: scale(1.25);
+    filter: drop-shadow(0 0 50px currentColor);
 }
 
-.kpszh-social-icon .youtube,
-.kpszh-social-icon .spotify,
-.kpszh-social-icon .soundcloud,
-.kpszh-social-icon .bandcamp,
-.kpszh-social-icon .vk,
-.kpszh-social-icon .boosty {
-    fill: var(--social-default-color);
-    transition: fill var(--brand-transition);
-}
+.kpszh-social-icon.youtube { --icon-color: var(--social-youtube); }
+.kpszh-social-icon.spotify { --icon-color: var(--social-spotify); }
+.kpszh-social-icon.soundcloud { --icon-color: var(--social-soundcloud); }
+.kpszh-social-icon.bandcamp { --icon-color: var(--social-bandcamp); }
+.kpszh-social-icon.vk { --icon-color: var(--social-vk); }
+.kpszh-social-icon.boosty { --icon-color: var(--social-boosty); }
 
-.kpszh-social-icon:hover .youtube { fill: var(--social-youtube) }
-
-.kpszh-social-icon:hover .spotify { fill: var(--social-spotify) }
-
-.kpszh-social-icon:hover .soundcloud { fill: var(--social-soundcloud) }
-
-.kpszh-social-icon:hover .bandcamp { fill: var(--social-bandcamp) }
-
-.kpszh-social-icon:hover .vk { fill: var(--social-vk) }
-
-.kpszh-social-icon:hover .boosty { fill: var(--social-boosty) }
+.kpszh-social-icon svg .youtube,
+.kpszh-social-icon svg .spotify,
+.kpszh-social-icon svg .soundcloud,
+.kpszh-social-icon svg .bandcamp,
+.kpszh-social-icon svg .vk,
+.kpszh-social-icon svg .boosty { fill: currentColor; }
 
 .kpszh-footer h6 {
     margin-block-start: 2em;
@@ -662,6 +658,7 @@ audio::-webkit-media-controls-time-remaining-display {
 }
 
 .index-stats-container h1 {
+    text-transform: none;
     font-size: 56px;
     margin-block-start: .2em;
 }
@@ -675,26 +672,26 @@ audio::-webkit-media-controls-time-remaining-display {
     margin-block-end: .75em;
 }
 
-.index-stats-container:hover h2 { color: var(--red-transparent-4) }
-
-.index-stats-container svg {
-    position: absolute;
-    --index-stats-icon-size: 84px;
-    width: var(--index-stats-icon-size);
-    height: var(--index-stats-icon-size);
-    right: calc(var(--index-stats-icon-size)/3 * -1);
-    top: 50%;
-    transform: translateY(-50%);
-    fill: var(--red-transparent-1);
-    transition: fill var(--brand-transition);
-}
-
-.index-stats-container:hover svg { fill: var(--red-transparent-3); }
+.index-stats-container:hover h2 { color: var(--red-transparent-5) }
 
 .index-stats-state {
     color: var(--white-transparent-1);
     margin-block: .5em;
 }
+
+.kpszh-container-svg {
+    position: absolute;
+    --index-stats-icon-size: 84px;
+    width: var(--index-stats-icon-size);
+    height: var(--index-stats-icon-size);
+    right: calc(var(--index-stats-icon-size)/3 * -1);
+    top: 40%;
+    transform: translateY(-50%);
+    fill: var(--red-transparent-1);
+    transition: fill var(--brand-transition);
+}
+
+*:hover > .kpszh-container-svg { fill: var(--red-transparent-4); }
 
 .index-logo-anim {
     position: relative;
@@ -703,7 +700,7 @@ audio::-webkit-media-controls-time-remaining-display {
     height: var(--index-logo-size);
     margin-inline: auto;
     margin-block: 1em;
-    mask-image: linear-gradient(150deg, black, transparent 125%);
+    mask-image: linear-gradient(150deg, black, transparent 175%);
 }
 
 .index-logo-anim img {
@@ -718,6 +715,13 @@ audio::-webkit-media-controls-time-remaining-display {
 }
 
 @keyframes indexLogoAnim { to { transform: rotate(360deg); } }
+
+.index-art-character { mask-image: linear-gradient(170deg, black 40%, transparent 90%); }
+
+.index-art-character img {
+    z-index: 2;
+    pointer-events: none;
+}
 
 .index-latest-container {
     display: flex;
@@ -789,16 +793,6 @@ audio::-webkit-media-controls-time-remaining-display {
 .index-latest-link a { text-decoration: none; }
 
 .index-art { display: flex; }
-
-.index-art-character img {
-    z-index: 2;
-    pointer-events: none;
-}
-
-@keyframes meAnim {
-    0% { transform: translateX(-400px) rotate(-22.5deg); opacity: 0; }
-    100% { transform: translateX(-100px) rotate(0); opacity: 1; }
-}
 
 
 /* news.css */
@@ -1066,6 +1060,7 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .kpszh-audio-container {
     border-radius: 12px;
+    overflow: hidden;
     background: var(--container-gradient);
     background-color: var(--black-transparent-1);
     background-clip: padding-box;
