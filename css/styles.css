@@ -331,7 +331,7 @@ a.kpszh-header-dropdown-button.active { font-weight: 300; }
 
 .kpszh-social-icon:hover svg {
     transform: scale(1.25);
-    filter: drop-shadow(0 0 50px currentColor);
+    filter: drop-shadow(0 0 40px currentColor);
 }
 
 .kpszh-social-icon.youtube { --icon-color: var(--social-youtube); }
@@ -341,12 +341,7 @@ a.kpszh-header-dropdown-button.active { font-weight: 300; }
 .kpszh-social-icon.vk { --icon-color: var(--social-vk); }
 .kpszh-social-icon.boosty { --icon-color: var(--social-boosty); }
 
-.kpszh-social-icon svg .youtube,
-.kpszh-social-icon svg .spotify,
-.kpszh-social-icon svg .soundcloud,
-.kpszh-social-icon svg .bandcamp,
-.kpszh-social-icon svg .vk,
-.kpszh-social-icon svg .boosty { fill: currentColor; }
+.kpszh-social-icon svg { fill: currentColor; }
 
 .kpszh-footer h6 {
     margin-block-start: 2em;
@@ -2201,7 +2196,7 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .faq-question.active .arrow {
     transform: rotate(540deg) scale(.95);
-    color: #f776;
+    color: var(--red-transparent-3);
 }
 
 .faq-question.active span.danganronpa { color: white; }
