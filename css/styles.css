@@ -1944,7 +1944,8 @@ a.news-link:hover .news-date { opacity: 1; }
     min-height: 920px;
 }
 
-.vst-wrapper {
+.vst-wrapper,
+.graphics-wrapper {
     position: relative;
     display: flex;
 }
