@@ -649,7 +649,7 @@ audio::-webkit-media-controls-time-remaining-display {
 
 .index-welcome {
     background-image: url("/img/index/welcome.webp");
-    background-size: 100% auto;
+    background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
 }
