@@ -48,7 +48,12 @@
                         <h3 class="album-panel-links"></h3>
                     </div>
                     <img class="album-panel-art" id="albumPanelArt">
-                    <img class="album-panel-cover cursor-hoverable zoomable" data-caption id="albumPanelCover">
+                    <div class="album-panel-corner" id="albumPanelCorner">
+                        <div class="album-panel-disc">
+                            <img id="albumPanelDisc">
+                        </div>
+                        <img class="album-panel-cover cursor-hoverable zoomable" data-caption id="albumPanelCover">
+                    </div>
                     <div class="album-panel-video"><video autoplay loop muted id="albumPanelVideo"></video></div>
                 </div>
                 <div class="album-panel gpu" id="remixesPanel">
@@ -278,6 +283,8 @@
                 const albumPanel = document.getElementById("albumPanel");
                 const remixesPanel = document.getElementById("remixesPanel");
                 const art = document.getElementById("albumPanelArt");
+                const disc = document.getElementById("albumPanelDisc");
+                const corner = document.getElementById("albumPanelCorner");
                 const cover = document.getElementById("albumPanelCover");
                 const video = document.getElementById("albumPanelVideo");
                 const info = document.querySelector(".album-panel-info");
@@ -373,6 +380,7 @@
                             panel.style.backgroundImage = `url(${albums[key].bg})`; // Фон
                             cover.src = albums[key].cover || ''; // Обложка
                             cover.dataset.caption = albums[key].cover_caption;
+                            disc.src = albums[key].disc || cover.src; // Диск
                             art.src = albums[key].art || ''; // Арт
                             video.src = albums[key].video || ''; // Видео для арта (My Despair)
                             video.poster = albums[key].poster || ''; // Постер-заглушка для арта (My Despair)
@@ -396,7 +404,7 @@
                             langLoad(localStorage.getItem('lang') || 'ru'); // Обеспечение работы i18n
 
                             // Анимации с начала при открытии панели
-                            restartAnimation(cover);
+                            restartAnimation(corner);
                             restartAnimation(art);
                             restartAnimation(info);
                         }
