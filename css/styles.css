@@ -1332,13 +1332,16 @@ a.news-link:hover .news-date { opacity: 1; }
     height: var(--album-panel-disc-size);
     mask-image: radial-gradient(transparent 10%, black 11%);
     border-radius: 50%;
-    filter: drop-shadow(0 10px 5px var(--black-transparent-2));
+    filter: brightness(1) drop-shadow(0 10px 5px var(--black-transparent-2));
     overflow: hidden;
     transform: translateY(-50%);
-    transition: left var(--brand-transition);
+    transition: left var(--brand-transition), filter var(--brand-transition);
 }
 
-.album-panel-disc:hover { left: calc(var(--album-panel-disc-size) / 1.5 * -1); }
+.album-panel-disc:hover {
+    left: calc(var(--album-panel-disc-size) / 1.5 * -1);
+    filter: brightness(1.5);
+}
 
 .album-panel-disc::before {
     content: "";
