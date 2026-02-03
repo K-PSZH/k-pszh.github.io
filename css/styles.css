@@ -51,6 +51,8 @@
     --image-gradient: transparent 25%, var(--link-2) 125%;
     --container-gradient: linear-gradient(-30deg, var(--red-transparent-3) -100%, transparent 50%, transparent 75%, var(--red-transparent-3) 150%);
     --audio-grid-gap: 20px;
+    --album-panel-cover-size: 150px;
+    --album-panel-disc-size: calc(var(--album-panel-cover-size) / 6 * 5);
     --projects-remixes-panel-cloud-size: 500;
 }
 
@@ -299,10 +301,10 @@ a.kpszh-header-dropdown-button.active { font-weight: 300; }
 }
 
 #main-body {
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     overflow-wrap: break-word;
 }
 
@@ -1119,8 +1121,8 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .main-image-caption {
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: 0;
+    right: 0;
     background-color: var(--black-transparent-2);
     color: white;
     padding: 4px 8px;
@@ -1243,7 +1245,7 @@ a.news-link:hover .news-date { opacity: 1; }
     height: 720px;
     border-radius: 12px;
     background-color: black;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     background-size: cover;
     background-position: center;
     background-clip: padding-box;
@@ -1256,15 +1258,8 @@ a.news-link:hover .news-date { opacity: 1; }
     transition: all var(--brand-transition);
 }
 
-@keyframes albumPanelNoise {
-    0% { background-position: 0 0; }
-    100% { background-position: 170px 460px; }
-}
-
-@keyframes albumPanelPattern {
-    0% { background-position: 0 0; }
-    100% { background-position: 0px 30px; }
-}
+@keyframes albumPanelNoise { 100% { background-position: 170px 460px; } }
+@keyframes albumPanelPattern { 100% { background-position: 0 30px; } }
 
 .album-panel::before {
     content: "";
@@ -1299,14 +1294,13 @@ a.news-link:hover .news-date { opacity: 1; }
 .album-panel:hover { border: 4px solid var(--red-transparent-3); }
 
 @keyframes albumPanelDisc {
-    0% { transform: rotate(0deg) }
-    100% { transform: rotate(360deg) }
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
 }
 
 @keyframes albumPanelCover {
-    0% { transform: translateY(-100px); opacity: 0; }
-    50% { transform: translateY(-100px); opacity: 0; }
-    100% { transform: translateY(0px); opacity: 1; }
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 .album-panel-corner {
@@ -1315,8 +1309,6 @@ a.news-link:hover .news-date { opacity: 1; }
     bottom: 20px;
     transition: transform var(--brand-transition), opacity var(--brand-transition);
     z-index: 5;
-    --album-panel-cover-size: 150px;
-    --album-panel-disc-size: calc(var(--album-panel-cover-size) / 6 * 5);
 }
 
 .album-panel-disc {
@@ -1361,7 +1353,7 @@ a.news-link:hover .news-date { opacity: 1; }
     user-select: all;
 }
 
-.album-panel.active .album-panel-corner { animation: albumPanelCover 1s ease; }
+.album-panel.active .album-panel-corner { animation: albumPanelCover .5s ease .5s both; }
 
 .album-panel-cover:hover {
     transform: scale(.9) rotate(-3deg);
@@ -1428,18 +1420,10 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .album-panel a:visited { -webkit-text-stroke-color: black; }
 
-.album-panel.mh h1,
-.album-panel.mh h2,
-.album-panel.mh h3,
-.album-panel.mh ol,
-.album-panel.md h1,
-.album-panel.md h2,
-.album-panel.md h3,
-.album-panel.md ol,
-.album-panel.tdufa h1,
-.album-panel.tdufa h2,
-.album-panel.tdufa h3,
-.album-panel.tdufa ol {
+.album-panel:is(.mh, .md, .tdufa) h1,
+.album-panel:is(.mh, .md, .tdufa) h2,
+.album-panel:is(.mh, .md, .tdufa) h3,
+.album-panel:is(.mh, .md, .tdufa) ol {
     user-select: none;
     margin: 6px auto;
     text-align: center;
@@ -1668,8 +1652,8 @@ a.news-link:hover .news-date { opacity: 1; }
     background-color: #100;
     border-radius: 8px 8px 0 0;
     overflow: hidden;
-    box-shadow: 0px 16px 64px -16px var(--link-1);
-    transition: all var(--brand-transition);
+    box-shadow: 0 16px 64px -16px var(--link-1);
+    transition: transform var(--brand-transition), opacity var(--brand-transition), border-radius var(--brand-transition), box-shadow var(--brand-transition);
 }
 
 .album-image img {
@@ -1927,8 +1911,8 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .product-image-caption {
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: 0;
+    right: 0;
     background-color: var(--black-transparent-2);
     color: white;
     padding: 4px 8px;
@@ -1965,7 +1949,7 @@ a.news-link:hover .news-date { opacity: 1; }
     text-transform: uppercase;
     font-size: 20px;
     filter: drop-shadow(0 0 48px transparent);
-    transition: all var(--brand-transition);
+    transition: background-color var(--brand-transition), background-position var(--brand-transition), filter var(--brand-transition);
 }
 
 .product-add-button:hover {
@@ -2062,7 +2046,7 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .vst-preview {
     background: var(--vst-default-background);
-    padding: 0px 0px 0px 0px;
+    padding: 0 0 0 0;
     display: flex;
     flex-direction: column;
     margin: 25px 15px 0;
@@ -2075,7 +2059,7 @@ a.news-link:hover .news-date { opacity: 1; }
 }
 
 .vst-wrapper:hover .vst-preview {
-    padding: 0px 3px 3px 3px;
+    padding: 0 3px 3px 3px;
     filter: sepia(0) hue-rotate(0deg) saturate(1) brightness(1);
 }
 
@@ -2103,9 +2087,9 @@ a.news-link:hover .news-date { opacity: 1; }
 .vst-header p {
     color: var(--vst-default-header);
     font-family: Verdana;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-size: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0;
     user-select: auto;
     transition: margin-top var(--brand-transition), margin-bottom var(--brand-transition), font-size var(--brand-transition);
 }
@@ -2269,7 +2253,7 @@ a.news-link:hover .news-date { opacity: 1; }
     .daw-preview:hover video { max-width: 720px; }
     
     .vst-wrapper .vst-preview {
-        padding: 0px 3px 3px 3px;
+        padding: 0 3px 3px 3px;
         filter: sepia(0) hue-rotate(0deg) saturate(1) brightness(1);
     
     }
@@ -2282,7 +2266,7 @@ a.news-link:hover .news-date { opacity: 1; }
 
 
 /* faq.css */
-#main.faq h2 { margin-block: 0px; }
+#main.faq h2 { margin-block: 0; }
 
 #main.faq h3 {
     font-weight: 300;
