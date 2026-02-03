@@ -18,21 +18,19 @@
     --accent-13: #d00;
     --accent-14: #e00;
     --accent-15: #f00;
+    --accent-transparent-1: #4008;
+    --accent-transparent-2: #5007;
+    --accent-transparent-3: #800a;
+    --accent-transparent-4: #900d;
+    --accent-transparent-5: #c00e;
     --black-transparent-1: #0004;
     --black-transparent-2: #0008;
     --black-transparent-3: #000c;
     --white-transparent-1: #fff6;
     --white-transparent-2: #fff8;
     --white-transparent-3: #fffa;
-    --accent-transparent-1: #4008;
-    --accent-transparent-2: #5007;
-    --accent-transparent-3: #800a;
-    --accent-transparent-4: #900d;
-    --accent-transparent-5: #c00e;
     --yellow-gradient-1: #fc0;
     --yellow-gradient-2: #c71;
-    --marquee-background: black;
-    --marquee-background-hover: var(--accent-2);
     --danganronpa: #FF2D81;
     --social-default-color: black;
     --social-youtube: #FF0033;
@@ -415,7 +413,7 @@ a.kpszh-header-dropdown-button.active { font-weight: 300; }
 
 .kpszh-marquee {
     position: absolute;
-    background-color: var(--marquee-background);
+    background-color: black;
     overflow: hidden;
     user-select: none;
     display: flex;
@@ -428,7 +426,7 @@ a.kpszh-header-dropdown-button.active { font-weight: 300; }
 
 .kpszh-marquee-link { display: block; }
 
-.kpszh-marquee-link:hover .kpszh-marquee { background-color: var(--marquee-background-hover); }
+.kpszh-marquee-link:hover .kpszh-marquee { background-color: var(--accent-2); }
 
 .kpszh-marquee ul {
     padding: 0;
@@ -810,6 +808,14 @@ audio::-webkit-media-controls-time-remaining-display {
 .index-logo-anim:hover img.breakable-23 { transform: translate(calc(-3px * var(--logo-anim-multi)), calc(2px * var(--logo-anim-multi))); }
 .index-logo-anim:hover img.breakable-24 { transform: translate(calc(-2px * var(--logo-anim-multi)), calc(3px * var(--logo-anim-multi))); }
 .index-logo-anim:hover img.breakable-25 { transform: translate(calc(0px * var(--logo-anim-multi)), calc(-4px * var(--logo-anim-multi))); }
+
+.index-logo-anim .color {
+    background-color: var(--accent-15);
+    mask-image: url("/img/index/logo_anim_2.webp");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
 
 @keyframes indexLogoAnim { to { transform: rotate(360deg); } }
 
