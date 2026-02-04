@@ -71,7 +71,7 @@
 @font-face { font-family: FOTComet; src: url(/fonts/FOTCometStd.otf); font-display: swap; }
 
 ::selection {
-    background-color: var(--accent-9);
+    background-color: var(--accent-10);
     color:white;
 }
 
@@ -392,8 +392,8 @@ a.kpszh-header-dropdown-button.active { font-weight: 300; }
 
 .kpszh-footer h6 {
     position: relative;
-    margin-block-start: 2em;
-    margin-block-end: 1em;
+    margin-block-start: 1.5em;
+    margin-block-end: 2em;
     font-size: 20px;
     z-index: 50;
     transition: margin-block-start var(--brand-transition), margin-block-end var(--brand-transition), font-size var(--brand-transition);
@@ -622,8 +622,8 @@ audio::-webkit-media-controls-time-remaining-display {
     .kpszh-social-icon { margin: auto 5px; }
 
     .kpszh-footer h6 {
-        margin-block-start: 1em;
-        margin-block-end: .5em;
+        margin-block-start: .75em;
+        margin-block-end: 1em;
     }
 }
 
@@ -1354,7 +1354,7 @@ a.news-link:hover .news-date { opacity: 1; }
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: radial-gradient(circle at 50% 0%, #fffc 0%, #fff5 15%, #fff2 30%, #fff0 50%), radial-gradient(var(--black-transparent-3) 10%, transparent 15%, transparent 65%, var(--black-transparent-1) 70%);
+    background: radial-gradient(circle at 50% 0%, #fffd 0%, #fff5 15%, #fff2 30%, #fff0 50%), radial-gradient(black 10%, transparent 15%, transparent 65%, black 75%);
     pointer-events: none;
     z-index: 2;
 }
@@ -1888,20 +1888,11 @@ a.news-link:hover .news-date { opacity: 1; }
     margin-block-end: 0;
 }
 
-.product-details h2 {
-    font-size: 22px;
-    text-align: right;
-    font-weight: 300;
-    line-height: normal;
-    margin-block-start: .1em;
-    margin-block-end: 0;
-    white-space: nowrap;
-}
-
 .product-image-container {
     position: relative;
     display: flex;
     border-radius: 12px 12px 0 12px;
+    height: 540px;
     overflow: hidden;
     transition: transform var(--brand-transition), opacity var(--brand-transition);
 }
@@ -1958,6 +1949,120 @@ a.news-link:hover .news-date { opacity: 1; }
     align-content: center;
     justify-content: space-between;
     align-items: flex-end;
+}
+
+.product-info-header {
+    margin-inline-start: .25em;
+    margin-block-start: .4em;
+    margin-block-end: .2em;
+    font-weight: 400;
+    font-size: 28px;
+    text-align: left;
+    letter-spacing: .01em;
+}
+
+.product-attrs-container { margin-block-end: 1em; }
+
+.product-attrs {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+    color: white;
+    min-height: 32px;
+    margin-block: .3em;
+    font-size: 20px;
+}
+
+.product-attrs dt {
+    width: 30%;
+	display: flex;
+	box-sizing: border-box;
+	align-items: flex-end;
+	word-break: break-word;
+    position: relative;
+    overflow: hidden;
+    padding-inline-start: .2em;
+    border-radius: 2px;
+}
+
+.product-attrs dt::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--accent-transparent-5), transparent 80%);
+    opacity: .5;
+    transition: opacity var(--brand-transition);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.product-attrs:hover dt::after {
+    opacity: 1;
+}
+
+.product-attrs dd {
+	display: flex;
+    width: 70%;
+	box-sizing: border-box;
+	align-items: flex-end;
+	word-break: break-word;
+    margin-inline-start: 0;
+    padding-inline-start: .2em;
+    background-image: linear-gradient(270deg, var(--accent-transparent-3) -120%, transparent 70%, var(--accent-transparent-3) 120%);
+    border-radius: 2px;
+}
+
+.product-attrs dd.size { background-image: none; }
+
+.product-size-block {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.product-size-buttons {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.product-size-option {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.product-size-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--accent-3);
+    border-radius: 8px;
+    background-color: var(--accent-2);
+    font-size: 16px;
+    color: white;
+    transition: all var(--brand-transition);
+    user-select: none;
+}
+
+.product-size-label:hover {
+    border-color: var(--accent-6);
+    background-color: var(--accent-5);
+}
+
+.product-size-option:checked + .product-size-label {
+    background-color: var(--accent-15);
+    border-color: var(--accent-15);
+    box-shadow: 0 0 0 4px var(--accent-transparent-3);
+}
+
+.product-description {
+    margin-block-start: 0;
+    margin-block-end: 1em;
 }
 
 .product-add-button {

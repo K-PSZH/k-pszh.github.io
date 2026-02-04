@@ -1,4 +1,4 @@
-html, body, a, button { cursor: none; }
+html, body, a, button, label { cursor: none; }
 
 #kpszh-cursor {
     position: fixed;
