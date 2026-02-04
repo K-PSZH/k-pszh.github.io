@@ -26,9 +26,10 @@
     --black-transparent-1: #0004;
     --black-transparent-2: #0008;
     --black-transparent-3: #000c;
-    --white-transparent-1: #fff6;
-    --white-transparent-2: #fff8;
-    --white-transparent-3: #fffa;
+    --white-transparent-1: #fff4;
+    --white-transparent-2: #fff6;
+    --white-transparent-3: #fff8;
+    --white-transparent-4: #fffa;
     --yellow-gradient-1: #fc0;
     --yellow-gradient-2: #c71;
     --danganronpa: #FF2D81;
@@ -390,7 +391,7 @@ a.kpszh-header-dropdown-button.active { font-weight: 300; }
 
 .kpszh-social-icon svg { fill: currentColor; }
 
-.kpszh-footer h6 {
+.kpszh-footer-copyright {
     position: relative;
     margin-block-start: 1.5em;
     margin-block-end: 2em;
@@ -399,11 +400,17 @@ a.kpszh-header-dropdown-button.active { font-weight: 300; }
     transition: margin-block-start var(--brand-transition), margin-block-end var(--brand-transition), font-size var(--brand-transition);
 }
 
-.kpszh-footer-image {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -100;
+.kpszh-footer-disclaimer {
+    position: relative;
+    font-weight: 200;
+    font-size: 15.5px;
+    text-transform: uppercase;
+    text-align: justify;
+    text-align-last: justify;
+    margin-block: 1em;
+    color: var(--white-transparent-1);
+    user-select: none;
+    transform: scale(1, 1.5);
 }
 
 .flag {
@@ -621,7 +628,7 @@ audio::-webkit-media-controls-time-remaining-display {
 
     .kpszh-social-icon { margin: auto 5px; }
 
-    .kpszh-footer h6 {
+    .kpszh-footer-copyright {
         margin-block-start: .75em;
         margin-block-end: 1em;
     }
@@ -645,9 +652,9 @@ audio::-webkit-media-controls-time-remaining-display {
 
     .character-red { background-image: none; }
 
-    .index-latest-excerpt .character-red { color: var(--white-transparent-3); }
+    .index-latest-excerpt .character-red { color: var(--white-transparent-4); }
 
-    .kpszh-footer h6 { font-size: 16px; }
+    .kpszh-footer-copyright { font-size: 16px; }
 
     #image-viewer .close { display: none;}
 }
@@ -734,21 +741,19 @@ audio::-webkit-media-controls-time-remaining-display {
     margin-block-start: .2em;
 }
 
-.index-stats-container:hover h1 { color: var(--accent-15) }
-
 .index-stats-container h2 {
-    color: var(--white-transparent-3);
+    color: var(--white-transparent-4);
     font-weight: 200;
     font-size: 24px;
     margin-block-end: .75em;
 }
-
-.index-stats-container:hover h2 { color: var(--accent-transparent-5) }
+.index-stats-container:hover h1,
+.index-stats-container:hover h2 { color: var(--accent-15) }
 
 .index-stats-state {
     font-weight: 200;
     font-size: 18px;
-    color: var(--white-transparent-1);
+    color: var(--white-transparent-2);
     margin-block: .5em;
 }
 
@@ -904,11 +909,11 @@ audio::-webkit-media-controls-time-remaining-display {
 
 .index-latest-title { font-size: 28px; }
 
-.index-latest-date { color: var(--white-transparent-3) }
+.index-latest-date { color: var(--white-transparent-4) }
 
 .index-latest-excerpt {
     font-weight: 300;
-    color: var(--white-transparent-3);
+    color: var(--white-transparent-4);
 }
 
 .index-latest-link { font-weight: 300; }
@@ -1002,14 +1007,14 @@ a.news-link:hover { color: white; }
 }
 
 .news-subtitle {
-    color: var(--white-transparent-3);
+    color: var(--white-transparent-4);
     overflow: hidden;
     font-size: 22px;
 }
 
 .news-excerpt {
     padding-top: 10px;
-    color: var(--white-transparent-2);
+    color: var(--white-transparent-3);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -1017,7 +1022,7 @@ a.news-link:hover { color: white; }
 }
 
 .news-date {
-    color: var(--white-transparent-3);
+    color: var(--white-transparent-4);
     font-size: 18px;
     position: absolute;
     top: 12px;
@@ -1061,7 +1066,7 @@ a.news-link:hover .news-date { opacity: 1; }
     margin-block-end: 0;
     display: inline-block;
     text-decoration: none;
-    color: var(--white-transparent-3);
+    color: var(--white-transparent-4);
 }
 
 .article-header {
@@ -1154,7 +1159,7 @@ a.news-link:hover .news-date { opacity: 1; }
     font-weight: 300;
     font-size: 20px;
     letter-spacing: .02em;
-    color: var(--white-transparent-3);
+    color: var(--white-transparent-4);
 }
 
 #main.article h3 {
@@ -1220,7 +1225,7 @@ a.news-link:hover .news-date { opacity: 1; }
 }
 
 .kpszh-audio-subtitle {
-    color: var(--white-transparent-2);
+    color: var(--white-transparent-3);
     font-size: 24px;
     font-weight: 300;
     user-select: none;
@@ -1733,7 +1738,7 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .album-date {
     font-size: 18px;
-    color: var(--white-transparent-2);
+    color: var(--white-transparent-3);
     transition: opacity var(--brand-transition);
 }
 
@@ -1833,19 +1838,19 @@ a.news-link:hover .news-date { opacity: 1; }
 
 .merch-price-nodiscount {
     font-size: 14px;
-    color: var(--white-transparent-1);
+    color: var(--white-transparent-2);
     text-decoration-line: line-through;
 }
 
 .merch-price {
     font-size: 22px;
-    color: var(--white-transparent-2);
+    color: var(--white-transparent-3);
 }
 
 .merch-take-a-look {
     font-weight: 400;
     text-align: right;
-    color: var(--white-transparent-3);
+    color: var(--white-transparent-4);
     transition: color var(--brand-transition);
     margin-block: .5em;
 }
@@ -1868,7 +1873,7 @@ a.news-link:hover .news-date { opacity: 1; }
     margin-block-end: 0;
     display: inline-block;
     text-decoration: none;
-    color: var(--white-transparent-3);
+    color: var(--white-transparent-4);
 }
 
 .product-container {
@@ -2050,8 +2055,8 @@ a.news-link:hover .news-date { opacity: 1; }
 }
 
 .product-size-label:hover {
-    border-color: var(--accent-6);
-    background-color: var(--accent-5);
+    border-color: var(--accent-8);
+    background-color: var(--accent-6);
 }
 
 .product-size-option:checked + .product-size-label {
@@ -2068,7 +2073,7 @@ a.news-link:hover .news-date { opacity: 1; }
 .product-add-button {
     border-radius: 4px;
     background-color: var(--accent-1);
-    background-image: linear-gradient(325deg, transparent 40%, var(--white-transparent-2) 50%, transparent 60%);
+    background-image: linear-gradient(325deg, transparent 40%, var(--white-transparent-3) 50%, transparent 60%);
     background-size: 300% auto;
     padding: 12px 24px;
     width: 250px;
