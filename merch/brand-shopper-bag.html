@@ -40,13 +40,19 @@
                 <a href="/merch.html" class="product-back">← <span data-i18n="product-back"></span></a>
                 <hr>
                 <div class="product-container">
-                    <div class="product-image-container image-red-gradient cursor-hoverable">
-                        <img class="zoomable" data-caption="product-3-image-caption" src="/img/merch/shopper-1.webp">
-                        <div class="product-image-caption"><span class="product-image-author" data-i18n="common-image-author"></span><span data-i18n="common-photographer-yura"></span></div>
+                    <div class="product-container-left">
+                        <div class="product-image-container image-red-gradient cursor-hoverable">
+                            <img class="zoomable" data-caption="product-3-image-caption" src="/img/merch/shopper-1.webp">
+                            <div class="product-image-caption"><span class="product-image-author" data-i18n="common-image-author"></span><span data-i18n="common-photographer-yura"></span></div>
+                        </div>
+                        <div class="product-images-block">
+                            <div class="product-image-small active"><img src="/img/merch/shopper-1.webp" class="cursor-hoverable"></div>
+                            <p class="product-images-amount" data-i18n="product-images-amount"></p>
+                        </div>
                     </div>
                     <div class="product-info-container">
                         <div class="product-header">
-                            <h1 id="character-red" data-i18n="product-3-title"></h1>
+                            <h1 id="character-red" class="product-header" data-i18n="product-3-title"></h1>
                         </div>
                         <h2 class="product-info-header" data-i18n="product-characteristics"></h2>
                         <div class="product-attrs-container">
@@ -69,7 +75,13 @@
                         </div>
                         <h2 class="product-info-header" data-i18n="product-description"></h2>
                         <p class="product-description" data-i18n="product-3-about"></p>
-                        <button class="product-add-button" data-i18n="product-add-button"></button>
+                        <div class="product-buy-block">
+                            <div class="product-buy-main">
+                                <h1 class="product-price"><span class="product-price-header" data-i18n="product-price"></span><span class="product-price-nodiscount" data-i18n="product-3-price-nodiscount"></span><span class="danganronpa" data-i18n="product-3-price"></span></h1>
+                                <button class="product-add-button" data-i18n="product-add-button"></button>
+                            </div>
+                            <p class="product-shipping" data-i18n="product-shipping"></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -129,12 +141,14 @@
                 </div>
             </div>
             <h6 class="kpszh-footer-copyright" data-i18n="common-footer-copyright"></h6>
-            <h6 class="kpszh-footer-disclaimer">Данный веб-сайт был создан в качестве курсовой работы студентом Яранского технологического техникума Посаженниковым Константином Сергеевичем.</h6>
+            <h6 class="kpszh-footer-disclaimer"></h6>
         </footer>
         <div id="image-viewer">
             <span class="close cursor-hoverable">&times;</span>
             <div class="image-viewer-body">
-                <img class="modal-content" id="full-image">
+                <div class="image-frame">
+                    <img class="modal-content" id="full-image">
+                </div>
                 <div class="image-viewer-caption"></div>
             </div>
         </div>

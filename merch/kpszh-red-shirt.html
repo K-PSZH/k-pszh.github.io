@@ -40,14 +40,18 @@
                 <a href="/merch.html" class="product-back">← <span data-i18n="product-back"></span></a>
                 <hr>
                 <div class="product-container">
-                    <div class="product-image-container image-red-gradient cursor-hoverable">
-                        <img class="zoomable" data-caption="product-1-image-caption" src="/img/merch/shirt-1.webp">
-                        <div class="product-image-caption"><span class="product-image-author" data-i18n="common-image-author"></span><span data-i18n="common-photographer-yura"></span></div>
+                    <div class="product-container-left">
+                        <div class="product-image-container image-red-gradient cursor-hoverable">
+                            <img class="zoomable" data-caption="product-1-image-caption" src="/img/merch/shirt-1.webp">
+                            <div class="product-image-caption"><span class="product-image-author" data-i18n="common-image-author"></span><span data-i18n="common-photographer-yura"></span></div>
+                        </div>
+                        <div class="product-images-block">
+                            <div class="product-image-small active"><img src="/img/merch/shirt-1.webp" class="cursor-hoverable"></div>
+                            <p class="product-images-amount" data-i18n="product-images-amount"></p>
+                        </div>
                     </div>
                     <div class="product-info-container">
-                        <div class="product-header">
-                            <h1 id="character-red" data-i18n="product-1-title"></h1>
-                        </div>
+                        <h1 id="character-red" class="product-header" data-i18n="product-1-title"></h1>
                         <h2 class="product-info-header" data-i18n="product-characteristics"></h2>
                         <div class="product-attrs-container">
                             <dl class="product-attrs">
@@ -70,11 +74,11 @@
                                         <label for="shirt-size-xs" class="product-size-label">XS</label>
                                         <input type="radio" id="shirt-size-s" name="shirt-size" value="s" class="product-size-option">
                                         <label for="shirt-size-s" class="product-size-label">S</label>
-                                        <input type="radio" id="shirt-size-m" name="shirt-size" value="m" class="product-size-option">
+                                        <input type="radio" id="shirt-size-m" name="shirt-size" value="m" class="product-size-option" checked>
                                         <label for="shirt-size-m" class="product-size-label">M</label>
                                         <input type="radio" id="shirt-size-l" name="shirt-size" value="l" class="product-size-option">
                                         <label for="shirt-size-l" class="product-size-label">L</label>
-                                        <input type="radio" id="shirt-size-xl" name="shirt-size" value="xl" class="product-size-option" checked>
+                                        <input type="radio" id="shirt-size-xl" name="shirt-size" value="xl" class="product-size-option">
                                         <label for="shirt-size-xl" class="product-size-label">XL</label>
                                         <input type="radio" id="shirt-size-xxl" name="shirt-size" value="xxl" class="product-size-option">
                                         <label for="shirt-size-xxl" class="product-size-label">XXL</label>
@@ -84,7 +88,13 @@
                         </div>
                         <h2 class="product-info-header" data-i18n="product-description"></h2>
                         <p class="product-description" data-i18n="product-1-about"></p>
-                        <button class="product-add-button" data-i18n="product-add-button"></button>
+                        <div class="product-buy-block">
+                            <div class="product-buy-main">
+                                <h1 class="product-price"><span class="product-price-header" data-i18n="product-price"></span><span class="product-price-nodiscount" data-i18n="product-1-price-nodiscount"></span><span class="danganronpa" data-i18n="product-1-price"></span></h1>
+                                <button class="product-add-button" data-i18n="product-add-button"></button>
+                            </div>
+                            <p class="product-shipping" data-i18n="product-shipping"></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -144,12 +154,14 @@
                 </div>
             </div>
             <h6 class="kpszh-footer-copyright" data-i18n="common-footer-copyright"></h6>
-            <h6 class="kpszh-footer-disclaimer">Данный веб-сайт был создан в качестве курсовой работы студентом Яранского технологического техникума Посаженниковым Константином Сергеевичем.</h6>
+            <h6 class="kpszh-footer-disclaimer"></h6>
         </footer>
         <div id="image-viewer">
             <span class="close cursor-hoverable">&times;</span>
             <div class="image-viewer-body">
-                <img class="modal-content" id="full-image">
+                <div class="image-frame">
+                    <img class="modal-content" id="full-image">
+                </div>
                 <div class="image-viewer-caption"></div>
             </div>
         </div>

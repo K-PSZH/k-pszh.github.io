@@ -17,6 +17,7 @@ html, body, a, button, label { cursor: none; }
     height: 100%;
     pointer-events: none;
     transform-origin: center center;
+    filter: hue-rotate(calc(var(--accent-hsl) * 1deg)) brightness(4);
     transition: transform var(--brand-transition), opacity var(--brand-transition);
     will-change: transform, opacity;
 }

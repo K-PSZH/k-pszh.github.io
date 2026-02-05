@@ -53,10 +53,9 @@
                 <hr>
                 <p data-i18n="article-2-text-1"></p>
                 <p data-i18n="article-2-text-2"></p>
-                <p data-i18n="article-2-text-3"></p>
                 <div class="kpszh-glass-container warning-container">
                     <div class="warning-container-text" data-i18n="article-2-note"></div>
-                    <svg class="kpszh-glass-container-icon"><use href="/img/icons/icons.svg#icon-warning"></use></svg>
+                    <svg class="kpszh-glass-container-icon fixed-icon"><use href="/img/icons/icons.svg#icon-warning"></use></svg>
                 </div>
                 <div class="kpszh-audio-grid">
                     <div class="kpszh-glass-container kpszh-audio-container">
@@ -165,12 +164,14 @@
                 </div>
             </div>
             <h6 class="kpszh-footer-copyright" data-i18n="common-footer-copyright"></h6>
-            <h6 class="kpszh-footer-disclaimer">Данный веб-сайт был создан в качестве курсовой работы студентом Яранского технологического техникума Посаженниковым Константином Сергеевичем.</h6>
+            <h6 class="kpszh-footer-disclaimer"></h6>
         </footer>
         <div id="image-viewer">
             <span class="close cursor-hoverable">&times;</span>
             <div class="image-viewer-body">
-                <img class="modal-content" id="full-image">
+                <div class="image-frame">
+                    <img class="modal-content" id="full-image">
+                </div>
                 <div class="image-viewer-caption"></div>
             </div>
         </div>
