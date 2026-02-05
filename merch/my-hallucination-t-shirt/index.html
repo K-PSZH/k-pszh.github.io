@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="/css/styles.css">
         <link rel="stylesheet" href="/css/cursor.css">
 	    <link rel="preload" href="/js/language.json" as="fetch" crossorigin>
-	    <title data-i18n="faq-tab-name"></title>
+	    <title data-i18n="product-2-tab-name"></title>
     </head>
     <body class="preload">
         <header class="kpszh-header">
@@ -19,11 +19,11 @@
                 <div class="kpszh-header-menu">
                     <a href="/" data-i18n="common-header-home"></a>
                     <a href="/news/" data-i18n="common-header-news"></a>
-                    <a href="/about.html" data-i18n="common-header-about"></a>
-                    <a href="/projects.html" data-i18n="common-header-projects"></a>
-                    <a href="/merch.html" data-i18n="common-header-merch"></a>
-                    <a href="/tools.html" data-i18n="common-header-tools"></a>
-                    <a href="/faq.html" class="active" data-i18n="common-header-faq"></a>
+                    <a href="/about/" data-i18n="common-header-about"></a>
+                    <a href="/projects/" data-i18n="common-header-projects"></a>
+                    <a href="/merch/" class="active" data-i18n="common-header-merch"></a>
+                    <a href="/tools/" data-i18n="common-header-tools"></a>
+                    <a href="/faq/" data-i18n="common-header-faq"></a>
                     <div class="kpszh-header-dropdown">
                         <a onclick="langMenu()" class="kpszh-header-dropdown-button" data-i18n="common-header-language"></a>
                         <div id="lang-dropdown" class="kpszh-header-dropdown-content">
@@ -35,28 +35,67 @@
             </div>
             <hr>
         </header>
-        <div id="main" class="faq">
+        <div id="main" class="product">
             <div id="main-body">
-                <h1 data-i18n="faq-title"></h1>
-                <h3>The things I'm most often asked about on social media are end up here!</h3>
-                <h2><span class="cursor-hoverable">CONTENT</span> RELATED QUESTIONS</h2>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <button class="faq-question">What are you using <span class="danganronpa">to create</span> music/videos?<span class="arrow">▼</span></button>
-                        <div class="faq-answer">
-                            <p>Check <a href="/tools.html">"Tools I use"</a> page!</p>
+                <a href="/merch/" class="product-back">← <span data-i18n="product-back"></span></a>
+                <hr>
+                <div class="product-container">
+                    <div class="product-container-left">
+                        <div class="product-image-container image-red-gradient cursor-hoverable">
+                            <img class="zoomable" data-caption="product-2-image-caption" src="/img/merch/tshirt-1.webp">
+                            <div class="product-image-caption"><span class="product-image-author" data-i18n="common-image-author"></span><span data-i18n="common-photographer-yura"></span></div>
+                        </div>
+                        <div class="product-images-block">
+                            <div class="product-image-small active"><img src="/img/merch/tshirt-1.webp" class="cursor-hoverable"></div>
+                            <p class="product-images-amount" data-i18n="product-images-amount"></p>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-question">Can I <span class="danganronpa">use</span> your music in my content?<span class="arrow">▼</span></button>
-                        <div class="faq-answer">
-                            <p>As long as it is non-profit and you are crediting me — sure you can!</p>
+                    <div class="product-info-container">
+                        <div class="product-header">
+                            <h1 id="character-red" class="product-header" data-i18n="product-2-title"></h1>
                         </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">Are you taking <span class="danganronpa">commissions</span>?<span class="arrow">▼</span></button>
-                        <div class="faq-answer">
-                            <p>Hell yeah! However, the payment method can be a little tricky due to my location.<br>Here's my <a href="https://boosty.to/kpszh" target="_blank">Boosty page</a>. That's the place where we can chat about commission and this is also where you are can pay later.</p>
+                        <h2 class="product-info-header" data-i18n="product-characteristics"></h2>
+                        <div class="product-attrs-container">
+                            <dl class="product-attrs">
+                                <dt data-i18n="product-material"></dt>
+                                <dd data-i18n="product-material-polyester"></dd>
+                            </dl>
+                            <dl class="product-attrs">
+                                <dt data-i18n="product-color"></dt>
+                                <dd data-i18n="product-color-black"></dd>
+                            </dl>
+                            <dl class="product-attrs">
+                                <dt data-i18n="product-pattern"></dt>
+                                <dd>My Hallucination</dd>
+                            </dl>
+                            <dl class="product-attrs">
+                                <dt data-i18n="product-size"></dt>
+                                <dd class="size">
+                                    <div class="product-size-buttons">
+                                        <input type="radio" id="tshirt-size-xs" name="tshirt-size" value="xs" class="product-size-option">
+                                        <label for="tshirt-size-xs" class="product-size-label">XS</label>
+                                        <input type="radio" id="tshirt-size-s" name="tshirt-size" value="s" class="product-size-option">
+                                        <label for="tshirt-size-s" class="product-size-label">S</label>
+                                        <input type="radio" id="tshirt-size-m" name="tshirt-size" value="m" class="product-size-option" checked>
+                                        <label for="tshirt-size-m" class="product-size-label">M</label>
+                                        <input type="radio" id="tshirt-size-l" name="tshirt-size" value="l" class="product-size-option">
+                                        <label for="tshirt-size-l" class="product-size-label">L</label>
+                                        <input type="radio" id="tshirt-size-xl" name="tshirt-size" value="xl" class="product-size-option">
+                                        <label for="tshirt-size-xl" class="product-size-label">XL</label>
+                                        <input type="radio" id="tshirt-size-xxl" name="tshirt-size" value="xxl" class="product-size-option">
+                                        <label for="tshirt-size-xxl" class="product-size-label">XXL</label>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <h2 class="product-info-header" data-i18n="product-description"></h2>
+                        <p class="product-description" data-i18n="product-2-about"></p>
+                        <div class="product-buy-block">
+                            <div class="product-buy-main">
+                                <h1 class="product-price"><span class="product-price-header" data-i18n="product-price"></span><span class="product-price-nodiscount" data-i18n="product-2-price-nodiscount"></span><span class="danganronpa" data-i18n="product-2-price"></span></h1>
+                                <button class="product-add-button" data-i18n="product-add-button"></button>
+                            </div>
+                            <p class="product-shipping" data-i18n="product-shipping"></p>
                         </div>
                     </div>
                 </div>
@@ -119,6 +158,15 @@
             <h6 class="kpszh-footer-copyright" data-i18n="common-footer-copyright"></h6>
             <h6 class="kpszh-footer-disclaimer"></h6>
         </footer>
+        <div id="image-viewer">
+            <span class="close cursor-hoverable">&times;</span>
+            <div class="image-viewer-body">
+                <div class="image-frame">
+                    <img class="modal-content" id="full-image">
+                </div>
+                <div class="image-viewer-caption"></div>
+            </div>
+        </div>
         <div id="kpszh-cursor">
             <img id="kpszh-cursor-image" src="/img/cursor.webp" alt="">
         </div>
@@ -129,24 +177,44 @@
                 document.body.classList.remove('preload');
             });
 
-            const qs = document.querySelectorAll('.faq-question');
+            document.addEventListener('DOMContentLoaded', () => {
+                const viewer = document.getElementById('image-viewer');
+                const fullImage = document.getElementById('full-image');
+                const viewerCaption = document.querySelector('.image-viewer-caption');
 
-            qs.forEach(q => {
-                q.addEventListener('click', () => {
-                    qs.forEach(i => {
-                        if (i !== q) {
-                            i.classList.remove('active');
-                            i.nextElementSibling.style.maxHeight = null;
+                function openViewer(img) {
+                    fullImage.src = img.src;
+                    activeCaptionKey = img.dataset.caption || null;
+                    viewerCaption.textContent = activeCaptionKey ? data[currentLang][activeCaptionKey] : '';
+                    viewer.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                    requestAnimationFrame(() => viewer.classList.add('visible'));
+                }
+
+                function closeViewer() {
+                    if (!viewer.classList.contains('visible')) return;
+                    viewer.classList.remove('visible');
+                    viewer.addEventListener('transitionend', function hide(e) {
+                        if (e.propertyName === 'opacity') {
+                            viewer.style.display = 'none';
+                            document.body.style.overflow = '';
+                            viewer.removeEventListener('transitionend', hide);
                         }
                     });
+                }
 
-                    q.classList.toggle('active');
+                document.addEventListener('click', e => {
+                    if (e.target.matches('.zoomable')) {
+                        openViewer(e.target);
+                    }
+                    else if (e.target === viewer || e.target.matches('.close')) {
+                        closeViewer();
+                    }
+                });
 
-                    const a = q.nextElementSibling;
-                    if (a.style.maxHeight) {
-                        a.style.maxHeight = null;
-                    } else {
-                        a.style.maxHeight = a.scrollHeight + 'px';
+                document.addEventListener('keydown', e => {
+                    if (e.key === 'Escape') {
+                        closeViewer();
                     }
                 });
             });

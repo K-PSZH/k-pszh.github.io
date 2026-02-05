@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="/css/styles.css">
         <link rel="stylesheet" href="/css/cursor.css">
 	    <link rel="preload" href="/js/language.json" as="fetch" crossorigin>
-	    <title data-i18n="product-2-tab-name"></title>
+	    <title data-i18n="article-3-tab-name"></title>
     </head>
     <body class="preload">
         <header class="kpszh-header">
@@ -18,12 +18,12 @@
                 </a>
                 <div class="kpszh-header-menu">
                     <a href="/" data-i18n="common-header-home"></a>
-                    <a href="/news/" data-i18n="common-header-news"></a>
-                    <a href="/about.html" data-i18n="common-header-about"></a>
-                    <a href="/projects.html" data-i18n="common-header-projects"></a>
-                    <a href="/merch.html" class="active" data-i18n="common-header-merch"></a>
-                    <a href="/tools.html" data-i18n="common-header-tools"></a>
-                    <a href="/faq.html" data-i18n="common-header-faq"></a>
+                    <a href="/news/" class="active" data-i18n="common-header-news"></a>
+                    <a href="/about/" data-i18n="common-header-about"></a>
+                    <a href="/projects/" data-i18n="common-header-projects"></a>
+                    <a href="/merch/" data-i18n="common-header-merch"></a>
+                    <a href="/tools/" data-i18n="common-header-tools"></a>
+                    <a href="/faq/" data-i18n="common-header-faq"></a>
                     <div class="kpszh-header-dropdown">
                         <a onclick="langMenu()" class="kpszh-header-dropdown-button" data-i18n="common-header-language"></a>
                         <div id="lang-dropdown" class="kpszh-header-dropdown-content">
@@ -35,70 +35,28 @@
             </div>
             <hr>
         </header>
-        <div id="main" class="product">
+        <div id="main" class="article">
             <div id="main-body">
-                <a href="/merch.html" class="product-back">← <span data-i18n="product-back"></span></a>
-                <hr>
-                <div class="product-container">
-                    <div class="product-container-left">
-                        <div class="product-image-container image-red-gradient cursor-hoverable">
-                            <img class="zoomable" data-caption="product-2-image-caption" src="/img/merch/tshirt-1.webp">
-                            <div class="product-image-caption"><span class="product-image-author" data-i18n="common-image-author"></span><span data-i18n="common-photographer-yura"></span></div>
-                        </div>
-                        <div class="product-images-block">
-                            <div class="product-image-small active"><img src="/img/merch/tshirt-1.webp" class="cursor-hoverable"></div>
-                            <p class="product-images-amount" data-i18n="product-images-amount"></p>
-                        </div>
-                    </div>
-                    <div class="product-info-container">
-                        <div class="product-header">
-                            <h1 id="character-red" class="product-header" data-i18n="product-2-title"></h1>
-                        </div>
-                        <h2 class="product-info-header" data-i18n="product-characteristics"></h2>
-                        <div class="product-attrs-container">
-                            <dl class="product-attrs">
-                                <dt data-i18n="product-material"></dt>
-                                <dd data-i18n="product-material-polyester"></dd>
-                            </dl>
-                            <dl class="product-attrs">
-                                <dt data-i18n="product-color"></dt>
-                                <dd data-i18n="product-color-black"></dd>
-                            </dl>
-                            <dl class="product-attrs">
-                                <dt data-i18n="product-pattern"></dt>
-                                <dd>My Hallucination</dd>
-                            </dl>
-                            <dl class="product-attrs">
-                                <dt data-i18n="product-size"></dt>
-                                <dd class="size">
-                                    <div class="product-size-buttons">
-                                        <input type="radio" id="tshirt-size-xs" name="tshirt-size" value="xs" class="product-size-option">
-                                        <label for="tshirt-size-xs" class="product-size-label">XS</label>
-                                        <input type="radio" id="tshirt-size-s" name="tshirt-size" value="s" class="product-size-option">
-                                        <label for="tshirt-size-s" class="product-size-label">S</label>
-                                        <input type="radio" id="tshirt-size-m" name="tshirt-size" value="m" class="product-size-option" checked>
-                                        <label for="tshirt-size-m" class="product-size-label">M</label>
-                                        <input type="radio" id="tshirt-size-l" name="tshirt-size" value="l" class="product-size-option">
-                                        <label for="tshirt-size-l" class="product-size-label">L</label>
-                                        <input type="radio" id="tshirt-size-xl" name="tshirt-size" value="xl" class="product-size-option">
-                                        <label for="tshirt-size-xl" class="product-size-label">XL</label>
-                                        <input type="radio" id="tshirt-size-xxl" name="tshirt-size" value="xxl" class="product-size-option">
-                                        <label for="tshirt-size-xxl" class="product-size-label">XXL</label>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </div>
-                        <h2 class="product-info-header" data-i18n="product-description"></h2>
-                        <p class="product-description" data-i18n="product-2-about"></p>
-                        <div class="product-buy-block">
-                            <div class="product-buy-main">
-                                <h1 class="product-price"><span class="product-price-header" data-i18n="product-price"></span><span class="product-price-nodiscount" data-i18n="product-2-price-nodiscount"></span><span class="danganronpa" data-i18n="product-2-price"></span></h1>
-                                <button class="product-add-button" data-i18n="product-add-button"></button>
-                            </div>
-                            <p class="product-shipping" data-i18n="product-shipping"></p>
-                        </div>
+                <a href="/news/" class="article-back">← <span data-i18n="article-back"></span></a>
+                <div class="article-header">
+                    <h1 id="character-red" data-i18n="article-3-title"></h1>
+                    <div class="article-details">
+                        <h2><span data-i18n="article-3-date"></span><span class="nbsp">&nbsp;&nbsp;</span>\\<span class="nbsp">&nbsp;&nbsp;</span></h2>
+                        <h2><span class="article-author" data-i18n="article-author"></span><b><span class="danganronpa cursor-hoverable">K-PSZH</span></b><span class="nbsp">&nbsp;&nbsp;</span>\\</h2>
                     </div>
                 </div>
+                <hr>
+                <div class="main-image-container image-red-gradient cursor-hoverable">
+                    <img class="zoomable" src="/img/news/about-rebuild.webp">
+                    <div class="main-image-caption"><span class="common-image-author" data-i18n="common-image-author"></span>Google Gemini</div>
+                </div>
+                <hr>
+                <p>I’ve been sitting on this for what feels like forever, waiting for the right moment to finally share it with you all... and now I can say it: the website is officially live! This little corner of the internet has been quietly simmering in my mind for ages, a place I’ve dreamed about building for a long time, and it’s an incredible feeling to finally open the doors and let you in. Here, you’ll find everything tied to my music world — updates, behind-the-scenes glimpses, random thoughts, and all the little creative sparks that I’m chasing at any given moment. For those of you who’ve been following my journey up to this point, thank you. Seriously. Your support means the world. And if you’re new here, welcome! Things are about to get interesting, chaotic, and hopefully a little magical.</p>
+                <hr>
+                <p>To mark this moment, the merch shop goes live today. I’m keeping things small but meaningful — pieces that I actually love wearing myself, designed to capture the vibe and energy of the project so far. There’s a sort of personal stamp on each item, a little piece of this world you can carry with you. And because I want to celebrate this launch properly, everything comes with a special discount for the first week. Consider it my way of saying thank you for sticking around, for checking in, for being curious. After the week, prices return to normal — so, no pressure, but, you know... there’s a little incentive to snag something now if you’ve been eyeing it.</p>
+                <hr>
+                <p>More news will be coming your way soon. You’ll hear it here first, right in this space that’s officially ours now.</p>
+                <p>So, from the bottom of my heart, thank you for being here at the very start. This is just the beginning, and I have a feeling that this chapter is going to be unforgettable. Strap in — it’s about to get fun, weird, and wild.</p>
             </div>
         </div>
         <footer class="kpszh-footer">
