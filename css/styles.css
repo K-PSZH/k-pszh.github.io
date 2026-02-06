@@ -703,7 +703,7 @@ audio::-webkit-media-controls-time-remaining-display {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("/img/index/welcome.webp");
+    background-image: url("/img/paragraph-1.webp");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -1343,17 +1343,17 @@ a.news-link:hover .news-date { opacity: 1; }
     left: calc(var(--album-panel-disc-size) / 2 * -1);
     width: var(--album-panel-disc-size);
     height: var(--album-panel-disc-size);
-    mask-image: radial-gradient(transparent 10%, black 11%);
+    mask-image: radial-gradient(transparent 10%, black 11%); /* center hole */
     border-radius: 50%;
-    filter: brightness(1) drop-shadow(0 10px 5px var(--black-transparent-2));
+    filter: brightness(1) drop-shadow(0 10px 5px var(--black-transparent-2)); /* outer shadow */
     overflow: hidden;
     transform: translateY(-50%);
     transition: left var(--brand-transition), filter var(--brand-transition);
 }
 
 .album-panel-disc:hover {
-    left: calc(var(--album-panel-disc-size) / 1.5 * -1);
-    filter: brightness(1.5);
+    left: calc(var(--album-panel-disc-size) / 1.5 * -1); /* hover slide */
+    filter: brightness(1.5); /* hover glow */
 }
 
 .album-panel-disc::before {
@@ -1361,7 +1361,7 @@ a.news-link:hover .news-date { opacity: 1; }
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: radial-gradient(circle at 50% 0%, #fffd 0%, #fff5 15%, #fff2 30%, #fff0 50%), radial-gradient(black 10%, transparent 15%, transparent 65%, black 75%);
+    background: radial-gradient(circle at 50% 0%, #fffd 0%, #fff5 15%, #fff2 30%, #fff0 50%), radial-gradient(black 10%, transparent 15%, transparent 65%, black 75%); /* top glare and inner shadows*/
     pointer-events: none;
     z-index: 2;
 }
@@ -1372,7 +1372,7 @@ a.news-link:hover .news-date { opacity: 1; }
     height: 100%;
     object-fit: cover;
     background-image: url(/img/covers/empty.webp);
-    animation: albumPanelDisc 10s linear infinite;
+    animation: albumPanelDisc 10s linear infinite; /* rotating */
     user-select: all;
 }
 
@@ -2135,8 +2135,24 @@ a.news-link:hover .news-date { opacity: 1; }
 .product-size-option:checked + .product-size-label::before { opacity: 1; }
 
 .product-description {
+    position: relative;
     margin-block-start: 0;
     margin-block-end: 1em;
+}
+
+.product-description::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/img/paragraph-2.webp");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: hue-rotate(calc(var(--accent-hsl) * 1deg));
+    z-index: -1;
 }
 
 .product-buy-block {
