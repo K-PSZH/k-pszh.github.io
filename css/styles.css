@@ -24,7 +24,7 @@
     --black-transparent-1: #0004;
     --black-transparent-2: #0008;
     --black-transparent-3: #000c;
-    --white-transparent-1: #fff4;
+    --white-transparent-1: #fff3;
     --white-transparent-2: #fff6;
     --white-transparent-3: #fff8;
     --white-transparent-4: #fffa;
@@ -540,7 +540,7 @@ span.danganronpa {
 }
 
 .image-frame {
-    transform: scale(0);
+    transform: scale(.5);
     transition: transform var(--brand-transition);
 }
 
@@ -549,7 +549,7 @@ span.danganronpa {
 .image-viewer-caption {
     flex: 0 0 auto;
     font-weight: 400;
-    color: var(--accent-9);
+    color: var(--accent-15);
     font-size: 24px;
     text-align: center;
     z-index: 1;
@@ -562,7 +562,6 @@ span.danganronpa {
     color: white;
 }
 
-#image-viewer.visible .modal-content,
 #image-viewer.visible .close { transform: scale(1); }
 
 @keyframes imageViewerZoom {
@@ -739,6 +738,7 @@ audio::-webkit-media-controls-time-remaining-display {
     right: calc(var(--kpszh-glass-container-icon-size) / -3);
     top: 40%;
     transform: translateY(-50%);
+    z-index: -1;
     fill: var(--accent-transparent-2);
     transition: right var(--brand-transition), fill var(--brand-transition);
 }
@@ -754,6 +754,8 @@ audio::-webkit-media-controls-time-remaining-display {
     background-color: var(--accent-transparent-1);
     border-color: var(--accent-transparent-3);
 }
+
+.kpszh-glass-container:has(.kpszh-glass-container-icon) { padding-right: calc(var(--kpszh-glass-container-icon-size) * 0.8); }
 
 .index-stats-container {
     flex-direction: column;
@@ -943,6 +945,12 @@ audio::-webkit-media-controls-time-remaining-display {
 }
 
 @media (hover: none) and (pointer: coarse) {
+    .index-logo-anim { mask-image: none; }
+
+    .index-logo-anim:hover { animation: none; }
+
+    .index-logo-anim:hover img.breakable { transform: none; }
+
     .index-latest-info audio { display: none; }
 }
 
@@ -1174,7 +1182,7 @@ a.news-link:hover .news-date { opacity: 1; }
 #main.article p { text-indent: 1em; }
 
 .warning-container {
-    padding: 12px calc(var(--kpszh-glass-container-icon-size) * 0.8) 12px 18px;
+    padding: 12px 18px 12px 18px;
     animation: warningBlinkContainer 1s ease infinite;
     will-change: background-color, border;
 }
