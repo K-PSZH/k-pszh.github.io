@@ -1220,6 +1220,12 @@ a.news-link:hover .news-date { opacity: 1; }
     padding: 12px 24px;
 }
 
+.kpszh-audio-container.playing .kpszh-glass-container-icon {
+    right: calc(var(--kpszh-glass-container-icon-size) / -6);
+    fill: var(--accent-transparent-3); }
+
+    .kpszh-audio-container.playing:hover .kpszh-glass-container-icon { fill: var(--accent-transparent-4); }
+
 .kpszh-audio-text {
     display: flex;
     flex-wrap: wrap;

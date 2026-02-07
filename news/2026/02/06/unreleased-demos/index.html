@@ -188,7 +188,10 @@
             document.addEventListener("DOMContentLoaded", () => {
                 const audios = document.querySelectorAll(".kpszh-audio-container audio");
                 const icon = audio => audio.closest(".kpszh-audio-container").querySelector("svg use");
-                const setIcon = (audio, play) => icon(audio)?.setAttribute("href", play ? "/img/icons/icons.svg#icon-audio-playing" : "/img/icons/icons.svg#icon-audio");
+                const setIcon = (audio, play) => {
+                    audio.closest(".kpszh-audio-container").classList.toggle("playing", play);
+                    // icon(audio)?.setAttribute("href", play ? "/img/icons/icons.svg#icon-audio-playing" : "/img/icons/icons.svg#icon-audio");
+                };
 
                 document.addEventListener("play", e => {
                     if (e.target.tagName !== "AUDIO") return;
