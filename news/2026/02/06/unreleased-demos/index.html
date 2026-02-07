@@ -186,19 +186,28 @@
             });
 
             document.addEventListener("DOMContentLoaded", () => {
-                document.addEventListener('contextmenu', e => {
-                    if (e.target.tagName === 'AUDIO') {
-                        e.preventDefault();
-                    }
-                });
-                document.addEventListener('play', e => {
-                    const audioElements = document.querySelectorAll('audio');
-                    audioElements.forEach(audioElement => {
-                        if (audioElement !== e.target && !audioElement.paused) {
-                            audioElement.pause();
-                        }
+                const audios = document.querySelectorAll(".kpszh-audio-container audio");
+                const icon = audio => audio.closest(".kpszh-audio-container").querySelector("svg use");
+                const setIcon = (audio, play) => icon(audio)?.setAttribute("href", play ? "/img/icons/icons.svg#icon-audio-playing" : "/img/icons/icons.svg#icon-audio");
+
+                document.addEventListener("play", e => {
+                    if (e.target.tagName !== "AUDIO") return;
+
+                    audios.forEach(a => {
+                        if (a !== e.target) a.pause();
+                        setIcon(a, a === e.target);
                     });
                 }, true);
+
+                audios.forEach(e => {
+                    ["pause", "ended"].forEach(ev =>
+                        e.addEventListener(ev, () => setIcon(e, false))
+                    );
+                });
+
+                document.addEventListener("contextmenu", e => {
+                    if (e.target.tagName === "AUDIO") e.preventDefault();
+                });
             });
 
             document.addEventListener('DOMContentLoaded', () => {
