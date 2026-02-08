@@ -376,7 +376,8 @@ hr { border-color: #fffc; border-width: 0 0 1px 0; }
 .kpszh-header-dropdown-submenu {
     position: absolute;
     top: 0;
-    right: 100%;
+    right: 100% !important;
+    left: auto !important;
     width: 150px;
     background: var(--accent-transparent-1);
     border-radius: 6px;
