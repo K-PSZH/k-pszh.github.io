@@ -24,11 +24,23 @@
                     <a href="/merch/" data-i18n="common-header-merch"></a>
                     <a href="/tools/" data-i18n="common-header-tools"></a>
                     <a href="/faq/" class="active" data-i18n="common-header-faq"></a>
-                    <div class="kpszh-header-dropdown">
-                        <a onclick="langMenu()" class="kpszh-header-dropdown-button" data-i18n="common-header-language"></a>
-                        <div id="lang-dropdown" class="kpszh-header-dropdown-content">
-                            <a onclick="langSet('ru')" data-lang="ru"><span data-i18n="common-header-language-ru"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/ru.svg"></a>
-                            <a onclick="langSet('en')" data-lang="en"><span data-i18n="common-header-language-en"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/us.svg"></a>
+                    <div class="kpszh-header-dropdown" id="settings">
+                        <button class="kpszh-header-dropdown-button" data-i18n="common-header-settings" aria-haspopup="true" aria-expanded="false"></button>
+                        <div class="kpszh-header-dropdown-menu" aria-hidden="true">
+                            <div class="kpszh-header-dropdown-menu-item" data-menu="languages" tabindex="0">
+                                <span data-i18n="common-header-language"></span>
+                                <div class="kpszh-header-dropdown-submenu">
+                                    <a data-lang="ru"><span data-i18n="common-header-language-ru"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/ru.svg"></a>
+                                    <a data-lang="en"><span data-i18n="common-header-language-en"></span><span class="nbsp">&nbsp;&nbsp;</span><img class="flag" src="/img/flags/us.svg"></a>
+                                </div>
+                            </div>
+                            <div class="kpszh-header-dropdown-menu-item" data-menu="themes" tabindex="0">
+                                <span data-i18n="common-header-theme"></span>
+                                <div class="kpszh-header-dropdown-submenu">
+                                    <a data-theme="0" data-i18n="common-header-theme-default"></a>
+                                    <a data-theme="240" data-i18n="common-header-theme-xmas"></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,7 +135,7 @@
             <img id="kpszh-cursor-image" src="/img/cursor.webp" alt="">
         </div>
         <script src="/js/cursor.js"></script>
-        <script src="/js/language.js"></script>
+        <script src="/js/settings.js"></script>
         <script>
             window.addEventListener('DOMContentLoaded', () => {
                 document.body.classList.remove('preload');
