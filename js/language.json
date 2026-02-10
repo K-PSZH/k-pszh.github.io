@@ -146,7 +146,7 @@
     "product-4-about": "Fancy addition to the finished look — a 5x5 cm metal badge pin, including the brand logo of yours truly!",
 
     "tools-tab-name": "Tools I use | K-PSZH",
-    "tools-title": "TOOLS I USE",
+    "tools-title": "Tools I use",
     "tools-music-subtitle": "FOR <span class=\"cursor-hoverable\">MUSIC</span> PRODUCTION",
     "tools-music-subtitle-daw": "<b>DAW:</b> FL Studio 21",
     "tools-music-caption-daw": "A preview of FL Studio project for <a href=\"https://youtu.be/2M0d_sTrlE0?t=1089\">\"A City of Hallucination\"",
@@ -159,7 +159,16 @@
     "tools-video-subtitle-additional": "ADDITIONAL STUFF",
 
     "faq-tab-name": "FAQ | K-PSZH",
-    "faq-title": "FAQ"
+    "faq-title": "FAQ",
+    
+    "donate-tab-name": "Donate | K-PSZH",
+    "donate-title": "Donate",
+    "donate-subtitle": "Currently, besides of buying my <a href=\"/merch/\">merch</a>, there are two more ways to <span class=\"danganronpa cursor-hoverable\"><b>support me</b></span>:",
+    "donate-option-once": "One-time donation",
+    "donate-option-month": "Monthly subscription",
+    "donate-option-commiss": "Accepting commissions",
+    "donate-option-exclusive": "Stuff for paid subscribers",
+    "donate-website-tba": "Donations directly through the website are currently under development"
   },
 
   "ru": {
@@ -309,7 +318,7 @@
     "product-4-about": "Стильное дополнение к готовому образу — металлический значок размером 5x5 сантиметров, с логотипом вашего покорного слуги!",
 
     "tools-tab-name": "Инструменты | K-PSZH",
-    "tools-title": "ИНСТРУМЕНТЫ",
+    "tools-title": "Инструменты",
     "tools-music-subtitle": "ДЛЯ СОЗДАНИЯ <span class=\"cursor-hoverable\">МУЗЫКИ</span>",
     "tools-music-subtitle-daw": "<b>DAW:</b> FL Studio 21",
     "tools-music-caption-daw": "Превью проекта FL Studio для трека <a href=\"https://youtu.be/2M0d_sTrlE0?t=1089\">\"A City of Hallucination\"",
@@ -322,6 +331,15 @@
     "tools-video-subtitle-additional": "ДОПОЛНИТЕЛЬНЫЕ РЕСУРСЫ",
 
     "faq-tab-name": "ЧаВО | K-PSZH",
-    "faq-title": "ЧаВО"
+    "faq-title": "ЧаВО",
+    
+    "donate-tab-name": "Донат | K-PSZH",
+    "donate-title": "Донат",
+    "donate-subtitle": "На данный момент, помимо приобретения <a href=\"/merch/\">мерчандайза</a>, есть ещё два способа <span class=\"danganronpa cursor-hoverable\"><b>поддержать меня</b></span>:",
+    "donate-option-once": "Разовое пожертвование",
+    "donate-option-month": "Ежемесячная подписка",
+    "donate-option-commiss": "Выполнение работ на заказ",
+    "donate-option-exclusive": "Эксклюзивы для подписчиков",
+    "donate-website-tba": "Возможность финансовой поддержки напрямую через сайт находится в разработке"
   }
 }

@@ -80,9 +80,7 @@
     color: white;
 }
 
-* {
-    -webkit-font-smoothing: antialiased;
-}
+* { -webkit-font-smoothing: antialiased; }
 
 img, br { user-select: none; }
 
@@ -321,14 +319,9 @@ hr { border-color: #fffc; border-width: 0 0 1px 0; }
     pointer-events: none;
 }
 
-.kpszh-header-dropdown-button:hover {
-    color: var(--accent-15);
-}
+.kpszh-header-dropdown-button:hover { color: var(--accent-15); }
 
-.kpszh-header-dropdown-button.active {
-    font-weight: 300;
-    user-select: none;
-}
+.kpszh-header-dropdown-button.active { user-select: none; }
 
 .kpszh-header-dropdown-button.active::before {
     opacity: 1;
@@ -350,7 +343,7 @@ hr { border-color: #fffc; border-width: 0 0 1px 0; }
     width: 100px;
     pointer-events: none;
     transform: translateY(4px);
-    transition: opacity .15s, transform .15s;
+    transition: opacity var(--brand-transition), transform var(--brand-transition);
 }
 
 .kpszh-header-dropdown-menu.open {
@@ -399,8 +392,6 @@ hr { border-color: #fffc; border-width: 0 0 1px 0; }
     border-radius: 4px;
 }
 
-.display-block { display: block; }
-
 @keyframes animationFlicker { 50% { opacity: 0; } }
 
 #main {
@@ -415,6 +406,13 @@ hr { border-color: #fffc; border-width: 0 0 1px 0; }
     padding-top: 0;
     padding-bottom: 0;
     overflow-wrap: break-word;
+}
+
+.main-subtitle {
+    font-weight: 300;
+    font-size: 24px;
+    margin-block-start: .5em;
+    margin-block-end: 2em;
 }
 
 .kpszh-footer {
@@ -1875,17 +1873,11 @@ a.news-link:hover .news-date { opacity: 1; }
 /* merch.css */
 #main.merch { max-width: var(--main-merch-width); }
 
-#main.merch h2 {
-    font-weight: 300;
-    font-size: 24px;
-    margin-block-start: .5em;
-    margin-block-end: 2em;
-}
-
 .merch-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    gap: 20px;
     margin-block-start: 0;
     margin-block-end: 3em;
 }
@@ -1896,7 +1888,7 @@ a.news-link:hover .news-date { opacity: 1; }
 }
 
 .merch-container {
-    max-width: 330px;
+    max-width: 320px;
     display: block;
     text-decoration: none;
     opacity: 0;
@@ -2638,15 +2630,6 @@ a.news-link:hover .news-date { opacity: 1; }
 
 
 /* faq.css */
-#main.faq h2 { margin-block: 0; }
-
-#main.faq h3 {
-    font-weight: 300;
-    font-size: 24px;
-    margin-block-start: .5em;
-    margin-block-end: 2em;
-}
-
 .faq-container {
     margin-inline: auto;
     margin-top: 15px;
@@ -2698,4 +2681,75 @@ a.news-link:hover .news-date { opacity: 1; }
     width: 90%;
     margin-block-start: 0;
     margin-block-end: 0;
+}
+
+
+/* donate */
+.donate-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-inline: auto;
+    max-width: 720px;
+    gap: 20px;
+    margin-block-start: 0;
+    margin-block-end: 3em;
+}
+
+.donate-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px 30px 20px;
+    width: 320px;
+    height: 360px;
+    text-decoration: none;
+}
+
+.donate-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(/img/bottom.webp);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: auto;
+    filter: hue-rotate(calc(var(--accent-hsl) * 1deg));
+    opacity: 1;
+}
+
+.donate-container:hover,
+.donate-container:focus { color: white; }
+
+.donate-container-icon {
+    width: 240px;
+    fill: white;
+    transition: transform var(--brand-transition);
+}
+
+.donate-container:not(.locked-container):hover .donate-container-icon { transform: scale(.95) }
+
+.donate-container ul {
+    width: 100%;
+    font-size: 24px;
+}
+
+.donate-container-text {
+    font-size: 24px;
+    text-align: center;
+}
+
+.kpszh-glass-container.locked-container {
+    background: linear-gradient(-30deg, #8888 -100%, transparent 50%, transparent 75%, #8888 150%);
+    background-color: #3333;
+    border: 4px solid #7777;
+    transition: none;
+}
+
+.locked-container::before { opacity: 0; }
+
+.kpszh-glass-container.locked-container *::selection { background-color: #9999; }
+
+.kpszh-glass-container.locked-container * {
+    color: #999;
+    fill: #999;
 }

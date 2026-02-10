@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="/css/styles.css">
         <link rel="stylesheet" href="/css/cursor.css">
 	    <link rel="preload" href="/js/language.json" as="fetch" crossorigin>
-	    <title data-i18n="news-tab-name"></title>
+	    <title data-i18n="donate-tab-name"></title>
     </head>
     <body class="preload">
         <header class="kpszh-header">
@@ -18,7 +18,7 @@
                 </a>
                 <div class="kpszh-header-menu">
                     <a href="/" data-i18n="common-header-home"></a>
-                    <a href="/news/" class="active" data-i18n="common-header-news"></a>
+                    <a href="/news/" data-i18n="common-header-news"></a>
                     <a href="/about/" data-i18n="common-header-about"></a>
                     <a href="/projects/" data-i18n="common-header-projects"></a>
                     <a href="/merch/" data-i18n="common-header-merch"></a>
@@ -49,37 +49,54 @@
         </header>
         <div id="main">
             <div id="main-body">
-                <h1 data-i18n="news-title"></h1>
-                <div class="news-block">
-                    <a alt="About REBUILD..." class="news-link gpu" href="/news/2026/03/02/about-rebuild/">
-                        <span class="kpszh-glass-container news-container">
-                            <svg class="kpszh-glass-container-icon"><use href="/img/icons/icons.svg#icon-news"></use></svg>
-                            <div class="news-image"><img src="/img/news/about-rebuild.webp"></div>
-                            <div class="news-date" data-i18n="news-3-date"></div>
-                            <div class="news-title" data-i18n="article-3-title"></div>
-                            <div class="news-subtitle" data-i18n="news-3-subtitle"></div>
-                            <div class="news-excerpt" data-i18n="news-excerpt"></div>
-                        </span>
+                <h1 data-i18n="donate-title"></h1>
+                <h2 class="main-subtitle" data-i18n="donate-subtitle"></h2>
+                <div class="donate-grid">
+                    <a href="https://www.donationalerts.com/r/kpszh" class="kpszh-glass-container donate-container gpu">
+                        <svg viewBox="0 0 236 80" xmlns="http://www.w3.org/2000/svg" class="donate-container-icon">
+                            <g transform="translate(0.000000, 7.000000)">
+                                <path d="M20.2,11.4c-0.4,5.5-4.2,11-11.8,11H0L1.9,0.8h8.5C17.8,0.8,20.6,6,20.2,11.4z M4.4,18.4h4.4 c4.9,0,7.2-3.6,7.4-7.1C16.4,8,14.7,4.6,10,4.6H5.6L4.4,18.4z"/>
+                                <path d="M44.4,11.7c-0.5,5.6-4.4,11.2-12.1,11.2s-10.6-5.5-10.1-11.1S26.9,0.3,34.3,0.3S45,6,44.4,11.7z M26.3,11.8 c-0.2,3.6,1.4,7.3,6.4,7.3s7.3-3.8,7.7-7.4C40.8,8.2,39.1,4,34,4S26.5,8.1,26.3,11.8L26.3,11.8z"/>
+                                <polygon points="62.6,0.7 66.7,0.7 64.8,22.4 62.2,22.4 62.2,22.4 52.2,7.8 50.9,22.4 46.8,22.4 48.7,0.8 52,0.8 61.4,14.2"/>
+                                <path d="M84.2,18.3H72.9l-2.2,4.1h-4.4L77.8,0.8h4.5l7.8,21.6h-4.4L84.2,18.3z M79.7,5.3l-4.8,9.2h8L79.7,5.3z"/>
+                                <polygon points="95.6,4.5 88.7,4.5 89,0.8 106.8,0.8 106.5,4.5 99.6,4.5 98.1,22.4 94,22.4 	"/>
+                                <polygon points="107.4,22.4 109.3,0.8 113.3,0.8 111.4,22.4 	"/>
+                                <path d="M138.1,11.7c-0.6,5.6-4.5,11.2-12.1,11.2s-10.6-5.5-10.1-11.1S120.5,0.3,128,0.3S138.6,6,138.1,11.7z M119.9,11.8 c-0.2,3.6,1.4,7.3,6.5,7.3c5.1,0,7.3-3.8,7.7-7.4c0.4-3.6-1.3-7.8-6.4-7.8S120.1,8.1,119.9,11.8z"/>
+                                <polygon points="156.2,0.7 160.3,0.7 158.4,22.4 155.9,22.4 155.9,22.4 145.8,7.8 144.5,22.4 140.5,22.4 142.3,0.8 145.6,0.8 155.1,14.2"/>
+                                <path d="M53.6,48.9H42.3L40.1,53h-4.4l11.6-21.7h4.4L59.5,53H55L53.6,48.9z M49,35.9l-4.8,9.2h8L49,35.9z"/>
+                                <polygon points="67.6,31.3 66,49.2 77.1,49.2 76.8,53 61.6,53 63.5,31.3 	"/>
+                                <path d="M95.8,53H79.6c0.6-7.2,1.3-14.5,1.9-21.7h16.2l-0.3,4H85.2l-0.4,5h11.7l-0.3,3.8H84.4L84,49h12.1L95.8,53z"/>
+                                <path d="M118.1,53h-4.8l-5.7-7.2h-3.9L103,53h-4l1.9-21.7c3.4,0,6.8,0,10.3,0c5.1,0,7.5,3.4,7.2,7.2c-0.1,3.4-2.7,6.3-6.1,6.8 l5.9,7.4L118.1,53z M104.6,35.1l-0.6,6.9h6.2c1,0.1,2-0.3,2.7-0.9c0.8-0.7,1.2-1.6,1.3-2.6c0.1-0.9-0.2-1.9-0.8-2.6 c-0.7-0.7-1.6-1-2.6-0.9H104.6z"/>
+                                <polygon points="127.9,35 121,35 121.3,31.3 139.1,31.3 138.8,35 131.9,35 130.4,53 126.3,53 	"/>
+                                <path d="M154.5,36.5c-0.6-1.2-2.6-2.4-4.9-2.4c-3,0-4.6,1.3-4.7,2.9c-0.2,1.9,2,2.4,4.6,2.7c4.5,0.6,8.6,1.7,8.1,6.9 c-0.4,4.8-4.9,6.9-9.7,6.9c-4.4,0-7.7-1.4-9-5.3l3.6-1.8c0.8,2.4,3.2,3.4,5.8,3.4c2.6,0,5.1-0.9,5.2-3.2c0.2-2-1.9-2.9-4.7-3.2 c-4.4-0.5-8.3-1.7-7.9-6.6c0.4-4.5,4.9-6.3,8.9-6.3c3.4,0,6.8,1,8.1,4.3L154.5,36.5z"/>
+                            </g>
+                            <g transform="translate(166.000000, 0.000000)">
+                                <path d="M68.6,17.7L54.4,1.2C53.7,0.4,52.8,0,51.8,0H9.4C7.6,0,6.2,1.3,6,3L0.9,61c-0.1,0.9,0.2,1.9,0.9,2.6 s1.5,1.1,2.5,1.1h8.3l-1.3,15.1l16.4-15.1h18.6c0.9,0,1.7-0.3,2.3-1l17.5-17c0.6-0.6,0.9-1.3,1-2.1l2.1-24.5 C69.4,19.3,69.1,18.4,68.6,17.7z M55.6,40c-0.1,0.8-0.4,1.6-1,2.1l-10.1,9.7c-0.6,0.6-1.5,0.9-2.3,0.9H17.4c-1.5,0-2.8-1-3.2-2.4 C14,49.9,14,49.5,14,49.1l3-34c0.1-1.7,1.6-3.1,3.3-3.1h25.2c1,0,1.9,0.4,2.5,1.1l8,9.2c0.6,0.7,0.9,1.6,0.8,2.5L55.6,40z M35.8,46.5h-4.9c-0.3,0-0.6-0.1-0.7-0.3s-0.3-0.5-0.3-0.8l0.4-4.9c0-0.5,0.5-0.9,1-0.9h4.9c0.3,0,0.6,0.1,0.7,0.3s0.3,0.5,0.3,0.8 l-0.4,4.9C36.8,46.1,36.3,46.5,35.8,46.5L35.8,46.5z M36.7,37.2h-5c-0.6,0-1-0.4-1-1L32,20.7c0.1-0.5,0.5-0.9,1-0.9h5 c0.6,0,1,0.4,1,1l-1.4,15.5C37.6,36.8,37.2,37.2,36.7,37.2z"/>
+                            </g>
+                        </svg>
+                        <ul>
+                            <li data-i18n="donate-option-once"></li>
+                        </ul>
                     </a>
-                    <a alt="past_months.mp3 : UNRELEASED DEMOS" class="news-link gpu" href="/news/2026/02/06/unreleased-demos/">
-                        <span class="kpszh-glass-container news-container">
-                            <svg class="kpszh-glass-container-icon"><use href="/img/icons/icons.svg#icon-news"></use></svg>
-                            <div class="news-image"><img src="/img/news/unreleased-demos.webp"></div>
-                            <div class="news-date" data-i18n="news-2-date"></div>
-                            <div class="news-title" data-i18n="article-2-title"></div>
-                            <div class="news-subtitle" data-i18n="news-2-subtitle"></div>
-                            <div class="news-excerpt" data-i18n="article-2-text-1"></div>
-                        </span>
+                    <a href="https://boosty.to/kpszh" class="kpszh-glass-container donate-container gpu">
+                        <svg viewBox="0 0 575.75 190" xmlns="http://www.w3.org/2000/svg" class="donate-container-icon">
+                            <g transform="translate(-82.500000, -50.500000)">
+                                <path class="st0" d="M632.8,138.6l-23.1,35.9l-2.3-35.9h-19.3h-6h-7.9c3.1-10.5,5.5-19,5.5-19l1.3-4.2h-25.5l-1.2,4.2l-5.5,19 h-21.7c-3.6,0-5.4,0-5.4,0c-22.3,0-34.8,6.4-40,18.4c-3-11-12.9-18.4-28.2-18.4c-13.2,0-24.9,4.9-33.6,12.7 c-4.5-7.8-13.4-12.7-25.8-12.7c-14.2,0-26.5,5.7-35.5,14.4c-4.1-8.7-13.4-14.4-26.7-14.4c-4.6,0-8.9,0.6-13,1.7l2-6.9 c0-0.1,0.1-0.2,0.1-0.3l5.1-17.7h-25.4l-16.2,55.8c-0.4,1.1-0.8,2.2-1.1,3.4c-0.7,2.6-1.2,5.1-1.4,7.5 c-2.1,15.6,4.7,27.3,23.6,28.1c1.7,0.2,3.5,0.3,5.5,0.3c13.4,0,25.9-5.7,35.1-14.4c3.9,8.7,13,14.4,27.1,14.4 c12.5,0,24.3-4.9,33.2-12.7c4.3,7.8,13.1,12.7,26.2,12.7c28.4,0,49.6,0,63.6,0c19.7,0,30.8-3.9,36.6-12.3c0,8.1,4.6,12.3,16.2,12.3 c9.4,0,22-2.1,39.3-6.3L563.3,240h25.4l69.5-101.4H632.8z M334.3,174.5c-2.4,8.2-10,14.8-17,14.8c-7,0-10.8-6.6-8.4-14.8 c2.4-8.2,10-14.8,17-14.8C332.9,159.7,336.7,166.3,334.3,174.5z M396.4,174.5c-2.4,8.2-10,14.8-17,14.8s-10.8-6.6-8.4-14.8 s10-14.8,17-14.8S398.8,166.3,396.4,174.5z M430.5,174.5c2.4-8.2,10-14.8,17-14.8s10.8,6.6,8.4,14.8c-2.3,8.1-9.8,14.6-16.7,14.8 c-0.2,0-0.4,0-0.6,0C431.8,189.1,428.2,182.6,430.5,174.5z M512.2,186.7c-1.3,3-11.3,2.5-13.8,2.6c0,0-6.6,0-24.6,0 c3.3-4.5,5.9-9.5,7.4-14.8c0.2-0.5,0.3-1.1,0.4-1.6c2.7,3.8,8.3,7.2,19.2,9.4C511.2,184.3,513.1,183.7,512.2,186.7z M537.3,178.6 c-2.2-8.4-11.5-11.8-24.6-13.4c-5.5-0.7-8.6-0.9-7.9-3.3c0.5-1.8,3.3-2.2,9.2-2.2c3.7,0,8.1,0,13.2,0h15.6L537.3,178.6z M562.6,178.7c0-0.2,2.5-8.6,5.5-19h16.1l2.6,26.9C560.3,192.3,559.7,190.8,562.6,178.7z"/>
+                            </g>
+                            <g transform="translate(-82.500000, -50.500000)">
+                                <path class="st0" d="M87.5,163.9L120.2,51h50.1l-10.1,35c-0.1,0.2-0.2,0.4-0.3,0.6L133.3,179h24.8c-10.4,25.9-18.5,46.2-24.3,60.9 c-45.8-0.5-58.6-33.3-47.4-72.1 M133.9,240l60.4-86.9h-25.6l22.3-55.7c38.2,4,56.2,34.1,45.6,70.5C225.3,207,179.4,240,134.8,240 C134.5,240,134.2,240,133.9,240z"/>
+                            </g>
+                        </svg>
+                        <ul>
+                            <li data-i18n="donate-option-once"></li>
+                            <li data-i18n="donate-option-month"></li>
+                            <li data-i18n="donate-option-commiss"></li>
+                            <li data-i18n="donate-option-exclusive"></li>
+                        </ul>
                     </a>
-                    <a alt="Welcome to the Beginning! Website Launch, Merch Drop and a New Chapter..." class="news-link gpu" href="/news/2026/02/01/welcome-to-the-beginning/">
-                        <span class="kpszh-glass-container news-container">
-                            <svg class="kpszh-glass-container-icon"><use href="/img/icons/icons.svg#icon-news"></use></svg>
-                            <div class="news-image"><img src="/img/news/welcome-to-the-beginning.webp"></div>
-                            <div class="news-date" data-i18n="news-1-date"></div>
-                            <div class="news-title" data-i18n="article-1-title"></div>
-                            <div class="news-subtitle" data-i18n="news-1-subtitle"></div>
-                            <div class="news-excerpt" data-i18n="news-excerpt"></div>
-                        </span>
+                    <a class="kpszh-glass-container donate-container locked-container cursor-not-hoverable gpu">
+                        <div class="kpszh-header"><h1>K-PSZH</h1></div>
+                        <p class="donate-container-text" data-i18n="donate-website-tba"></p>
                     </a>
                 </div>
             </div>
@@ -141,6 +158,15 @@
             <h6 class="kpszh-footer-copyright" data-i18n="common-footer-copyright"></h6>
             <h6 class="kpszh-footer-disclaimer"></h6>
         </footer>
+        <div id="image-viewer">
+            <span class="close cursor-hoverable">&times;</span>
+            <div class="image-viewer-body">
+                <div class="image-frame">
+                    <img class="modal-content" id="full-image">
+                </div>
+                <div class="image-viewer-caption"></div>
+            </div>
+        </div>
         <div id="kpszh-cursor">
             <img id="kpszh-cursor-image" src="/img/cursor.webp" alt="">
         </div>
@@ -149,6 +175,48 @@
         <script>
             window.addEventListener('DOMContentLoaded', () => {
                 document.body.classList.remove('preload');
+            });
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const viewer = document.getElementById('image-viewer');
+                const fullImage = document.getElementById('full-image');
+                const viewerCaption = document.querySelector('.image-viewer-caption');
+
+                function openViewer(img) {
+                    fullImage.src = img.src;
+                    activeCaptionKey = img.dataset.caption || null;
+                    viewerCaption.textContent = activeCaptionKey ? data[currentLang][activeCaptionKey] : '';
+                    viewer.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                    requestAnimationFrame(() => viewer.classList.add('visible'));
+                }
+
+                function closeViewer() {
+                    if (!viewer.classList.contains('visible')) return;
+                    viewer.classList.remove('visible');
+                    viewer.addEventListener('transitionend', function hide(e) {
+                        if (e.propertyName === 'opacity') {
+                            viewer.style.display = 'none';
+                            document.body.style.overflow = '';
+                            viewer.removeEventListener('transitionend', hide);
+                        }
+                    });
+                }
+
+                document.addEventListener('click', e => {
+                    if (e.target.matches('.zoomable')) {
+                        openViewer(e.target);
+                    }
+                    else if (e.target === viewer || e.target.matches('.close')) {
+                        closeViewer();
+                    }
+                });
+
+                document.addEventListener('keydown', e => {
+                    if (e.key === 'Escape') {
+                        closeViewer();
+                    }
+                });
             });
         </script>
     </body>

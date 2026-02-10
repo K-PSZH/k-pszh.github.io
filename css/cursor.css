@@ -29,7 +29,7 @@ html, body, a, button, label { cursor: none; }
 
 @keyframes hover {
     0% { opacity: 1; }
-    100% { opacity: .5; }
+    100% { opacity: .25; }
 }
 
 @media (hover: none) and (pointer: coarse) {

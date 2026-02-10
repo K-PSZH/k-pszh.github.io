@@ -15,7 +15,9 @@
 
     // Эффект наведения (ссылки, кнопки и кастомные .cursor-hoverable)
     document.addEventListener("pointermove", e => {
-        cursor.classList.toggle("pointer", !!e.target.closest("a, button, audio, label, .cursor-hoverable"));
+        const isHoverable = !!e.target.closest("a, button, audio, label, .cursor-hoverable");
+        const isNotHoverable = !!e.target.closest(".cursor-not-hoverable");
+        cursor.classList.toggle("pointer", isHoverable && !isNotHoverable);
     });
 
     // Анимация ускорения и масштабирования
