@@ -1,15 +1,38 @@
-html, body, a, button, label { cursor: none; }
+html, body { cursor: default; }
+
+a, button, label, [role="button"], .cursor-hoverable { cursor: pointer; }
+
+html.custom-cursor, 
+html.custom-cursor body,
+html.custom-cursor a,
+html.custom-cursor button,
+html.custom-cursor label {
+    cursor: none;
+}
+
+html.custom-cursor audio::-webkit-media-controls-play-button,
+html.custom-cursor audio::-webkit-media-controls-timeline,
+html.custom-cursor audio::-webkit-media-controls-mute-button,
+html.custom-cursor audio::-webkit-media-controls-volume-slider,
+html.custom-cursor audio::-webkit-media-controls-fullscreen-button { cursor: none !important; }
 
 #kpszh-cursor {
     position: fixed;
+    opacity: 0;
     left: 0;
     top: 0;
     pointer-events: none;
     z-index: 9999;
-    transform: translate(-50%, -50%);
     width: 48px;
-    will-change: left, top;
+    transform: translate(-50%, -50%); /* центрирование через left/top */
+    will-change: transform;
+    /* rotate/scale через css-переменные */
+    --cursor-rot: 0deg;
+    --cursor-scale: 1;
+    transform: translate(-50%, -50%) rotate(var(--cursor-rot)) scale(var(--cursor-scale));
 }
+
+html.custom-cursor #kpszh-cursor { opacity: 1;}
 
 #kpszh-cursor img {
     display: block;

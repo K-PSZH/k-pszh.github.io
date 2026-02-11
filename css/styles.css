@@ -371,7 +371,7 @@ hr { border-color: #fffc; border-width: 0 0 1px 0; }
     top: 0;
     right: 100% !important;
     left: auto !important;
-    width: 150px;
+    width: 200px;
     background: var(--accent-transparent-1);
     border-radius: 6px;
     opacity: 0;
@@ -670,12 +670,6 @@ audio::-webkit-media-controls-enclosure {
     filter: invert();
     border-radius: 0;
 }
-
-audio::-webkit-media-controls-play-button,
-audio::-webkit-media-controls-timeline,
-audio::-webkit-media-controls-mute-button,
-audio::-webkit-media-controls-volume-slider,
-audio::-webkit-media-controls-fullscreen-button { cursor: none !important; }
 
 audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
@@ -1452,12 +1446,6 @@ a.news-link:hover .news-date { opacity: 1; }
     filter: brightness(1) drop-shadow(0 10px 5px var(--black-transparent-2)); /* outer shadow */
     overflow: hidden;
     transform: translateY(-50%);
-    transition: left var(--brand-transition), filter var(--brand-transition);
-}
-
-.album-panel-disc:hover {
-    left: calc(var(--album-panel-disc-size) / 1.5 * -1); /* hover slide */
-    filter: brightness(1.5); /* hover glow */
 }
 
 .album-panel-disc::before {
@@ -1595,17 +1583,10 @@ a.news-link:hover .news-date { opacity: 1; }
     margin-block-start: .5em;
 }
 
-.album-panel.mh li,
-.album-panel.mh li span { transition: color var(--brand-transition); }
-
 .album-panel.mh li span {
     color: #ccc;
     font-size: .85em;
 }
-
-.album-panel.mh li:hover { color: #888; }
-
-.album-panel.mh li:hover span { color: #555; }
 
 .album-panel.mp h1,
 .album-panel.mp h2,
@@ -1662,10 +1643,6 @@ a.news-link:hover .news-date { opacity: 1; }
     margin-block-start: .5em;
 }
 
-.album-panel.md li { transition: color var(--brand-transition); }
-
-.album-panel.md li:hover { color: var(--danganronpa) }
-
 .album-panel.tdufa h1,
 .album-panel.tdufa h2,
 .album-panel.tdufa h3,
@@ -1697,10 +1674,6 @@ a.news-link:hover .news-date { opacity: 1; }
     line-height: 1.6;
     margin-block-start: .5em;
 }
-
-.album-panel.tdufa li { transition: color var(--brand-transition); }
-
-.album-panel.tdufa li:hover { color: #f68; }
 
 .album-panel.tdufa a:hover { color: #e14; }
 
@@ -2454,7 +2427,7 @@ a.news-link:hover .news-date { opacity: 1; }
     margin-top: 0;
     margin-bottom: 0;
     font-size: 0;
-    user-select: auto;
+    user-select: none;
     transition: margin-top var(--brand-transition), margin-bottom var(--brand-transition), font-size var(--brand-transition);
 }
 

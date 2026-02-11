@@ -1,5 +1,5 @@
-const prefs = JSON.parse(localStorage.getItem('prefs')) ?? { lang: 'ru', theme: 0 };
-let { lang: currentLang, theme: currentTheme } = prefs;
+const prefs = JSON.parse(localStorage.getItem('prefs')) ?? { lang: 'ru', theme: 0, cursor: 1 };
+let { lang: currentLang, theme: currentTheme, cursor: currentCursor } = prefs;
 let data = {};
 
 const settings = document.getElementById('settings');
@@ -49,12 +49,22 @@ function setTheme(theme) {
     toggleActive('[data-theme]', 'theme', theme);
 }
 
+function setCursor(cursor) {
+    currentCursor = prefs.cursor = cursor;
+    savePrefs();
+    document.documentElement.classList.toggle("custom-cursor", cursor == 1);
+    toggleActive('[data-cursor]', 'cursor', cursor);
+}
+
 settings.addEventListener('click', e => {
     const lang = e.target.closest('[data-lang]');
     const theme = e.target.closest('[data-theme]');
+    const cursor = e.target.closest('[data-cursor]');
     if (lang) return setLang(lang.dataset.lang);
     if (theme) return setTheme(Number(theme.dataset.theme));
+    if (cursor) return setCursor(Number(cursor.dataset.cursor));
 });
 
 prefsLoad(currentLang);
 setTheme(currentTheme);
+setCursor(currentCursor);
