@@ -321,6 +321,8 @@ hr { border-color: #fffc; border-width: 0 0 1px 0; }
 
 .kpszh-header-dropdown-button:hover { color: var(--accent-15); }
 
+.kpszh-header-dropdown-button:active { color: var(--accent-9); }
+
 .kpszh-header-dropdown-button.active { user-select: none; }
 
 .kpszh-header-dropdown-button.active::before {

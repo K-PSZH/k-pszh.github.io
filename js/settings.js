@@ -9,9 +9,7 @@ const btn = settings.querySelector('.kpszh-header-dropdown-button');
 const savePrefs = () => localStorage.setItem('prefs', JSON.stringify(prefs));
 
 function toggleActive(selector, key, value) {
-    settings.querySelectorAll(selector).forEach(el =>
-        el.classList.toggle('active', String(el.dataset[key]) === String(value))
-    );
+    settings.querySelectorAll(selector).forEach(el => el.classList.toggle('active', String(el.dataset[key]) === String(value)));
 }
 
 async function prefsLoad(lang) {
