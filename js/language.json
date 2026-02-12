@@ -117,6 +117,7 @@
     "product-description": "Description",
     "product-price": "Price:",
     "product-add-button": "Add to cart",
+    "product-out-of-stock": "Currently out of stock",
     "product-shipping": "the delivery cost and method are specified during the checkout",
 
     "product-1-tab-name": "K-PSZH' Red Shirt | K-PSZH",
@@ -293,6 +294,7 @@
     "product-description": "Описание",
     "product-price": "Цена:",
     "product-add-button": "В корзину",
+    "product-out-of-stock": "Сейчас нет в наличии",
     "product-shipping": "стоимость и способ доставки уточняются при оформлении заказа",
 
     "product-1-tab-name": "Красная рубашка K-PSZH | K-PSZH",

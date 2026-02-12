@@ -208,6 +208,7 @@ a.active:hover::before {
 button {
     font-family: Oswald;
     font-weight: 300;
+    user-select: none;
 }
 
 hr { border-color: #fffc; border-width: 0 0 1px 0; }
@@ -2291,6 +2292,18 @@ a.news-link:hover .news-date { opacity: 1; }
 .product-add-button:focus {
     background-color: var(--accent-5);
     filter: drop-shadow(0 0 8px var(--accent-5));
+}
+
+.product-add-button:disabled {
+    background-color: #333;
+    filter: none;
+    transition: none;
+}
+
+.product-out-of-stock {
+    margin-block-start: .4em;
+    font-size: 42px;
+    text-align: right;
 }
 
 .product-shipping {
