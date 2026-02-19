@@ -1,4 +1,4 @@
-html, body, button:disabled { cursor: default; }
+html, body, button:disabled, .locked { cursor: default; }
 
 a, button, label, .cursor-hoverable { cursor: pointer; }
 

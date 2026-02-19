@@ -1,8 +1,8 @@
 /* styles.css */
 @property --accent-hsl {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 0;
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
 }
 
 :root {
@@ -105,7 +105,7 @@ body::before {
     right: 0;
     z-index: -1000;
     background-image: url(/img/bg.webp);
-    filter: hue-rotate(calc(var(--accent-hsl) * 1deg));
+    filter: hue-rotate(calc(var(--accent-hsl) * 1deg)) brightness(.15);
 }
 
 body::after {
@@ -208,7 +208,6 @@ a.active:hover::before {
 button {
     font-family: Oswald;
     font-weight: 300;
-    user-select: none;
 }
 
 hr { border-color: #fffc; border-width: 0 0 1px 0; }
@@ -343,7 +342,7 @@ hr { border-color: #fffc; border-width: 0 0 1px 0; }
     backdrop-filter: blur(2px);
     border-radius: 6px;
     opacity: 0;
-    width: 100px;
+    width: 125px;
     pointer-events: none;
     transform: translateY(4px);
     transition: opacity var(--brand-transition), transform var(--brand-transition);
@@ -374,7 +373,7 @@ hr { border-color: #fffc; border-width: 0 0 1px 0; }
     top: 0;
     right: 100% !important;
     left: auto !important;
-    width: 200px;
+    width: 150px;
     background: var(--accent-transparent-1);
     border-radius: 6px;
     opacity: 0;
@@ -770,7 +769,7 @@ audio::-webkit-media-controls-time-remaining-display {
 .index-main-section {
     display: flex;
     justify-content: space-between;
-    margin-top: 2em;
+    margin-top: 1em;
 }
 
 .index-left { flex: 1; }
@@ -805,44 +804,78 @@ audio::-webkit-media-controls-time-remaining-display {
 }
 
 .kpszh-glass-container {
+    --container-bg: var(--container-gradient);
+    --container-bg-color: var(--black-transparent-1);
+    --container-border: var(--black-transparent-2);
+    --container-transition: var(--brand-transition);
+    --container-icon-right: calc(var(--kpszh-glass-container-icon-size) / -3);
+    --container-icon-fill: var(--accent-transparent-2);
     position: relative;
     display: flex;
     overflow: hidden;
     border-radius: 12px;
     box-sizing: border-box;
-    background: var(--container-gradient);
-    background-color: var(--black-transparent-1);
+    background: var(--container-bg);
+    background-color: var(--container-bg-color);
     background-clip: padding-box;
-    border: 4px solid var(--black-transparent-2);
+    border: 4px solid var(--container-border);
     transform: translateZ(0);
-    transition: background-color var(--brand-transition), border var(--brand-transition);
+    transition: var(--container-transition);
+}
+
+.kpszh-glass-container:hover {
+    --container-bg-color: var(--accent-transparent-1);
+    --container-border: var(--accent-transparent-3);
+    --container-icon-right: calc(var(--kpszh-glass-container-icon-size) / -3.5);
+    --container-icon-fill: var(--accent-transparent-4);
 }
 
 .kpszh-glass-container-icon {
     position: absolute;
     width: var(--kpszh-glass-container-icon-size);
     height: var(--kpszh-glass-container-icon-size);
-    right: calc(var(--kpszh-glass-container-icon-size) / -3);
+    right: var(--container-icon-right);
+    fill: var(--container-icon-fill);
     top: 40%;
     transform: translateY(-50%);
     z-index: -1;
-    fill: var(--accent-transparent-2);
     transition: right var(--brand-transition), fill var(--brand-transition);
-}
-
-.kpszh-glass-container:hover .kpszh-glass-container-icon {
-    right: calc(var(--kpszh-glass-container-icon-size) / -3.5);
-    fill: var(--accent-transparent-4);
 }
 
 .kpszh-glass-container:hover .kpszh-glass-container-icon.fixed-icon { right: calc(var(--kpszh-glass-container-icon-size) / -3); }
 
-.kpszh-glass-container:hover {
-    background-color: var(--accent-transparent-1);
-    border-color: var(--accent-transparent-3);
+.kpszh-glass-container.has-icon { padding-right: calc(var(--kpszh-glass-container-icon-size) * 0.8); }
+
+.kpszh-glass-container.locked {
+    --container-bg: linear-gradient(-30deg, #8888 -100%, transparent 50%, transparent 75%, #8888 150%);
+    --container-bg-color: var(--black-transparent-1);
+    --container-border: #7777;
 }
 
-.kpszh-glass-container:has(.kpszh-glass-container-icon) { padding-right: calc(var(--kpszh-glass-container-icon-size) * 0.8); }
+.kpszh-glass-container.locked *::selection { background-color: #9999; }
+
+.kpszh-glass-container.locked * {
+    color: #999;
+    fill: #999;
+}
+
+.kpszh-glass-container.texture::after {
+    content: "";
+    position: absolute;
+    height: 100px;
+    background: url(/img/bg.webp) no-repeat bottom center;
+    background-size: auto;
+    filter: hue-rotate(calc(var(--accent-hsl) * 1deg));
+    z-index: -1;
+}
+
+.kpszh-glass-container.texture.bottom::after {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100px;
+    mask-image: linear-gradient(0deg, black -50%, #0001 50%, transparent 100%);
+}
 
 .index-stats-container {
     flex-direction: column;
@@ -886,9 +919,9 @@ audio::-webkit-media-controls-time-remaining-display {
     margin-inline: auto;
     margin-block: 1em;
     mask-image: linear-gradient(150deg, black 25%, transparent 60%);
-    mask-size: 220% 220%;
+    mask-size: 250% 250%;
     mask-repeat: no-repeat;
-    mask-position: 25% 25%;
+    mask-position: 30% 30%;
     transition: mask-position var(--brand-transition);
 }
 
@@ -898,7 +931,7 @@ audio::-webkit-media-controls-time-remaining-display {
 }
 
 .index-logo-shake img {
-    --logo-anim-multi: 1.25;
+    --logo-anim-multi: 1;
     position: absolute;
     backface-visibility: hidden;
     inset: 0;
@@ -917,13 +950,13 @@ audio::-webkit-media-controls-time-remaining-display {
 
 @keyframes indexLogoShake {
     0%   { transform: translate(0, 0); }
-    10%  { transform: translate(4px, -4px); }
+    10%  { transform: translate(3px, -4px); }
     20%  { transform: translate(-4px, 3px); }
-    30%  { transform: translate(3px, -3px); }
+    30%  { transform: translate(2px, -3px); }
     40%  { transform: translate(-3px, 2px); }
-    50%  { transform: translate(2px, -2px); }
+    50%  { transform: translate(1.5px, -2px); }
     60%  { transform: translate(-2px, 1.5px); }
-    70%  { transform: translate(1px, -1px); }
+    70%  { transform: translate(0.7px, -1px); }
     80%  { transform: translate(-1px, 0.7px); }
     90%  { transform: translate(0, -0.4px); }
     100% { transform: translate(0, 0); }
@@ -946,8 +979,7 @@ audio::-webkit-media-controls-time-remaining-display {
     font-size: 18px;
     font-weight: 400;
     margin-inline: auto;
-    margin-block-start: .5em;
-    margin-block-end: 1em;
+    margin-block: .5em;
     max-width: 640px;
     z-index: 3;
 }
@@ -983,7 +1015,7 @@ audio::-webkit-media-controls-time-remaining-display {
 .index-latest-info {
     display: flex;
     flex-direction: column;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(16px);
     width: 100%;
     padding-inline: .5em;
 }
@@ -1010,6 +1042,13 @@ audio::-webkit-media-controls-time-remaining-display {
 .index-latest-link { font-weight: 300; }
 
 .index-latest-link a { text-decoration: none; }
+
+.index-more {
+    font-size: 46px;
+    margin-block: .5em;
+}
+
+.index-more span { font-weight: 200; }
 
 @media only screen and (max-width: 1220px) {
     .index-right { display: none; }
@@ -1307,11 +1346,14 @@ a.news-link:hover .news-date { opacity: 1; }
     padding: 12px 24px;
 }
 
-.kpszh-audio-container.playing .kpszh-glass-container-icon {
-    right: calc(var(--kpszh-glass-container-icon-size) / -6);
-    fill: var(--accent-transparent-3); }
+.kpszh-audio-container.playing {
+    --container-icon-right: calc(var(--kpszh-glass-container-icon-size) / -6);
+    --container-icon-fill: var(--accent-transparent-3);
+}
 
-    .kpszh-audio-container.playing:hover .kpszh-glass-container-icon { fill: var(--accent-transparent-4); }
+.kpszh-audio-container.playing:hover {
+    --container-icon-fill: var(--accent-transparent-4);
+}
 
 .kpszh-audio-text {
     display: flex;
@@ -1867,8 +1909,15 @@ a.news-link:hover .news-date { opacity: 1; }
     max-width: 320px;
     display: block;
     text-decoration: none;
+    padding-bottom: 4px;
     opacity: 0;
 }
+/* 20/40
+   80/60 */ 
+.merch-container.texture.bottom:nth-child(1)::after { background-position: 30% 70%; }
+.merch-container.texture.bottom:nth-child(2)::after { background-position: 50% 50%; }
+.merch-container.texture.bottom:nth-child(3)::after { background-position: 70% 60%; }
+.merch-container.texture.bottom:nth-child(4)::after { background-position: 50% 40%; }
 
 .merch-container.visible { animation: merchContainerSwipe 1s ease forwards; }
 
@@ -2278,6 +2327,7 @@ a.news-link:hover .news-date { opacity: 1; }
     color: white;
     font-family: Oswald;
     text-transform: uppercase;
+    user-select: none;
     font-size: 20px;
     filter: drop-shadow(0 0 48px transparent);
     transition: background-color var(--brand-transition), background-position var(--brand-transition), filter var(--brand-transition);
@@ -2295,7 +2345,8 @@ a.news-link:hover .news-date { opacity: 1; }
 }
 
 .product-add-button:disabled {
-    background-color: #333;
+    background-color: var(--accent-2);
+    color: var(--white-transparent-2);
     filter: none;
     transition: none;
 }
@@ -2693,17 +2744,8 @@ a.news-link:hover .news-date { opacity: 1; }
     text-decoration: none;
 }
 
-.donate-container::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url(/img/bottom.webp);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: auto;
-    filter: hue-rotate(calc(var(--accent-hsl) * 1deg));
-    opacity: 1;
-}
+.donate-container.texture.bottom:nth-child(1)::after { background-position: 20% 40%; }
+.donate-container.texture.bottom:nth-child(2)::after { background-position: 80% 60%; }
 
 .donate-container:hover,
 .donate-container:focus { color: white; }
@@ -2714,7 +2756,7 @@ a.news-link:hover .news-date { opacity: 1; }
     transition: transform var(--brand-transition);
 }
 
-.donate-container:not(.locked-container):hover .donate-container-icon { transform: scale(.95) }
+.donate-container:not(.locked):hover .donate-container-icon { transform: scale(.95) }
 
 .donate-container ul {
     width: 100%;
@@ -2724,20 +2766,4 @@ a.news-link:hover .news-date { opacity: 1; }
 .donate-container-text {
     font-size: 24px;
     text-align: center;
-}
-
-.kpszh-glass-container.locked-container {
-    background: linear-gradient(-30deg, #8888 -100%, transparent 50%, transparent 75%, #8888 150%);
-    background-color: #3333;
-    border: 4px solid #7777;
-    transition: none;
-}
-
-.locked-container::before { opacity: 0; }
-
-.kpszh-glass-container.locked-container *::selection { background-color: #9999; }
-
-.kpszh-glass-container.locked-container * {
-    color: #999;
-    fill: #999;
 }
