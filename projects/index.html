@@ -111,7 +111,7 @@
                     <p data-i18n="projects-remixes-description"></p>
                 </div>
                 <div class="projects-grid">
-                    <a class="kpszh-glass-container album-container gpu" href="#projectsTitle">
+                    <a class="kpszh-glass-container album-container gpu" href="#mh">
                         <div class="album-image">
                             <img data-album="mh" src="/img/covers/mh.webp">
                         </div>
@@ -120,7 +120,7 @@
                             <div class="album-date" data-i18n="projects-mh-date"></div>
                         </div>
                     </a>
-                    <a class="kpszh-glass-container album-container gpu" href="#projectsTitle">
+                    <a class="kpszh-glass-container album-container gpu" href="#mp">
                         <div class="album-image">
                             <img data-album="mp" src="/img/covers/mp.webp">
                         </div>
@@ -129,7 +129,7 @@
                             <div class="album-date" data-i18n="projects-mp-date"></div>
                         </div>
                     </a>
-                    <a class="kpszh-glass-container album-container gpu" href="#projectsTitle">
+                    <a class="kpszh-glass-container album-container gpu" href="#md">
                         <div class="album-image">
                             <img data-album="md" src="/img/covers/md.webp">
                         </div>
@@ -138,7 +138,7 @@
                             <div class="album-date" data-i18n="projects-md-date"></div>
                         </div>
                     </a>
-                    <a class="kpszh-glass-container album-container gpu" href="#projectsTitle">
+                    <a class="kpszh-glass-container album-container gpu" href="#tdufa">
                         <div class="album-image">
                             <img data-album="tdufa" src="/img/covers/tdufa.webp">
                         </div>
@@ -147,7 +147,7 @@
                             <div class="album-date" data-i18n="projects-tdufa-date"></div>
                         </div>
                     </a>
-                    <a class="kpszh-glass-container album-container wide gpu" href="#projectsTitle">
+                    <a class="kpszh-glass-container album-container wide gpu" href="#remixes">
                         <div class="album-image">
                             <img data-album="remixes" src="/img/covers/remixes.webp">
                         </div>                       
@@ -213,7 +213,6 @@
                 </div>
             </div>
             <h6 class="kpszh-footer-copyright" data-i18n="common-footer-copyright"></h6>
-            <h6 class="kpszh-footer-disclaimer"></h6>
         </footer>
         <div id="image-viewer">
             <span class="close cursor-hoverable">&times;</span>
@@ -301,6 +300,14 @@
                     e.style.animation = 'none';
                     e.offsetHeight;
                     e.style.animation = '';
+                }
+
+                function openProjectByKey(key) {
+                    const container = [...containers].find(c => c.querySelector('.album-image img')?.dataset.album === key );
+                    if (container) {
+                        container.click();
+                        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                 }
 
                 const albumPanel = document.getElementById("albumPanel");
@@ -438,8 +445,14 @@
                         // Выбор карточки альбома
                         containers.forEach(c => c.classList.remove("selected"));
                         container.classList.add("selected");
+
+                        // Скролл
+                        document.getElementById("projectsTitle").scrollIntoView({ behavior: 'smooth', block: 'start' });
                     });
                 });
+
+                const hash = location.hash.replace('#', '');
+                if (hash) { openProjectByKey(hash); }
             });
 
             document.addEventListener('DOMContentLoaded', () => {
