@@ -30,7 +30,7 @@
     --black-transparent-1: #0004;
     --black-transparent-2: #0008;
     --black-transparent-3: #000c;
-    --white-transparent-1: #fff3;
+    --white-transparent-1: #fff4;
     --white-transparent-2: #fff6;
     --white-transparent-3: #fff8;
     --white-transparent-4: #fffa;
@@ -507,27 +507,28 @@ hr {
 
 .kpszh-footer-copyright {
     position: relative;
-    margin-block-start: 1.5em;
-    margin-block-end: 2em;
+    margin-block: 1.5em;
     font-size: 20px;
     z-index: 50;
-    transition: margin-block-start var(--brand-transition), margin-block-end var(--brand-transition), font-size var(--brand-transition);
+    transition: margin-block var(--brand-transition), font-size var(--brand-transition);
 }
 
 .kpszh-footer-disclaimer {
-    position: absolute;
     font-weight: 200;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    font-size: .7em;
+    bottom: .5em;
+    left: .5em;
+    right: .5em;
+    font-size: 1.05em;
     text-transform: uppercase;
-    text-align: justify;
-    text-align-last: justify;
     margin-block: 0;
     color: var(--white-transparent-1);
     user-select: none;
     transform: scale(1, 1.5);
+}
+
+.kpszh-footer-disclaimer span {
+    color: var(--social-youtube);
+    opacity: 0.75;
 }
 
 .flag {
@@ -745,8 +746,7 @@ audio::-webkit-media-controls-time-remaining-display {
     .kpszh-social-icon { margin: auto 5px; }
 
     .kpszh-footer-copyright {
-        margin-block-start: .75em;
-        margin-block-end: 1em;
+        margin-block: .75em;
     }
 }
 

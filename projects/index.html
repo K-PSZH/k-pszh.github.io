@@ -215,8 +215,8 @@
                 </div>
             </div>
             <h6 class="kpszh-footer-copyright" data-i18n="common-footer-copyright"></h6>
-            <h6 class="kpszh-footer-disclaimer" data-i18n="common-footer-disclaimer"></h6>
         </footer>
+        <h6 class="kpszh-footer-disclaimer" data-i18n="common-footer-disclaimer"></h6>
         <div id="image-viewer">
             <span class="close cursor-hoverable">&times;</span>
             <div class="image-viewer-body">
@@ -341,7 +341,7 @@
                         tracklist_title: "projects-tracklist",
                         tracklist: "<li>1. The Ball of Schizos <span>[Sep 18]</span></li><li>2. Mass Tour Baiting <span>[Nov 3] (feat. Rekonza)</span></li><li>3. Beverly Hills Slut, 4649 <span>[Dec 6]</span></li><li>4. Bring Me Some Pizza and Let's Celebrate <span>[Jan 13]</span></li><li>5. Identifying Her <span>[Jan 26]</span></li><li>6. time of death is 7.08.20 <span>[Apr 11]</span></li><li>7. A City of Hallucination <span>(feat. Nero Sakamaki & Hikaru Akahoshi)</span></li>",
                         link_youtube: "https://youtu.be/2M0d_sTrlE0",
-                        links: '<a href="https://youtu.be/2M0d_sTrlE0">YouTube</a> | <a href="https://open.spotify.com/album/1mPHRHbUd4ylrc6hGFKURm">Spotify</a> | <a href="https://music.apple.com/us/album/my-hallucination/1829957401">Apple Music</a> | <a href="https://kpszh.bandcamp.com/album/my-hallucination">Bandcamp</a>',
+                        links: 'projects-mh-links',
                     },
                     mp: {
                         bg: "/img/projects/mypain_bg.webp",
@@ -350,7 +350,7 @@
                         title: "my pain",
                         date: "projects-mp-date",
                         tracklist: "",
-                        links: '<a href="https://youtu.be/cbHY_igMHlY">YouTube</a> | <a href="https://open.spotify.com/album/25nDxdqnqXQiLuoMvOxndW">Spotify</a> | <a href="https://music.apple.com/us/album/my-pain-single/1755619299">Apple Music</a> | <a href="https://kpszh.bandcamp.com/album/my-pain">Bandcamp</a>',
+                        links: 'projects-mp-links',
                     },
                     md: {
                         bg: "/img/projects/mydespair_bg.webp",
@@ -364,7 +364,7 @@
                         date: "projects-md-date",
                         tracklist_title: "projects-tracklist",
                         tracklist: "<li>1. Despairification (Intro)</li><li>2. Not My WORLD?</li><li>3. Beautiful Danger</li><li>4. Her Eyes</li><li>5. Cling For Your Life</li><li>6. Despair Symptom</li><li>7. My Despair</li>",
-                        links: '<a href="https://youtu.be/8oa-dFOf0CU">YouTube</a> | <a href="https://open.spotify.com/album/0iHF3CMDCt8wiktjghR312">Spotify</a> | <a href="https://music.apple.com/us/album/my-despair/1737262415">Apple Music</a> | <a href="https://kpszh.bandcamp.com/album/my-despair">Bandcamp</a>',
+                        links: 'projects-md-links',
                     },
                     tdufa: {
                         bg: "/img/projects/tdufa_bg.webp",
@@ -375,7 +375,7 @@
                         date: "projects-tdufa-date",
                         tracklist_title: "projects-tdufa-tracklist",
                         tracklist: "<li>3. Scrum Debate</li><li>11. Flashing Anagram</li>",
-                        links: '<a href="https://youtu.be/mqNVufYBNvw">YouTube</a> | <a href="https://everythingfantasy.bandcamp.com/album/the-danganronpa-ultimate-fan-album">Bandcamp</a>',
+                        links: 'projects-tdufa-links',
                     }
                 };
 
@@ -433,7 +433,7 @@
                                 tracklist_title.textContent = "";
                             }
                             tracklist.innerHTML = albums[key].tracklist; // Треклист
-                            links.innerHTML = albums[key].links; // Ссылки
+                            links.setAttribute("data-i18n", albums[key].links); // Ссылки
                             prefsLoad(localStorage.getItem('lang') || 'ru'); // Обеспечение работы i18n
 
                             // Анимации с начала при открытии панели
