@@ -2,6 +2,17 @@ const prefs = JSON.parse(localStorage.getItem('prefs')) ?? { lang: 'ru', theme: 
 let { lang: currentLang, theme: currentTheme, cursor: currentCursor } = prefs;
 let data = {};
 
+function getLangFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('lang');
+}
+
+const urlLang = getLangFromURL();
+
+if (urlLang) {
+    currentLang = prefs.lang = urlLang;
+}
+
 const settings = document.getElementById('settings');
 const dropdown = settings.querySelector('.kpszh-header-dropdown-menu');
 const btn = settings.querySelector('.kpszh-header-dropdown-button');
@@ -15,6 +26,7 @@ function toggleActive(selector, key, value) {
 async function prefsLoad(lang) {
     const res = await fetch('/js/language.json');
     data = await res.json();
+    if (!data[lang]) lang = 'en';
     document.querySelectorAll('[data-i18n]').forEach(el => { el.innerHTML = data[lang][el.dataset.i18n]; });
     document.documentElement.lang = lang;
     toggleActive('[data-lang]', 'lang', lang);
@@ -64,5 +76,6 @@ settings.addEventListener('click', e => {
 });
 
 prefsLoad(currentLang);
+savePrefs();
 setTheme(currentTheme);
 setCursor(currentCursor);
