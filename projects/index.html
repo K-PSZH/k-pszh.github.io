@@ -434,7 +434,7 @@
                             }
                             tracklist.innerHTML = albums[key].tracklist; // Треклист
                             links.setAttribute("data-i18n", albums[key].links); // Ссылки
-                            prefsLoad(localStorage.getItem('lang') || 'ru'); // Обеспечение работы i18n
+                            prefsLoad(currentLang); // Обеспечение работы i18n
 
                             // Анимации с начала при открытии панели
                             restartAnimation(corner);
